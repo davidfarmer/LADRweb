@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bases</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-0 { system: extends lower-alpha; prefix: '('; suffix: ') '; }
+</style>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Linear algebra done right">
+<meta property="og:title" content="Linear algebra done right">
+<meta property="book:title" content="Linear algebra done right">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.12';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.561f7165d9bf3626.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Linear algebra done right</span></a></div>
+<p class="byline">Sheldon Axler</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="x2spli.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="fin-dimVS.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="dimension.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\tensor}{\otimes}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\andd}{\quad \text{and} \quad}
+\newcommand{\orr}{\quad \text{or} \quad}
+\newcommand{\butt}{\quad \text{but} \quad}
+\newcommand{\fun}[3]{#1 \colon #2 \to #3}
+\newcommand{\nth}{{\text{th}}}
+\newcommand{\C}[1]{\symbf{C}^{#1}}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\R}[1]{\symbf{R}^{#1}}
+\newcommand{\CC}[1]{\symbf{C}^{#1}}
+\newcommand{\FF}[1]{\symbf{F}^{#1}}
+\newcommand{\RR}[1]{\symbf{R}^{#1}}
+\newcommand{\A}{\symcal{A}}
+\newcommand{\B}{\symcal{B}}
+\newcommand{\E}{\symcal{E}}
+\newcommand{\CF}{\symcal{F}}
+\newcommand{\Lc}{\symcal{L}}
+\newcommand{\M}{\symcal{M}}
+\newcommand{\P}{\symcal{P}}
+\newcommand{\sm}{\backslash}
+\newcommand{\Space}{}
+\DeclareMathOperator{\ran}{range}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\perm}{perm}
+\DeclareMathOperator{\vol}{volume}
+\DeclareMathOperator{\ker}{null}
+\newcommand{\tran}[1]{#1^{\text{t}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Linear Algebra Done Right</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="author.html" class="internal"><span class="title">About the Author</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forStudents.html" class="internal"><span class="title">Preface for Students</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forInstructors.html" class="internal"><span class="title">Preface for Instructors</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgments.html" class="internal"><span class="title">Acknowledgments</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="VectorSpaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-VectorSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="VectorSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Rn_and_Cn.html" class="internal"><span class="codenumber">1.1</span> <span class="title"><span class="process-math">\(\R n\)</span> and <span class="process-math">\(\C n\)</span></span></a></div>
+<ul id="ptx-toc-group-Rn_and_Cn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-2" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-3" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Lists</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-4" class="internal"><span class="codenumber">1.1.3</span> <span class="title"><span class="process-math">\(\F n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Rn_and_Cn.html#fields" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Digression on Fields</span></a></div>
+<ul id="ptx-toc-group-fields" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Rn_and_Cn.html#fields-4" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1DefVS.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Definition of Vector Space</span></a></div>
+<ul id="ptx-toc-group-x1DefVS" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1DefVS.html#x1DefVS-46" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1Subspaces.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Subspaces</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-3" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Sums of Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Direct Sums</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4-18" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="fin-dimVS.html" class="internal"><span class="codenumber">2</span> <span class="title">Finite-Dimensional Vector Spaces</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-fin-dimVS">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="fin-dimVS-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2spli.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Span and Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2spli.html#x2spli-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Linear Combinations and Span</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2spli.html#x2spli-4" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2spli.html#x2spli-4-26" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="bases.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Bases</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-bases"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bases.html#bases-26" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="dimension.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Dimension</span></a></div>
+<ul id="ptx-toc-group-dimension" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="dimension.html#dimension-30" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="LinearMaps.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Maps</span></a></div>
+<ul id="ptx-toc-group-LinearMaps" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="LinearMaps-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="vslinear.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Vector Space of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-vslinear" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vslinear.html#vslinear-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Definition and Examples of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="vslinear.html#vslinear-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Algebraic Operations on <span class="process-math">\(\Lc(V, W)\)</span></span></a></div>
+<ul id="ptx-toc-group-vslinear-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="vslinear.html#vslinear-3-20" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3nullspace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Null Spaces and Ranges</span></a></div>
+<ul id="ptx-toc-group-x3nullspace" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-2" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Null Space and Injectivity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-3" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Range and Surjectivity</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Fundamental Theorem of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-x3nullspace-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4-30" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Matrices</span></a></div>
+<ul id="ptx-toc-group-matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-2" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Representing a Linear Map by a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-3" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Addition and Scalar Multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-4" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="matrices.html#matrices-5" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Column–Row Factorization and Rank of a Matrix</span></a></div>
+<ul id="ptx-toc-group-matrices-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="matrices.html#x3think2" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="invertible.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Invertibility and Isomorphisms</span></a></div>
+<ul id="ptx-toc-group-invertible" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-2" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Invertible Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-3" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Isomorphic Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-4" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Linear Maps Thought of as Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="invertible.html#invertible-5" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Change of Basis</span></a></div>
+<ul id="ptx-toc-group-invertible-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="invertible.html#invertible-5-27" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pq.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Products and Quotients of Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-pq" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pq.html#pq-2" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Products of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="pq.html#pq-3" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Quotient Spaces</span></a></div>
+<ul id="ptx-toc-group-pq-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="pq.html#pq-3-29" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="duals.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Duality</span></a></div>
+<ul id="ptx-toc-group-duals" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-2" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Dual Space and Dual Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-3" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Null Space and Range of Dual of Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="duals.html#duals-4" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Matrix of Dual of Linear Map</span></a></div>
+<ul id="ptx-toc-group-duals-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="duals.html#duals-4-9" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="polynomials.html" class="internal"><span class="codenumber">4</span> <span class="title">Polynomials</span></a></div>
+<ul id="ptx-toc-group-polynomials" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="polynomials-25.html" class="internal"><span class="codenumber">4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="eigs.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-eigs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="eigs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x5invar.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Invariant Subspaces</span></a></div>
+<ul id="ptx-toc-group-x5invar" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x5invar.html#x5invar-2" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x5invar.html#x5invar-3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Polynomials Applied to Operators</span></a></div>
+<ul id="ptx-toc-group-x5invar-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x5invar.html#x5invar-3-19" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="eigenuppertri.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Minimal Polynomial</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-2" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Existence of Eigenvalues on Complex Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-3" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Eigenvalues and the Minimal Polynomial</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Eigenvalues on Odd-Dimensional Real Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4-10" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x4utm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Upper-Triangular Matrices</span></a></div>
+<ul id="ptx-toc-group-x4utm" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x4utm.html#x4utm-41" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="diagmat.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Diagonalizable Operators</span></a></div>
+<ul id="ptx-toc-group-diagmat" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-2" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Diagonal Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-3" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Conditions for Diagonalizability</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="diagmat.html#diagmat-4" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Gershgorin Disk Theorem</span></a></div>
+<ul id="ptx-toc-group-diagmat-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="diagmat.html#diagmat-4-12" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2diagmat.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Commuting Operators</span></a></div>
+<ul id="ptx-toc-group-x2diagmat" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2diagmat.html#x2diagmat-30" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="InnerProductSpaces.html" class="internal"><span class="codenumber">6</span> <span class="title">Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-InnerProductSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="InnerProductSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x6ipn.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Inner Products and Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-2" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Inner Products</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x6ipn.html#x6ipn-3" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-3-41" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="orthobases.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Orthonormal Bases</span></a></div>
+<ul id="ptx-toc-group-orthobases" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="orthobases.html#orthobases-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Orthonormal Lists and the Gram–Schmidt Procedure</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="orthobases.html#orthobases-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Linear Functionals on Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-orthobases-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="orthobases.html#orthobases-3-16" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="OrthoMin.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements and Minimization Problems</span></a></div>
+<ul id="ptx-toc-group-OrthoMin" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-2" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-3" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Minimization Problems</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Pseudoinverse</span></a></div>
+<ul id="ptx-toc-group-OrthoMin-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4-27" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="opsinner.html" class="internal"><span class="codenumber">7</span> <span class="title">Operators on Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-opsinner" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="opsinner-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="selfadjoint_normal.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Self-Adjoint and Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-2" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Adjoints</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-3" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Self-Adjoint Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4-18" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpectralTheorem.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Real Spectral Theorem</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Complex Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4-10" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="POIUO.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Positive Operators</span></a></div>
+<ul id="ptx-toc-group-POIUO" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="POIUO.html#POIUO-21" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3QR.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isometries, Unitary Operators, and Matrix Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-2" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Isometries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-3" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-4" class="internal"><span class="codenumber">7.4.3</span> <span class="title">QR Factorization</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3QR.html#x3QR-5" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Cholesky Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3QR.html#x3QR-5-13" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2SVD.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x2SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-2" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2SVD.html#x2SVD-3" class="internal"><span class="codenumber">7.5.2</span> <span class="title">SVD for Linear Maps and for Matrices</span></a></div>
+<ul id="ptx-toc-group-x2SVD-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-3-22" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9SVD.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Consequences of Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x9SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-2" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Norms of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-3" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Approximation by Linear Maps with Lower-Dimensional Range</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-4" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Polar Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-5" class="internal"><span class="codenumber">7.6.4</span> <span class="title">Operators Applied to Ellipsoids and Parallelepipeds</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-6" class="internal"><span class="codenumber">7.6.5</span> <span class="title">Volume via Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9SVD.html#x9SVD-7" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Properties of an Operator as Determined by Its Eigenvalues</span></a></div>
+<ul id="ptx-toc-group-x9SVD-7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-7-5" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="operators_complex_vs.html" class="internal"><span class="codenumber">8</span> <span class="title">Operators on Complex Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-operators_complex_vs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="operators_complex_vs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="geneig.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Generalized Eigenvectors and Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-2" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Null Spaces of Powers of an Operator</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-3" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Generalized Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="geneig.html#geneig-4" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="geneig.html#geneig-4-15" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="decompop.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-decompop" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-2" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Generalized Eigenspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-3" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Multiplicity of an Eigenvalue</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="decompop.html#decompop-4" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Block Diagonal Matrices</span></a></div>
+<ul id="ptx-toc-group-decompop-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="decompop.html#decompop-4-10" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x8geneigde.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Consequences of Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-x8geneigde" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x8geneigde.html#x8geneigde-2" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Square Roots of Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x8geneigde.html#Jordan" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Jordan Form</span></a></div>
+<ul id="ptx-toc-group-Jordan" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x8geneigde.html#Jordan-19" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x7trace.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Trace: A Connection Between Matrices and Operators</span></a></div>
+<ul id="ptx-toc-group-x7trace" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x7trace.html#x7trace-36" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="MultLATensors.html" class="internal"><span class="codenumber">9</span> <span class="title">Multilinear Algebra and Determinants</span></a></div>
+<ul id="ptx-toc-group-MultLATensors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="MultLATensors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bilin_quad.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Bilinear Forms and Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-2" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-3" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Symmetric Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4-15" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="alt_multi.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Alternating Multilinear Forms</span></a></div>
+<ul id="ptx-toc-group-alt_multi" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-2" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Multilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="alt_multi.html#alt_multi-3" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Alternating Multilinear Forms and Permutations</span></a></div>
+<ul id="ptx-toc-group-alt_multi-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-3-27" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9det.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9det.html#x9det-2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Defining the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9det.html#x9det-3" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Properties of Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9det.html#x9det-3-65" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9TensorSect.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Tensor Products</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-2" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Tensor Product of Two Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-3" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Tensor Product of Inner Product Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Tensor Product of Multiple Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4-25" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back matter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocredits.html" class="internal"><span class="codenumber">1</span> <span class="title">Photo Credits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="typesetting.html" class="internal"><span class="codenumber">2</span> <span class="title">Colophon: Notes on Typesetting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pretextplus.html" class="internal"><span class="codenumber">3</span> <span class="title">Colophon: The Web version</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="bases">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bases</span>
+</h1>
+<div class="para" id="bases-2">In the previous section, we discussed linearly independent lists and we also discussed spanning lists. Now we bring these concepts together by considering lists that have both properties.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="bases-3"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">basis.</span>
+</h2>
+<div class="para" id="bases-3-2-1">A <dfn class="terminology">basis</dfn>  of <span class="process-math">\(V\)</span> is a list of vectors in <span class="process-math">\(V\)</span> that is linearly independent and spans <span class="process-math">\(V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 2.26: basis"><a tabindex="-1" href="#bases-3" title="Copy heading and permalink for Definition 2.26: basis" aria-label="Copy heading and permalink for Definition 2.26: basis">🔗</a></div>
+</article>
+<details id="ex_bases" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">bases.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="ex_bases-2-1">
+<ol class="decimal" id="ex_bases-2-1-1">
+<li id="ex_bases-2-1-1-1">
+<div class="para" id="ex_bases-2-1-1-1-1">The list <span class="process-math">\((1, 0, \dots, 0), (0, 1, 0, \dots, 0), \dots, (0, \dots, 0, 1)\)</span> is a basis of <span class="process-math">\(\FF{n}\text{,}\)</span> called the <dfn class="terminology">standard basis</dfn> of <span class="process-math">\(\FF{n}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_bases-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex_bases-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex_bases-2-1-1-2">
+<div class="para" id="ex_bases-2-1-1-2-1">The list <span class="process-math">\((1,2), (3,5)\)</span> is a basis of <span class="process-math">\(\FF{2}\text{.}\)</span> Note that this list has length two, which is the same as the length of the standard basis of <span class="process-math">\(\FF2\text{.}\)</span> In the next section, we will see that this is not a coincidence.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_bases-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex_bases-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex_bases-2-1-1-3">
+<div class="para" id="ex_bases-2-1-1-3-1">The list <span class="process-math">\((1,2, -4), (7, -5, 6)\)</span> is linearly independent in <span class="process-math">\(\F3\)</span> but is not a basis of <span class="process-math">\(\F{3}\)</span> because it does not span <span class="process-math">\(\FF{3}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_bases-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#ex_bases-2-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="ex_bases-2-1-1-4">
+<div class="para" id="ex_bases-2-1-1-4-1">The list <span class="process-math">\((1,2), (3,5), (4,13)\)</span> spans <span class="process-math">\(\F{2}\)</span> but is not a basis of <span class="process-math">\(\F{2}\)</span> because it is not linearly independent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_bases-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#ex_bases-2-1-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="ex_bases-2-1-1-5">
+<div class="para" id="ex_bases-2-1-1-5-1">The list <span class="process-math">\((1, 1, 0), (0, 0, 1)\)</span> is a basis of <span class="process-math">\(\{ (x, x, y) \in \F{3} \colon x, y \in \F{} \}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_bases-2-1-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5"><a tabindex="-1" href="#ex_bases-2-1-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="ex_bases-2-1-1-6">
+<div class="para logical" id="ex_bases-2-1-1-6-1">
+<div class="para">The list <span class="process-math">\((1, -1, 0), (1, 0, -1)\)</span> is a basis of</div>
+<div class="displaymath process-math" id="ex_bases-2-1-1-6-1-2">
+\begin{equation*}
+\{ (x, y, z) \in \F{3} \colon x + y + z = 0 \}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_bases-2-1-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 6"><a tabindex="-1" href="#ex_bases-2-1-1-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li id="ex_bases-2-1-1-7">
+<div class="para" id="ex_bases-2-1-1-7-1">The list <span class="process-math">\(1, z, \dots, z^m\)</span> is a basis of <span class="process-math">\(\P{}_m(\F{})\text{,}\)</span> called the <dfn class="terminology">standard basis</dfn> of <span class="process-math">\(\P{}_m(\F{})\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_bases-2-1-1-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7"><a tabindex="-1" href="#ex_bases-2-1-1-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_bases-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.27: bases"><a tabindex="-1" href="#ex_bases" title="Copy heading and permalink for Example 2.27: bases" aria-label="Copy heading and permalink for Example 2.27: bases">🔗</a></div>
+</article></details>
+<div class="para logical" id="bases-5">
+<div class="para">In addition to the standard basis, <span class="process-math">\(\F{n}\)</span> has many other bases. For example,</div>
+<div class="displaymath process-math" id="bases-5-2">
+\begin{equation*}
+(7, 5), (-4, 9) \andd (1,2), (3,5)
+\end{equation*}
+</div>
+<div class="para">are both bases of <span class="process-math">\(\FF{2}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="bases-6">The next result helps explain why bases are useful. Recall that “uniquely” means “in only one way”.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x380"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">criterion for basis.</span>
+</h2>
+<div class="para logical" id="x380-2-1">
+<div class="para">A list <span class="process-math">\(v_1, \dots,
+v_n\)</span> of vectors in <span class="process-math">\(V\)</span> is a basis of <span class="process-math">\(V\)</span> if and only if every <span class="process-math">\(v \in V\)</span> can be written uniquely in the form</div>
+<div class="displaymath process-math" id="x66">
+\begin{equation}
+v = a_1 v_1 + \dots + a_n v_n,\tag{2.2}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(a_1, \dots, a_n \in \F{}{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x380-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 2.28: criterion for basis"><a tabindex="-1" href="#x380" title="Copy heading and permalink for Theorem 2.28: criterion for basis" aria-label="Copy heading and permalink for Theorem 2.28: criterion for basis">🔗</a></div>
+</article>
+<details id="bases-8" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Aside</span></h2></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="bases-8-1">This proof is essentially a repetition of the ideas that led us to the definition of linear independence.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<details id="bases-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="bases-9-1">
+<div class="para">First suppose that <span class="process-math">\(v_1, \dots,
+v_n\)</span> is a basis of <span class="process-math">\(V{}\text{.}\)</span> Let <span class="process-math">\(v \in V{}\text{.}\)</span> Because <span class="process-math">\(v_1, \dots, v_n\)</span> spans <span class="process-math">\(V{}\text{,}\)</span> there exist <span class="process-math">\(a_1, \dots,
+a_n \in \F{}\)</span> such that <a href="bases.html#x66" class="xref" data-knowl="./knowl/xref/x66.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2">(2.2)</a> holds. To show that the representation in <a href="bases.html#x66" class="xref" data-knowl="./knowl/xref/x66.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2">(2.2)</a> is unique, suppose <span class="process-math">\(c_1, \dots, c_n\)</span> are scalars such that we also have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x66.html ./knowl/xref/x66.html" id="bases-9-1-10">
+\begin{equation*}
+v = c_1 v_1 + \dots + c_n v_n.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="bases-9-2">
+<div class="para">Subtracting the last equation from <a href="bases.html#x66" class="xref" data-knowl="./knowl/xref/x66.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2">(2.2)</a>, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x66.html" id="bases-9-2-2">
+\begin{equation*}
+0 = (a_1 - c_1) v_1 + \dots + (a_n - c_n) v_n.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="bases-9-3">This implies that each <span class="process-math">\(a_k - c_k\)</span> equals <span class="process-math">\(0\)</span> (because <span class="process-math">\(v_1, \dots, v_n\)</span> is linearly independent). Hence <span class="process-math">\(a_1 = c_1, \dots, a_n = c_n\text{.}\)</span> We have the desired uniqueness, completing the proof in one direction.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="bases-9-4">
+<div class="para">For the other direction, suppose every <span class="process-math">\(v \in V\)</span> can be written uniquely in the form given by <a href="bases.html#x66" class="xref" data-knowl="./knowl/xref/x66.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2">(2.2)</a>. This implies that the list <span class="process-math">\(v_1, \dots, v_n\)</span> spans <span class="process-math">\(V{}\text{.}\)</span> To show that <span class="process-math">\(v_1, \dots, v_n\)</span> is linearly independent, suppose <span class="process-math">\(a_1, \dots, a_n \in \F{}\)</span> are such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x66.html" id="bases-9-4-7">
+\begin{equation*}
+0 = a_1 v_1 + \dots + a_n v_n.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-9-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="bases-9-5">The uniqueness of the <a href="bases.html#x66" class="xref" data-knowl="./knowl/xref/x66.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2">representation (2.2)</a> (taking <span class="process-math">\(v = 0\)</span>) now implies that <span class="process-math">\(a_1 = \dots = a_n = 0\text{.}\)</span> Thus <span class="process-math">\(v_1, \dots,
+v_n\)</span> is linearly independent and hence is a basis of <span class="process-math">\(V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-9-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 2.2.1"><a tabindex="-1" href="#bases-9" title="Copy heading and permalink for Proof 2.2.1" aria-label="Copy heading and permalink for Proof 2.2.1">🔗</a></div>
+</article></details>
+<div class="para" id="bases-10">A spanning list in a vector space may not be a basis because it is not linearly independent. Our next result says that given any spanning list, some (possibly none) of the vectors in it can be discarded so that the remaining list is linearly independent and still spans the vector space.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="bases-11">As an example in the vector space <span class="process-math">\(\FF{2}\text{,}\)</span> if the procedure in the proof below is applied to the list <span class="process-math">\((1,2), (3, 6), (4, 7), (5, 9)\text{,}\)</span> then the second and fourth vectors will be removed. This leaves <span class="process-math">\((1,2), (4, 7)\text{,}\)</span> which is a basis of <span class="process-math">\(\FF{2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x267"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">every spanning list contains a basis.</span>
+</h2>
+<div class="para" id="x267-2-1">Every spanning list in a vector space can be reduced to a basis of the vector space.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x267-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 2.29: every spanning list contains a basis"><a tabindex="-1" href="#x267" title="Copy heading and permalink for Theorem 2.29: every spanning list contains a basis" aria-label="Copy heading and permalink for Theorem 2.29: every spanning list contains a basis">🔗</a></div>
+</article>
+<details id="bases-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="bases-13-1">Suppose <span class="process-math">\(v_1, \dots, v_n\)</span> spans <span class="process-math">\(V{}\text{.}\)</span> We want to remove some of the vectors from <span class="process-math">\(v_1, \dots,
+v_n\)</span> so that the remaining vectors form a basis of <span class="process-math">\(V{}\text{.}\)</span> We do this through the multistep process described below.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="bases-13-2">
+<div class="para">Start with <span class="process-math">\(B\)</span> equal to the list <span class="process-math">\(v_1, \dots, v_n\text{.}\)</span>
+</div>
+<ol class="decimal" id="bases-13-2-3">
+<li id="bases-13-2-3-1">
+<span class="heading li--heading"><span class="title li--heading-title">Step 1.</span></span>
+<div class="para" id="bases-13-2-3-1-2">If <span class="process-math">\(v_1 = 0\text{,}\)</span> then delete <span class="process-math">\(v_1\)</span> from <span class="process-math">\(B\text{.}\)</span> If <span class="process-math">\(v_1 \ne 0\text{,}\)</span> then leave <span class="process-math">\(B\)</span> unchanged.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-13-2-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1: Step 1"><a tabindex="-1" href="#bases-13-2-3-1" title="Copy heading and permalink for Item 1: Step 1" aria-label="Copy heading and permalink for Item 1: Step 1">🔗</a></div>
+</li>
+<li id="bases-13-2-3-2">
+<span class="heading li--heading"><span class="title li--heading-title">Step <span class="process-math">\(k\)</span>.</span></span>
+<div class="para" id="bases-13-2-3-2-2">If <span class="process-math">\(v_k\)</span> is in <span class="process-math">\(\Span(v_1, \dots,
+v_{k-1})\text{,}\)</span> then delete <span class="process-math">\(v_k\)</span> from the list <span class="process-math">\(B\text{.}\)</span> If <span class="process-math">\(v_k\)</span> is not in <span class="process-math">\(\Span(v_1, \dots,
+v_{k-1})\text{,}\)</span> then leave <span class="process-math">\(B\)</span> unchanged.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-13-2-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2: Step k"><a tabindex="-1" href="#bases-13-2-3-2" title="Copy heading and permalink for Item 2: Step k" aria-label="Copy heading and permalink for Item 2: Step k">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="bases-13-3">Stop the process after step <span class="process-math">\(n\text{,}\)</span> getting a list <span class="process-math">\(B\text{.}\)</span> This list <span class="process-math">\(B\)</span> spans <span class="process-math">\(V\)</span> because our original list spanned <span class="process-math">\(V\)</span> and we have discarded only vectors that were already in the span of the previous vectors. The process ensures that no vector in <span class="process-math">\(B\)</span> is in the span of the previous ones. Thus <span class="process-math">\(B\)</span> is linearly independent, by the linear dependence lemma <a href="x2spli.html#x4" class="xref" data-knowl="./knowl/xref/x4.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.20: linear dependence lemma">Theorem 2.20</a>. Hence <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-13-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 2.2.2"><a tabindex="-1" href="#bases-13" title="Copy heading and permalink for Proof 2.2.2" aria-label="Copy heading and permalink for Proof 2.2.2">🔗</a></div>
+</article></details>
+<div class="para" id="bases-14">We now come to an important corollary of the previous result.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x6"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">basis of finite-dimensional vector space.</span>
+</h2>
+<div class="para" id="x6-2-1">Every finite-dimensional vector space has a basis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 2.30: basis of finite-dimensional vector space"><a tabindex="-1" href="#x6" title="Copy heading and permalink for Theorem 2.30: basis of finite-dimensional vector space" aria-label="Copy heading and permalink for Theorem 2.30: basis of finite-dimensional vector space">🔗</a></div>
+</article>
+<details id="bases-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="bases-16-1">By definition, a finite-dimensional vector space has a spanning list. The previous result tells us that each spanning list can be reduced to a basis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 2.2.3"><a tabindex="-1" href="#bases-16" title="Copy heading and permalink for Proof 2.2.3" aria-label="Copy heading and permalink for Proof 2.2.3">🔗</a></div>
+</article></details>
+<div class="para" id="bases-17">Our next result is in some sense a dual of <a href="bases.html#x267" class="xref" data-knowl="./knowl/xref/x267.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.29: every spanning list contains a basis">Theorem 2.29</a>, which said that every spanning list can be reduced to a basis. Now we show that given any linearly independent list, we can adjoin some additional vectors (this includes the possibility of adjoining no additional vectors) so that the extended list is still linearly independent but also spans the space.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x9"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">every linearly independent list extends to a basis.</span>
+</h2>
+<div class="para" id="x9-2-1">Every linearly independent list of vectors in a finite-dimensional vector space can be extended to a basis of the vector space.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 2.31: every linearly independent list extends to a basis"><a tabindex="-1" href="#x9" title="Copy heading and permalink for Theorem 2.31: every linearly independent list extends to a basis" aria-label="Copy heading and permalink for Theorem 2.31: every linearly independent list extends to a basis">🔗</a></div>
+</article>
+<details id="bases-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="bases-19-1">
+<div class="para">Suppose <span class="process-math">\(u_1, \dots,
+u_m\)</span> is linearly independent in a finite-dimensional vector space <span class="process-math">\(V{}\text{.}\)</span> Let <span class="process-math">\(w_1, \dots,
+w_n\)</span> be a list of vectors in <span class="process-math">\(V\)</span> that spans <span class="process-math">\(V{}\text{.}\)</span> Thus the list</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x267.html" id="bases-19-1-6">
+\begin{equation*}
+u_1, \dots, u_m, w_1, \dots, w_n
+\end{equation*}
+</div>
+<div class="para">spans <span class="process-math">\(V{}\text{.}\)</span> Applying the procedure of the proof of <a href="bases.html#x267" class="xref" data-knowl="./knowl/xref/x267.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.29: every spanning list contains a basis">Theorem 2.29</a> to reduce this list to a basis of <span class="process-math">\(V\)</span> produces a basis consisting of the vectors <span class="process-math">\(u_1, \dots,
+u_m\)</span> and some of the <span class="process-math">\(w\)</span>’s (none of the <span class="process-math">\(u\)</span>’s get deleted in this procedure because <span class="process-math">\(u_1, \dots,
+u_m\)</span> is linearly independent).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 2.2.4"><a tabindex="-1" href="#bases-19" title="Copy heading and permalink for Proof 2.2.4" aria-label="Copy heading and permalink for Proof 2.2.4">🔗</a></div>
+</article></details>
+<div class="para logical" id="bases-20">
+<div class="para">As an example in <span class="process-math">\(\FF{3}\text{,}\)</span> suppose we start with the linearly independent list <span class="process-math">\((2, 3, 4), (9, 6, 8)\text{.}\)</span> If we take <span class="process-math">\(w_1, w_2, w_3\)</span> to be the standard basis of <span class="process-math">\(\FF{3}\text{,}\)</span> then applying the procedure in the proof above produces the list</div>
+<div class="displaymath process-math" id="bases-20-5">
+\begin{equation*}
+(2, 3, 4), (9, 6, 8), (0, 1, 0),
+\end{equation*}
+</div>
+<div class="para">which is a basis of <span class="process-math">\(\FF{3}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="bases-21" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Aside</span></h2></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="bases-21-1">Using the same ideas but more advanced tools, the next result can be proved without the hypothesis that <span class="process-math">\(V\)</span> is finite-dimensional.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-21-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para" id="bases-22">As an application of the result above, we now show that every subspace of a finite-dimensional vector space can be paired with another subspace to form a direct sum of the whole space.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="a220"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">every subspace of  <span class="process-math">\(V\)</span> is part of a direct sum equal to  <span class="process-math">\(V\)</span>.</span>
+</h2>
+<div class="para" id="a220-2-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V{}\text{.}\)</span> Then there is a subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(V\)</span> such that <span class="process-math">\(V = U \oplus W{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#a220-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 2.32: every subspace of  V is part of a direct sum equal to  V"><a tabindex="-1" href="#a220" title="Copy heading and permalink for Theorem 2.32: every subspace of  V is part of a direct sum equal to  V" aria-label="Copy heading and permalink for Theorem 2.32: every subspace of  V is part of a direct sum equal to  V">🔗</a></div>
+</article>
+<div class="para" id="bases-24"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<details id="bases-25" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="bases-25-1">Because <span class="process-math">\(V\)</span> is finite-dimensional, so is <span class="process-math">\(U\)</span> (<a href="x2spli.html#x68" class="xref" data-knowl="./knowl/xref/x68.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.25: finite-dimensional subspaces">see 2.25</a>). Thus there is a basis <span class="process-math">\(u_1, \dots, u_m\)</span> of <span class="process-math">\(U\)</span> (by <a href="bases.html#x6" class="xref" data-knowl="./knowl/xref/x6.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.30: basis of finite-dimensional vector space">Theorem 2.30</a>). Of course <span class="process-math">\(u_1, \dots,
+u_m\)</span> is a linearly independent list of vectors in <span class="process-math">\(V{}\text{.}\)</span> Hence this list can be extended to a basis <span class="process-math">\(u_1, \dots,
+u_m, w_1, \dots, w_n\)</span> of <span class="process-math">\(V\)</span> (by <a href="bases.html#x9" class="xref" data-knowl="./knowl/xref/x9.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.31: every linearly independent list extends to a basis">Theorem 2.31</a>). Let <span class="process-math">\(W = \Span(w_1, \dots, w_n)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="bases-25-2">
+<div class="para">To prove that <span class="process-math">\(V = U \oplus W{}\text{,}\)</span> by <a href="x1Subspaces.html#x219" class="xref" data-knowl="./knowl/xref/x219.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.50: direct sum of two subspaces">Theorem 1.50</a> we only need to show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x219.html" id="bases-25-2-3">
+\begin{equation*}
+V = U + W \andd U \cap W = \{0\}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-25-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="bases-25-3">
+<div class="para">To prove the first equation above, suppose <span class="process-math">\(v \in V{}\text{.}\)</span> Then, because the list <span class="process-math">\(u_1, \dots,
+u_m, w_1, \dots, w_n\)</span> spans <span class="process-math">\(V{}\text{,}\)</span> there exist <span class="process-math">\(a_1, \dots, a_m, b_1, \dots,
+b_n \in \F{}\)</span> such that</div>
+<div class="displaymath process-math" id="bases-25-3-5">
+\begin{equation*}
+v = \underbrace{a_1 u_1 + \dots + a_m u_m}_u + \underbrace{b_1 w_1 + \dots + b_n w_n}_w{}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-25-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="bases-25-4">We have <span class="process-math">\(v = u + w\text{,}\)</span> where <span class="process-math">\(u \in U\)</span> and <span class="process-math">\(w \in W\)</span> are defined as above. Thus <span class="process-math">\(v \in U + W{}\text{,}\)</span> completing the proof that <span class="process-math">\(V = U + W{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-25-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="bases-25-5">
+<div class="para">To show that <span class="process-math">\(U \cap W = \{0\}\text{,}\)</span> suppose <span class="process-math">\(v \in U \cap W{}\text{.}\)</span> Then there exist scalars <span class="process-math">\(a_1, \dots, a_m, b_1, \dots,
+b_n \in \F{}\)</span> such that</div>
+<div class="displaymath process-math" id="bases-25-5-4">
+\begin{equation*}
+v = a_1 u_1 + \dots + a_m u_m = b_1 w_1 + \dots + b_n w_n.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-25-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="bases-25-6">
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="bases-25-6-1">
+\begin{equation*}
+a_1 u_1 + \dots + a_m u_m - b_1 w_1 - \dots - b_n w_n = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-25-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="bases-25-7">
+<div class="para">Because <span class="process-math">\(u_1, \dots, u_m, w_1, \dots,
+w_n\)</span> is linearly independent, this implies that</div>
+<div class="displaymath process-math" id="bases-25-7-2">
+\begin{equation*}
+a_1 = \dots = a_m = b_1 = \dots = b_n = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-25-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="bases-25-8">Thus <span class="process-math">\(v = 0\text{,}\)</span> completing the proof that <span class="process-math">\(U \cap W = \{0\}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-25-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 2.2.5"><a tabindex="-1" href="#bases-25" title="Copy heading and permalink for Proof 2.2.5" aria-label="Copy heading and permalink for Proof 2.2.5">🔗</a></div>
+</article></details>
+<section class="exercises" id="bases-26">
+<h2 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h2>
+<article class="exercise exercise-like" id="bases-26-2"><h3 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="bases-26-2-1-1">Find all vector spaces that have exactly one basis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.1"><a tabindex="-1" href="#bases-26-2" title="Copy heading and permalink for Exercise 2.2.1" aria-label="Copy heading and permalink for Exercise 2.2.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="bases-26-3"><h3 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="bases-26-3-1-1">Verify all assertions in <a href="bases.html#ex_bases" class="xref" data-knowl="./knowl/xref/ex_bases.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.27: bases">Example 2.27</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.2"><a tabindex="-1" href="#bases-26-3" title="Copy heading and permalink for Exercise 2.2.2" aria-label="Copy heading and permalink for Exercise 2.2.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="bases-26-4"><h3 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="bases-26-4-1-1">
+<ol class="decimal" id="bases-26-4-1-1-1">
+<li id="bases-26-4-1-1-1-1">
+<div class="para logical" id="bases-26-4-1-1-1-1-1">
+<div class="para">Let <span class="process-math">\(U\)</span> be the subspace of <span class="process-math">\(\R{5}\)</span> defined by</div>
+<div class="displaymath process-math" id="bases-26-4-1-1-1-1-1-3">
+\begin{equation*}
+U = \{  (x_1, x_2, x_3, x_4, x_5) \in \R{5}: x_1 = 3 x_2 \ and\  x_3 = 7x_4 \}.
+\end{equation*}
+</div>
+<div class="para">Find a basis of <span class="process-math">\(U\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-4-1-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2.2.3.1"><a tabindex="-1" href="#bases-26-4-1-1-1-1" title="Copy heading and permalink for Item 2.2.3.1" aria-label="Copy heading and permalink for Item 2.2.3.1">🔗</a></div>
+</li>
+<li id="bases-26-4-1-1-1-2">
+<div class="para" id="bases-26-4-1-1-1-2-1">Extend the basis in (a) to a basis of <span class="process-math">\(\RR5\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-4-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2.2.3.2"><a tabindex="-1" href="#bases-26-4-1-1-1-2" title="Copy heading and permalink for Item 2.2.3.2" aria-label="Copy heading and permalink for Item 2.2.3.2">🔗</a></div>
+</li>
+<li id="bases-26-4-1-1-1-3">
+<div class="para" id="bases-26-4-1-1-1-3-1">Find a subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(\R5\)</span> such that <span class="process-math">\(\R5 = U \oplus W{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-4-1-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2.2.3.3"><a tabindex="-1" href="#bases-26-4-1-1-1-3" title="Copy heading and permalink for Item 2.2.3.3" aria-label="Copy heading and permalink for Item 2.2.3.3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.3"><a tabindex="-1" href="#bases-26-4" title="Copy heading and permalink for Exercise 2.2.3" aria-label="Copy heading and permalink for Exercise 2.2.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="bases-26-5"><h3 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="bases-26-5-1-1">
+<ol class="decimal" id="bases-26-5-1-1-1">
+<li id="bases-26-5-1-1-1-1">
+<div class="para logical" id="bases-26-5-1-1-1-1-1">
+<div class="para">Let <span class="process-math">\(U\)</span> be the subspace of <span class="process-math">\(\C{5}\)</span> defined by</div>
+<div class="displaymath process-math" id="bases-26-5-1-1-1-1-1-3">
+\begin{equation*}
+U = \{  (z_1, z_2, z_3, z_4, z_5) \in \C{5}: 6 z_1 = z_2 \ and\  z_3 + 2z_4 + 3z_5 = 0 \}.
+\end{equation*}
+</div>
+<div class="para">Find a basis of <span class="process-math">\(U\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-5-1-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2.2.4.1"><a tabindex="-1" href="#bases-26-5-1-1-1-1" title="Copy heading and permalink for Item 2.2.4.1" aria-label="Copy heading and permalink for Item 2.2.4.1">🔗</a></div>
+</li>
+<li id="bases-26-5-1-1-1-2">
+<div class="para" id="bases-26-5-1-1-1-2-1">Extend the basis in (a) to a basis of <span class="process-math">\(\CC5\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-5-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2.2.4.2"><a tabindex="-1" href="#bases-26-5-1-1-1-2" title="Copy heading and permalink for Item 2.2.4.2" aria-label="Copy heading and permalink for Item 2.2.4.2">🔗</a></div>
+</li>
+<li id="bases-26-5-1-1-1-3">
+<div class="para" id="bases-26-5-1-1-1-3-1">Find a subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(\C5\)</span> such that <span class="process-math">\(\C5 = U \oplus W{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-5-1-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2.2.4.3"><a tabindex="-1" href="#bases-26-5-1-1-1-3" title="Copy heading and permalink for Item 2.2.4.3" aria-label="Copy heading and permalink for Item 2.2.4.3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.4"><a tabindex="-1" href="#bases-26-5" title="Copy heading and permalink for Exercise 2.2.4" aria-label="Copy heading and permalink for Exercise 2.2.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="bases-26-6"><h3 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="bases-26-6-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(U, W\)</span> are subspaces of <span class="process-math">\(V\)</span> such that <span class="process-math">\(V = U + W{}\text{.}\)</span> Prove that there exists a basis of <span class="process-math">\(V\)</span> consisting of vectors in <span class="process-math">\(U \cup W{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.5"><a tabindex="-1" href="#bases-26-6" title="Copy heading and permalink for Exercise 2.2.5" aria-label="Copy heading and permalink for Exercise 2.2.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="bases-26-7"><h3 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="bases-26-7-1-1">Prove or give a counterexample: If <span class="process-math">\(p_0, p_1, p_2, p_3\)</span> is a list in <span class="process-math">\(\P{}_3(\F{})\)</span> such that none of the polynomials <span class="process-math">\(p_0, p_1, p_2, p_3\)</span> has degree <span class="process-math">\(2\text{,}\)</span> then <span class="process-math">\(p_0, p_1, p_2, p_3\)</span> is not a basis of <span class="process-math">\(\P{}_3(\F{})\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.6"><a tabindex="-1" href="#bases-26-7" title="Copy heading and permalink for Exercise 2.2.6" aria-label="Copy heading and permalink for Exercise 2.2.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="bases-26-8"><h3 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="bases-26-8-1-1">
+<div class="para">Suppose <span class="process-math">\(v_1, v_2, v_3, v_4\)</span> is a basis of <span class="process-math">\(V{}\text{.}\)</span> Prove that</div>
+<div class="displaymath process-math" id="bases-26-8-1-1-3">
+\begin{equation*}
+v_1 + v_2, v_2 + v_3, v_3 + v_4, v_4
+\end{equation*}
+</div>
+<div class="para">is also a basis of <span class="process-math">\(V{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.7"><a tabindex="-1" href="#bases-26-8" title="Copy heading and permalink for Exercise 2.2.7" aria-label="Copy heading and permalink for Exercise 2.2.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="bases-26-9"><h3 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="bases-26-9-1-1">Prove or give a counterexample: If <span class="process-math">\(v_1, v_2, v_3, v_4\)</span> is a basis of <span class="process-math">\(V\)</span> and <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V\)</span> such that <span class="process-math">\(v_1, v_2 \in U\)</span> and <span class="process-math">\(v_3 \notin U\)</span> and <span class="process-math">\(v_4 \notin U\text{,}\)</span> then <span class="process-math">\(v_1, v_2\)</span> is a basis of <span class="process-math">\(U\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.8"><a tabindex="-1" href="#bases-26-9" title="Copy heading and permalink for Exercise 2.2.8" aria-label="Copy heading and permalink for Exercise 2.2.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="bases-26-10"><h3 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="bases-26-10-1-1">
+<div class="para">Suppose <span class="process-math">\(v_1, \ldots, v_m\)</span> is a list of vectors in <span class="process-math">\(V{}\text{.}\)</span> For <span class="process-math">\(k \in \{ 1, \ldots, m \}\text{,}\)</span> let</div>
+<div class="displaymath process-math" id="bases-26-10-1-1-4">
+\begin{equation*}
+w_k = v_1 + \cdots + v_k.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="bases-26-10-1-2">Show that <span class="process-math">\(v_1, \ldots,
+v_m\)</span> is a basis of <span class="process-math">\(V\)</span> if and only if <span class="process-math">\(w_1, \ldots,
+w_m\)</span> is a basis of <span class="process-math">\(V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-10-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.9"><a tabindex="-1" href="#bases-26-10" title="Copy heading and permalink for Exercise 2.2.9" aria-label="Copy heading and permalink for Exercise 2.2.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="bases-26-11"><h3 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="bases-26-11-1-1">
+<div class="para">Suppose <span class="process-math">\(U\)</span> and <span class="process-math">\(W\)</span> are subspaces of <span class="process-math">\(V\)</span> such that <span class="process-math">\(V = U \oplus W{}\text{.}\)</span> Suppose also that <span class="process-math">\(u_1, \dots,
+u_m\)</span> is a basis of <span class="process-math">\(U\)</span> and <span class="process-math">\(w_1, \dots,
+w_n\)</span> is a basis of <span class="process-math">\(W{}\text{.}\)</span> Prove that</div>
+<div class="displaymath process-math" id="bases-26-11-1-1-9">
+\begin{equation*}
+u_1, \dots, u_m, w_1, \dots, w_n
+\end{equation*}
+</div>
+<div class="para">is a basis of <span class="process-math">\(V{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.10"><a tabindex="-1" href="#bases-26-11" title="Copy heading and permalink for Exercise 2.2.10" aria-label="Copy heading and permalink for Exercise 2.2.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="bases-26-12"><h3 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="bases-26-12-1-1">Suppose <span class="process-math">\(V\)</span> is a real vector space. Show that if <span class="process-math">\(v_1, \dots, v_n\)</span> is a basis of <span class="process-math">\(V\)</span> (as a real vector space), then <span class="process-math">\(v_1, \dots,
+v_n\)</span> is also a basis of the complexification <span class="process-math">\(V{}_{\C{}}\)</span> (as a complex vector space).  Note: See <a href="x1DefVS.html#x1VC" class="xref" data-knowl="./knowl/xref/x1VC.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1.2.8.2">Exercise 1.2.8.2</a> in <a href="x1DefVS.html" class="internal" title="Section 1.2: Definition of Vector Space">Section 1.2</a> for the definition of the complexification <span class="process-math">\(V{}_{\C{}}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bases-26-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.2.11"><a tabindex="-1" href="#bases-26-12" title="Copy heading and permalink for Exercise 2.2.11" aria-label="Copy heading and permalink for Exercise 2.2.11">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 2.2: Exercises"><a tabindex="-1" href="#bases-26" title="Copy heading and permalink for Exercises 2.2: Exercises" aria-label="Copy heading and permalink for Exercises 2.2: Exercises">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 2.2: Bases"><a tabindex="-1" href="#bases" title="Copy heading and permalink for Section 2.2: Bases" aria-label="Copy heading and permalink for Section 2.2: Bases">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="x2spli.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="dimension.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

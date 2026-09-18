@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vector Space of Linear Maps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-0 { system: extends lower-alpha; prefix: '('; suffix: ') '; }
+</style>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Linear algebra done right">
+<meta property="og:title" content="Linear algebra done right">
+<meta property="book:title" content="Linear algebra done right">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.12';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.561f7165d9bf3626.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Linear algebra done right</span></a></div>
+<p class="byline">Sheldon Axler</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="LinearMaps-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="LinearMaps.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="x3nullspace.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\tensor}{\otimes}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\andd}{\quad \text{and} \quad}
+\newcommand{\orr}{\quad \text{or} \quad}
+\newcommand{\butt}{\quad \text{but} \quad}
+\newcommand{\fun}[3]{#1 \colon #2 \to #3}
+\newcommand{\nth}{{\text{th}}}
+\newcommand{\C}[1]{\symbf{C}^{#1}}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\R}[1]{\symbf{R}^{#1}}
+\newcommand{\CC}[1]{\symbf{C}^{#1}}
+\newcommand{\FF}[1]{\symbf{F}^{#1}}
+\newcommand{\RR}[1]{\symbf{R}^{#1}}
+\newcommand{\A}{\symcal{A}}
+\newcommand{\B}{\symcal{B}}
+\newcommand{\E}{\symcal{E}}
+\newcommand{\CF}{\symcal{F}}
+\newcommand{\Lc}{\symcal{L}}
+\newcommand{\M}{\symcal{M}}
+\newcommand{\P}{\symcal{P}}
+\newcommand{\sm}{\backslash}
+\newcommand{\Space}{}
+\DeclareMathOperator{\ran}{range}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\perm}{perm}
+\DeclareMathOperator{\vol}{volume}
+\DeclareMathOperator{\ker}{null}
+\newcommand{\tran}[1]{#1^{\text{t}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Linear Algebra Done Right</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="author.html" class="internal"><span class="title">About the Author</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forStudents.html" class="internal"><span class="title">Preface for Students</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forInstructors.html" class="internal"><span class="title">Preface for Instructors</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgments.html" class="internal"><span class="title">Acknowledgments</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="VectorSpaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-VectorSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="VectorSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Rn_and_Cn.html" class="internal"><span class="codenumber">1.1</span> <span class="title"><span class="process-math">\(\R n\)</span> and <span class="process-math">\(\C n\)</span></span></a></div>
+<ul id="ptx-toc-group-Rn_and_Cn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-2" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-3" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Lists</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-4" class="internal"><span class="codenumber">1.1.3</span> <span class="title"><span class="process-math">\(\F n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Rn_and_Cn.html#fields" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Digression on Fields</span></a></div>
+<ul id="ptx-toc-group-fields" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Rn_and_Cn.html#fields-4" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1DefVS.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Definition of Vector Space</span></a></div>
+<ul id="ptx-toc-group-x1DefVS" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1DefVS.html#x1DefVS-46" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1Subspaces.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Subspaces</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-3" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Sums of Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Direct Sums</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4-18" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="fin-dimVS.html" class="internal"><span class="codenumber">2</span> <span class="title">Finite-Dimensional Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-fin-dimVS" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="fin-dimVS-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2spli.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Span and Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2spli.html#x2spli-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Linear Combinations and Span</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2spli.html#x2spli-4" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2spli.html#x2spli-4-26" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bases.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Bases</span></a></div>
+<ul id="ptx-toc-group-bases" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bases.html#bases-26" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="dimension.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Dimension</span></a></div>
+<ul id="ptx-toc-group-dimension" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="dimension.html#dimension-30" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="LinearMaps.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Maps</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-LinearMaps">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="LinearMaps-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="vslinear.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Vector Space of Linear Maps</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-vslinear">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vslinear.html#vslinear-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Definition and Examples of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="vslinear.html#vslinear-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Algebraic Operations on <span class="process-math">\(\Lc(V, W)\)</span></span></a></div>
+<ul id="ptx-toc-group-vslinear-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="vslinear.html#vslinear-3-20" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3nullspace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Null Spaces and Ranges</span></a></div>
+<ul id="ptx-toc-group-x3nullspace" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-2" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Null Space and Injectivity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-3" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Range and Surjectivity</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Fundamental Theorem of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-x3nullspace-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4-30" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Matrices</span></a></div>
+<ul id="ptx-toc-group-matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-2" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Representing a Linear Map by a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-3" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Addition and Scalar Multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-4" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="matrices.html#matrices-5" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Column–Row Factorization and Rank of a Matrix</span></a></div>
+<ul id="ptx-toc-group-matrices-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="matrices.html#x3think2" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="invertible.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Invertibility and Isomorphisms</span></a></div>
+<ul id="ptx-toc-group-invertible" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-2" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Invertible Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-3" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Isomorphic Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-4" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Linear Maps Thought of as Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="invertible.html#invertible-5" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Change of Basis</span></a></div>
+<ul id="ptx-toc-group-invertible-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="invertible.html#invertible-5-27" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pq.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Products and Quotients of Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-pq" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pq.html#pq-2" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Products of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="pq.html#pq-3" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Quotient Spaces</span></a></div>
+<ul id="ptx-toc-group-pq-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="pq.html#pq-3-29" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="duals.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Duality</span></a></div>
+<ul id="ptx-toc-group-duals" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-2" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Dual Space and Dual Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-3" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Null Space and Range of Dual of Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="duals.html#duals-4" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Matrix of Dual of Linear Map</span></a></div>
+<ul id="ptx-toc-group-duals-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="duals.html#duals-4-9" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="polynomials.html" class="internal"><span class="codenumber">4</span> <span class="title">Polynomials</span></a></div>
+<ul id="ptx-toc-group-polynomials" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="polynomials-25.html" class="internal"><span class="codenumber">4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="eigs.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-eigs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="eigs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x5invar.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Invariant Subspaces</span></a></div>
+<ul id="ptx-toc-group-x5invar" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x5invar.html#x5invar-2" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x5invar.html#x5invar-3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Polynomials Applied to Operators</span></a></div>
+<ul id="ptx-toc-group-x5invar-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x5invar.html#x5invar-3-19" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="eigenuppertri.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Minimal Polynomial</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-2" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Existence of Eigenvalues on Complex Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-3" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Eigenvalues and the Minimal Polynomial</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Eigenvalues on Odd-Dimensional Real Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4-10" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x4utm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Upper-Triangular Matrices</span></a></div>
+<ul id="ptx-toc-group-x4utm" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x4utm.html#x4utm-41" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="diagmat.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Diagonalizable Operators</span></a></div>
+<ul id="ptx-toc-group-diagmat" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-2" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Diagonal Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-3" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Conditions for Diagonalizability</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="diagmat.html#diagmat-4" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Gershgorin Disk Theorem</span></a></div>
+<ul id="ptx-toc-group-diagmat-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="diagmat.html#diagmat-4-12" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2diagmat.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Commuting Operators</span></a></div>
+<ul id="ptx-toc-group-x2diagmat" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2diagmat.html#x2diagmat-30" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="InnerProductSpaces.html" class="internal"><span class="codenumber">6</span> <span class="title">Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-InnerProductSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="InnerProductSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x6ipn.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Inner Products and Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-2" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Inner Products</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x6ipn.html#x6ipn-3" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-3-41" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="orthobases.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Orthonormal Bases</span></a></div>
+<ul id="ptx-toc-group-orthobases" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="orthobases.html#orthobases-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Orthonormal Lists and the Gram–Schmidt Procedure</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="orthobases.html#orthobases-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Linear Functionals on Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-orthobases-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="orthobases.html#orthobases-3-16" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="OrthoMin.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements and Minimization Problems</span></a></div>
+<ul id="ptx-toc-group-OrthoMin" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-2" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-3" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Minimization Problems</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Pseudoinverse</span></a></div>
+<ul id="ptx-toc-group-OrthoMin-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4-27" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="opsinner.html" class="internal"><span class="codenumber">7</span> <span class="title">Operators on Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-opsinner" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="opsinner-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="selfadjoint_normal.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Self-Adjoint and Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-2" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Adjoints</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-3" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Self-Adjoint Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4-18" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpectralTheorem.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Real Spectral Theorem</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Complex Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4-10" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="POIUO.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Positive Operators</span></a></div>
+<ul id="ptx-toc-group-POIUO" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="POIUO.html#POIUO-21" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3QR.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isometries, Unitary Operators, and Matrix Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-2" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Isometries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-3" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-4" class="internal"><span class="codenumber">7.4.3</span> <span class="title">QR Factorization</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3QR.html#x3QR-5" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Cholesky Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3QR.html#x3QR-5-13" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2SVD.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x2SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-2" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2SVD.html#x2SVD-3" class="internal"><span class="codenumber">7.5.2</span> <span class="title">SVD for Linear Maps and for Matrices</span></a></div>
+<ul id="ptx-toc-group-x2SVD-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-3-22" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9SVD.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Consequences of Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x9SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-2" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Norms of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-3" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Approximation by Linear Maps with Lower-Dimensional Range</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-4" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Polar Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-5" class="internal"><span class="codenumber">7.6.4</span> <span class="title">Operators Applied to Ellipsoids and Parallelepipeds</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-6" class="internal"><span class="codenumber">7.6.5</span> <span class="title">Volume via Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9SVD.html#x9SVD-7" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Properties of an Operator as Determined by Its Eigenvalues</span></a></div>
+<ul id="ptx-toc-group-x9SVD-7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-7-5" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="operators_complex_vs.html" class="internal"><span class="codenumber">8</span> <span class="title">Operators on Complex Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-operators_complex_vs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="operators_complex_vs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="geneig.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Generalized Eigenvectors and Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-2" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Null Spaces of Powers of an Operator</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-3" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Generalized Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="geneig.html#geneig-4" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="geneig.html#geneig-4-15" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="decompop.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-decompop" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-2" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Generalized Eigenspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-3" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Multiplicity of an Eigenvalue</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="decompop.html#decompop-4" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Block Diagonal Matrices</span></a></div>
+<ul id="ptx-toc-group-decompop-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="decompop.html#decompop-4-10" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x8geneigde.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Consequences of Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-x8geneigde" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x8geneigde.html#x8geneigde-2" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Square Roots of Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x8geneigde.html#Jordan" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Jordan Form</span></a></div>
+<ul id="ptx-toc-group-Jordan" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x8geneigde.html#Jordan-19" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x7trace.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Trace: A Connection Between Matrices and Operators</span></a></div>
+<ul id="ptx-toc-group-x7trace" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x7trace.html#x7trace-36" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="MultLATensors.html" class="internal"><span class="codenumber">9</span> <span class="title">Multilinear Algebra and Determinants</span></a></div>
+<ul id="ptx-toc-group-MultLATensors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="MultLATensors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bilin_quad.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Bilinear Forms and Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-2" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-3" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Symmetric Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4-15" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="alt_multi.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Alternating Multilinear Forms</span></a></div>
+<ul id="ptx-toc-group-alt_multi" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-2" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Multilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="alt_multi.html#alt_multi-3" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Alternating Multilinear Forms and Permutations</span></a></div>
+<ul id="ptx-toc-group-alt_multi-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-3-27" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9det.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9det.html#x9det-2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Defining the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9det.html#x9det-3" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Properties of Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9det.html#x9det-3-65" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9TensorSect.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Tensor Products</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-2" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Tensor Product of Two Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-3" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Tensor Product of Inner Product Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Tensor Product of Multiple Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4-25" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back matter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocredits.html" class="internal"><span class="codenumber">1</span> <span class="title">Photo Credits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="typesetting.html" class="internal"><span class="codenumber">2</span> <span class="title">Colophon: Notes on Typesetting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pretextplus.html" class="internal"><span class="codenumber">3</span> <span class="title">Colophon: The Web version</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="vslinear">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Space of Linear Maps</span>
+</h1>
+<section class="subsection" id="vslinear-2">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definition and Examples of Linear Maps</span>
+</h2>
+<div class="para" id="vslinear-2-2">Now we are ready for one of the key definitions in linear algebra.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="vslinear-2-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">linear map.</span>
+</h3>
+<div class="para logical" id="vslinear-2-3-2-1">
+<div class="para">A <dfn class="terminology">linear map</dfn>  from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\)</span> is a function <span class="process-math">\(T\colon V \rightarrow W\)</span> with the following properties. </div>
+<ol class="decimal" id="vslinear-2-3-2-1-8">
+<li id="vslinear-2-3-2-1-8-1">
+<span class="heading li--heading"><span class="title li--heading-title">additivity.</span></span>
+<div class="para" id="vslinear-2-3-2-1-8-1-2">
+<span class="process-math">\(T(u + v) = Tu + Tv\)</span> for all <span class="process-math">\(u, v \in V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-3-2-1-8-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1: additivity"><a tabindex="-1" href="#vslinear-2-3-2-1-8-1" title="Copy heading and permalink for Item 1: additivity" aria-label="Copy heading and permalink for Item 1: additivity">🔗</a></div>
+</li>
+<li id="vslinear-2-3-2-1-8-2">
+<span class="heading li--heading"><span class="title li--heading-title">homogeneity.</span></span>
+<div class="para" id="vslinear-2-3-2-1-8-2-2">
+<span class="process-math">\(T(\lambda v) = \lambda(Tv)\)</span> for all <span class="process-math">\(\lambda \in \F{}\)</span> and all <span class="process-math">\(v \in V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-3-2-1-8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2: homogeneity"><a tabindex="-1" href="#vslinear-2-3-2-1-8-2" title="Copy heading and permalink for Item 2: homogeneity" aria-label="Copy heading and permalink for Item 2: homogeneity">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 3.1: linear map"><a tabindex="-1" href="#vslinear-2-3" title="Copy heading and permalink for Definition 3.1: linear map" aria-label="Copy heading and permalink for Definition 3.1: linear map">🔗</a></div>
+</article>
+<details id="vslinear-2-4" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Aside</span></h3></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="vslinear-2-4-1">Some mathematicians use the phrase <em class="emphasis">linear transformation</em>,  which means the same as linear map.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para" id="vslinear-2-5">Note that for linear maps we often use the notation <span class="process-math">\(Tv\)</span> as well as the usual function notation <span class="process-math">\(T(v)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="principle theorem-like" id="vslinear-2-6"><h3 class="heading">
+<span class="type">Principle</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(\Lc(V,W)\text{,}\)</span> <span class="process-math">\(\Lc(V)\)</span>.</span>
+</h3>
+<div class="para logical" id="vslinear-2-6-2-1">
+<ol class="decimal" id="vslinear-2-6-2-1-1">
+<li id="vslinear-2-6-2-1-1-1">
+<div class="para" id="vslinear-2-6-2-1-1-1-1">The set of linear maps from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\)</span> is denoted by <span class="process-math">\(\Lc(V{},W)\text{.}\)</span> <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-6-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#vslinear-2-6-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="vslinear-2-6-2-1-1-2">
+<div class="para" id="vslinear-2-6-2-1-1-2-1">The set of linear maps from <span class="process-math">\(V\)</span> to <span class="process-math">\(V\)</span> is denoted by <span class="process-math">\(\Lc(V)\text{.}\)</span> In other words, <span class="process-math">\(\Lc(V) = \Lc(V{},V)\text{.}\)</span> <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-6-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#vslinear-2-6-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Principle 3.2: \Lc(V,W) \Lc(V)"><a tabindex="-1" href="#vslinear-2-6" title="Copy heading and permalink for Principle 3.2: \Lc(V,W) \Lc(V)" aria-label="Copy heading and permalink for Principle 3.2: \Lc(V,W) \Lc(V)">🔗</a></div>
+</article>
+<div class="para" id="vslinear-2-7">Let’s look at some examples of linear maps. Make sure you verify that each of the functions defined in the next example is indeed a linear map:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="x2a111" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">linear maps.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="x2a111-2-1">
+<ol class="decimal" id="x2a111-2-1-1">
+<li id="x2a111-2-1-1-1">
+<span class="heading li--heading"><span class="title li--heading-title">zero.</span></span>
+<div class="para logical" id="x2a111-2-1-1-1-2">
+<div class="para">In addition to its other uses, we let the symbol <span class="process-math">\(0\)</span> denote the linear map that takes every element of some vector space to the additive identity of another (or possibly the same) vector space. To be specific, <span class="process-math">\(0 \in \Lc(V{},W)\)</span> is defined by</div>
+<div class="displaymath process-math" id="x2a111-2-1-1-1-2-3">
+\begin{equation*}
+0v = 0.
+\end{equation*}
+</div>
+<div class="para">The <span class="process-math">\(0\)</span> on the left side of the equation above is a function from <span class="process-math">\(V\)</span> to <span class="process-math">\(W{}\text{,}\)</span> whereas the <span class="process-math">\(0\)</span> on the right side is the additive identity in <span class="process-math">\(W{}\text{.}\)</span> As usual, the context should allow you to distinguish between the many uses of the symbol <span class="process-math">\(0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2a111-2-1-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1: zero"><a tabindex="-1" href="#x2a111-2-1-1-1" title="Copy heading and permalink for Item 1: zero" aria-label="Copy heading and permalink for Item 1: zero">🔗</a></div>
+</li>
+<li id="x2a111-2-1-1-2">
+<span class="heading li--heading"><span class="title li--heading-title">identity operator.</span></span>
+<div class="para logical" id="x2a111-2-1-1-2-2">
+<div class="para">The <dfn class="terminology">identity operator</dfn>,  denoted by <span class="process-math">\(I\text{,}\)</span> is the  linear map on some vector space that takes each element to itself. To be specific, <span class="process-math">\(I \in \Lc(V)\)</span> is defined by</div>
+<div class="displaymath process-math" id="x2a111-2-1-1-2-2-6">
+\begin{equation*}
+Iv = v.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2a111-2-1-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2: identity operator"><a tabindex="-1" href="#x2a111-2-1-1-2" title="Copy heading and permalink for Item 2: identity operator" aria-label="Copy heading and permalink for Item 2: identity operator">🔗</a></div>
+</li>
+<li id="x2a111-2-1-1-3">
+<span class="heading li--heading"><span class="title li--heading-title">differentiation.</span></span>
+<div class="para logical" id="x2a111-2-1-1-3-2">
+<div class="para">Define <span class="process-math">\(D\in \Lc\bigl(\P(\R{})\bigr)\)</span> by</div>
+<div class="displaymath process-math" id="x2a111-2-1-1-3-2-3">
+\begin{equation*}
+Dp = p'\!.
+\end{equation*}
+</div>
+<div class="para">The assertion that this function is a linear map is another way of stating a basic result about differentiation: <span class="process-math">\((f + g)' = f' + g'\)</span> and <span class="process-math">\((\lambda f)' = \lambda f'\)</span> whenever <span class="process-math">\(f,
+g\)</span> are differentiable and <span class="process-math">\(\lambda\)</span> is a constant.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2a111-2-1-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3: differentiation"><a tabindex="-1" href="#x2a111-2-1-1-3" title="Copy heading and permalink for Item 3: differentiation" aria-label="Copy heading and permalink for Item 3: differentiation">🔗</a></div>
+</li>
+<li id="x2a111-2-1-1-4">
+<span class="heading li--heading"><span class="title li--heading-title">integration.</span></span>
+<div class="para logical" id="x2a111-2-1-1-4-2">
+<div class="para">Define <span class="process-math">\(T\in \Lc\bigl(\P(\R{}),\R{}\bigr)\)</span> by</div>
+<div class="displaymath process-math" id="x2a111-2-1-1-4-2-2">
+\begin{equation*}
+Tp = \int_0^1 p.
+\end{equation*}
+</div>
+<div class="para">The assertion that this function is linear is another way of stating a basic result about integration: the integral of the sum of two functions equals the sum of the integrals, and the integral of a constant times a function equals the constant times the integral of the function.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2a111-2-1-1-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4: integration"><a tabindex="-1" href="#x2a111-2-1-1-4" title="Copy heading and permalink for Item 4: integration" aria-label="Copy heading and permalink for Item 4: integration">🔗</a></div>
+</li>
+<li id="x2a111-2-1-1-5">
+<span class="heading li--heading"><span class="title li--heading-title">multiplication by <span class="process-math">\(x^2\)</span>.</span></span>
+<div class="para logical" id="x2a111-2-1-1-5-2">
+<div class="para">Define a linear map <span class="process-math">\(T\in \Lc\bigl(\P(\R{})\bigr)\)</span> by</div>
+<div class="displaymath process-math" id="x2a111-2-1-1-5-2-2">
+\begin{equation*}
+(Tp)(x) = x^2 p(x)
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(x \in \R{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2a111-2-1-1-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5: multiplication by x^2"><a tabindex="-1" href="#x2a111-2-1-1-5" title="Copy heading and permalink for Item 5: multiplication by x^2" aria-label="Copy heading and permalink for Item 5: multiplication by x^2">🔗</a></div>
+</li>
+<li id="x2a111-2-1-1-6">
+<span class="heading li--heading"><span class="title li--heading-title">backward shift.</span></span>
+<div class="para logical" id="x2a111-2-1-1-6-2">
+<div class="para">Recall that <span class="process-math">\(\F{\infty}\)</span> denotes the vector space of all sequences of elements of <span class="process-math">\(\F{}{}\text{.}\)</span> Define a linear map <span class="process-math">\(T\in \Lc( \F{\infty} )\)</span> by </div>
+<div class="displaymath process-math" id="x2a111-2-1-1-6-2-5">
+\begin{equation*}
+T(x_1, x_2, x_3, \dots) = (x_2, x_3, \dots).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2a111-2-1-1-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 6: backward shift"><a tabindex="-1" href="#x2a111-2-1-1-6" title="Copy heading and permalink for Item 6: backward shift" aria-label="Copy heading and permalink for Item 6: backward shift">🔗</a></div>
+</li>
+<li id="x2a111-2-1-1-7">
+<span class="heading li--heading"><span class="title li--heading-title">from <span class="process-math">\(\R3\)</span> to <span class="process-math">\(\R2\)</span>.</span></span>
+<div class="para logical" id="x2a111-2-1-1-7-2">
+<div class="para">Define a linear map <span class="process-math">\(T\in \Lc( \RR{3},\R{2} )\)</span> by</div>
+<div class="displaymath process-math" id="x2a111-2-1-1-7-2-2">
+\begin{equation*}
+T(x,y,z) = (2x - y + 3z, 7x + 5y -6z).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2a111-2-1-1-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7: from \R3 to \R2"><a tabindex="-1" href="#x2a111-2-1-1-7" title="Copy heading and permalink for Item 7: from \R3 to \R2" aria-label="Copy heading and permalink for Item 7: from \R3 to \R2">🔗</a></div>
+</li>
+<li id="x2a111-2-1-1-8">
+<span class="heading li--heading"><span class="title li--heading-title">from <span class="process-math">\(\F{n}\)</span> to <span class="process-math">\(\F{m}\)</span>.</span></span>
+<div class="para logical" id="x2a111-2-1-1-8-2">
+<div class="para">To generalize the previous example, let <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> be positive integers, let <span class="process-math">\(A_{j,k} \in \F{}\)</span> for each <span class="process-math">\(j = 1, \dots,
+m\)</span> and each <span class="process-math">\(k = 1, \dots , n\text{,}\)</span> and define a linear map <span class="process-math">\(T\in \Lc( \FF{n},\F{m} )\)</span> by</div>
+<div class="displaymath process-math" id="x2a111-2-1-1-8-2-7">
+\begin{equation*}
+T(x_1, \dots, x_n) = (A_{1,1}x_1 + \dots + A_{1,n}   x_n, \dots, A_{m,1}x_1 + \dots + A_{m,n} x_n).
+\end{equation*}
+</div>
+<div class="para">Actually every linear map from <span class="process-math">\(\F{n}\)</span> to <span class="process-math">\(\F{m}\)</span> is of this form.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2a111-2-1-1-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 8: from \F{n} to \F{m}"><a tabindex="-1" href="#x2a111-2-1-1-8" title="Copy heading and permalink for Item 8: from \F{n} to \F{m}" aria-label="Copy heading and permalink for Item 8: from \F{n} to \F{m}">🔗</a></div>
+</li>
+<li id="x2a111-2-1-1-9">
+<span class="heading li--heading"><span class="title li--heading-title">composition.</span></span>
+<div class="para logical" id="x2a111-2-1-1-9-2">
+<div class="para">Fix a polynomial <span class="process-math">\(q \in \P(\R{})\text{.}\)</span> Define a linear map <span class="process-math">\(T \in \Lc( \P(\R{}) )\)</span> by</div>
+<div class="displaymath process-math" id="x2a111-2-1-1-9-2-3">
+\begin{equation*}
+(Tp)(x) = p( q(x) ).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2a111-2-1-1-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 9: composition"><a tabindex="-1" href="#x2a111-2-1-1-9" title="Copy heading and permalink for Item 9: composition" aria-label="Copy heading and permalink for Item 9: composition">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2a111-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.3: linear maps"><a tabindex="-1" href="#x2a111" title="Copy heading and permalink for Example 3.3: linear maps" aria-label="Copy heading and permalink for Example 3.3: linear maps">🔗</a></div>
+</article></details>
+<div class="para" id="vslinear-2-9">The existence part of the next result means that we can find a linear map that takes on whatever values we wish on the vectors in a basis. The uniqueness part of the next result means that a linear map is completely determined by its values on a basis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x3linearmap"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">linear map lemma.</span>
+</h3>
+<div class="para logical" id="x3linearmap-2-1">
+<div class="para">Suppose <span class="process-math">\(v_1, \dots,
+v_n\)</span> is a basis of <span class="process-math">\(V\)</span> and <span class="process-math">\(w_1, \dots, w_n \in W{}\text{.}\)</span> Then there exists a unique linear map <span class="process-math">\(T \colon V \to W\)</span> such that </div>
+<div class="displaymath process-math" id="x3linearmap-2-1-6">
+\begin{equation*}
+Tv_k = w_k
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(k = 1, \dots, n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x3linearmap-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.4: linear map lemma"><a tabindex="-1" href="#x3linearmap" title="Copy heading and permalink for Theorem 3.4: linear map lemma" aria-label="Copy heading and permalink for Theorem 3.4: linear map lemma">🔗</a></div>
+</article>
+<details id="vslinear-2-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="vslinear-2-11-1">
+<div class="para">First we show the existence of a linear map <span class="process-math">\(T\)</span> with the desired property. Define <span class="process-math">\(T \colon V \to W\)</span> by</div>
+<div class="displaymath process-math" id="vslinear-2-11-1-3">
+\begin{equation*}
+T(c_1 v_1 + \dots + c_n v_n) = c_1 w_1 + \dots + c_n w_n,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(c_1, \dots, c_n\)</span> are arbitrary elements of <span class="process-math">\(\F{}{}\text{.}\)</span> The list <span class="process-math">\(v_1, \dots, v_n\)</span> is a basis of <span class="process-math">\(V{}\text{.}\)</span> Thus the equation above does indeed define a function <span class="process-math">\(T\)</span> from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\)</span> (because each element of <span class="process-math">\(V\)</span> can be uniquely written in the form <span class="process-math">\(c_1 v_1 + \dots + c_n v_n\)</span>).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="vslinear-2-11-2">For each <span class="process-math">\(k\text{,}\)</span> taking <span class="process-math">\(c_k = 1\)</span> and the other <span class="process-math">\(c\)</span>’s equal to <span class="process-math">\(0\)</span> in the equation above shows that <span class="process-math">\(Tv_k = w_k\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="vslinear-2-11-3">
+<div class="para">If <span class="process-math">\(u, v \in V\)</span> with <span class="process-math">\(u = a_1 v_1 + \dots + a_n v_n\)</span> and <span class="process-math">\(v = c_1 v_1 + \dots + c_n v_n\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="vslinear-2-11-3-4">
+\begin{align*}
+T(u + v) \amp = T\bigl( (a_1 + c_1) v_1 + \dots + (a_n + c_n) v_n \bigr)\\
+\amp = (a_1 + c_1) w_1 + \dots + (a_n + c_n) w_n\\
+\amp = (a_1 w_1 + \dots + a_n w_n) + (c_1 w_1 + \dots + c_n w_n)\\
+\amp = Tu + Tv\text{.}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="vslinear-2-11-4">
+<div class="para">Similarly, if <span class="process-math">\(\lambda \in \F{}\)</span> and <span class="process-math">\(v = c_1 v_1 + \dots + c_n v_n\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="vslinear-2-11-4-3">
+\begin{align*}
+T(\lambda v) \amp = T( \lambda c_1 v_1 + \dots + \lambda c_n v_n)\\
+\amp = \lambda c_1 w_1 + \dots + \lambda c_n w_n\\
+\amp = \lambda (c_1 w_1 + \dots + c_n w_n)\\
+\amp = \lambda Tv\text{.}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-11-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="vslinear-2-11-5">Thus <span class="process-math">\(T\)</span> is a linear map from <span class="process-math">\(V\)</span> to <span class="process-math">\(W{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-11-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="vslinear-2-11-6">
+<div class="para">To prove uniqueness, now suppose that <span class="process-math">\(T \in \Lc(V{},W)\)</span> and that <span class="process-math">\(Tv_k = w_k\)</span> for each <span class="process-math">\(k = 1, \dots, n\text{.}\)</span> Let <span class="process-math">\(c_1, \dots, c_n \in \F{}{}\text{.}\)</span> Then the homogeneity of <span class="process-math">\(T\)</span> implies that <span class="process-math">\(T(c_k v_k) = c_k w_k\)</span> for each <span class="process-math">\(k = 1, \dots, n\text{.}\)</span> The additivity of <span class="process-math">\(T\)</span> now implies that</div>
+<div class="displaymath process-math" id="vslinear-2-11-6-9">
+\begin{equation*}
+T(c_1 v_1 + \dots + c_n v_n) = c_1 w_1 + \dots + c_n w_n.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-11-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="vslinear-2-11-7">Thus <span class="process-math">\(T\)</span> is uniquely determined on <span class="process-math">\(\Span(v_1, \dots,
+v_n)\)</span> by the equation above. Because <span class="process-math">\(v_1, \dots, v_n\)</span> is a basis of <span class="process-math">\(V{}\text{,}\)</span> this implies that <span class="process-math">\(T\)</span> is uniquely determined on <span class="process-math">\(V{}\text{,}\)</span> as desired.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-2-11-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 3.1.1.1"><a tabindex="-1" href="#vslinear-2-11" title="Copy heading and permalink for Proof 3.1.1.1" aria-label="Copy heading and permalink for Proof 3.1.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 3.1.1: Definition and Examples of Linear Maps"><a tabindex="-1" href="#vslinear-2" title="Copy heading and permalink for Subsection 3.1.1: Definition and Examples of Linear Maps" aria-label="Copy heading and permalink for Subsection 3.1.1: Definition and Examples of Linear Maps">🔗</a></div>
+</section>
+<section class="subsection" id="vslinear-3">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Algebraic Operations on <span class="process-math">\(\Lc(V, W)\)</span></span>
+</h2>
+<div class="para" id="vslinear-3-2">We begin by defining addition and scalar multiplication on <span class="process-math">\(\Lc(V{},W)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="vslinear-3-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">addition and scalar multiplication on <span class="process-math">\(\Lc(V,W)\)</span>.</span>
+</h3>
+<div class="para logical" id="vslinear-3-3-2-1">
+<div class="para">Suppose <span class="process-math">\(S, T \in \Lc(V{},W)\)</span> and <span class="process-math">\(\lambda \in \F{}{}\text{.}\)</span> The <dfn class="terminology">sum</dfn> <span class="process-math">\(S + T\)</span>  and the <dfn class="terminology">product</dfn> <span class="process-math">\(\lambda T\)</span> are the linear maps from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\)</span> defined by</div>
+<div class="displaymath process-math" id="vslinear-3-3-2-1-14">
+\begin{equation*}
+(S+T)(v) = Sv + Tv \andd (\lambda T)(v) = \lambda (Tv)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(v \in V{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 3.5: addition and scalar multiplication on \Lc(V,W)"><a tabindex="-1" href="#vslinear-3-3" title="Copy heading and permalink for Definition 3.5: addition and scalar multiplication on \Lc(V,W)" aria-label="Copy heading and permalink for Definition 3.5: addition and scalar multiplication on \Lc(V,W)">🔗</a></div>
+</article>
+<details id="vslinear-3-4" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Aside</span></h3></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="vslinear-3-4-1">Linear maps are pervasive throughout mathematics. However, they are not as ubiquitous as imagined by people who seem to think <span class="process-math">\(\cos\)</span> is a linear map from <span class="process-math">\(\R{}\)</span> to <span class="process-math">\(\R{}\)</span> when they incorrectly write that <span class="process-math">\(\cos(x + y)\)</span> equals <span class="process-math">\(\cos x + \cos y\)</span> and that <span class="process-math">\(\cos 2x\)</span> equals <span class="process-math">\(2\cos x\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para" id="vslinear-3-5">You should verify that <span class="process-math">\(S+T\)</span> and <span class="process-math">\(\lambda T\)</span> as defined above are indeed linear maps. In other words, if <span class="process-math">\(S, T \in \Lc(V{},W)\)</span> and <span class="process-math">\(\lambda \in \F{}{}\text{,}\)</span> then <span class="process-math">\(S+T \in \Lc(V{}, W)\)</span> and <span class="process-math">\(\lambda T \in \Lc(V{}, W)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="vslinear-3-6">Because we took the trouble to define addition and scalar multiplication on <span class="process-math">\(\Lc(V{},W)\text{,}\)</span> the next result should not be a surprise.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="LVW"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(\Lc(V,W)\)</span> is a vector space.</span>
+</h3>
+<div class="para" id="LVW-2-1">With the operations of addition and scalar multiplication as defined above, <span class="process-math">\(\Lc(V{},W)\)</span> is a vector space.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#LVW-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.6: \Lc(V,W) is a vector space"><a tabindex="-1" href="#LVW" title="Copy heading and permalink for Theorem 3.6: \Lc(V,W) is a vector space" aria-label="Copy heading and permalink for Theorem 3.6: \Lc(V,W) is a vector space">🔗</a></div>
+</article>
+<div class="para" id="vslinear-3-8">The routine proof of the result above is left to the reader. Note that the additive identity of <span class="process-math">\(\Lc(V{},W)\)</span> is the zero linear map defined in <a href="vslinear.html#x2a111" class="xref" data-knowl="./knowl/xref/x2a111.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.3: linear maps">Example 3.3</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="vslinear-3-9">Usually it makes no sense to multiply together two elements of a vector space, but for some pairs of linear maps a useful product exists, as in the next definition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="x3ST"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">product of linear maps.</span>
+</h3>
+<div class="para logical" id="x3ST-2-1">
+<div class="para">If <span class="process-math">\(T \in \Lc(U,V)\)</span> and <span class="process-math">\(S \in \Lc(V{},W)\text{,}\)</span> then the <dfn class="terminology">product</dfn> <span class="process-math">\(ST \in \Lc(U,W)\)</span> is defined by</div>
+<div class="displaymath process-math" id="x3ST-2-1-6">
+\begin{equation*}
+(ST)(u) = S(Tu)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(u \in U\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x3ST-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 3.7: product of linear maps"><a tabindex="-1" href="#x3ST" title="Copy heading and permalink for Definition 3.7: product of linear maps" aria-label="Copy heading and permalink for Definition 3.7: product of linear maps">🔗</a></div>
+</article>
+<div class="para" id="vslinear-3-11">Thus <span class="process-math">\(ST\)</span> is just the usual composition <span class="process-math">\(S \circ T\)</span> of two functions, but when both functions are linear, we usually write <span class="process-math">\(ST\)</span> instead of <span class="process-math">\(S \circ T{}\text{.}\)</span> The product notation <span class="process-math">\(ST\)</span> helps make the distributive properties (see next result) seem natural. <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="vslinear-3-12">Note that <span class="process-math">\(ST\)</span> is defined only when <span class="process-math">\(T\)</span> maps into the domain of <span class="process-math">\(S\text{.}\)</span> You should verify that <span class="process-math">\(ST\)</span> is indeed a linear map from <span class="process-math">\(U\)</span> to <span class="process-math">\(W\)</span> whenever <span class="process-math">\(T \in \Lc(U,V)\)</span> and <span class="process-math">\(S \in \Lc(V{},W)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="algprod"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">algebraic properties of products of linear maps.</span>
+</h3>
+<div class="para logical" id="algprod-2-1">
+<ol class="decimal" id="algprod-2-1-1">
+<li id="algprod-2-1-1-1">
+<span class="heading li--heading"><span class="title li--heading-title">associativity.</span></span>
+<div class="para" id="algprod-2-1-1-1-2">
+<span class="process-math">\((T{}_1T{}_2)T{}_3 = T{}_1(T{}_2T{}_3)\)</span> whenever <span class="process-math">\(T{}_1\text{,}\)</span> <span class="process-math">\(T{}_2\text{,}\)</span> and <span class="process-math">\(T{}_3\)</span> are linear maps such that the products make sense (meaning <span class="process-math">\(T{}_3\)</span> maps into the domain of <span class="process-math">\(T{}_2\text{,}\)</span> and <span class="process-math">\(T{}_2\)</span> maps into the domain of <span class="process-math">\(T{}_1\)</span>). <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#algprod-2-1-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1: associativity"><a tabindex="-1" href="#algprod-2-1-1-1" title="Copy heading and permalink for Item 1: associativity" aria-label="Copy heading and permalink for Item 1: associativity">🔗</a></div>
+</li>
+<li id="algprod-2-1-1-2">
+<span class="heading li--heading"><span class="title li--heading-title">identity.</span></span>
+<div class="para" id="algprod-2-1-1-2-2">
+<span class="process-math">\(TI = IT = T\)</span> whenever <span class="process-math">\(T \in \Lc(V{},W)\text{;}\)</span> here the first <span class="process-math">\(I\)</span> is the identity operator on <span class="process-math">\(V{}\text{,}\)</span> and the second <span class="process-math">\(I\)</span> is the identity operator on <span class="process-math">\(W\text{.}\)</span> <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#algprod-2-1-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2: identity"><a tabindex="-1" href="#algprod-2-1-1-2" title="Copy heading and permalink for Item 2: identity" aria-label="Copy heading and permalink for Item 2: identity">🔗</a></div>
+</li>
+<li id="algprod-2-1-1-3">
+<span class="heading li--heading"><span class="title li--heading-title">distributive properties.</span></span>
+<div class="para" id="algprod-2-1-1-3-2">
+<span class="process-math">\((S_1 + S_2) T = S_1 T + S_2 T \andd S(T{}_1 + T{}_2) = ST{}_1 + ST{}_2\)</span> whenever <span class="process-math">\(T{},T{}_1,T{}_2 \in \Lc(U,V)\)</span> and <span class="process-math">\(S, S_1, S_2 \in \Lc(V{},W)\text{.}\)</span> <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#algprod-2-1-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3: distributive properties"><a tabindex="-1" href="#algprod-2-1-1-3" title="Copy heading and permalink for Item 3: distributive properties" aria-label="Copy heading and permalink for Item 3: distributive properties">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#algprod-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.8: algebraic properties of products of linear maps"><a tabindex="-1" href="#algprod" title="Copy heading and permalink for Theorem 3.8: algebraic properties of products of linear maps" aria-label="Copy heading and permalink for Theorem 3.8: algebraic properties of products of linear maps">🔗</a></div>
+</article>
+<div class="para" id="vslinear-3-14">The routine proof of the result above is left to the reader.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="vslinear-3-15">Multiplication of linear maps is not commutative.  In other words, it is not necessarily true that <span class="process-math">\(ST = TS\text{,}\)</span> even if both sides of the equation make sense.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="x3noncom" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">two noncommuting linear maps from  <span class="process-math">\(\P(\R)\)</span> to  <span class="process-math">\(\P(\R)\)</span>.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="x3noncom-2-1">
+<div class="para">Suppose <span class="process-math">\(D \in \Lc\bigl(\P(\R{})\bigr)\)</span> is the differentiation map defined in <a href="vslinear.html#x2a111" class="xref" data-knowl="./knowl/xref/x2a111.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.3: linear maps">Example 3.3</a> and <span class="process-math">\(T \in \Lc\bigl(\P(\R{})\bigr)\)</span> is the multiplication by <span class="process-math">\(x^2\)</span> map defined earlier in this section. Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x2a111.html" id="x3noncom-2-1-6">
+\begin{equation*}
+\bigl((TD)p\bigr)(x) = x^2 p' \! (x) \butt \bigl((DT)p\bigr)(x) = x^2 p' \! (x) + 2 x p(x).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x3noncom-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="x3noncom-2-2">Thus <span class="process-math">\(TD \ne DT{}\)</span>—differentiating and then multiplying by <span class="process-math">\(x^2\)</span> is not the same as multiplying by <span class="process-math">\(x^2\)</span> and then differentiating.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x3noncom-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.9: two noncommuting linear maps from  \P(\R) to  \P(\R)"><a tabindex="-1" href="#x3noncom" title="Copy heading and permalink for Example 3.9: two noncommuting linear maps from  \P(\R) to  \P(\R)" aria-label="Copy heading and permalink for Example 3.9: two noncommuting linear maps from  \P(\R) to  \P(\R)">🔗</a></div>
+</article></details>
+<article class="theorem theorem-like" id="zerotozero"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">linear maps take <span class="process-math">\(0\)</span> to <span class="process-math">\(0\)</span>.</span>
+</h3>
+<div class="para" id="zerotozero-2-1">Suppose <span class="process-math">\(T\)</span> is a linear map from <span class="process-math">\(V\)</span> to <span class="process-math">\(W{}\text{.}\)</span> Then <span class="process-math">\(T(0) = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#zerotozero-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.10: linear maps take 0 to 0"><a tabindex="-1" href="#zerotozero" title="Copy heading and permalink for Theorem 3.10: linear maps take 0 to 0" aria-label="Copy heading and permalink for Theorem 3.10: linear maps take 0 to 0">🔗</a></div>
+</article>
+<details id="vslinear-3-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="vslinear-3-18-1">
+<div class="para">By additivity, we have</div>
+<div class="displaymath process-math" id="vslinear-3-18-1-1">
+\begin{equation*}
+T(0) = T(0 + 0) = T(0) + T(0).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="vslinear-3-18-2">Add the additive inverse of <span class="process-math">\(T(0)\)</span> to each side of the equation above to conclude that <span class="process-math">\(T(0) = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-18-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 3.1.2.1"><a tabindex="-1" href="#vslinear-3-18" title="Copy heading and permalink for Proof 3.1.2.1" aria-label="Copy heading and permalink for Proof 3.1.2.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="vslinear-3-19">
+<div class="para">Suppose <span class="process-math">\(m, b \in \R{}\text{.}\)</span> The function <span class="process-math">\(\fun f {\R{}} {\R{}}\)</span> defined by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/zerotozero.html" id="vslinear-3-19-3">
+\begin{equation*}
+f(x) = mx + b
+\end{equation*}
+</div>
+<div class="para">is a linear map if and only if <span class="process-math">\(b = 0\)</span> (<a href="vslinear.html#zerotozero" class="xref" data-knowl="./knowl/xref/zerotozero.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.10: linear maps take 0 to 0">use 3.10</a>). Thus the linear functions of high school algebra are not the same as linear maps in the context of linear algebra.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="exercises" id="vslinear-3-20">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="vslinear-3-20-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="vslinear-3-20-2-1-1">
+<div class="para">Suppose <span class="process-math">\(b, c \in \R{}\text{.}\)</span> Define <span class="process-math">\(T \colon \R3 \to \R2\)</span> by</div>
+<div class="displaymath process-math" id="vslinear-3-20-2-1-1-3">
+\begin{equation*}
+T(x, y, z) = (2x -4y + 3z + b, 6x + c xyz).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="vslinear-3-20-2-1-2">Show that <span class="process-math">\(T\)</span> is linear if and only if <span class="process-math">\(b = c = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.1"><a tabindex="-1" href="#vslinear-3-20-2" title="Copy heading and permalink for Exercise 3.1.2.1" aria-label="Copy heading and permalink for Exercise 3.1.2.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="vslinear-3-20-3-1-1">
+<div class="para">Suppose <span class="process-math">\(b, c \in \R{}\text{.}\)</span> Define <span class="process-math">\(T \colon \P(\R{}) \to \R2\)</span> by</div>
+<div class="displaymath process-math" id="vslinear-3-20-3-1-1-3">
+\begin{equation*}
+Tp = \Bigl(3p(4) + 5p' \! (6) + b p(1) p(2), \int_{-1}^2 x^3 p(x)  dx + c \sin p(0)\Bigr).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="vslinear-3-20-3-1-2">Show that <span class="process-math">\(T\)</span> is linear if and only if <span class="process-math">\(b = c = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.2"><a tabindex="-1" href="#vslinear-3-20-3" title="Copy heading and permalink for Exercise 3.1.2.2" aria-label="Copy heading and permalink for Exercise 3.1.2.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="vslinear-3-20-4-1-1">
+<div class="para">Suppose that <span class="process-math">\(T \in \Lc( \FF{n}, \F{m} )\text{.}\)</span> Show that there exist scalars <span class="process-math">\(A_{j, k} \in \F{}\)</span> for <span class="process-math">\(j = 1, \dots,
+m\)</span> and <span class="process-math">\(k = 1, \dots, n\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x2a111.html" id="vslinear-3-20-4-1-1-5">
+\begin{equation*}
+T(x_1, \dots, x_n) = (A_{1,1}x_1 + \dots + A_{1,n} x_n, \dots, A_{m,1}x_1 + \dots + A_{m,n} x_n)
+\end{equation*}
+</div>
+<div class="para">for every <span class="process-math">\((x_1, \dots, x_n) \in \FF{n}\text{.}\)</span> Note: This exercise shows that the linear map <span class="process-math">\(T\)</span> has the form promised in the second to last item of <a href="vslinear.html#x2a111" class="xref" data-knowl="./knowl/xref/x2a111.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.3: linear maps">Example 3.3</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.3"><a tabindex="-1" href="#vslinear-3-20-4" title="Copy heading and permalink for Exercise 3.1.2.3" aria-label="Copy heading and permalink for Exercise 3.1.2.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-5"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="vslinear-3-20-5-1-1">Suppose <span class="process-math">\(T \in \Lc(V{}, W)\)</span> and <span class="process-math">\(v_1, \dots,
+v_m\)</span> is a list of vectors in <span class="process-math">\(V\)</span> such that <span class="process-math">\(Tv_1, \dots, Tv_m\)</span> is a linearly independent list in <span class="process-math">\(W{}\text{.}\)</span> Prove that <span class="process-math">\(v_1, \dots, v_m\)</span> is linearly independent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.4"><a tabindex="-1" href="#vslinear-3-20-5" title="Copy heading and permalink for Exercise 3.1.2.4" aria-label="Copy heading and permalink for Exercise 3.1.2.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="vslinear-3-20-6-1-1">Prove that <span class="process-math">\(\Lc(V{},W)\)</span> is a vector space, as was asserted in <a href="vslinear.html#LVW" class="xref" data-knowl="./knowl/xref/LVW.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.6: \Lc(V,W) is a vector space">Theorem 3.6</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.5"><a tabindex="-1" href="#vslinear-3-20-6" title="Copy heading and permalink for Exercise 3.1.2.5" aria-label="Copy heading and permalink for Exercise 3.1.2.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="vslinear-3-20-7-1-1">Prove that multiplication of linear maps has the associative, identity, and distributive properties asserted in <a href="vslinear.html#algprod" class="xref" data-knowl="./knowl/xref/algprod.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.8: algebraic properties of products of linear maps">Theorem 3.8</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.6"><a tabindex="-1" href="#vslinear-3-20-7" title="Copy heading and permalink for Exercise 3.1.2.6" aria-label="Copy heading and permalink for Exercise 3.1.2.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="dualone"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="dualone-1-1">Show that every linear map from a one-dimensional vector space to itself is multiplication by some scalar. More precisely, prove that if <span class="process-math">\(\dim V = 1\)</span> and <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> then there exists <span class="process-math">\(\lambda \in \F{}\)</span> such that <span class="process-math">\(Tv = \lambda v\)</span> for all <span class="process-math">\(v \in V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#dualone-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.7"><a tabindex="-1" href="#dualone" title="Copy heading and permalink for Exercise 3.1.2.7" aria-label="Copy heading and permalink for Exercise 3.1.2.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x403"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x403-1-1">
+<div class="para">Give an example of a function <span class="process-math">\(\phi\colon \R{2} \to \R{}\)</span> such that</div>
+<div class="displaymath process-math" id="x403-1-1-2">
+\begin{equation*}
+\phi(av) = a \phi(v)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(a \in \R{}\)</span> and all <span class="process-math">\(v \in \R{2}\)</span> but <span class="process-math">\(\phi\)</span> is not linear. Note: This exercise and the next exercise show that neither homogeneity nor additivity alone is enough to imply that a function is a linear map.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x403-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.8"><a tabindex="-1" href="#x403" title="Copy heading and permalink for Exercise 3.1.2.8" aria-label="Copy heading and permalink for Exercise 3.1.2.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-10"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="vslinear-3-20-10-1-1">
+<div class="para">Give an example of a function <span class="process-math">\(\phi \colon \C{} \to \C{}\)</span> such that</div>
+<div class="displaymath process-math" id="vslinear-3-20-10-1-1-2">
+\begin{equation*}
+\phi(w + z) = \phi(w) + \phi(z)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(w, z \in \C{}\)</span> but <span class="process-math">\(\phi\)</span> is not linear. (Here <span class="process-math">\(\C{}\)</span> is thought of as a complex vector space.) Note: There also exists a function <span class="process-math">\(\phi \colon \R{} \to \R{}\)</span> such that <span class="process-math">\(\phi\)</span> satisfies the additivity condition above but <span class="process-math">\(\phi\)</span> is not linear. However, showing the existence of such a function involves considerably more advanced tools.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.9"><a tabindex="-1" href="#vslinear-3-20-10" title="Copy heading and permalink for Exercise 3.1.2.9" aria-label="Copy heading and permalink for Exercise 3.1.2.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-11"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="vslinear-3-20-11-1-1">Prove or give a counterexample: If <span class="process-math">\(q \in \P(\R{})\)</span> and <span class="process-math">\(\fun T {\P(\R{})} {\P(\R{})}\)</span> is defined by <span class="process-math">\(Tp = q \circ p\text{,}\)</span> then <span class="process-math">\(T\)</span> is a linear map. Note: The function <span class="process-math">\(T\)</span> defined here differs from the function <span class="process-math">\(T\)</span> defined in the last bullet point of <a href="vslinear.html#x2a111" class="xref" data-knowl="./knowl/xref/x2a111.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.3: linear maps">Example 3.3</a> by the order of the functions in the compositions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.10"><a tabindex="-1" href="#vslinear-3-20-11" title="Copy heading and permalink for Exercise 3.1.2.10" aria-label="Copy heading and permalink for Exercise 3.1.2.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-12"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="vslinear-3-20-12-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> is a scalar multiple of the identity if and only if <span class="process-math">\(ST = TS\)</span> for every <span class="process-math">\(S \in \Lc(V)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.11"><a tabindex="-1" href="#vslinear-3-20-12" title="Copy heading and permalink for Exercise 3.1.2.11" aria-label="Copy heading and permalink for Exercise 3.1.2.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-13"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="vslinear-3-20-13-1-1">
+<div class="para">Suppose <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V\)</span> with <span class="process-math">\(U \ne V{}\text{.}\)</span> Suppose <span class="process-math">\(S \in \Lc(U, W)\)</span> and <span class="process-math">\(S \ne 0\)</span> (which means that <span class="process-math">\(Su \ne 0\)</span> for some <span class="process-math">\(u \in U\)</span>). Define <span class="process-math">\(T \colon V \to W\)</span> by</div>
+<div class="displaymath process-math" id="vslinear-3-20-13-1-1-9">
+\begin{equation*}
+Tv = \begin{cases}Sv \amp  \text{ if }  v \in U,\\ 0 \amp  \text{ if }  v \in V \textit{ and \ }v \notin U. \end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="vslinear-3-20-13-1-2">Prove that <span class="process-math">\(T\)</span> is not a linear map on <span class="process-math">\(V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-13-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.12"><a tabindex="-1" href="#vslinear-3-20-13" title="Copy heading and permalink for Exercise 3.1.2.12" aria-label="Copy heading and permalink for Exercise 3.1.2.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x384"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x384-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional. Prove that every linear map on a subspace of <span class="process-math">\(V\)</span> can be extended to a linear map on <span class="process-math">\(V{}\text{.}\)</span> In other words, show that if <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V\)</span> and <span class="process-math">\(S \in \Lc(U, W)\text{,}\)</span> then there exists <span class="process-math">\(T \in \Lc(V{}, W)\)</span> such that <span class="process-math">\(Tu = Su\)</span> for all <span class="process-math">\(u \in U\text{.}\)</span> Note: The result in this exercise is used in the proof of <a href="duals.html#dimannih" class="xref" data-knowl="./knowl/xref/dimannih.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.117: dimension of the annihilator">Theorem 3.117</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x384-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.13"><a tabindex="-1" href="#x384" title="Copy heading and permalink for Exercise 3.1.2.13" aria-label="Copy heading and permalink for Exercise 3.1.2.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-15"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="vslinear-3-20-15-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional with <span class="process-math">\(\dim V &gt; 0\text{,}\)</span> and suppose <span class="process-math">\(W\)</span> is infinite-dimensional. Prove that <span class="process-math">\(\Lc(V{},W)\)</span> is infinite-dimensional.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.14"><a tabindex="-1" href="#vslinear-3-20-15" title="Copy heading and permalink for Exercise 3.1.2.14" aria-label="Copy heading and permalink for Exercise 3.1.2.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="vslinear-3-20-16"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="vslinear-3-20-16-1-1">Suppose <span class="process-math">\(v_1, \dots,
+v_m\)</span> is a linearly dependent list of vectors in <span class="process-math">\(V{}\text{.}\)</span> Suppose also that <span class="process-math">\(W \ne \{0\}\text{.}\)</span> Prove that there exist <span class="process-math">\(w_1, \dots,
+w_m \in W\)</span> such that no <span class="process-math">\(T \in \Lc(V{}, W)\)</span> satisfies <span class="process-math">\(Tv_k = w_k\)</span> for each <span class="process-math">\(k = 1, \dots, m\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vslinear-3-20-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.15"><a tabindex="-1" href="#vslinear-3-20-16" title="Copy heading and permalink for Exercise 3.1.2.15" aria-label="Copy heading and permalink for Exercise 3.1.2.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="noncomm"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="noncomm-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional with <span class="process-math">\(\dim V &gt; 1\text{.}\)</span> Prove that there exist <span class="process-math">\(S, T \in \Lc(V)\)</span> such that <span class="process-math">\(ST \ne TS\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#noncomm-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.16"><a tabindex="-1" href="#noncomm" title="Copy heading and permalink for Exercise 3.1.2.16" aria-label="Copy heading and permalink for Exercise 3.1.2.16">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ideals"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="ideals-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional. Show that the only two-sided ideals of <span class="process-math">\(\Lc(V)\)</span> are <span class="process-math">\(\{ 0 \}\)</span> and <span class="process-math">\(\Lc(V)\text{.}\)</span>  Note: A subspace <span class="process-math">\(\E\)</span> of <span class="process-math">\(\Lc(V)\)</span> is called a <dfn class="terminology">two-sided ideal</dfn> of <span class="process-math">\(\Lc(V)\)</span> if <span class="process-math">\(TE \in \E\)</span> and <span class="process-math">\(ET \in \E\)</span> for all <span class="process-math">\(E \in \E\)</span> and all <span class="process-math">\(T \in \Lc(V)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ideals-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 3.1.2.17"><a tabindex="-1" href="#ideals" title="Copy heading and permalink for Exercise 3.1.2.17" aria-label="Copy heading and permalink for Exercise 3.1.2.17">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 3.1.2: Exercises"><a tabindex="-1" href="#vslinear-3-20" title="Copy heading and permalink for Exercises 3.1.2: Exercises" aria-label="Copy heading and permalink for Exercises 3.1.2: Exercises">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 3.1.2: Algebraic Operations on \Lc(V, W)"><a tabindex="-1" href="#vslinear-3" title="Copy heading and permalink for Subsection 3.1.2: Algebraic Operations on \Lc(V, W)" aria-label="Copy heading and permalink for Subsection 3.1.2: Algebraic Operations on \Lc(V, W)">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 3.1: Vector Space of Linear Maps"><a tabindex="-1" href="#vslinear" title="Copy heading and permalink for Section 3.1: Vector Space of Linear Maps" aria-label="Copy heading and permalink for Section 3.1: Vector Space of Linear Maps">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="LinearMaps-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="x3nullspace.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

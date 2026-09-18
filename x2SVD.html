@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Singular Value Decomposition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-0 { system: extends lower-alpha; prefix: '('; suffix: ') '; }
+</style>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Linear algebra done right">
+<meta property="og:title" content="Linear algebra done right">
+<meta property="book:title" content="Linear algebra done right">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.12';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.561f7165d9bf3626.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Linear algebra done right</span></a></div>
+<p class="byline">Sheldon Axler</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="x3QR.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="opsinner.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="x9SVD.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\tensor}{\otimes}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\andd}{\quad \text{and} \quad}
+\newcommand{\orr}{\quad \text{or} \quad}
+\newcommand{\butt}{\quad \text{but} \quad}
+\newcommand{\fun}[3]{#1 \colon #2 \to #3}
+\newcommand{\nth}{{\text{th}}}
+\newcommand{\C}[1]{\symbf{C}^{#1}}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\R}[1]{\symbf{R}^{#1}}
+\newcommand{\CC}[1]{\symbf{C}^{#1}}
+\newcommand{\FF}[1]{\symbf{F}^{#1}}
+\newcommand{\RR}[1]{\symbf{R}^{#1}}
+\newcommand{\A}{\symcal{A}}
+\newcommand{\B}{\symcal{B}}
+\newcommand{\E}{\symcal{E}}
+\newcommand{\CF}{\symcal{F}}
+\newcommand{\Lc}{\symcal{L}}
+\newcommand{\M}{\symcal{M}}
+\newcommand{\P}{\symcal{P}}
+\newcommand{\sm}{\backslash}
+\newcommand{\Space}{}
+\DeclareMathOperator{\ran}{range}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\perm}{perm}
+\DeclareMathOperator{\vol}{volume}
+\DeclareMathOperator{\ker}{null}
+\newcommand{\tran}[1]{#1^{\text{t}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Linear Algebra Done Right</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="author.html" class="internal"><span class="title">About the Author</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forStudents.html" class="internal"><span class="title">Preface for Students</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forInstructors.html" class="internal"><span class="title">Preface for Instructors</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgments.html" class="internal"><span class="title">Acknowledgments</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="VectorSpaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-VectorSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="VectorSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Rn_and_Cn.html" class="internal"><span class="codenumber">1.1</span> <span class="title"><span class="process-math">\(\R n\)</span> and <span class="process-math">\(\C n\)</span></span></a></div>
+<ul id="ptx-toc-group-Rn_and_Cn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-2" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-3" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Lists</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-4" class="internal"><span class="codenumber">1.1.3</span> <span class="title"><span class="process-math">\(\F n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Rn_and_Cn.html#fields" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Digression on Fields</span></a></div>
+<ul id="ptx-toc-group-fields" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Rn_and_Cn.html#fields-4" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1DefVS.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Definition of Vector Space</span></a></div>
+<ul id="ptx-toc-group-x1DefVS" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1DefVS.html#x1DefVS-46" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1Subspaces.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Subspaces</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-3" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Sums of Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Direct Sums</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4-18" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="fin-dimVS.html" class="internal"><span class="codenumber">2</span> <span class="title">Finite-Dimensional Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-fin-dimVS" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="fin-dimVS-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2spli.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Span and Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2spli.html#x2spli-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Linear Combinations and Span</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2spli.html#x2spli-4" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2spli.html#x2spli-4-26" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bases.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Bases</span></a></div>
+<ul id="ptx-toc-group-bases" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bases.html#bases-26" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="dimension.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Dimension</span></a></div>
+<ul id="ptx-toc-group-dimension" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="dimension.html#dimension-30" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="LinearMaps.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Maps</span></a></div>
+<ul id="ptx-toc-group-LinearMaps" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="LinearMaps-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="vslinear.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Vector Space of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-vslinear" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vslinear.html#vslinear-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Definition and Examples of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="vslinear.html#vslinear-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Algebraic Operations on <span class="process-math">\(\Lc(V, W)\)</span></span></a></div>
+<ul id="ptx-toc-group-vslinear-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="vslinear.html#vslinear-3-20" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3nullspace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Null Spaces and Ranges</span></a></div>
+<ul id="ptx-toc-group-x3nullspace" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-2" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Null Space and Injectivity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-3" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Range and Surjectivity</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Fundamental Theorem of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-x3nullspace-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4-30" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Matrices</span></a></div>
+<ul id="ptx-toc-group-matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-2" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Representing a Linear Map by a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-3" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Addition and Scalar Multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-4" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="matrices.html#matrices-5" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Column–Row Factorization and Rank of a Matrix</span></a></div>
+<ul id="ptx-toc-group-matrices-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="matrices.html#x3think2" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="invertible.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Invertibility and Isomorphisms</span></a></div>
+<ul id="ptx-toc-group-invertible" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-2" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Invertible Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-3" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Isomorphic Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-4" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Linear Maps Thought of as Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="invertible.html#invertible-5" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Change of Basis</span></a></div>
+<ul id="ptx-toc-group-invertible-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="invertible.html#invertible-5-27" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pq.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Products and Quotients of Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-pq" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pq.html#pq-2" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Products of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="pq.html#pq-3" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Quotient Spaces</span></a></div>
+<ul id="ptx-toc-group-pq-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="pq.html#pq-3-29" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="duals.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Duality</span></a></div>
+<ul id="ptx-toc-group-duals" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-2" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Dual Space and Dual Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-3" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Null Space and Range of Dual of Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="duals.html#duals-4" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Matrix of Dual of Linear Map</span></a></div>
+<ul id="ptx-toc-group-duals-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="duals.html#duals-4-9" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="polynomials.html" class="internal"><span class="codenumber">4</span> <span class="title">Polynomials</span></a></div>
+<ul id="ptx-toc-group-polynomials" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="polynomials-25.html" class="internal"><span class="codenumber">4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="eigs.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-eigs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="eigs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x5invar.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Invariant Subspaces</span></a></div>
+<ul id="ptx-toc-group-x5invar" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x5invar.html#x5invar-2" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x5invar.html#x5invar-3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Polynomials Applied to Operators</span></a></div>
+<ul id="ptx-toc-group-x5invar-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x5invar.html#x5invar-3-19" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="eigenuppertri.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Minimal Polynomial</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-2" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Existence of Eigenvalues on Complex Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-3" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Eigenvalues and the Minimal Polynomial</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Eigenvalues on Odd-Dimensional Real Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4-10" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x4utm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Upper-Triangular Matrices</span></a></div>
+<ul id="ptx-toc-group-x4utm" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x4utm.html#x4utm-41" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="diagmat.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Diagonalizable Operators</span></a></div>
+<ul id="ptx-toc-group-diagmat" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-2" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Diagonal Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-3" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Conditions for Diagonalizability</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="diagmat.html#diagmat-4" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Gershgorin Disk Theorem</span></a></div>
+<ul id="ptx-toc-group-diagmat-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="diagmat.html#diagmat-4-12" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2diagmat.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Commuting Operators</span></a></div>
+<ul id="ptx-toc-group-x2diagmat" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2diagmat.html#x2diagmat-30" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="InnerProductSpaces.html" class="internal"><span class="codenumber">6</span> <span class="title">Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-InnerProductSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="InnerProductSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x6ipn.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Inner Products and Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-2" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Inner Products</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x6ipn.html#x6ipn-3" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-3-41" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="orthobases.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Orthonormal Bases</span></a></div>
+<ul id="ptx-toc-group-orthobases" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="orthobases.html#orthobases-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Orthonormal Lists and the Gram–Schmidt Procedure</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="orthobases.html#orthobases-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Linear Functionals on Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-orthobases-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="orthobases.html#orthobases-3-16" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="OrthoMin.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements and Minimization Problems</span></a></div>
+<ul id="ptx-toc-group-OrthoMin" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-2" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-3" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Minimization Problems</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Pseudoinverse</span></a></div>
+<ul id="ptx-toc-group-OrthoMin-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4-27" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="opsinner.html" class="internal"><span class="codenumber">7</span> <span class="title">Operators on Inner Product Spaces</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-opsinner">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="opsinner-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="selfadjoint_normal.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Self-Adjoint and Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-2" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Adjoints</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-3" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Self-Adjoint Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4-18" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpectralTheorem.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Real Spectral Theorem</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Complex Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4-10" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="POIUO.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Positive Operators</span></a></div>
+<ul id="ptx-toc-group-POIUO" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="POIUO.html#POIUO-21" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3QR.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isometries, Unitary Operators, and Matrix Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-2" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Isometries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-3" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-4" class="internal"><span class="codenumber">7.4.3</span> <span class="title">QR Factorization</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3QR.html#x3QR-5" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Cholesky Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3QR.html#x3QR-5-13" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="x2SVD.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Singular Value Decomposition</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-x2SVD">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-2" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2SVD.html#x2SVD-3" class="internal"><span class="codenumber">7.5.2</span> <span class="title">SVD for Linear Maps and for Matrices</span></a></div>
+<ul id="ptx-toc-group-x2SVD-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-3-22" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9SVD.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Consequences of Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x9SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-2" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Norms of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-3" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Approximation by Linear Maps with Lower-Dimensional Range</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-4" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Polar Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-5" class="internal"><span class="codenumber">7.6.4</span> <span class="title">Operators Applied to Ellipsoids and Parallelepipeds</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-6" class="internal"><span class="codenumber">7.6.5</span> <span class="title">Volume via Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9SVD.html#x9SVD-7" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Properties of an Operator as Determined by Its Eigenvalues</span></a></div>
+<ul id="ptx-toc-group-x9SVD-7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-7-5" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="operators_complex_vs.html" class="internal"><span class="codenumber">8</span> <span class="title">Operators on Complex Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-operators_complex_vs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="operators_complex_vs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="geneig.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Generalized Eigenvectors and Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-2" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Null Spaces of Powers of an Operator</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-3" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Generalized Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="geneig.html#geneig-4" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="geneig.html#geneig-4-15" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="decompop.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-decompop" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-2" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Generalized Eigenspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-3" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Multiplicity of an Eigenvalue</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="decompop.html#decompop-4" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Block Diagonal Matrices</span></a></div>
+<ul id="ptx-toc-group-decompop-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="decompop.html#decompop-4-10" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x8geneigde.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Consequences of Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-x8geneigde" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x8geneigde.html#x8geneigde-2" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Square Roots of Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x8geneigde.html#Jordan" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Jordan Form</span></a></div>
+<ul id="ptx-toc-group-Jordan" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x8geneigde.html#Jordan-19" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x7trace.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Trace: A Connection Between Matrices and Operators</span></a></div>
+<ul id="ptx-toc-group-x7trace" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x7trace.html#x7trace-36" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="MultLATensors.html" class="internal"><span class="codenumber">9</span> <span class="title">Multilinear Algebra and Determinants</span></a></div>
+<ul id="ptx-toc-group-MultLATensors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="MultLATensors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bilin_quad.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Bilinear Forms and Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-2" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-3" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Symmetric Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4-15" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="alt_multi.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Alternating Multilinear Forms</span></a></div>
+<ul id="ptx-toc-group-alt_multi" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-2" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Multilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="alt_multi.html#alt_multi-3" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Alternating Multilinear Forms and Permutations</span></a></div>
+<ul id="ptx-toc-group-alt_multi-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-3-27" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9det.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9det.html#x9det-2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Defining the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9det.html#x9det-3" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Properties of Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9det.html#x9det-3-65" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9TensorSect.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Tensor Products</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-2" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Tensor Product of Two Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-3" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Tensor Product of Inner Product Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Tensor Product of Multiple Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4-25" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back matter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocredits.html" class="internal"><span class="codenumber">1</span> <span class="title">Photo Credits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="typesetting.html" class="internal"><span class="codenumber">2</span> <span class="title">Colophon: Notes on Typesetting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pretextplus.html" class="internal"><span class="codenumber">3</span> <span class="title">Colophon: The Web version</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="x2SVD">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Singular Value Decomposition</span>
+</h1>
+<section class="subsection" id="x2SVD-2">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Singular Values</span>
+</h2>
+<div class="para" id="x2SVD-2-2">We will need the following result in this section.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x2Tstar"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.52</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">properties of  <span class="process-math">\(T^*T\)</span>.</span>
+</h3>
+<div class="para logical" id="x2Tstar-2-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V{}, W)\text{.}\)</span> Then</div>
+<ol class="decimal" id="x2Tstar-2-1-2">
+<li id="x2Tstar-2-1-2-1">
+<div class="para" id="x2Tstar-2-1-2-1-1">
+<span class="process-math">\(T^* T\)</span> is a positive operator on <span class="process-math">\(V\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2Tstar-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#x2Tstar-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="x2Tstar-2-1-2-2">
+<div class="para" id="x2Tstar-2-1-2-2-1">
+<span class="process-math">\(\ker T^*T = \ker T\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2Tstar-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#x2Tstar-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="x2Tstar-2-1-2-3">
+<div class="para" id="x2Tstar-2-1-2-3-1">
+<span class="process-math">\(\ran T^*T = \ran T^*\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2Tstar-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#x2Tstar-2-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="x2Tstar-2-1-2-4">
+<div class="para" id="x2Tstar-2-1-2-4-1">
+<span class="process-math">\(\dim \ran T = \dim \ran T^* = \dim \ran T^* T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2Tstar-2-1-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#x2Tstar-2-1-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2Tstar-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.52: properties of  T^*T"><a tabindex="-1" href="#x2Tstar" title="Copy heading and permalink for Theorem 7.52: properties of  T^*T" aria-label="Copy heading and permalink for Theorem 7.52: properties of  T^*T">🔗</a></div>
+</article>
+<details id="x2SVD-2-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="x2SVD-2-4-1">
+<ol class="decimal" id="x2SVD-2-4-1-1">
+<li id="x2SVD-2-4-1-1-1">
+<div class="para logical" id="x2SVD-2-4-1-1-1-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="x2SVD-2-4-1-1-1-1-1">
+\begin{equation*}
+( T^* T )^* = T^* ( T^* )^* = T^* T{}.
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(T^* T\)</span> is self-adjoint. If <span class="process-math">\(v \in V{}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="x2SVD-2-4-1-1-1-1-4">
+\begin{equation*}
+\langle ( T^*T )v , v \rangle  = \langle  T^*(Tv), v \rangle  = \langle Tv, Tv \rangle  = \|Tv\|^2 \ge 0.
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(T^* T\)</span> is a positive operator.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-4-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#x2SVD-2-4-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="x2SVD-2-4-1-1-2">
+<div class="para logical" id="x2SVD-2-4-1-1-2-1">
+<div class="para">First suppose <span class="process-math">\(v \in \ker T^*T{}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="x2SVD-2-4-1-1-2-1-2">
+\begin{equation*}
+\lVert Tv \rVert ^2 = \langle Tv, Tv \rangle  = \langle T^*Tv, v \rangle  = \langle 0, v \rangle  = 0.
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(Tv = 0\text{,}\)</span> proving that <span class="process-math">\(\ker T^*T \subset \ker T{}\text{.}\)</span> The inclusion in the other direction is clear, because if <span class="process-math">\(v \in V\)</span> and <span class="process-math">\(Tv = 0\text{,}\)</span> then <span class="process-math">\(T^*Tv = 0\text{.}\)</span> Thus <span class="process-math">\(\ker T^*T = \ker T\text{,}\)</span> completing the proof of (b).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-4-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#x2SVD-2-4-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="x2SVD-2-4-1-1-3">
+<div class="para logical" id="x2SVD-2-4-1-1-3-1">
+<div class="para">We already know from (a) that <span class="process-math">\(T^*T\)</span> is self-adjoint. Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x377.html" id="x2SVD-2-4-1-1-3-1-2">
+\begin{equation*}
+\ran T^* T = ( \ker T^* T )^\perp = (\ker T)^\perp = \ran T^*{},
+\end{equation*}
+</div>
+<div class="para">where the first and last equalities come from <a href="selfadjoint_normal.html#x377" class="xref" data-knowl="./knowl/xref/x377.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.6: null space and range of  T^*">Theorem 7.6</a> and the second equality comes from (b).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-4-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#x2SVD-2-4-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="x2SVD-2-4-1-1-4">
+<div class="para logical" id="x2SVD-2-4-1-1-4-1">
+<div class="para">To verify the first equation in (d), note that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x377.html ./knowl/xref/x350.html ./knowl/xref/x3ab11.html" id="x2SVD-2-4-1-1-4-1-1">
+\begin{equation*}
+\dim \ran T = \dim ( \ker T^* )^\perp = \dim W - \dim \ker T^* = \dim \ran T^*{},
+\end{equation*}
+</div>
+<div class="para">where the first equality comes from <a href="selfadjoint_normal.html#x377" class="xref" data-knowl="./knowl/xref/x377.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.6: null space and range of  T^*">Theorem 7.6</a>(d), the second equality comes from <a href="OrthoMin.html#x350" class="xref" data-knowl="./knowl/xref/x350.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.47: dimension of orthogonal complement">Theorem 6.47</a>, and the last equality comes from the fundamental theorem of linear maps <a href="x3nullspace.html#x3ab11" class="xref" data-knowl="./knowl/xref/x3ab11.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.21: fundamental theorem of linear maps">Theorem 3.21</a>. The equality <span class="process-math">\(\dim \ran T^* = \dim \ran T^* T\)</span> follows from (c).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-4-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#x2SVD-2-4-1-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.5.1.1"><a tabindex="-1" href="#x2SVD-2-4" title="Copy heading and permalink for Proof 7.5.1.1" aria-label="Copy heading and permalink for Proof 7.5.1.1">🔗</a></div>
+</article></details>
+<div class="para" id="x2SVD-2-5">The eigenvalues of an operator tell us something about the behavior of the operator. Another collection of numbers, called the singular values, is also useful. Eigenspaces and the notation <span class="process-math">\(E\)</span> (used in the examples) were defined in <a href="diagmat.html#eigenspace" class="xref" data-knowl="./knowl/xref/eigenspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.46: eigenspace, E(\lambda, T)">Definition 5.46</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="x2SVD-2-6"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.53</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">singular values.</span>
+</h3>
+<div class="para" id="x2SVD-2-6-2-1">Suppose <span class="process-math">\(T \in \Lc(V{}, W)\text{.}\)</span> The <dfn class="terminology">singular values</dfn>  of <span class="process-math">\(T\)</span> are the nonnegative square roots of the eigenvalues of <span class="process-math">\(T^* T{}\text{,}\)</span> listed in decreasing order, each included as many times as the dimension of the corresponding eigenspace of <span class="process-math">\(T^*T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 7.53: singular values"><a tabindex="-1" href="#x2SVD-2-6" title="Copy heading and permalink for Definition 7.53: singular values" aria-label="Copy heading and permalink for Definition 7.53: singular values">🔗</a></div>
+</article>
+<details id="x412" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.54</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">singular values of an operator on  <span class="process-math">\(\F4\)</span>.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="x412-2-1">
+<div class="para">Define <span class="process-math">\(T \in \Lc( \F{4} )\)</span> by <span class="process-math">\(T(z_1, z_2, z_3, z_4) = (0, 3 z_1, 2 z_2, -3z_4)\text{.}\)</span> A calculation shows that</div>
+<div class="displaymath process-math" id="x412-2-1-3">
+\begin{equation*}
+T^*T(z_1, z_2, z_3, z_4) = (9 z_1, 4z_2, 0, 9z_4),
+\end{equation*}
+</div>
+<div class="para">as you should verify. Thus the standard basis of <span class="process-math">\(\F4\)</span> diagonalizes <span class="process-math">\(T^*T\text{,}\)</span> and we see that the eigenvalues of <span class="process-math">\(T^* T\)</span> are <span class="process-math">\(9\text{,}\)</span> <span class="process-math">\(4\text{,}\)</span> and <span class="process-math">\(0\text{.}\)</span> Also, the dimensions of the eigenspaces corresponding to the eigenvalues are</div>
+<div class="displaymath process-math" id="x412-2-1-10">
+\begin{equation*}
+\dim E( 9, T^* T ) = 2 \andd \dim E( 4, T^* T ) = 1 \andd \dim E( 0, T^*T ) = 1.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x412-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="x412-2-2">Taking nonnegative square roots of these eigenvalues of <span class="process-math">\(T^*T\)</span> and using dimension information from above, we conclude that the singular values of <span class="process-math">\(T\)</span> are <span class="process-math">\(3, 3, 2, 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x412-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="x412-2-3">The only eigenvalues of <span class="process-math">\(T\)</span> are <span class="process-math">\(-3\)</span> and <span class="process-math">\(0\text{.}\)</span> Thus in this case, the collection of eigenvalues did not pick up the number <span class="process-math">\(2\)</span> that appears in the definition (and hence the behavior) of <span class="process-math">\(T\text{,}\)</span> but the list of singular values does include <span class="process-math">\(2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x412-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.54: singular values of an operator on  \F4"><a tabindex="-1" href="#x412" title="Copy heading and permalink for Example 7.54: singular values of an operator on  \F4" aria-label="Copy heading and permalink for Example 7.54: singular values of an operator on  \F4">🔗</a></div>
+</article></details>
+<details id="x43singular" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.55</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">singular values of a linear map from  <span class="process-math">\(\F4\)</span> to  <span class="process-math">\(\F3\)</span>.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="x43singular-2-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(  \F4, \F3  )\)</span> has matrix (with respect to the standard bases)</div>
+<div class="displaymath process-math" id="x43singular-2-1-2">
+\begin{equation*}
+\begin{pmatrix}0 \amp  0 \amp  0 \amp  -5 \\ 0 \amp  0 \amp  0 \amp  0\\ 1 \amp  1 \amp  0 \amp  0 \end{pmatrix} .
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x43singular-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="x43singular-2-2">
+<div class="para">You can verify that the matrix of <span class="process-math">\(T^* T\)</span> is</div>
+<div class="displaymath process-math" id="x43singular-2-2-2">
+\begin{equation*}
+\begin{pmatrix}1 \amp  1 \amp  0 \amp  0 \\ 1 \amp  1 \amp  0 \amp  0\\ 0 \amp  0 \amp  0\amp  0\\ 0 \amp  0 \amp  0 \amp  25 \end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">and that the eigenvalues of the operator <span class="process-math">\(T^*T\)</span> are <span class="process-math">\(25\text{,}\)</span> <span class="process-math">\(2\text{,}\)</span> <span class="process-math">\(0\text{,}\)</span> with <span class="process-math">\(\dim E( 25, T^* T ) = 1\text{,}\)</span> <span class="process-math">\(\dim E( 2, T^* T ) = 1\text{,}\)</span> and <span class="process-math">\(\dim E( 0, T^*T ) = 2\text{.}\)</span> Thus the singular values of <span class="process-math">\(T\)</span> are <span class="process-math">\(5, \sqrt{2}, 0, 0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x43singular-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.55: singular values of a linear map from  \F4 to  \F3"><a tabindex="-1" href="#x43singular" title="Copy heading and permalink for Example 7.55: singular values of a linear map from  \F4 to  \F3" aria-label="Copy heading and permalink for Example 7.55: singular values of a linear map from  \F4 to  \F3">🔗</a></div>
+</article></details>
+<div class="para" id="x2SVD-2-9">See <a href="x2SVD.html#x2Schmidt" class="xref" data-knowl="./knowl/xref/x2Schmidt.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.5.2.2">Exercise 7.5.2.2</a> for a characterization of the positive singular values.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x7posSV"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.56</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">role of positive singular values.</span>
+</h3>
+<div class="para logical" id="x7posSV-2-1">
+<div class="para">Suppose that <span class="process-math">\(T \in \Lc(V{}, W)\text{.}\)</span> Then</div>
+<ol class="decimal" id="x7posSV-2-1-2">
+<li id="x7posSV-2-1-2-1">
+<div class="para" id="x7posSV-2-1-2-1-1">
+<span class="process-math">\(T\)</span> is injective <span class="process-math">\(\iff 0\)</span> is not a singular value of <span class="process-math">\(T\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7posSV-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#x7posSV-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="x7posSV-2-1-2-2">
+<div class="para" id="x7posSV-2-1-2-2-1">the number of positive singular values of <span class="process-math">\(T\)</span> equals <span class="process-math">\(\dim \ran T\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7posSV-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#x7posSV-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="x7posSV-2-1-2-3">
+<div class="para" id="x7posSV-2-1-2-3-1">
+<span class="process-math">\(T\)</span> is surjective <span class="process-math">\(\iff\)</span> number of positive singular values of <span class="process-math">\(T\)</span> equals <span class="process-math">\(\dim W{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7posSV-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#x7posSV-2-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7posSV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.56: role of positive singular values"><a tabindex="-1" href="#x7posSV" title="Copy heading and permalink for Theorem 7.56: role of positive singular values" aria-label="Copy heading and permalink for Theorem 7.56: role of positive singular values">🔗</a></div>
+</article>
+<details id="x2SVD-2-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="x2SVD-2-11-1">The linear map <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\ker T = \{ 0 \}\text{,}\)</span> which happens if and only if <span class="process-math">\(\ker T^*T = \{ 0 \}\)</span> [by <a href="x2SVD.html#x2Tstar" class="xref" data-knowl="./knowl/xref/x2Tstar.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.52: properties of  T^*T">Theorem 7.52</a>(b)] , which happens if and only if <span class="process-math">\(0\)</span> is not an eigenvalue of <span class="process-math">\(T^*T\text{,}\)</span> which happens if and only if <span class="process-math">\(0\)</span> is not a singular value of <span class="process-math">\(T\text{,}\)</span> completing the proof of (a).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-2-11-2">The spectral theorem applied to <span class="process-math">\(T^* T\)</span> shows that <span class="process-math">\(\dim \ran T^*T\)</span> equals the number of positive eigenvalues of <span class="process-math">\(T^*T\)</span> (counting repetitions). <a href="x2SVD.html#x2Tstar" class="xref" data-knowl="./knowl/xref/x2Tstar.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.52: properties of  T^*T">Thus 7.52</a>(d) implies that <span class="process-math">\(\dim \ran T\)</span> equals the number of positive singular values of <span class="process-math">\(T\text{,}\)</span> proving (b).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-2-11-3">Use (b) and <a href="dimension.html#x2subfull" class="xref" data-knowl="./knowl/xref/x2subfull.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.38: subspace of full dimension equals the whole space">Theorem 2.38</a> to show that (c) holds.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.5.1.2"><a tabindex="-1" href="#x2SVD-2-11" title="Copy heading and permalink for Proof 7.5.1.2" aria-label="Copy heading and permalink for Proof 7.5.1.2">🔗</a></div>
+</article></details>
+<div class="para" id="x2SVD-2-12">The table below compares eigenvalues with singular values.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><em class="emphasis">list of eigenvalues</em></td>
+<td class="l m b0 r0 l0 t0 lines"><em class="emphasis">list of singular values</em></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">context: vector spaces</td>
+<td class="l m b0 r0 l0 t0 lines">context: inner product spaces</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">defined only for linear maps from a vector space to itself</td>
+<td class="l m b0 r0 l0 t0 lines">defined for linear maps from an inner product space to a possibly different inner product space</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">can be arbitrary real numbers (if \(\F{} = \R{}\)) or complex numbers (if \(\F{} = \C{}\))</td>
+<td class="l m b0 r0 l0 t0 lines">are nonnegative numbers</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">can be the empty list if \(\F{} = \R{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">length of list equals dimension of domain</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">includes \(0 \! \iff \!\) operator is not invertible</td>
+<td class="l m b0 r0 l0 t0 lines">includes \(0 \! \iff\!\) linear map is not injective</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">no standard order, especially if \(\F{} = \C{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">always listed in decreasing order</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+<div class="para" id="x2SVD-2-14">The next result nicely characterizes isometries in terms of singular values.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x5isomsv1"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.57</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">isometries characterized by having all singular values equal  <span class="process-math">\(1\)</span>.</span>
+</h3>
+<div class="para" id="x5isomsv1-2-1">Suppose that <span class="process-math">\(S \in \Lc(V{}, W)\text{.}\)</span> Then<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5isomsv1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<blockquote class="blockquote" id="x5isomsv1-2-2">
+<div class="para" id="x5isomsv1-2-2-1">
+<span class="process-math">\(S\)</span> is an isometry <span class="process-math">\(\iff\)</span> all singular values of <span class="process-math">\(S\)</span> equal <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5isomsv1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#x5isomsv1-2-2" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.57: isometries characterized by having all singular values equal  1"><a tabindex="-1" href="#x5isomsv1" title="Copy heading and permalink for Theorem 7.57: isometries characterized by having all singular values equal  1" aria-label="Copy heading and permalink for Theorem 7.57: isometries characterized by having all singular values equal  1">🔗</a></div>
+</article>
+<details id="x2SVD-2-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="x2SVD-2-16-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x234.html ./knowl/xref/x86.html ./knowl/xref/x85.html" id="x2SVD-2-16-1-1">
+\begin{align*}
+\text{ \(S\) is an isometry }  \amp \iff S^* S = I\\
+\amp \iff \text{ all eigenvalues of \(S^* S\) equal \(1\) }\\
+\amp \iff \text{ all singular values of \(S\) equal~\(1\), }
+\end{align*}
+</div>
+<div class="para">where the first equivalence comes from <a href="x3QR.html#x234" class="xref" data-knowl="./knowl/xref/x234.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.39: characterizations of isometries">Theorem 7.39</a> and the second equivalence comes from the spectral theorem ( <a href="SpectralTheorem.html#x86" class="xref" data-knowl="./knowl/xref/x86.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.24: real spectral theorem">Theorem 7.24</a> <a href="SpectralTheorem.html#x85" class="xref" data-knowl="./knowl/xref/x85.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.26: complex spectral theorem">or 7.26</a>) applied to the self-adjoint operator <span class="process-math">\(S^* S\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.5.1.3"><a tabindex="-1" href="#x2SVD-2-16" title="Copy heading and permalink for Proof 7.5.1.3" aria-label="Copy heading and permalink for Proof 7.5.1.3">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 7.5.1: Singular Values"><a tabindex="-1" href="#x2SVD-2" title="Copy heading and permalink for Subsection 7.5.1: Singular Values" aria-label="Copy heading and permalink for Subsection 7.5.1: Singular Values">🔗</a></div>
+</section>
+<section class="subsection" id="x2SVD-3">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">SVD for Linear Maps and for Matrices</span>
+</h2>
+<details id="x2SVD-3-2" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Aside</span></h3></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="x2SVD-3-2-1">The singular value decomposition is useful in computational linear algebra because good techniques exist for approximating eigenvalues and eigenvectors of positive operators such as <span class="process-math">\(T^*T\text{,}\)</span> whose eigenvalues and eigenvectors lead to the singular value decomposition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para" id="x2SVD-3-3">The next result shows that every linear map from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\)</span> has a remarkably clean description in terms of its singular values and orthonormal lists in <span class="process-math">\(V\)</span> and <span class="process-math">\(W{}\text{.}\)</span> In the next section we will see several important applications of the singular value decomposition (often called the SVD).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x382"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.58</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">singular value decomposition.</span>
+</h3>
+<div class="para logical" id="x382-2-1">
+<div class="para"> Suppose <span class="process-math">\(T \in \Lc(V{}, W)\)</span> and the positive singular values of <span class="process-math">\(T\)</span> are <span class="process-math">\(s_1, \dots, s_m\text{.}\)</span> Then there exist orthonormal lists <span class="process-math">\(e_1, \dots,
+e_m\)</span> in <span class="process-math">\(V\)</span> and <span class="process-math">\(f_1, \dots,
+f_m\)</span> in <span class="process-math">\(W\)</span> such that</div>
+<div class="displaymath process-math" id="x6Tv">
+\begin{equation}
+Tv = s_1 \langle v, e_1 \rangle  f_1 + \dots + s_m \langle v, e_m \rangle  f_m\tag{7.13}
+\end{equation}
+</div>
+<div class="para">for every <span class="process-math">\(v \in V{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x382-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.58: singular value decomposition"><a tabindex="-1" href="#x382" title="Copy heading and permalink for Theorem 7.58: singular value decomposition" aria-label="Copy heading and permalink for Theorem 7.58: singular value decomposition">🔗</a></div>
+</article>
+<details id="x2SVD-3-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="x2SVD-3-5-1">
+<div class="para">Let <span class="process-math">\(s_1, \ldots, s_n\)</span> denote the singular values of <span class="process-math">\(T\)</span> (thus <span class="process-math">\(n = \dim V\)</span>). Because <span class="process-math">\(T^*T\)</span> is a positive operator [<a href="x2SVD.html#x2Tstar" class="xref" data-knowl="./knowl/xref/x2Tstar.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.52: properties of  T^*T">see 7.52</a>(a)] , the spectral theorem implies that there exists an orthonormal basis <span class="process-math">\(e_1, \ldots,
+e_n\)</span> of <span class="process-math">\(V\)</span> with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x2Tstar.html" id="x6sing">
+\begin{equation}
+T^*T e_k = {s_k}^{2} e_k\tag{7.14}
+\end{equation}
+</div>
+<div class="para">for each <span class="process-math">\(k = 1, \ldots, n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x2SVD-3-5-2">
+<div class="para">For each <span class="process-math">\(k = 1, \ldots, m\text{,}\)</span> let</div>
+<div class="displaymath process-math" id="x7v">
+\begin{equation}
+f_k = \frac{Te_k}{s_k}.\tag{7.15}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x2SVD-3-5-3">
+<div class="para">If <span class="process-math">\(j, k \in \{ 1, \ldots, m \}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="x2SVD-3-5-3-2">
+\begin{equation*}
+\langle f_j, f_k \rangle  = \frac{1}{s_j s_k} \langle Te_j, Te_k \rangle  =  \frac{1}{s_j s_k} \langle e_j, T^*T e_k \rangle  = \frac{s_k}{s_j} \langle e_j, e_k \rangle = \begin{cases}0 \amp  \text{ if }  j \ne k ,\\ 1 \amp  \text{ if }  j = k. \end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-5-4">Thus <span class="process-math">\(f_1, \ldots, f_m\)</span> is an orthonormal list in <span class="process-math">\(W{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-5-5">If <span class="process-math">\(k \in \{ 1, \ldots,
+n \}\)</span> and <span class="process-math">\(k &gt; m\text{,}\)</span> then <span class="process-math">\(s_k = 0\)</span> and hence <span class="process-math">\(T^*T e_k = 0\)</span> (by <a href="x2SVD.html#x6sing" class="xref" data-knowl="./knowl/xref/x6sing.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.14">(7.14)</a>), which implies that <span class="process-math">\(Te_k = 0\)</span> [by <a href="x2SVD.html#x2Tstar" class="xref" data-knowl="./knowl/xref/x2Tstar.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.52: properties of  T^*T">Theorem 7.52</a>(b)] .<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x2SVD-3-5-6">
+<div class="para">Suppose <span class="process-math">\(v \in V{}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x7v.html" id="x2SVD-3-5-6-2">
+\begin{align*}
+Tv \amp = T(  \langle v, e_1 \rangle  e_1 + \cdots + \langle v, e_n \rangle  e_n  )\\
+\amp = \langle v, e_1 \rangle  Te_1 + \cdots + \langle v, e_m \rangle  Te_m\\
+\amp = s_1 \langle v, e_1 \rangle  f_1 + \cdots + s_m \langle v, e_m \rangle  f_m\text{,}
+\end{align*}
+</div>
+<div class="para">where the last index in the first line switched from <span class="process-math">\(n\)</span> to <span class="process-math">\(m\)</span> in the second line because <span class="process-math">\(Te_k = 0\)</span> if <span class="process-math">\(k &gt; m\)</span> (as noted in the paragraph above) and the third line follows from <a href="x2SVD.html#x7v" class="xref" data-knowl="./knowl/xref/x7v.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.15">(7.15)</a>. The equation above is our desired result.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.5.2.1"><a tabindex="-1" href="#x2SVD-3-5" title="Copy heading and permalink for Proof 7.5.2.1" aria-label="Copy heading and permalink for Proof 7.5.2.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="x2SVD-3-6">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V{}, W)\text{,}\)</span> the positive singular values of <span class="process-math">\(T\)</span> are <span class="process-math">\(s_1, \ldots,
+s_m\text{,}\)</span> and <span class="process-math">\(e_1, \ldots, e_m\)</span> and <span class="process-math">\(f_1, \ldots,
+f_m\)</span> are as in the singular value <a href="x2SVD.html#x382" class="xref" data-knowl="./knowl/xref/x382.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.58: singular value decomposition">decomposition 7.58</a>. The orthonormal list <span class="process-math">\(e_1, \ldots,
+e_m\)</span> can be extended to an orthonormal basis <span class="process-math">\(e_1, \ldots,
+e_{\dim V}\)</span> of <span class="process-math">\(V\)</span> and the orthonormal list <span class="process-math">\(f_1, \ldots,
+f_m\)</span> can be extended to an orthonormal basis <span class="process-math">\(f_1, \ldots,
+f_{\dim W}\)</span> of <span class="process-math">\(W{}\text{.}\)</span> The <a href="x2SVD.html#x6Tv" class="xref" data-knowl="./knowl/xref/x6Tv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.13">formula (7.13)</a> shows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x382.html ./knowl/xref/x6Tv.html" id="x2SVD-3-6-14">
+\begin{equation*}
+Te_k = \begin{cases}s_k f_k \amp  \text{ if }  1 \le k \le m,\\ 0 \amp  \text{ if }  m \lt  k \le \dim V{}. \end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x2SVD-3-7">
+<div class="para">Thus the matrix of <span class="process-math">\(T\)</span> with respect to the orthonormal bases <span class="process-math">\((e_1, \ldots,
+e_{\dim V})\)</span> and <span class="process-math">\((f_1, \ldots,
+f_{\dim W})\)</span> has the simple form</div>
+<div class="displaymath process-math" id="x2SVD-3-7-4">
+\begin{equation*}
+\M(  T, (e_1, \ldots, e_{\dim V}), (f_1, \ldots, f_{\dim W})  )_{j,k} = \begin{cases}s_k \amp \text{ if }  1 \le j = k \le m, \\ 0 \amp \text{ otherwise } . \end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-8">If <span class="process-math">\(\dim V = \dim W\)</span> (as happens, for example, if <span class="process-math">\(W = V\)</span>), then the matrix described in the paragraph above is a diagonal matrix. If we extend the definition of diagonal matrix as follows to apply to matrices that are not necessarily square, then we have proved the wonderful result that every linear map from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\)</span> has a diagonal matrix with respect to appropriate orthonormal bases.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="x2SVD-3-9"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.59</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">diagonal matrix.</span>
+</h3>
+<div class="para" id="x2SVD-3-9-2-1">An <span class="process-math">\(M\)</span>-by-<span class="process-math">\(N\)</span> matrix <span class="process-math">\(A\)</span> is called a <dfn class="terminology">diagonal matrix</dfn>  if all entries of the matrix are <span class="process-math">\(0\)</span> except possibly <span class="process-math">\(A_{k,k}\)</span> for <span class="process-math">\(k = 1, \ldots, \min \{ M, N \}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 7.59: diagonal matrix"><a tabindex="-1" href="#x2SVD-3-9" title="Copy heading and permalink for Definition 7.59: diagonal matrix" aria-label="Copy heading and permalink for Definition 7.59: diagonal matrix">🔗</a></div>
+</article>
+<div class="para" id="x2SVD-3-10">The table below compares the spectral theorem ( <a href="SpectralTheorem.html#x86" class="xref" data-knowl="./knowl/xref/x86.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.24: real spectral theorem">Theorem 7.24</a> and <a href="SpectralTheorem.html#x85" class="xref" data-knowl="./knowl/xref/x85.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.26: complex spectral theorem">Theorem 7.26</a>) with the singular value decomposition <a href="x2SVD.html#x382" class="xref" data-knowl="./knowl/xref/x382.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.58: singular value decomposition">Theorem 7.58</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><em class="emphasis">spectral theorem</em></td>
+<td class="l m b0 r0 l0 t0 lines"><em class="emphasis">singular value decomposition</em></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">describes only self-adjoint operators (when \(\F{} = \R{}\)) or normal operators (when \(\F{} = \C{}\))</td>
+<td class="l m b0 r0 l0 t0 lines">describes arbitrary linear maps from an inner product space to a possibly different inner product space</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">produces a single orthonormal basis</td>
+<td class="l m b0 r0 l0 t0 lines">produces two orthonormal lists, one for domain space and one for range space, that are not necessarily the same even when range space equals domain space</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">different proofs depending on whether \(\F{} = \R{}\) or \(\F{}=\C{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">same proof works regardless of whether \(\F{} = \R{}\) or \(\F{}=\C{}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+<div class="para" id="x2SVD-3-12">The singular value decomposition gives us a new way to understand the adjoint and the inverse of a linear map. Specifically, the next result shows that given a singular value decomposition of a linear map <span class="process-math">\(T \in \Lc(V{},W)\text{,}\)</span> we can obtain the adjoint of <span class="process-math">\(T\)</span> simply by interchanging the roles of the <span class="process-math">\(e\)</span>’s and the <span class="process-math">\(f\)</span>’s (<a href="x2SVD.html#x6SVD" class="xref" data-knowl="./knowl/xref/x6SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.17">see (7.17)</a>). Similarly, we can obtain the pseudoinverse <span class="process-math">\(T^\dagger\)</span> (<a href="OrthoMin.html#x6pseudo" class="xref" data-knowl="./knowl/xref/x6pseudo.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.60: pseudoinverse, T^\dagger">see 6.60</a>) of <span class="process-math">\(T\)</span> by interchanging the roles of the <span class="process-math">\(e\)</span>’s and the <span class="process-math">\(f\)</span> ’s and replacing each positive singular value <span class="process-math">\(s_k\)</span> of <span class="process-math">\(T\)</span> with <span class="process-math">\(1/s_k\)</span> (<a href="x2SVD.html#x7SVD" class="xref" data-knowl="./knowl/xref/x7SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.18">see (7.18)</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-13">Recall that the pseudoinverse <span class="process-math">\(T^\dagger\)</span> in <a href="x2SVD.html#x7SVD" class="xref" data-knowl="./knowl/xref/x7SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.18">(7.18)</a> below equals the inverse <span class="process-math">\(T^{-1}\)</span> if <span class="process-math">\(T\)</span> is invertible [<a href="OrthoMin.html#x6propps" class="xref" data-knowl="./knowl/xref/x6propps.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.61: algebraic properties of the pseudoinverse">see 6.61</a>(a)] . <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x8SVDadj"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.60</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">singular value decomposition of adjoint and pseudoinverse.</span>
+</h3>
+<div class="para logical" id="x8SVDadj-2-1">
+<div class="para"> Suppose <span class="process-math">\(T \in \Lc(V{}, W)\)</span> and the positive singular values of <span class="process-math">\(T\)</span> are <span class="process-math">\(s_1, \dots, s_m\text{.}\)</span> Suppose <span class="process-math">\(e_1, \dots, e_m\)</span> and <span class="process-math">\(f_1, \dots,
+f_m\)</span> are orthonormal lists in <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> such that</div>
+<div class="displaymath process-math" id="x5SVD">
+\begin{equation}
+Tv = s_1 \langle v, e_1 \rangle  f_1 + \dots + s_m \langle v, e_m \rangle  f_m\tag{7.16}
+\end{equation}
+</div>
+<div class="para">for every <span class="process-math">\(v \in V{}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="x6SVD">
+\begin{equation}
+T^*w = s_1 \langle w, f_1 \rangle  e_1 + \dots + s_m \langle w, f_m \rangle  e_m\tag{7.17}
+\end{equation}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="x7SVD">
+\begin{equation}
+T^\dagger w = \frac{\langle w, f_1 \rangle }{s_1} e_1 + \dots + \frac{\langle w, f_m \rangle }{s_m} e_m\tag{7.18}
+\end{equation}
+</div>
+<div class="para">for every <span class="process-math">\(w \in W{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x8SVDadj-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.60: singular value decomposition of adjoint and pseudoinverse"><a tabindex="-1" href="#x8SVDadj" title="Copy heading and permalink for Theorem 7.60: singular value decomposition of adjoint and pseudoinverse" aria-label="Copy heading and permalink for Theorem 7.60: singular value decomposition of adjoint and pseudoinverse">🔗</a></div>
+</article>
+<details id="x2SVD-3-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="x2SVD-3-15-1">
+<div class="para">If <span class="process-math">\(v \in V\)</span> and <span class="process-math">\(w \in W\)</span> then</div>
+<div class="displaymath process-math" id="x2SVD-3-15-1-3">
+\begin{align*}
+\langle Tv,w \rangle  \amp = \langle s_1 \langle v, e_1 \rangle  f_1 + \dots + s_m \langle v, e_m \rangle  f_m, w \rangle\\
+\amp = s_1 \langle v, e_1 \rangle  \langle f_1,w \rangle  + \dots + s_m \langle v, e_m \rangle  \langle f_m, w \rangle\\
+\amp = \langle v, s_1 \langle w, f_1 \rangle  e_1 + \dots + s_m \langle w, f_m \rangle  e_m \rangle \text{.}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x2SVD-3-15-2">
+<div class="para">This implies that</div>
+<div class="displaymath process-math" id="x2SVD-3-15-2-1">
+\begin{equation*}
+T^*w = s_1 \langle w, f_1 \rangle  e_1 + \dots + s_m \langle w, f_m \rangle  e_m,
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-15-3">
+<a href="x2SVD.html#x6SVD" class="xref" data-knowl="./knowl/xref/x6SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.17">proving (7.17)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-15-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x2SVD-3-15-4">
+<div class="para">To <a href="x2SVD.html#x7SVD" class="xref" data-knowl="./knowl/xref/x7SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.18">prove (7.18)</a>, suppose <span class="process-math">\(w \in W{}\text{.}\)</span> Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x7SVD.html" id="x2SVD-3-15-4-3">
+\begin{equation*}
+v = \frac{\langle w, f_1 \rangle }{s_1} e_1 + \dots + \frac{\langle w, f_m \rangle }{s_m} e_m.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-15-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x2SVD-3-15-5">
+<div class="para">Apply <span class="process-math">\(T\)</span> to both sides of the equation above, getting</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x5SVD.html ./knowl/xref/x5SVD.html ./knowl/xref/x418.html ./knowl/xref/x4SVD.html ./knowl/xref/x6pseudo.html ./knowl/xref/x7SVD.html" id="x2SVD-3-15-5-2">
+\begin{align*}
+Tv \amp = \frac{\langle w, f_1 \rangle }{s_1} Te_1 + \dots + \frac{\langle w, f_m \rangle }{s_m} Te_m\\
+\amp = \langle w, f_1 \rangle  f_1 + \dots + \langle w, f_m \rangle  f_m\\
+\amp = P_{\!\ran T}   w\text{,}
+\end{align*}
+</div>
+<div class="para">where the second line holds <a href="x2SVD.html#x5SVD" class="xref" data-knowl="./knowl/xref/x5SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.16">because (7.16)</a> implies that <span class="process-math">\(Te_k = s_k f_k\)</span> if <span class="process-math">\(k = 1, \ldots, m\text{,}\)</span> and the last line above holds <a href="x2SVD.html#x5SVD" class="xref" data-knowl="./knowl/xref/x5SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.16">because (7.16)</a> implies that <span class="process-math">\(f_1, \ldots,
+f_m\)</span> spans <span class="process-math">\(\ran T\)</span> and thus is an orthonormal basis of <span class="process-math">\(\ran T\)</span> [and <a href="OrthoMin.html#x418" class="xref" data-knowl="./knowl/xref/x418.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.52: properties of orthogonal projection P_{U}">hence 6.52</a>(i) applies] . The equation above, the observation that <span class="process-math">\(v \in (\ker T)^\perp\)</span> [see <a href="x2SVD.html#x4SVD" class="xref" data-knowl="./knowl/xref/x4SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.5.2.8">Exercise 7.5.2.8</a>(b)] , and the definition of <span class="process-math">\(T^\dagger w\)</span> (<a href="OrthoMin.html#x6pseudo" class="xref" data-knowl="./knowl/xref/x6pseudo.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.60: pseudoinverse, T^\dagger">see 6.60</a>) show that <span class="process-math">\(v = T^\dagger w\text{,}\)</span> <a href="x2SVD.html#x7SVD" class="xref" data-knowl="./knowl/xref/x7SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.18">proving (7.18)</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-15-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.5.2.2"><a tabindex="-1" href="#x2SVD-3-15" title="Copy heading and permalink for Proof 7.5.2.2" aria-label="Copy heading and permalink for Proof 7.5.2.2">🔗</a></div>
+</article></details>
+<details id="x2SVD-3-16" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.61</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">finding a singular value decomposition.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="x2SVD-3-16-2-1">
+<div class="para">Define <span class="process-math">\(T \in \Lc(  \F4, \F3  )\)</span> by <span class="process-math">\(T(x_1, x_2, x_3, x_4) = (-5x_4, 0, x_1 + x_2)\text{.}\)</span> We want to find a singular value decomposition of <span class="process-math">\(T{}\text{.}\)</span> The matrix of <span class="process-math">\(T\)</span> (with respect to the standard bases) is</div>
+<div class="displaymath process-math" id="x2SVD-3-16-2-1-5">
+\begin{equation*}
+\begin{pmatrix}0 \amp  0 \amp  0 \amp  -5 \\ 0 \amp  0 \amp  0 \amp  0\\ 1 \amp  1 \amp  0 \amp  0 \end{pmatrix} .
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="x2SVD-3-16-2-2">
+<div class="para">Thus, as discussed in <a href="x2SVD.html#x43singular" class="xref" data-knowl="./knowl/xref/x43singular.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.55: singular values of a linear map from  \F4 to  \F3">Example 7.55</a>, the matrix of <span class="process-math">\(T^*T\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x43singular.html" id="x2SVD-3-16-2-2-3">
+\begin{equation*}
+\begin{pmatrix}1 \amp  1 \amp  0 \amp  0 \\ 1 \amp  1 \amp  0 \amp  0\\ 0 \amp  0 \amp  0\amp  0\\ 0 \amp  0 \amp  0 \amp  25 \end{pmatrix} ,
+\end{equation*}
+</div>
+<div class="para">and the positive eigenvalues of <span class="process-math">\(T^*T\)</span> are <span class="process-math">\(25\text{,}\)</span> <span class="process-math">\(2\text{,}\)</span> with <span class="process-math">\(\dim E( 25, T^* T ) = 1\)</span> and <span class="process-math">\(\dim E( 2, T^* T ) = 1\text{.}\)</span> Hence the positive singular values of <span class="process-math">\(T\)</span> are <span class="process-math">\(5, \sqrt{2}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-16-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="x2SVD-3-16-2-3">
+<div class="para">Thus to find a singular value decomposition of <span class="process-math">\(T\text{,}\)</span> we must find an orthonormal list <span class="process-math">\(e_1, e_2\)</span> in <span class="process-math">\(\F4\)</span> and an orthonormal list <span class="process-math">\(f_1, f_2\)</span> in <span class="process-math">\(\F3\)</span> such that</div>
+<div class="displaymath process-math" id="x2SVD-3-16-2-3-6">
+\begin{equation*}
+Tv = 5 \langle v, e_1 \rangle  f_1 + \sqrt{2} \langle v, e_2 \rangle  f_2
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(v \in \F4\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-16-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="x2SVD-3-16-2-4">
+<div class="para">An orthonormal basis of <span class="process-math">\(E( 25, T^* T )\)</span> is the vector <span class="process-math">\((0,0,0,1 )\text{;}\)</span> an orthonormal basis of <span class="process-math">\(E( 2, T^*T )\)</span> is the vector <span class="process-math">\((  \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}},0,0  )\text{.}\)</span> Thus, following the proof of <a href="x2SVD.html#x382" class="xref" data-knowl="./knowl/xref/x382.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.58: singular value decomposition">Theorem 7.58</a>, we take</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x382.html" id="x2SVD-3-16-2-4-6">
+\begin{equation*}
+e_1 = (0,0,0,1) \andd e_2 = (  \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}},0,0  )
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x382.html" id="x2SVD-3-16-2-4-7">
+\begin{equation*}
+f_1 = \frac{Te_1}{5} = (-1, 0, 0) \andd f_2 = \frac{Te_2}{\sqrt{2}} = (0, 0, 1).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-16-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="x2SVD-3-16-2-5">
+<div class="para">Then, as expected, we see that <span class="process-math">\(e_1, e_2\)</span> is an orthonormal list in <span class="process-math">\(\F4\)</span> and <span class="process-math">\(f_1, f_2\)</span> is an orthonormal list in <span class="process-math">\(\F3\)</span> and</div>
+<div class="displaymath process-math" id="x2SVD-3-16-2-5-5">
+\begin{equation*}
+Tv = 5 \langle v, e_1 \rangle  f_1 + \sqrt{2} \langle v, e_2 \rangle  f_2
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(v \in \F4\text{.}\)</span> Thus we have found a singular value decomposition of <span class="process-math">\(T{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-16-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.61: finding a singular value decomposition"><a tabindex="-1" href="#x2SVD-3-16" title="Copy heading and permalink for Example 7.61: finding a singular value decomposition" aria-label="Copy heading and permalink for Example 7.61: finding a singular value decomposition">🔗</a></div>
+</article></details>
+<div class="para" id="x2SVD-3-17">The next result translates the singular value decomposition from the context of linear maps to the context of matrices. Specifically, the following result gives a factorization of an arbitrary matrix as the product of three nice matrices. The proof gives an explicit construction of these three matrices in terms of the singular value decomposition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-18">In the next result, the phrase “orthonormal columns” should be interpreted to mean that the columns are orthonormal with respect to the standard Euclidean inner product.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x2matSVD"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.62</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">matrix version of SVD.</span>
+</h3>
+<div class="para logical" id="x2matSVD-2-1">
+<div class="para">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(p\)</span>-by-<span class="process-math">\(n\)</span> matrix of rank <span class="process-math">\(m\ge1\text{.}\)</span> Then there exist a <span class="process-math">\(p\)</span>-by-<span class="process-math">\(m\)</span> matrix <span class="process-math">\(B\)</span> with orthonormal columns, an <span class="process-math">\(m\)</span>-by-<span class="process-math">\(m\)</span> diagonal matrix <span class="process-math">\(D\)</span> with positive numbers on the diagonal, and an <span class="process-math">\(n\)</span>-by-<span class="process-math">\(m\)</span> matrix <span class="process-math">\(C\)</span> with orthonormal columns such that</div>
+<div class="displaymath process-math" id="x2matSVD-2-1-15">
+\begin{equation*}
+A = B D C^*{}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2matSVD-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.62: matrix version of SVD"><a tabindex="-1" href="#x2matSVD" title="Copy heading and permalink for Theorem 7.62: matrix version of SVD" aria-label="Copy heading and permalink for Theorem 7.62: matrix version of SVD">🔗</a></div>
+</article>
+<details id="x2SVD-3-20" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="x2SVD-3-20-1">
+<div class="para">Let <span class="process-math">\(\fun T {\F{n}} {\F{p}}\)</span> be the linear map whose matrix with respect to the standard bases equals <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(\dim \ran T = m\)</span> (by <a href="invertible.html#x3rangecolrank" class="xref" data-knowl="./knowl/xref/x3rangecolrank.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.72: dimension of  \ran T equals column rank of  \M(T)">Theorem 3.72</a>). Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x3rangecolrank.html" id="x7MatSVD">
+\begin{equation}
+Tv = s_1 \langle v, e_1 \rangle f_1 + \cdots + s_m \langle v, e_m \rangle  f_m\tag{7.19}
+\end{equation}
+</div>
+<div class="para">be a singular value decomposition of <span class="process-math">\(T{}\text{.}\)</span> Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x3rangecolrank.html" id="x2SVD-3-20-1-7">
+\begin{align*}
+B \amp = \text{ the \(p\)-by-\(m\) matrix whose columns are }  f_1, \ldots, f_m,\\
+D \amp = \text{ the \(m\)-by-\(m\) diagonal matrix whose diagonal entries are }  s_1, \ldots, s_m,\\
+C \amp = \text{ the \(n\)-by-\(m\) matrix whose columns are }  e_1, \ldots, e_m\text{.}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x2SVD-3-20-2">
+<div class="para">Let <span class="process-math">\(u_1, \ldots,
+u_m\)</span> denote the standard basis of <span class="process-math">\(\FF{m}\text{.}\)</span> If <span class="process-math">\(k \in \{ 1, \ldots, m \}\)</span> then</div>
+<div class="displaymath process-math" id="x2SVD-3-20-2-4">
+\begin{equation*}
+(AC - BD)u_k = Ae_k - B(s_k u_k) = s_k f_k - s_k f_k = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-20-3">Thus <span class="process-math">\(AC = B D\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-20-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x2SVD-3-20-4">
+<div class="para">Multiply both sides of this last equation by <span class="process-math">\(C^*\)</span> (the conjugate transpose of <span class="process-math">\(C\)</span>) on the right to get</div>
+<div class="displaymath process-math" id="x2SVD-3-20-4-3">
+\begin{equation*}
+ACC^* = B D C^*{}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-20-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-20-5">Note that the rows of <span class="process-math">\(C^*\)</span> are the complex conjugates of <span class="process-math">\(e_1, \ldots, e_m\text{.}\)</span> Thus if <span class="process-math">\(k \in \{ 1, \ldots, m \}\text{,}\)</span> then the definition of matrix multiplication shows that <span class="process-math">\(C^*e_k = u_k\text{;}\)</span> hence <span class="process-math">\(CC^* e_k = e_k\text{.}\)</span> Thus <span class="process-math">\(ACC^*v = Av\)</span> for all <span class="process-math">\(v \in \Span(e_1, \dots,
+e_m)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-20-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-20-6">If <span class="process-math">\(v \in ( \Span(e_1, \ldots,
+e_m) )^\perp\text{,}\)</span> then <span class="process-math">\(Av = 0\)</span> (as follows from <a href="x2SVD.html#x7MatSVD" class="xref" data-knowl="./knowl/xref/x7MatSVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.19">(7.19)</a>) and <span class="process-math">\(C^*v = 0\)</span> (as follows from the definition of matrix multiplication). Hence <span class="process-math">\(ACC^*v = Av\)</span> for all <span class="process-math">\(v \in ( \Span(e_1, \dots,
+e_m) )^\perp\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-20-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x2SVD-3-20-7">
+<div class="para">Because <span class="process-math">\(ACC^*\)</span> and <span class="process-math">\(A\)</span> agree on <span class="process-math">\(\Span(e_1, \dots,
+e_m)\)</span> and on <span class="process-math">\(( \Span(e_1, \dots,
+e_m) )^\perp\text{,}\)</span> we conclude that <span class="process-math">\(ACC^* = A\text{.}\)</span> Thus the displayed equation above becomes</div>
+<div class="displaymath process-math" id="x2SVD-3-20-7-6">
+\begin{equation*}
+A = B D C^*{},
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-20-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.5.2.3"><a tabindex="-1" href="#x2SVD-3-20" title="Copy heading and permalink for Proof 7.5.2.3" aria-label="Copy heading and permalink for Proof 7.5.2.3">🔗</a></div>
+</article></details>
+<div class="para logical" id="x2SVD-3-21">
+<div class="para">Note that the matrix <span class="process-math">\(A\)</span> in the result above has <span class="process-math">\(pn\)</span> entries. In comparison, the matrices <span class="process-math">\(B\text{,}\)</span> <span class="process-math">\(D\text{,}\)</span> and <span class="process-math">\(C\)</span> above have a total of</div>
+<div class="displaymath process-math" id="x2SVD-3-21-6">
+\begin{equation*}
+m(p + m + n)
+\end{equation*}
+</div>
+<div class="para">entries. Thus if <span class="process-math">\(p\)</span> and <span class="process-math">\(n\)</span> are large numbers and the rank <span class="process-math">\(m\)</span> is considerably less than <span class="process-math">\(p\)</span> and <span class="process-math">\(n\text{,}\)</span> then the number of entries that must be stored on a computer to represent <span class="process-math">\(A\)</span> is considerably less than <span class="process-math">\(pn\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="exercises" id="x2SVD-3-22">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="x2SVD-3-22-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x2SVD-3-22-2-1-1">Suppose <span class="process-math">\(T \in \Lc(V{}, W)\text{.}\)</span> Show that <span class="process-math">\(T = 0\)</span> if and only if all singular values of <span class="process-math">\(T\)</span> are <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.1"><a tabindex="-1" href="#x2SVD-3-22-2" title="Copy heading and permalink for Exercise 7.5.2.1" aria-label="Copy heading and permalink for Exercise 7.5.2.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2Schmidt"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x2Schmidt-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V{}, W)\)</span> and <span class="process-math">\(s &gt; 0\text{.}\)</span> Prove that <span class="process-math">\(s\)</span> is a singular value of <span class="process-math">\(T\)</span> if and only if there exist nonzero vectors <span class="process-math">\(v \in V\)</span> and <span class="process-math">\(w \in W\)</span> such that</div>
+<div class="displaymath process-math" id="x2Schmidt-1-1-7">
+\begin{equation*}
+Tv = sw \andd T^* w = sv.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2Schmidt-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="x2Schmidt-1-2">Note: The vectors <span class="process-math">\(v,
+w\)</span> satisfying both equations above are called a <em class="emphasis">Schmidt pair</em>. Erhard Schmidt introduced the concept of singular values in 1907. <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2Schmidt-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.2"><a tabindex="-1" href="#x2Schmidt" title="Copy heading and permalink for Exercise 7.5.2.2" aria-label="Copy heading and permalink for Exercise 7.5.2.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2SVD-3-22-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x2SVD-3-22-4-1-1">Give an example of <span class="process-math">\(T \in \Lc( \C2 )\)</span> such that <span class="process-math">\(0\)</span> is the only eigenvalue of <span class="process-math">\(T\)</span> and the singular values of <span class="process-math">\(T\)</span> are <span class="process-math">\(5, 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.3"><a tabindex="-1" href="#x2SVD-3-22-4" title="Copy heading and permalink for Exercise 7.5.2.3" aria-label="Copy heading and permalink for Exercise 7.5.2.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3interval"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x3interval-1-1">
+<div class="para">Suppose that <span class="process-math">\(T \in \Lc(V{}, W)\text{,}\)</span> <span class="process-math">\(s_1\)</span> is the largest singular value of <span class="process-math">\(T\text{,}\)</span> and <span class="process-math">\(s_n\)</span> is the smallest singular value of <span class="process-math">\(T{}\text{.}\)</span> Prove that</div>
+<div class="displaymath process-math" id="x3interval-1-1-6">
+\begin{equation*}
+\{  \lVert Tv \rVert  : v \in V \text{ and }  \lVert v \rVert  = 1  \} = [s_n, s_1].
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x3interval-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.4"><a tabindex="-1" href="#x3interval" title="Copy heading and permalink for Exercise 7.5.2.4" aria-label="Copy heading and permalink for Exercise 7.5.2.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2SVD-3-22-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x2SVD-3-22-6-1-1">Suppose <span class="process-math">\(T \in \Lc( \C{2} )\)</span> is defined by <span class="process-math">\(T(x, y) = (-4y, x)\text{.}\)</span> Find the singular values of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.5"><a tabindex="-1" href="#x2SVD-3-22-6" title="Copy heading and permalink for Exercise 7.5.2.5" aria-label="Copy heading and permalink for Exercise 7.5.2.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2SVD-3-22-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x2SVD-3-22-7-1-1">Find the singular values of the differentiation operator <span class="process-math">\(D \in \Lc\bigl(\P{}_2(\R{})\bigr)\)</span> defined by <span class="process-math">\(Dp = p'\!\text{,}\)</span> where the inner product on <span class="process-math">\(\P{}_2(\R{})\)</span> is as in <a href="orthobases.html#obP2R" class="xref" data-knowl="./knowl/xref/obP2R.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.33: an orthonormal basis of  \P_2(\R)">Example 6.33</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.6"><a tabindex="-1" href="#x2SVD-3-22-7" title="Copy heading and permalink for Exercise 7.5.2.6" aria-label="Copy heading and permalink for Exercise 7.5.2.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7singsp"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x7singsp-1-1">Suppose that <span class="process-math">\(T \in \Lc(V)\)</span> is self-adjoint or that <span class="process-math">\(\F{}= \C{}\)</span> and <span class="process-math">\(T \in \Lc(V)\)</span> is normal. Let <span class="process-math">\(\lambda_1, \ldots, \lambda_n\)</span> be the eigenvalues of <span class="process-math">\(T\text{,}\)</span> each included in this list as many times as the dimension of the corresponding eigenspace. Show that the singular values of <span class="process-math">\(T\)</span> are <span class="process-math">\(\lvert \lambda_1 \rvert , \ldots, \lvert \lambda_n \rvert\text{,}\)</span> after these numbers have been sorted into decreasing order.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7singsp-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.7"><a tabindex="-1" href="#x7singsp" title="Copy heading and permalink for Exercise 7.5.2.7" aria-label="Copy heading and permalink for Exercise 7.5.2.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4SVD"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x4SVD-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V{}, W)\text{.}\)</span> Suppose <span class="process-math">\(s_1 \ge  s_2 \ge \cdots \ge s_m &gt;0\)</span> and <span class="process-math">\(e_1, \dots,
+e_m\)</span> is an orthonormal list in <span class="process-math">\(V\)</span> and <span class="process-math">\(f_1, \dots,
+f_m\)</span> is an orthonormal list in <span class="process-math">\(W\)</span> such that</div>
+<div class="displaymath process-math" id="x4SVD-1-1-8">
+\begin{equation*}
+Tv = s_1 \langle v, e_1 \rangle  f_1 + \dots + s_m \langle v, e_m \rangle  f_m
+\end{equation*}
+</div>
+<div class="para">for every <span class="process-math">\(v \in V{}\text{.}\)</span>
+</div>
+<ol class="decimal" id="x4SVD-1-1-10">
+<li id="x4SVD-1-1-10-1">
+<div class="para" id="x4SVD-1-1-10-1-1">Prove that <span class="process-math">\(f_1, \dots,
+f_m\)</span> is an orthonormal basis of <span class="process-math">\(\ran T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x4SVD-1-1-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.5.2.8.1"><a tabindex="-1" href="#x4SVD-1-1-10-1" title="Copy heading and permalink for Item 7.5.2.8.1" aria-label="Copy heading and permalink for Item 7.5.2.8.1">🔗</a></div>
+</li>
+<li id="x4SVD-1-1-10-2">
+<div class="para" id="x4SVD-1-1-10-2-1">Prove that <span class="process-math">\(e_1, \dots,
+e_m\)</span> is an orthonormal basis of <span class="process-math">\((\ker T)^\perp\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x4SVD-1-1-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.5.2.8.2"><a tabindex="-1" href="#x4SVD-1-1-10-2" title="Copy heading and permalink for Item 7.5.2.8.2" aria-label="Copy heading and permalink for Item 7.5.2.8.2">🔗</a></div>
+</li>
+<li id="x4SVD-1-1-10-3">
+<div class="para" id="x4SVD-1-1-10-3-1">Prove that <span class="process-math">\(s_1, \ldots,
+s_m\)</span> are the positive singular values of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x4SVD-1-1-10-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.5.2.8.3"><a tabindex="-1" href="#x4SVD-1-1-10-3" title="Copy heading and permalink for Item 7.5.2.8.3" aria-label="Copy heading and permalink for Item 7.5.2.8.3">🔗</a></div>
+</li>
+<li id="x4SVD-1-1-10-4">
+<div class="para" id="x4SVD-1-1-10-4-1">Prove that if <span class="process-math">\(k \in \{ 1, \ldots, m \}\text{,}\)</span> then <span class="process-math">\(e_k\)</span> is an eigenvector of <span class="process-math">\(T^*T\)</span> with corresponding eigenvalue <span class="process-math">\({s_k}^{2}{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x4SVD-1-1-10-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.5.2.8.4"><a tabindex="-1" href="#x4SVD-1-1-10-4" title="Copy heading and permalink for Item 7.5.2.8.4" aria-label="Copy heading and permalink for Item 7.5.2.8.4">🔗</a></div>
+</li>
+<li id="x4SVD-1-1-10-5">
+<div class="para logical" id="x4SVD-1-1-10-5-1">
+<div class="para">Prove that</div>
+<div class="displaymath process-math" id="x4SVD-1-1-10-5-1-1">
+\begin{equation*}
+TT^*w = {s_1}^{2} \langle w, f_1 \rangle  f_1 + \cdots + {s_m}^{2} \langle w, f_m \rangle  f_m
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(w \in W{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x4SVD-1-1-10-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.5.2.8.5"><a tabindex="-1" href="#x4SVD-1-1-10-5" title="Copy heading and permalink for Item 7.5.2.8.5" aria-label="Copy heading and permalink for Item 7.5.2.8.5">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x4SVD-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.8"><a tabindex="-1" href="#x4SVD" title="Copy heading and permalink for Exercise 7.5.2.8" aria-label="Copy heading and permalink for Exercise 7.5.2.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4TstarSing"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x4TstarSing-1-1">Suppose <span class="process-math">\(T \in \Lc(V{}, W)\text{.}\)</span> Show that <span class="process-math">\(T\)</span> and <span class="process-math">\(T^*\)</span> have the same positive singular values.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x4TstarSing-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.9"><a tabindex="-1" href="#x4TstarSing" title="Copy heading and permalink for Exercise 7.5.2.9" aria-label="Copy heading and permalink for Exercise 7.5.2.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7singinv"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x7singinv-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V{}, W)\)</span> has singular values <span class="process-math">\(s_1, \ldots, s_n\text{.}\)</span> Prove that if <span class="process-math">\(T\)</span> is an invertible linear map, then <span class="process-math">\(T^{-1}\)</span> has singular values</div>
+<div class="displaymath process-math" id="x7singinv-1-1-5">
+\begin{equation*}
+\frac{1}{s_n}, \ldots, \frac{1}{s_1}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7singinv-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.10"><a tabindex="-1" href="#x7singinv" title="Copy heading and permalink for Exercise 7.5.2.10" aria-label="Copy heading and permalink for Exercise 7.5.2.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7sums2"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x7sums2-1-1">
+<div class="para">Suppose that <span class="process-math">\(T \in \Lc(V{}, W)\)</span> and <span class="process-math">\(v_1, \ldots,
+v_n\)</span> is an orthonormal basis of <span class="process-math">\(V{}\text{.}\)</span> Let <span class="process-math">\(s_1, \ldots, s_n\)</span> denote the singular values of <span class="process-math">\(T{}\text{.}\)</span>
+</div>
+<ol class="decimal" id="x7sums2-1-1-6">
+<li id="x7sums2-1-1-6-1">
+<div class="para" id="x7sums2-1-1-6-1-1">Prove that <span class="process-math">\(\lVert Tv_1 \rVert ^2 + \cdots + \lVert Tv_n \rVert ^2 = {s_1}^{2} + \cdots + {s_n}^{2}{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7sums2-1-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.5.2.11.1"><a tabindex="-1" href="#x7sums2-1-1-6-1" title="Copy heading and permalink for Item 7.5.2.11.1" aria-label="Copy heading and permalink for Item 7.5.2.11.1">🔗</a></div>
+</li>
+<li id="x7sums2-1-1-6-2">
+<div class="para logical" id="x7sums2-1-1-6-2-1">
+<div class="para">Prove that if <span class="process-math">\(W = V\)</span> and <span class="process-math">\(T\)</span> is a positive operator, then</div>
+<div class="displaymath process-math" id="x7sums2-1-1-6-2-1-3">
+\begin{equation*}
+\langle Tv_1, v_1 \rangle  + \cdots + \langle Tv_n, v_n \rangle  = s_1 + \cdots + s_n.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7sums2-1-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.5.2.11.2"><a tabindex="-1" href="#x7sums2-1-1-6-2" title="Copy heading and permalink for Item 7.5.2.11.2" aria-label="Copy heading and permalink for Item 7.5.2.11.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7sums2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="x7sums2-1-2">Note: See the comment after <a href="selfadjoint_normal.html#x6sumT2" class="xref" data-knowl="./knowl/xref/x6sumT2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.1.3.5">Exercise 7.1.3.5</a> in <a href="selfadjoint_normal.html" class="internal" title="Section 7.1: Self-Adjoint and Normal Operators">Section 7.1</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7sums2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.11"><a tabindex="-1" href="#x7sums2" title="Copy heading and permalink for Exercise 7.5.2.11" aria-label="Copy heading and permalink for Exercise 7.5.2.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2SVD-3-22-13"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x2SVD-3-22-13-1-1">
+<ol class="decimal" id="x2SVD-3-22-13-1-1-1">
+<li id="x2SVD-3-22-13-1-1-1-1">
+<div class="para" id="x2SVD-3-22-13-1-1-1-1-1">Give an example of a finite-dimensional vector space and an operator <span class="process-math">\(T\)</span> on it such that the singular values of <span class="process-math">\(T^2\)</span> do not equal the squares of the singular values of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-13-1-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.5.2.12.1"><a tabindex="-1" href="#x2SVD-3-22-13-1-1-1-1" title="Copy heading and permalink for Item 7.5.2.12.1" aria-label="Copy heading and permalink for Item 7.5.2.12.1">🔗</a></div>
+</li>
+<li id="x2SVD-3-22-13-1-1-1-2">
+<div class="para" id="x2SVD-3-22-13-1-1-1-2-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is normal. Prove that the singular values of <span class="process-math">\(T^2\)</span> equal the squares of the singular values of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-13-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.5.2.12.2"><a tabindex="-1" href="#x2SVD-3-22-13-1-1-1-2" title="Copy heading and permalink for Item 7.5.2.12.2" aria-label="Copy heading and permalink for Item 7.5.2.12.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.12"><a tabindex="-1" href="#x2SVD-3-22-13" title="Copy heading and permalink for Exercise 7.5.2.12" aria-label="Copy heading and permalink for Exercise 7.5.2.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2SVD-3-22-14"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x2SVD-3-22-14-1-1">Suppose <span class="process-math">\(T{}_1, T{}_2 \in \Lc(V)\text{.}\)</span> Prove that <span class="process-math">\(T{}_1\)</span> and <span class="process-math">\(T{}_2\)</span> have the same singular values if and only if there exist unitary operators <span class="process-math">\(S_1, S_2 \in \Lc(V)\)</span> such that <span class="process-math">\(T{}_1 = S_1 T{}_2 S_2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.13"><a tabindex="-1" href="#x2SVD-3-22-14" title="Copy heading and permalink for Exercise 7.5.2.13" aria-label="Copy heading and permalink for Exercise 7.5.2.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3smallSV"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x3smallSV-1-1">Suppose <span class="process-math">\(T \in \Lc(V{},W)\text{.}\)</span> Let <span class="process-math">\(s_n\)</span> denote the smallest singular value of <span class="process-math">\(T{}\text{.}\)</span> Prove that <span class="process-math">\(s_n \| v \| \le \| Tv \|\)</span> for every <span class="process-math">\(v \in V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x3smallSV-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.14"><a tabindex="-1" href="#x3smallSV" title="Copy heading and permalink for Exercise 7.5.2.14" aria-label="Copy heading and permalink for Exercise 7.5.2.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2SVD-3-22-16"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x2SVD-3-22-16-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(s_1 \ge \cdots \ge s_n\)</span> are the singular values of <span class="process-math">\(T{}\text{.}\)</span> Prove that if <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\text{,}\)</span> then <span class="process-math">\(s_1 \ge |\lambda| \ge s_n\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.15"><a tabindex="-1" href="#x2SVD-3-22-16" title="Copy heading and permalink for Exercise 7.5.2.15" aria-label="Copy heading and permalink for Exercise 7.5.2.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7Tdagstar"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x7Tdagstar-1-1">Suppose <span class="process-math">\(T \in \Lc(V{}, W)\text{.}\)</span> Prove that <span class="process-math">\(( T^* )^\dagger = ( T^\dagger )^*{}\text{.}\)</span>  Note: Compare the result in this exercise to the analogous result for invertible linear maps \big[<a href="selfadjoint_normal.html#x7propadjoint" class="xref" data-knowl="./knowl/xref/x7propadjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.5: properties of the adjoint">see 7.5</a> ( f ) \big].<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7Tdagstar-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.16"><a tabindex="-1" href="#x7Tdagstar" title="Copy heading and permalink for Exercise 7.5.2.16" aria-label="Copy heading and permalink for Exercise 7.5.2.16">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2SVD-3-22-18"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x2SVD-3-22-18-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> is self-adjoint if and only if <span class="process-math">\(T^\dagger\)</span> is self-adjoint. <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.17"><a tabindex="-1" href="#x2SVD-3-22-18" title="Copy heading and permalink for Exercise 7.5.2.17" aria-label="Copy heading and permalink for Exercise 7.5.2.17">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 7.5.2: Exercises"><a tabindex="-1" href="#x2SVD-3-22" title="Copy heading and permalink for Exercises 7.5.2: Exercises" aria-label="Copy heading and permalink for Exercises 7.5.2: Exercises">🔗</a></div>
+</section>
+<blockquote class="blockquote" id="x2SVD-3-23">
+<div class="para" id="x2SVD-3-23-1">Matrices unfold<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-23-2">Singular values gleam like stars<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-23-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x2SVD-3-23-3">Order in chaos shines<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-23-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<cite class="attribution">―written by ChatGPT with input: <em class="emphasis">haiku about SVD</em></cite><div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#x2SVD-3-23" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 7.5.2: SVD for Linear Maps and for Matrices"><a tabindex="-1" href="#x2SVD-3" title="Copy heading and permalink for Subsection 7.5.2: SVD for Linear Maps and for Matrices" aria-label="Copy heading and permalink for Subsection 7.5.2: SVD for Linear Maps and for Matrices">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 7.5: Singular Value Decomposition"><a tabindex="-1" href="#x2SVD" title="Copy heading and permalink for Section 7.5: Singular Value Decomposition" aria-label="Copy heading and permalink for Section 7.5: Singular Value Decomposition">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="x3QR.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="x9SVD.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

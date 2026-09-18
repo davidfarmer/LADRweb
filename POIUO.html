@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Positive Operators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-0 { system: extends lower-alpha; prefix: '('; suffix: ') '; }
+</style>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Linear algebra done right">
+<meta property="og:title" content="Linear algebra done right">
+<meta property="book:title" content="Linear algebra done right">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.12';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.561f7165d9bf3626.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Linear algebra done right</span></a></div>
+<p class="byline">Sheldon Axler</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="SpectralTheorem.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="opsinner.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="x3QR.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\tensor}{\otimes}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\andd}{\quad \text{and} \quad}
+\newcommand{\orr}{\quad \text{or} \quad}
+\newcommand{\butt}{\quad \text{but} \quad}
+\newcommand{\fun}[3]{#1 \colon #2 \to #3}
+\newcommand{\nth}{{\text{th}}}
+\newcommand{\C}[1]{\symbf{C}^{#1}}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\R}[1]{\symbf{R}^{#1}}
+\newcommand{\CC}[1]{\symbf{C}^{#1}}
+\newcommand{\FF}[1]{\symbf{F}^{#1}}
+\newcommand{\RR}[1]{\symbf{R}^{#1}}
+\newcommand{\A}{\symcal{A}}
+\newcommand{\B}{\symcal{B}}
+\newcommand{\E}{\symcal{E}}
+\newcommand{\CF}{\symcal{F}}
+\newcommand{\Lc}{\symcal{L}}
+\newcommand{\M}{\symcal{M}}
+\newcommand{\P}{\symcal{P}}
+\newcommand{\sm}{\backslash}
+\newcommand{\Space}{}
+\DeclareMathOperator{\ran}{range}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\perm}{perm}
+\DeclareMathOperator{\vol}{volume}
+\DeclareMathOperator{\ker}{null}
+\newcommand{\tran}[1]{#1^{\text{t}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Linear Algebra Done Right</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="author.html" class="internal"><span class="title">About the Author</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forStudents.html" class="internal"><span class="title">Preface for Students</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forInstructors.html" class="internal"><span class="title">Preface for Instructors</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgments.html" class="internal"><span class="title">Acknowledgments</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="VectorSpaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-VectorSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="VectorSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Rn_and_Cn.html" class="internal"><span class="codenumber">1.1</span> <span class="title"><span class="process-math">\(\R n\)</span> and <span class="process-math">\(\C n\)</span></span></a></div>
+<ul id="ptx-toc-group-Rn_and_Cn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-2" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-3" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Lists</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-4" class="internal"><span class="codenumber">1.1.3</span> <span class="title"><span class="process-math">\(\F n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Rn_and_Cn.html#fields" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Digression on Fields</span></a></div>
+<ul id="ptx-toc-group-fields" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Rn_and_Cn.html#fields-4" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1DefVS.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Definition of Vector Space</span></a></div>
+<ul id="ptx-toc-group-x1DefVS" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1DefVS.html#x1DefVS-46" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1Subspaces.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Subspaces</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-3" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Sums of Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Direct Sums</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4-18" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="fin-dimVS.html" class="internal"><span class="codenumber">2</span> <span class="title">Finite-Dimensional Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-fin-dimVS" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="fin-dimVS-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2spli.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Span and Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2spli.html#x2spli-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Linear Combinations and Span</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2spli.html#x2spli-4" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2spli.html#x2spli-4-26" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bases.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Bases</span></a></div>
+<ul id="ptx-toc-group-bases" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bases.html#bases-26" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="dimension.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Dimension</span></a></div>
+<ul id="ptx-toc-group-dimension" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="dimension.html#dimension-30" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="LinearMaps.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Maps</span></a></div>
+<ul id="ptx-toc-group-LinearMaps" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="LinearMaps-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="vslinear.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Vector Space of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-vslinear" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vslinear.html#vslinear-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Definition and Examples of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="vslinear.html#vslinear-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Algebraic Operations on <span class="process-math">\(\Lc(V, W)\)</span></span></a></div>
+<ul id="ptx-toc-group-vslinear-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="vslinear.html#vslinear-3-20" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3nullspace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Null Spaces and Ranges</span></a></div>
+<ul id="ptx-toc-group-x3nullspace" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-2" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Null Space and Injectivity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-3" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Range and Surjectivity</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Fundamental Theorem of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-x3nullspace-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4-30" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Matrices</span></a></div>
+<ul id="ptx-toc-group-matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-2" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Representing a Linear Map by a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-3" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Addition and Scalar Multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-4" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="matrices.html#matrices-5" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Column–Row Factorization and Rank of a Matrix</span></a></div>
+<ul id="ptx-toc-group-matrices-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="matrices.html#x3think2" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="invertible.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Invertibility and Isomorphisms</span></a></div>
+<ul id="ptx-toc-group-invertible" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-2" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Invertible Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-3" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Isomorphic Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-4" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Linear Maps Thought of as Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="invertible.html#invertible-5" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Change of Basis</span></a></div>
+<ul id="ptx-toc-group-invertible-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="invertible.html#invertible-5-27" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pq.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Products and Quotients of Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-pq" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pq.html#pq-2" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Products of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="pq.html#pq-3" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Quotient Spaces</span></a></div>
+<ul id="ptx-toc-group-pq-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="pq.html#pq-3-29" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="duals.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Duality</span></a></div>
+<ul id="ptx-toc-group-duals" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-2" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Dual Space and Dual Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-3" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Null Space and Range of Dual of Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="duals.html#duals-4" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Matrix of Dual of Linear Map</span></a></div>
+<ul id="ptx-toc-group-duals-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="duals.html#duals-4-9" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="polynomials.html" class="internal"><span class="codenumber">4</span> <span class="title">Polynomials</span></a></div>
+<ul id="ptx-toc-group-polynomials" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="polynomials-25.html" class="internal"><span class="codenumber">4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="eigs.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-eigs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="eigs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x5invar.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Invariant Subspaces</span></a></div>
+<ul id="ptx-toc-group-x5invar" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x5invar.html#x5invar-2" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x5invar.html#x5invar-3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Polynomials Applied to Operators</span></a></div>
+<ul id="ptx-toc-group-x5invar-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x5invar.html#x5invar-3-19" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="eigenuppertri.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Minimal Polynomial</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-2" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Existence of Eigenvalues on Complex Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-3" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Eigenvalues and the Minimal Polynomial</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Eigenvalues on Odd-Dimensional Real Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4-10" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x4utm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Upper-Triangular Matrices</span></a></div>
+<ul id="ptx-toc-group-x4utm" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x4utm.html#x4utm-41" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="diagmat.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Diagonalizable Operators</span></a></div>
+<ul id="ptx-toc-group-diagmat" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-2" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Diagonal Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-3" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Conditions for Diagonalizability</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="diagmat.html#diagmat-4" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Gershgorin Disk Theorem</span></a></div>
+<ul id="ptx-toc-group-diagmat-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="diagmat.html#diagmat-4-12" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2diagmat.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Commuting Operators</span></a></div>
+<ul id="ptx-toc-group-x2diagmat" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2diagmat.html#x2diagmat-30" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="InnerProductSpaces.html" class="internal"><span class="codenumber">6</span> <span class="title">Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-InnerProductSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="InnerProductSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x6ipn.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Inner Products and Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-2" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Inner Products</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x6ipn.html#x6ipn-3" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-3-41" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="orthobases.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Orthonormal Bases</span></a></div>
+<ul id="ptx-toc-group-orthobases" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="orthobases.html#orthobases-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Orthonormal Lists and the Gram–Schmidt Procedure</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="orthobases.html#orthobases-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Linear Functionals on Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-orthobases-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="orthobases.html#orthobases-3-16" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="OrthoMin.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements and Minimization Problems</span></a></div>
+<ul id="ptx-toc-group-OrthoMin" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-2" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-3" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Minimization Problems</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Pseudoinverse</span></a></div>
+<ul id="ptx-toc-group-OrthoMin-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4-27" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="opsinner.html" class="internal"><span class="codenumber">7</span> <span class="title">Operators on Inner Product Spaces</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-opsinner">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="opsinner-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="selfadjoint_normal.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Self-Adjoint and Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-2" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Adjoints</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-3" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Self-Adjoint Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4-18" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpectralTheorem.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Real Spectral Theorem</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Complex Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4-10" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="POIUO.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Positive Operators</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-POIUO"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="POIUO.html#POIUO-21" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3QR.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isometries, Unitary Operators, and Matrix Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-2" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Isometries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-3" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-4" class="internal"><span class="codenumber">7.4.3</span> <span class="title">QR Factorization</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3QR.html#x3QR-5" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Cholesky Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3QR.html#x3QR-5-13" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2SVD.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x2SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-2" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2SVD.html#x2SVD-3" class="internal"><span class="codenumber">7.5.2</span> <span class="title">SVD for Linear Maps and for Matrices</span></a></div>
+<ul id="ptx-toc-group-x2SVD-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-3-22" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9SVD.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Consequences of Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x9SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-2" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Norms of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-3" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Approximation by Linear Maps with Lower-Dimensional Range</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-4" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Polar Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-5" class="internal"><span class="codenumber">7.6.4</span> <span class="title">Operators Applied to Ellipsoids and Parallelepipeds</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-6" class="internal"><span class="codenumber">7.6.5</span> <span class="title">Volume via Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9SVD.html#x9SVD-7" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Properties of an Operator as Determined by Its Eigenvalues</span></a></div>
+<ul id="ptx-toc-group-x9SVD-7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-7-5" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="operators_complex_vs.html" class="internal"><span class="codenumber">8</span> <span class="title">Operators on Complex Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-operators_complex_vs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="operators_complex_vs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="geneig.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Generalized Eigenvectors and Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-2" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Null Spaces of Powers of an Operator</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-3" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Generalized Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="geneig.html#geneig-4" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="geneig.html#geneig-4-15" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="decompop.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-decompop" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-2" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Generalized Eigenspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-3" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Multiplicity of an Eigenvalue</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="decompop.html#decompop-4" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Block Diagonal Matrices</span></a></div>
+<ul id="ptx-toc-group-decompop-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="decompop.html#decompop-4-10" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x8geneigde.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Consequences of Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-x8geneigde" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x8geneigde.html#x8geneigde-2" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Square Roots of Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x8geneigde.html#Jordan" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Jordan Form</span></a></div>
+<ul id="ptx-toc-group-Jordan" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x8geneigde.html#Jordan-19" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x7trace.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Trace: A Connection Between Matrices and Operators</span></a></div>
+<ul id="ptx-toc-group-x7trace" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x7trace.html#x7trace-36" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="MultLATensors.html" class="internal"><span class="codenumber">9</span> <span class="title">Multilinear Algebra and Determinants</span></a></div>
+<ul id="ptx-toc-group-MultLATensors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="MultLATensors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bilin_quad.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Bilinear Forms and Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-2" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-3" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Symmetric Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4-15" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="alt_multi.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Alternating Multilinear Forms</span></a></div>
+<ul id="ptx-toc-group-alt_multi" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-2" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Multilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="alt_multi.html#alt_multi-3" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Alternating Multilinear Forms and Permutations</span></a></div>
+<ul id="ptx-toc-group-alt_multi-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-3-27" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9det.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9det.html#x9det-2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Defining the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9det.html#x9det-3" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Properties of Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9det.html#x9det-3-65" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9TensorSect.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Tensor Products</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-2" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Tensor Product of Two Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-3" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Tensor Product of Inner Product Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Tensor Product of Multiple Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4-25" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back matter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocredits.html" class="internal"><span class="codenumber">1</span> <span class="title">Photo Credits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="typesetting.html" class="internal"><span class="codenumber">2</span> <span class="title">Colophon: Notes on Typesetting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pretextplus.html" class="internal"><span class="codenumber">3</span> <span class="title">Colophon: The Web version</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="POIUO">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Positive Operators</span>
+</h1>
+<article class="definition definition-like" id="POIUO-2"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">positive operator.</span>
+</h2>
+<div class="para logical" id="POIUO-2-2-1">
+<div class="para">An operator <span class="process-math">\(T \in \Lc(V)\)</span> is called <dfn class="terminology">positive</dfn>  if <span class="process-math">\(T\)</span> is self-adjoint and</div>
+<div class="displaymath process-math" id="POIUO-2-2-1-5">
+\begin{equation*}
+\langle Tv, v \rangle  \ge 0
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(v \in V{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 7.28: positive operator"><a tabindex="-1" href="#POIUO-2" title="Copy heading and permalink for Definition 7.28: positive operator" aria-label="Copy heading and permalink for Definition 7.28: positive operator">🔗</a></div>
+</article>
+<div class="para" id="POIUO-3">If <span class="process-math">\(V\)</span> is a complex vector space, then the requirement that <span class="process-math">\(T\)</span> be self-adjoint can be dropped from the definition above (by <a href="selfadjoint_normal.html#x58" class="xref" data-knowl="./knowl/xref/x58.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.14: \langle Tv, v \rangle is real for all  v \iff T is self-adjoint  (assuming  \F{} = \C{})">Theorem 7.14</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="POIUO-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">positive operators.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="POIUO-4-2-1">
+<ol class="decimal" id="POIUO-4-2-1-1">
+<li id="POIUO-4-2-1-1-1">
+<div class="para" id="POIUO-4-2-1-1-1-1">Let <span class="process-math">\(T \in \Lc( \F2 )\)</span> be the operator whose matrix (using the standard basis) is <span class="process-math">\(\left(\begin{matrix}2 \amp -1\\-1 \amp 1 \end{matrix} \right)\text{.}\)</span> Then <span class="process-math">\(T\)</span> is self-adjoint and <span class="process-math">\(\langle T(w, z), (w, z) \rangle = 2 \lvert w \rvert ^2 - 2\re( w\overline{z} ) + \lvert z \rvert ^2 = \lvert w-z \rvert ^2 + \lvert w \rvert ^2 \ge 0\)</span> for all <span class="process-math">\((w, z) \in \F2\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is a positive operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-4-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#POIUO-4-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="POIUO-4-2-1-1-2">
+<div class="para" id="POIUO-4-2-1-1-2-1">If <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V{}\text{,}\)</span> then the orthogonal projection <span class="process-math">\(P_{\!U}\)</span> is a positive operator, as you should verify.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-4-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#POIUO-4-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="POIUO-4-2-1-1-3">
+<div class="para" id="POIUO-4-2-1-1-3-1">If <span class="process-math">\(T \in \Lc(V)\)</span> is self-adjoint and <span class="process-math">\(b,
+c \in \R{}\)</span> are such that <span class="process-math">\(b^2 \lt 4 c\text{,}\)</span> then <span class="process-math">\(T^2 + b T + c I\)</span> is a positive operator, as shown by the proof of <a href="SpectralTheorem.html#x150" class="xref" data-knowl="./knowl/xref/x150.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.22: invertible quadratic expressions">Theorem 7.22</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-4-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#POIUO-4-2-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.29: positive operators"><a tabindex="-1" href="#POIUO-4" title="Copy heading and permalink for Example 7.29: positive operators" aria-label="Copy heading and permalink for Example 7.29: positive operators">🔗</a></div>
+</article></details>
+<article class="definition definition-like" id="sqrt"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">square root.</span>
+</h2>
+<div class="para" id="sqrt-2-1">An operator <span class="process-math">\(R\)</span> is called a <dfn class="terminology">square root</dfn> of an operator <span class="process-math">\(T\)</span> if <span class="process-math">\(R^2 = T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sqrt-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 7.30: square root"><a tabindex="-1" href="#sqrt" title="Copy heading and permalink for Definition 7.30: square root" aria-label="Copy heading and permalink for Definition 7.30: square root">🔗</a></div>
+</article>
+<details id="POIUO-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">square root of an operator.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="POIUO-6-2-1">If <span class="process-math">\(T \in \Lc( \F{3} )\)</span> is defined by <span class="process-math">\(T(z_1, z_2, z_3) = (z_3, 0, 0)\text{,}\)</span> then the operator <span class="process-math">\(R \in \Lc( \F{3} )\)</span> defined by <span class="process-math">\(R(z_1, z_2, z_3) = (z_2, z_3, 0)\)</span> is a square root of <span class="process-math">\(T\)</span> because <span class="process-math">\(R^2 = T\text{,}\)</span> as you can verify.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.31: square root of an operator"><a tabindex="-1" href="#POIUO-6" title="Copy heading and permalink for Example 7.31: square root of an operator" aria-label="Copy heading and permalink for Example 7.31: square root of an operator">🔗</a></div>
+</article></details>
+<details id="POIUO-7" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Aside</span></h2></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="POIUO-7-1">Because positive operators correspond to nonnegative numbers, better terminology would use the term nonnegative operators. However, operator theorists consistently call these positive operators, so we follow that custom. Some mathematicians use the term <em class="emphasis">positive semidefinite operator</em>,  which means the same as positive operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para" id="POIUO-8">The characterizations of the positive operators in the next result correspond to characterizations of the nonnegative numbers among <span class="process-math">\(\C{}\text{.}\)</span> Specifically, a number <span class="process-math">\(z \in \C{}\)</span> is nonnegative if and only if it has a nonnegative square root, corresponding to condition (d). Also, <span class="process-math">\(z\)</span> is nonnegative if and only if it has a real square root, corresponding to condition (e). Finally, <span class="process-math">\(z\)</span> is nonnegative if and only if there exists <span class="process-math">\(w \in \C{}\)</span> such that <span class="process-math">\(z = \bar{w}w\text{,}\)</span> corresponding to condition (f). See <a href="POIUO.html#Grammian" class="xref" data-knowl="./knowl/xref/Grammian.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.3.20">Exercise 7.3.20</a> for another condition that is equivalent to being a positive operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x197"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">characterizations of positive operators.</span>
+</h2>
+<div class="para logical" id="x197-2-1">
+<div class="para">Let <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Then the following are equivalent. </div>
+<ol class="decimal" id="x197-2-1-3">
+<li id="x197-2-1-3-1">
+<div class="para" id="x197-2-1-3-1-1">
+<span class="process-math">\(T\)</span> is a positive operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x197-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#x197-2-1-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="x197-2-1-3-2">
+<div class="para" id="x197-2-1-3-2-1">
+<span class="process-math">\(T\)</span> is self-adjoint and all eigenvalues of <span class="process-math">\(T\)</span> are nonnegative.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x197-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#x197-2-1-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="x197-2-1-3-3">
+<div class="para" id="x197-2-1-3-3-1">With respect to some orthonormal basis of <span class="process-math">\(V{}\text{,}\)</span> the matrix of <span class="process-math">\(T\)</span> is a diagonal matrix with only nonnegative numbers on the diagonal.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x197-2-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#x197-2-1-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="x197-2-1-3-4">
+<div class="para" id="x197-2-1-3-4-1">
+<span class="process-math">\(T\)</span> has a positive square root.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x197-2-1-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#x197-2-1-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="x197-2-1-3-5">
+<div class="para" id="x197-2-1-3-5-1">
+<span class="process-math">\(T\)</span> has a self-adjoint square root.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x197-2-1-3-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5"><a tabindex="-1" href="#x197-2-1-3-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="x197-2-1-3-6">
+<div class="para" id="x197-2-1-3-6-1">
+<span class="process-math">\(T = R^*R\)</span> for some <span class="process-math">\(R \in \Lc(V)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x197-2-1-3-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 6"><a tabindex="-1" href="#x197-2-1-3-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x197-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.32: characterizations of positive operators"><a tabindex="-1" href="#x197" title="Copy heading and permalink for Theorem 7.32: characterizations of positive operators" aria-label="Copy heading and permalink for Theorem 7.32: characterizations of positive operators">🔗</a></div>
+</article>
+<details id="POIUO-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="POIUO-10-1">We will prove that (a) <span class="process-math">\(\Rightarrow\)</span> (b) <span class="process-math">\(\Rightarrow\)</span> (c) <span class="process-math">\(\Rightarrow\)</span> (d) <span class="process-math">\(\Rightarrow\)</span> (e) <span class="process-math">\(\Rightarrow\)</span> (f) <span class="process-math">\(\Rightarrow\)</span> (a).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="POIUO-10-2">
+<div class="para">First suppose (a) holds, so that <span class="process-math">\(T\)</span> is positive, which implies that <span class="process-math">\(T\)</span> is self-adjoint (by definition of positive operator). To prove the other condition in (b), suppose <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span> Let <span class="process-math">\(v\)</span> be an eigenvector of <span class="process-math">\(T\)</span> corresponding to <span class="process-math">\(\lambda\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="POIUO-10-2-8">
+\begin{equation*}
+0 \le \langle Tv, v \rangle  = \langle \lambda v, v \rangle  = \lambda \langle v, v \rangle .
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="POIUO-10-3">Thus <span class="process-math">\(\lambda\)</span> is a nonnegative number. Hence (b) holds, showing that (a) implies (b).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-10-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="POIUO-10-4">Now suppose (b) holds, so that <span class="process-math">\(T\)</span> is self-adjoint and all eigenvalues of <span class="process-math">\(T\)</span> are nonnegative. By the spectral theorem ( <a href="SpectralTheorem.html#x86" class="xref" data-knowl="./knowl/xref/x86.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.24: real spectral theorem">Theorem 7.24</a> and <a href="SpectralTheorem.html#x85" class="xref" data-knowl="./knowl/xref/x85.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.26: complex spectral theorem">Theorem 7.26</a>), there is an orthonormal basis <span class="process-math">\(e_1, \dots,
+e_n\)</span> of <span class="process-math">\(V\)</span> consisting of eigenvectors of <span class="process-math">\(T{}\text{.}\)</span> Let <span class="process-math">\(\lambda_1, \dots, \lambda_n\)</span> be the eigenvalues of <span class="process-math">\(T\)</span> corresponding to <span class="process-math">\(e_1, \dots, e_n\text{;}\)</span> thus each <span class="process-math">\(\lambda_k\)</span> is a nonnegative number. The matrix of <span class="process-math">\(T\)</span> with respect to <span class="process-math">\(e_1, \ldots,
+e_n\)</span> is the diagonal matrix with <span class="process-math">\(\lambda_1, \ldots, \lambda_n\)</span> on the diagonal, which shows that (b) implies (c).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-10-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="POIUO-10-5">
+<div class="para">Now suppose (c) holds. Suppose <span class="process-math">\(e_1, \ldots,
+e_n\)</span> is an orthonormal basis of <span class="process-math">\(V\)</span> such that the matrix of <span class="process-math">\(T\)</span> with respect to this basis is a diagonal matrix with nonnegative numbers <span class="process-math">\(\lambda_1, \ldots, \lambda_n\)</span> on the diagonal. The linear map lemma <a href="vslinear.html#x3linearmap" class="xref" data-knowl="./knowl/xref/x3linearmap.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.4: linear map lemma">Theorem 3.4</a> implies that there exists <span class="process-math">\(R \in \Lc(V)\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x3linearmap.html" id="POIUO-10-5-7">
+\begin{equation*}
+Re_k = \sqrt{\lambda_k} e_k
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(k = 1, \dots, n\text{.}\)</span> As you should verify, <span class="process-math">\(R\)</span> is a positive operator. Furthermore, <span class="process-math">\(R^2 e_k = \lambda_k e_k = Te_k\)</span> for each <span class="process-math">\(k\text{,}\)</span> which implies that <span class="process-math">\(R^2 = T{}\text{.}\)</span> Thus <span class="process-math">\(R\)</span> is a positive square root of <span class="process-math">\(T{}\text{.}\)</span> Hence (d) holds, which shows that (c) implies (d).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-10-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="POIUO-10-6">Every positive operator is self-adjoint (by definition of positive operator). Thus (d) implies (e). }<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-10-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="POIUO-10-7">Now suppose (e) holds, meaning that there exists a self-adjoint operator <span class="process-math">\(R\)</span> on <span class="process-math">\(V\)</span> such that <span class="process-math">\(T = R^2{}\text{.}\)</span> Then <span class="process-math">\(T = R^* R\)</span> \big(because <span class="process-math">\(R^* = R\)</span>\big). Hence (e) implies (f).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-10-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="POIUO-10-8">
+<div class="para">Finally, suppose (f) holds. Let <span class="process-math">\(R \in \Lc(V)\)</span> be such that <span class="process-math">\(T = R^*R\text{.}\)</span> Then <span class="process-math">\(T^* = ( R^*R )^* = R^*( R^* )^* = R^*R = T{}\text{.}\)</span> Hence <span class="process-math">\(T\)</span> is self-adjoint. To complete the proof that (a) holds, note that</div>
+<div class="displaymath process-math" id="POIUO-10-8-5">
+\begin{equation*}
+\langle Tv, v \rangle  = \langle R^*Rv, v \rangle  = \langle Rv, Rv \rangle  \ge 0
+\end{equation*}
+</div>
+<div class="para">for every <span class="process-math">\(v \in V{}\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is positive, showing that (f) implies (a).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-10-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.3.1"><a tabindex="-1" href="#POIUO-10" title="Copy heading and permalink for Proof 7.3.1" aria-label="Copy heading and permalink for Proof 7.3.1">🔗</a></div>
+</article></details>
+<div class="para" id="POIUO-11">Every nonnegative number has a unique nonnegative square root. The next result shows that positive operators enjoy a similar property.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x329"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">each positive operator has only one positive square root.</span>
+</h2>
+<div class="para" id="x329-2-1">Every positive operator on <span class="process-math">\(V\)</span> has a unique positive square root.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x329-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.33: each positive operator has only one positive square root"><a tabindex="-1" href="#x329" title="Copy heading and permalink for Theorem 7.33: each positive operator has only one positive square root" aria-label="Copy heading and permalink for Theorem 7.33: each positive operator has only one positive square root">🔗</a></div>
+</article>
+<details id="POIUO-13" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Aside</span></h2></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="POIUO-13-1">A positive operator can have infinitely many square roots (although only one of them can be positive) . For example, the identity operator on <span class="process-math">\(V\)</span> has infinitely many square roots if <span class="process-math">\(\dim V &gt; 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<details id="POIUO-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="POIUO-14-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is positive. Suppose <span class="process-math">\(v \in V\)</span> is an eigenvector of <span class="process-math">\(T{}\text{.}\)</span> Hence there exists a real number <span class="process-math">\(\lambda \ge 0\)</span> such that <span class="process-math">\(Tv = \lambda v\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="POIUO-14-2">Let <span class="process-math">\(R\)</span> be a positive square root of <span class="process-math">\(T{}\text{.}\)</span> We will prove that <span class="process-math">\(Rv = \sqrt{\lambda}v\text{.}\)</span> This will imply that the behavior of <span class="process-math">\(R\)</span> on the eigenvectors of <span class="process-math">\(T\)</span> is uniquely determined. Because there is a basis of <span class="process-math">\(V\)</span> consisting of eigenvectors of <span class="process-math">\(T\)</span> (by the spectral theorem), this will imply that <span class="process-math">\(R\)</span> is uniquely determined.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-14-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="POIUO-14-3">To prove that <span class="process-math">\(Rv = \sqrt{\lambda}v\text{,}\)</span> note that the spectral theorem asserts that there is an orthonormal basis <span class="process-math">\(e_1, \dots,
+e_n\)</span> of <span class="process-math">\(V\)</span> consisting of eigenvectors of <span class="process-math">\(R\text{.}\)</span> Because <span class="process-math">\(R\)</span> is a positive operator, all its eigenvalues are nonnegative. Thus there exist nonnegative numbers <span class="process-math">\(\lambda_1, \dots, \lambda_n\)</span> such that <span class="process-math">\(Re_k = \sqrt{\lambda_k} e_k\)</span> for each <span class="process-math">\(k = 1, \dots, n\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-14-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="POIUO-14-4">
+<div class="para">Because <span class="process-math">\(e_1, \dots, e_n\)</span> is a basis of <span class="process-math">\(V{}\text{,}\)</span> we can write</div>
+<div class="displaymath process-math" id="POIUO-14-4-3">
+\begin{equation*}
+v = a_1 e_1 + \dots + a_n e_n
+\end{equation*}
+</div>
+<div class="para">for some numbers <span class="process-math">\(a_1, \dots, a_n \in \F{}{}\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="POIUO-14-4-5">
+\begin{equation*}
+Rv = a_1 \sqrt{\lambda_1} e_1 + \dots + a_n \sqrt{\lambda_n} e_n.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-14-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="POIUO-14-5">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="POIUO-14-5-1">
+\begin{equation*}
+\lambda v = Tv = R^2v = a_1 \lambda_1 e_1 + \dots + a_n \lambda_n e_n.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-14-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="POIUO-14-6">
+<div class="para">The equation above implies that</div>
+<div class="displaymath process-math" id="POIUO-14-6-1">
+\begin{equation*}
+a_1 \lambda e_1 + \dots + a_n \lambda e_n = a_1 \lambda_1 e_1 + \dots + a_n \lambda_n e_n.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-14-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="POIUO-14-7">
+<div class="para">Thus <span class="process-math">\(a_k(\lambda - \lambda_k) = 0\)</span> for each <span class="process-math">\(k = 1, \dots, n\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="POIUO-14-7-3">
+\begin{equation*}
+v = \sum_{\{k:\lambda_k = \lambda\}} a_k e_k.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-14-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="POIUO-14-8">
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="POIUO-14-8-1">
+\begin{equation*}
+Rv = \sum_{\{k:\lambda_k = \lambda\}} a_k \sqrt{\lambda} e_k = \sqrt{\lambda} v,
+\end{equation*}
+</div>
+<div class="para">as desired.}</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-14-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.3.2"><a tabindex="-1" href="#POIUO-14" title="Copy heading and permalink for Proof 7.3.2" aria-label="Copy heading and permalink for Proof 7.3.2">🔗</a></div>
+</article></details>
+<div class="para" id="POIUO-15">The notation defined below makes sense thanks to the result above.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="principle theorem-like" id="POIUO-16"><h2 class="heading">
+<span class="type">Principle</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(\sqrt{T}\)</span>.</span>
+</h2>
+<div class="para" id="POIUO-16-2-1">For <span class="process-math">\(T\)</span> a positive operator, <span class="process-math">\(\sqrt{T}\)</span> denotes the unique positive square root of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Principle 7.34: \sqrt{T}"><a tabindex="-1" href="#POIUO-16" title="Copy heading and permalink for Principle 7.34: \sqrt{T}" aria-label="Copy heading and permalink for Principle 7.34: \sqrt{T}">🔗</a></div>
+</article>
+<details id="POIUO-17" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.35</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">square root of positive operators.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="POIUO-17-2-1">
+<div class="para">Define operators <span class="process-math">\(S, T\)</span> on <span class="process-math">\(\R 2\)</span> (with the usual Euclidean inner product) by</div>
+<div class="displaymath process-math" id="POIUO-17-2-1-3">
+\begin{equation*}
+S(x, y) = (x, 2y) \andd T(x, y) = (x+y, x+y).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="POIUO-17-2-2">
+<div class="para">Then with respect to the standard basis of <span class="process-math">\(\R 2\)</span> we have</div>
+<div class="displaymath process-math" id="MST">
+\begin{equation}
+\M(S) = \begin{pmatrix} 1 \amp  0 \\ 0 \amp  2\end{pmatrix} \andd \M(T) = \begin{pmatrix} 1 \amp  1 \\ 1 \amp  1\end{pmatrix}.\tag{7.7}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-17-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="POIUO-17-2-3">Each of these matrices equals its transpose; thus <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> are self-adjoint.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-17-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="POIUO-17-2-4">
+<div class="para">If <span class="process-math">\((x, y) \in \R2\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="POIUO-17-2-4-2">
+\begin{equation*}
+\langle  S(x, y), (x, y)  \rangle  = x^2 + 2y^2 \ge 0
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="POIUO-17-2-4-3">
+\begin{equation*}
+\langle  T(x, y), (x, y)  \rangle  = x^2 + 2 xy + y^2 = (x+y)^2 \ge 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-17-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="POIUO-17-2-5">Thus <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> are positive operators.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-17-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="POIUO-17-2-6">
+<div class="para">The standard basis of <span class="process-math">\(\R2\)</span> is an orthonormal basis consisting of eigenvectors of <span class="process-math">\(S\text{.}\)</span> Note that</div>
+<div class="displaymath process-math" id="POIUO-17-2-6-3">
+\begin{equation*}
+(  \tfrac{1}{\sqrt{2}}, \tfrac{1}{\sqrt{2}} ), (  \tfrac{1}{\sqrt{2}}, -\tfrac{1}{\sqrt{2}} )
+\end{equation*}
+</div>
+<div class="para">is an orthonormal basis of eigenvectors of <span class="process-math">\(T\text{,}\)</span> with eigenvalue <span class="process-math">\(2\)</span> for the first eigenvector and eigenvalue <span class="process-math">\(0\)</span> for the second eigenvector. Thus <span class="process-math">\(\sqrt{T}\)</span> has the same eigenvectors, with eigenvalues <span class="process-math">\(\sqrt{2}\)</span> and <span class="process-math">\(0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-17-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="POIUO-17-2-7">
+<div class="para">You can verify that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/MST.html" id="POIUO-17-2-7-1">
+\begin{equation*}
+\M( \! \sqrt{S}    ) = \begin{pmatrix}1 \amp  0 \\ 0 \amp  \sqrt{2} \end{pmatrix} \andd \M( \! \sqrt{T}    ) = \begin{pmatrix}\frac{1}{\sqrt{2}} \amp  \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \amp  \frac{1}{\sqrt{2}} \end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">with respect to the standard basis by showing that the squares of the matrices above are the matrices in <a href="POIUO.html#MST" class="xref" data-knowl="./knowl/xref/MST.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.7">(7.7)</a> and that each matrix above is the matrix of a positive operator.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-17-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.35: square root of positive operators"><a tabindex="-1" href="#POIUO-17" title="Copy heading and permalink for Example 7.35: square root of positive operators" aria-label="Copy heading and permalink for Example 7.35: square root of positive operators">🔗</a></div>
+</article></details>
+<div class="para" id="POIUO-18">The statement of the next result does not involve a square root, but the clean proof makes nice use of the square root of a positive operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x7TvvZero"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.36</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(T\)</span> positive and  <span class="process-math">\(\langle Tv, v \rangle  = 0 \implies Tv = 0\)</span>.</span>
+</h2>
+<div class="para" id="x7TvvZero-2-1">Suppose <span class="process-math">\(T\)</span> is a positive operator on <span class="process-math">\(V\)</span> and <span class="process-math">\(v \in V\)</span> is such that <span class="process-math">\(\langle Tv, v \rangle = 0\text{.}\)</span> Then <span class="process-math">\(Tv = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7TvvZero-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.36: T positive and  \langle Tv, v \rangle  = 0 \implies Tv = 0"><a tabindex="-1" href="#x7TvvZero" title="Copy heading and permalink for Theorem 7.36: T positive and  \langle Tv, v \rangle  = 0 \implies Tv = 0" aria-label="Copy heading and permalink for Theorem 7.36: T positive and  \langle Tv, v \rangle  = 0 \implies Tv = 0">🔗</a></div>
+</article>
+<details id="POIUO-20" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="POIUO-20-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="POIUO-20-1-1">
+\begin{equation*}
+0 = \langle Tv, v \rangle  = \langle \sqrt{T} \sqrt{T} v, v \rangle  = \langle \sqrt T v, \sqrt T v \rangle  = \lVert \sqrt T v \rVert ^2{}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="POIUO-20-2">Hence <span class="process-math">\(\sqrt T v = 0\text{.}\)</span> Thus <span class="process-math">\(Tv = \sqrt T( \sqrt T v ) = 0\text{,}\)</span> as desired.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.3.3"><a tabindex="-1" href="#POIUO-20" title="Copy heading and permalink for Proof 7.3.3" aria-label="Copy heading and permalink for Proof 7.3.3">🔗</a></div>
+</article></details>
+<section class="exercises" id="POIUO-21">
+<h2 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h2>
+<article class="exercise exercise-like" id="POIUO-21-2"><h3 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-2-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that if both <span class="process-math">\(T\)</span> and <span class="process-math">\(-T\)</span> are positive operators, then <span class="process-math">\(T = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.1"><a tabindex="-1" href="#POIUO-21-2" title="Copy heading and permalink for Exercise 7.3.1" aria-label="Copy heading and permalink for Exercise 7.3.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-3"><h3 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="POIUO-21-3-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc( \F4 )\)</span> is the operator whose matrix (with respect to the standard basis) is</div>
+<div class="displaymath process-math" id="POIUO-21-3-1-1-2">
+\begin{equation*}
+\begin{pmatrix}2 \amp  -1 \amp  0 \amp  0 \\ -1 \amp  2 \amp  -1 \amp  0\\ 0 \amp  -1 \amp  2 \amp  - 1 \\ 0 \amp  0 \amp  -1 \amp  2 \end{pmatrix} .
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="POIUO-21-3-1-2">Show that <span class="process-math">\(T\)</span> is an invertible positive operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.2"><a tabindex="-1" href="#POIUO-21-3" title="Copy heading and permalink for Exercise 7.3.2" aria-label="Copy heading and permalink for Exercise 7.3.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-4"><h3 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-4-1-1">Suppose <span class="process-math">\(n\)</span> is a positive integer and <span class="process-math">\(T \in \Lc( \F n )\)</span> is the operator whose matrix (with respect to the standard basis) consists of all <span class="process-math">\(1\)</span>’s. Show that <span class="process-math">\(T\)</span> is a positive operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.3"><a tabindex="-1" href="#POIUO-21-4" title="Copy heading and permalink for Exercise 7.3.3" aria-label="Copy heading and permalink for Exercise 7.3.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-5"><h3 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-5-1-1">Suppose <span class="process-math">\(n\)</span> is an integer with <span class="process-math">\(n &gt; 1\text{.}\)</span> Show that there exists an <span class="process-math">\(n\)</span>-by-<span class="process-math">\(n\)</span> matrix <span class="process-math">\(A\)</span> such that all of the entries of <span class="process-math">\(A\)</span> are positive numbers and <span class="process-math">\(A = A^*{}\text{,}\)</span> but the operator on <span class="process-math">\(\F n\)</span> whose matrix (with respect to the standard basis) equals <span class="process-math">\(A\)</span> is not a positive operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.4"><a tabindex="-1" href="#POIUO-21-5" title="Copy heading and permalink for Exercise 7.3.4" aria-label="Copy heading and permalink for Exercise 7.3.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-6"><h3 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-6-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is self-adjoint. Prove that <span class="process-math">\(T\)</span> is a positive operator if and only if for every orthonormal basis <span class="process-math">\(e_1, \ldots,
+e_n\)</span> of <span class="process-math">\(V{}\text{,}\)</span> all entries on the diagonal of <span class="process-math">\(\M( T, (e_1, \ldots,
+e_n) )\)</span> are nonnegative numbers.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.5"><a tabindex="-1" href="#POIUO-21-6" title="Copy heading and permalink for Exercise 7.3.5" aria-label="Copy heading and permalink for Exercise 7.3.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-7"><h3 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-7-1-1">Prove that the sum of two positive operators on <span class="process-math">\(V\)</span> is a positive operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.6"><a tabindex="-1" href="#POIUO-21-7" title="Copy heading and permalink for Exercise 7.3.6" aria-label="Copy heading and permalink for Exercise 7.3.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-8"><h3 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-8-1-1">Suppose <span class="process-math">\(S \in \Lc(V)\)</span> is an invertible positive operator and <span class="process-math">\(T \in \Lc(V)\)</span> is a positive operator. Prove that <span class="process-math">\(S+T\)</span> is invertible.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.7"><a tabindex="-1" href="#POIUO-21-8" title="Copy heading and permalink for Exercise 7.3.7" aria-label="Copy heading and permalink for Exercise 7.3.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-9"><h3 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-9-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> is a positive operator if and only if the pseudoinverse <span class="process-math">\(T^\dagger\)</span> is a positive operator. <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.8"><a tabindex="-1" href="#POIUO-21-9" title="Copy heading and permalink for Exercise 7.3.8" aria-label="Copy heading and permalink for Exercise 7.3.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-10"><h3 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-10-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is a positive operator and <span class="process-math">\(S \in \Lc(W{}, V)\text{.}\)</span> Prove that <span class="process-math">\(S^* T S\)</span> is a positive operator on <span class="process-math">\(W{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.9"><a tabindex="-1" href="#POIUO-21-10" title="Copy heading and permalink for Exercise 7.3.9" aria-label="Copy heading and permalink for Exercise 7.3.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-11"><h3 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="POIUO-21-11-1-1">
+<div class="para">Suppose <span class="process-math">\(T\)</span> is a positive operator on <span class="process-math">\(V{}\text{.}\)</span> Suppose <span class="process-math">\(v, w \in V\)</span> are such that</div>
+<div class="displaymath process-math" id="POIUO-21-11-1-1-4">
+\begin{equation*}
+Tv = w \andd Tw = v.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="POIUO-21-11-1-2">Prove that <span class="process-math">\(v = w\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-11-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.10"><a tabindex="-1" href="#POIUO-21-11" title="Copy heading and permalink for Exercise 7.3.10" aria-label="Copy heading and permalink for Exercise 7.3.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-12"><h3 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-12-1-1">Suppose <span class="process-math">\(T\)</span> is a positive operator on <span class="process-math">\(V\)</span> and <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V\)</span> invariant under <span class="process-math">\(T{}\text{.}\)</span> Prove that <span class="process-math">\(T|_U \in \Lc(U)\)</span> is a positive operator on <span class="process-math">\(U\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.11"><a tabindex="-1" href="#POIUO-21-12" title="Copy heading and permalink for Exercise 7.3.11" aria-label="Copy heading and permalink for Exercise 7.3.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-13"><h3 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-13-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is a positive operator. Prove that <span class="process-math">\(T^k\)</span> is a positive operator for every positive integer <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.12"><a tabindex="-1" href="#POIUO-21-13" title="Copy heading and permalink for Exercise 7.3.12" aria-label="Copy heading and permalink for Exercise 7.3.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-14"><h3 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="POIUO-21-14-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is self-adjoint and <span class="process-math">\(\alpha \in \R{}\text{.}\)</span>
+</div>
+<ol class="decimal" id="POIUO-21-14-1-1-3">
+<li id="POIUO-21-14-1-1-3-1">
+<div class="para" id="POIUO-21-14-1-1-3-1-1">Prove that <span class="process-math">\(T - \alpha I\)</span> is a positive operator if and only if <span class="process-math">\(\alpha\)</span> is less than or equal to every eigenvalue of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-14-1-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.3.13.1"><a tabindex="-1" href="#POIUO-21-14-1-1-3-1" title="Copy heading and permalink for Item 7.3.13.1" aria-label="Copy heading and permalink for Item 7.3.13.1">🔗</a></div>
+</li>
+<li id="POIUO-21-14-1-1-3-2">
+<div class="para" id="POIUO-21-14-1-1-3-2-1">Prove that <span class="process-math">\(\alpha I - T\)</span> is a positive operator if and only if <span class="process-math">\(\alpha\)</span> is greater than or equal to every eigenvalue of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-14-1-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.3.13.2"><a tabindex="-1" href="#POIUO-21-14-1-1-3-2" title="Copy heading and permalink for Item 7.3.13.2" aria-label="Copy heading and permalink for Item 7.3.13.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.13"><a tabindex="-1" href="#POIUO-21-14" title="Copy heading and permalink for Exercise 7.3.13" aria-label="Copy heading and permalink for Exercise 7.3.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-15"><h3 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="POIUO-21-15-1-1">
+<div class="para">Suppose <span class="process-math">\(T\)</span> is a positive operator on <span class="process-math">\(V\)</span> and <span class="process-math">\(v_1, \ldots,
+v_m \in V{}\text{.}\)</span> Prove that</div>
+<div class="displaymath process-math" id="POIUO-21-15-1-1-4">
+\begin{equation*}
+\sum_{j=1}^m \sum_{k=1}^m \langle Tv_k, v_j \rangle  \ge 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.14"><a tabindex="-1" href="#POIUO-21-15" title="Copy heading and permalink for Exercise 7.3.14" aria-label="Copy heading and permalink for Exercise 7.3.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-16"><h3 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="POIUO-21-16-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is self-adjoint. Prove that there exist positive operators <span class="process-math">\(A, B \in \Lc(V)\)</span> such that</div>
+<div class="displaymath process-math" id="POIUO-21-16-1-1-3">
+\begin{equation*}
+T = A - B \andd \sqrt{T^* T} = A + B \andd AB = BA = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.15"><a tabindex="-1" href="#POIUO-21-16" title="Copy heading and permalink for Exercise 7.3.15" aria-label="Copy heading and permalink for Exercise 7.3.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-17"><h3 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="POIUO-21-17-1-1">
+<div class="para">Suppose <span class="process-math">\(T\)</span> is a positive operator on <span class="process-math">\(V{}\text{.}\)</span> Prove that</div>
+<div class="displaymath process-math" id="POIUO-21-17-1-1-3">
+\begin{equation*}
+\ker \sqrt{T} = \ker T \andd \ran \sqrt{T} = \ran T{}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.16"><a tabindex="-1" href="#POIUO-21-17" title="Copy heading and permalink for Exercise 7.3.16" aria-label="Copy heading and permalink for Exercise 7.3.16">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2psqrt"><h3 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="x2psqrt-1-1">Suppose that <span class="process-math">\(T \in \Lc(V)\)</span> is a positive operator. Prove that there exists a polynomial <span class="process-math">\(p\)</span> with real coefficients such that <span class="process-math">\(\sqrt{T} = p(T)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2psqrt-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.17"><a tabindex="-1" href="#x2psqrt" title="Copy heading and permalink for Exercise 7.3.17" aria-label="Copy heading and permalink for Exercise 7.3.17">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2ProdPos"><h3 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="x2ProdPos-1-1">Suppose <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> are positive operators on <span class="process-math">\(V{}\text{.}\)</span> Prove that <span class="process-math">\(ST\)</span> is a positive operator if and only if <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> commute. <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2ProdPos-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.18"><a tabindex="-1" href="#x2ProdPos" title="Copy heading and permalink for Exercise 7.3.18" aria-label="Copy heading and permalink for Exercise 7.3.18">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-20"><h3 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-20-1-1">Show that the identity operator on <span class="process-math">\(\F{2}\)</span> has infinitely many self-adjoint square roots.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.19"><a tabindex="-1" href="#POIUO-21-20" title="Copy heading and permalink for Exercise 7.3.19" aria-label="Copy heading and permalink for Exercise 7.3.19">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="Grammian"><h3 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="Grammian-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(e_1, \ldots,
+e_n\)</span> is an orthonormal basis of <span class="process-math">\(V{}\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> is a positive operator if and only if there exist <span class="process-math">\(v_1, \ldots,
+v_n \in V\)</span> such that</div>
+<div class="displaymath process-math" id="Grammian-1-1-6">
+\begin{equation*}
+\langle Te_k, e_j \rangle  = \langle v_k, v_j \rangle
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(j, k = 1, \ldots, n\text{.}\)</span> Note: The numbers <span class="process-math">\(\{ \langle Te_k, e_j \rangle  \} _{j, k = 1, \ldots,
+n}\)</span> are the entries in the matrix of <span class="process-math">\(T\)</span> with respect to the orthonormal basis <span class="process-math">\(e_1, \ldots, e_n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#Grammian-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.20"><a tabindex="-1" href="#Grammian" title="Copy heading and permalink for Exercise 7.3.20" aria-label="Copy heading and permalink for Exercise 7.3.20">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-22"><h3 class="heading"><span class="codenumber">21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="POIUO-21-22-1-1">
+<div class="para">Suppose <span class="process-math">\(n\)</span> is a positive integer. The <span class="process-math">\(n\)</span>-by-<span class="process-math">\(n\)</span> <dfn class="terminology">Hilbert matrix</dfn> is the <span class="process-math">\(n\)</span>-by-<span class="process-math">\(n\)</span> matrix whose entry in row <span class="process-math">\(j\text{,}\)</span> column <span class="process-math">\(k\)</span> is <span class="process-math">\(\frac{1}{j+k-1}\text{.}\)</span> Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is an operator whose matrix with respect to some orthonormal basis of <span class="process-math">\(V\)</span> is the <span class="process-math">\(n\)</span>-by-<span class="process-math">\(n\)</span> Hilbert matrix. Prove that <span class="process-math">\(T\)</span> is a positive invertible operator.  Note: Example: The <span class="process-math">\(4\)</span>-by-<span class="process-math">\(4\)</span> Hilbert matrix is</div>
+<div class="displaymath process-math" id="POIUO-21-22-1-1-18">
+\begin{equation*}
+\begin{pmatrix}1 \amp  \frac{1}{2} \amp  \frac{1}{3} \amp  \frac{1}{4} \\ \frac{1}{2} \amp  \frac{1}{3} \amp  \frac{1}{4} \amp  \frac{1}{5}\\ \frac{1}{3} \amp  \frac{1}{4} \amp  \frac{1}{5} \amp  \frac{1}{6}\\ \frac{1}{4} \amp  \frac{1}{5} \amp  \frac{1}{6} \amp  \frac{1}{7} \end{pmatrix} .
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.21"><a tabindex="-1" href="#POIUO-21-22" title="Copy heading and permalink for Exercise 7.3.21" aria-label="Copy heading and permalink for Exercise 7.3.21">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-23"><h3 class="heading"><span class="codenumber">22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-23-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is a positive operator and <span class="process-math">\(u \in V\)</span> is such that <span class="process-math">\(\lVert u \rVert = 1\)</span> and <span class="process-math">\(\lVert Tu \rVert \ge \lVert Tv \rVert\)</span> for all <span class="process-math">\(v \in V\)</span> with <span class="process-math">\(\lVert v \rVert = 1\text{.}\)</span> Show that <span class="process-math">\(u\)</span> is an eigenvector of <span class="process-math">\(T\)</span> corresponding to the largest eigenvalue of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-23-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.22"><a tabindex="-1" href="#POIUO-21-23" title="Copy heading and permalink for Exercise 7.3.22" aria-label="Copy heading and permalink for Exercise 7.3.22">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-24"><h3 class="heading"><span class="codenumber">23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="POIUO-21-24-1-1">
+<div class="para">For <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(u, v \in V{}\text{,}\)</span> define <span class="process-math">\(\langle u, v \rangle _T\)</span> by <span class="process-math">\(\langle u, v \rangle _T = \langle Tu, v \rangle\text{.}\)</span>
+</div>
+<ol class="decimal" id="POIUO-21-24-1-1-5">
+<li id="POIUO-21-24-1-1-5-1">
+<div class="para" id="POIUO-21-24-1-1-5-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that <span class="process-math">\(\langle \cdot, \cdot \rangle _T\)</span> is an inner product on <span class="process-math">\(V\)</span> if and only if <span class="process-math">\(T\)</span> is an invertible positive operator (with respect to the original inner product <span class="process-math">\(\langle \cdot, \cdot \rangle\)</span>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-24-1-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.3.23.1"><a tabindex="-1" href="#POIUO-21-24-1-1-5-1" title="Copy heading and permalink for Item 7.3.23.1" aria-label="Copy heading and permalink for Item 7.3.23.1">🔗</a></div>
+</li>
+<li id="POIUO-21-24-1-1-5-2">
+<div class="para" id="POIUO-21-24-1-1-5-2-1">Prove that every inner product on <span class="process-math">\(V\)</span> is of the form <span class="process-math">\(\langle \cdot, \cdot \rangle _T\)</span> for some positive invertible operator <span class="process-math">\(T \in \Lc(V)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-24-1-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.3.23.2"><a tabindex="-1" href="#POIUO-21-24-1-1-5-2" title="Copy heading and permalink for Item 7.3.23.2" aria-label="Copy heading and permalink for Item 7.3.23.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-24-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.23"><a tabindex="-1" href="#POIUO-21-24" title="Copy heading and permalink for Exercise 7.3.23" aria-label="Copy heading and permalink for Exercise 7.3.23">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-25"><h3 class="heading"><span class="codenumber">24<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="POIUO-21-25-1-1">
+<div class="para">Suppose <span class="process-math">\(S\)</span> and <span class="process-math">\(T\)</span> are positive operators on <span class="process-math">\(V{}\text{.}\)</span> Prove that</div>
+<div class="displaymath process-math" id="POIUO-21-25-1-1-4">
+\begin{equation*}
+\ker(S+T) = \ker S \cap \ker T{}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-25-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.24"><a tabindex="-1" href="#POIUO-21-25" title="Copy heading and permalink for Exercise 7.3.24" aria-label="Copy heading and permalink for Exercise 7.3.24">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="POIUO-21-26"><h3 class="heading"><span class="codenumber">25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="POIUO-21-26-1-1">Let <span class="process-math">\(T\)</span> be the second derivative operator in <a href="selfadjoint_normal.html#x1100" class="xref" data-knowl="./knowl/xref/x1100.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.1.3.31">Exercise 7.1.3.31</a>(b) in <a href="selfadjoint_normal.html" class="internal" title="Section 7.1: Self-Adjoint and Normal Operators">Section 7.1</a>. Show that <span class="process-math">\(-T\)</span> is a positive operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#POIUO-21-26-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.3.25"><a tabindex="-1" href="#POIUO-21-26" title="Copy heading and permalink for Exercise 7.3.25" aria-label="Copy heading and permalink for Exercise 7.3.25">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 7.3: Exercises"><a tabindex="-1" href="#POIUO-21" title="Copy heading and permalink for Exercises 7.3: Exercises" aria-label="Copy heading and permalink for Exercises 7.3: Exercises">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 7.3: Positive Operators"><a tabindex="-1" href="#POIUO" title="Copy heading and permalink for Section 7.3: Positive Operators" aria-label="Copy heading and permalink for Section 7.3: Positive Operators">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="SpectralTheorem.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="x3QR.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Invariant Subspaces</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-0 { system: extends lower-alpha; prefix: '('; suffix: ') '; }
+</style>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Linear algebra done right">
+<meta property="og:title" content="Linear algebra done right">
+<meta property="book:title" content="Linear algebra done right">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.12';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.561f7165d9bf3626.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Linear algebra done right</span></a></div>
+<p class="byline">Sheldon Axler</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="eigs-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="eigs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="eigenuppertri.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\tensor}{\otimes}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\andd}{\quad \text{and} \quad}
+\newcommand{\orr}{\quad \text{or} \quad}
+\newcommand{\butt}{\quad \text{but} \quad}
+\newcommand{\fun}[3]{#1 \colon #2 \to #3}
+\newcommand{\nth}{{\text{th}}}
+\newcommand{\C}[1]{\symbf{C}^{#1}}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\R}[1]{\symbf{R}^{#1}}
+\newcommand{\CC}[1]{\symbf{C}^{#1}}
+\newcommand{\FF}[1]{\symbf{F}^{#1}}
+\newcommand{\RR}[1]{\symbf{R}^{#1}}
+\newcommand{\A}{\symcal{A}}
+\newcommand{\B}{\symcal{B}}
+\newcommand{\E}{\symcal{E}}
+\newcommand{\CF}{\symcal{F}}
+\newcommand{\Lc}{\symcal{L}}
+\newcommand{\M}{\symcal{M}}
+\newcommand{\P}{\symcal{P}}
+\newcommand{\sm}{\backslash}
+\newcommand{\Space}{}
+\DeclareMathOperator{\ran}{range}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\perm}{perm}
+\DeclareMathOperator{\vol}{volume}
+\DeclareMathOperator{\ker}{null}
+\newcommand{\tran}[1]{#1^{\text{t}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Linear Algebra Done Right</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="author.html" class="internal"><span class="title">About the Author</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forStudents.html" class="internal"><span class="title">Preface for Students</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forInstructors.html" class="internal"><span class="title">Preface for Instructors</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgments.html" class="internal"><span class="title">Acknowledgments</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="VectorSpaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-VectorSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="VectorSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Rn_and_Cn.html" class="internal"><span class="codenumber">1.1</span> <span class="title"><span class="process-math">\(\R n\)</span> and <span class="process-math">\(\C n\)</span></span></a></div>
+<ul id="ptx-toc-group-Rn_and_Cn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-2" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-3" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Lists</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-4" class="internal"><span class="codenumber">1.1.3</span> <span class="title"><span class="process-math">\(\F n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Rn_and_Cn.html#fields" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Digression on Fields</span></a></div>
+<ul id="ptx-toc-group-fields" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Rn_and_Cn.html#fields-4" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1DefVS.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Definition of Vector Space</span></a></div>
+<ul id="ptx-toc-group-x1DefVS" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1DefVS.html#x1DefVS-46" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1Subspaces.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Subspaces</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-3" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Sums of Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Direct Sums</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4-18" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="fin-dimVS.html" class="internal"><span class="codenumber">2</span> <span class="title">Finite-Dimensional Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-fin-dimVS" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="fin-dimVS-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2spli.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Span and Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2spli.html#x2spli-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Linear Combinations and Span</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2spli.html#x2spli-4" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2spli.html#x2spli-4-26" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bases.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Bases</span></a></div>
+<ul id="ptx-toc-group-bases" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bases.html#bases-26" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="dimension.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Dimension</span></a></div>
+<ul id="ptx-toc-group-dimension" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="dimension.html#dimension-30" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="LinearMaps.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Maps</span></a></div>
+<ul id="ptx-toc-group-LinearMaps" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="LinearMaps-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="vslinear.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Vector Space of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-vslinear" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vslinear.html#vslinear-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Definition and Examples of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="vslinear.html#vslinear-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Algebraic Operations on <span class="process-math">\(\Lc(V, W)\)</span></span></a></div>
+<ul id="ptx-toc-group-vslinear-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="vslinear.html#vslinear-3-20" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3nullspace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Null Spaces and Ranges</span></a></div>
+<ul id="ptx-toc-group-x3nullspace" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-2" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Null Space and Injectivity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-3" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Range and Surjectivity</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Fundamental Theorem of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-x3nullspace-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4-30" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Matrices</span></a></div>
+<ul id="ptx-toc-group-matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-2" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Representing a Linear Map by a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-3" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Addition and Scalar Multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-4" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="matrices.html#matrices-5" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Column–Row Factorization and Rank of a Matrix</span></a></div>
+<ul id="ptx-toc-group-matrices-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="matrices.html#x3think2" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="invertible.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Invertibility and Isomorphisms</span></a></div>
+<ul id="ptx-toc-group-invertible" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-2" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Invertible Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-3" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Isomorphic Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-4" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Linear Maps Thought of as Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="invertible.html#invertible-5" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Change of Basis</span></a></div>
+<ul id="ptx-toc-group-invertible-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="invertible.html#invertible-5-27" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pq.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Products and Quotients of Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-pq" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pq.html#pq-2" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Products of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="pq.html#pq-3" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Quotient Spaces</span></a></div>
+<ul id="ptx-toc-group-pq-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="pq.html#pq-3-29" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="duals.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Duality</span></a></div>
+<ul id="ptx-toc-group-duals" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-2" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Dual Space and Dual Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-3" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Null Space and Range of Dual of Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="duals.html#duals-4" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Matrix of Dual of Linear Map</span></a></div>
+<ul id="ptx-toc-group-duals-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="duals.html#duals-4-9" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="polynomials.html" class="internal"><span class="codenumber">4</span> <span class="title">Polynomials</span></a></div>
+<ul id="ptx-toc-group-polynomials" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="polynomials-25.html" class="internal"><span class="codenumber">4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="eigs.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-eigs">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="eigs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="x5invar.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Invariant Subspaces</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-x5invar">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x5invar.html#x5invar-2" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x5invar.html#x5invar-3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Polynomials Applied to Operators</span></a></div>
+<ul id="ptx-toc-group-x5invar-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x5invar.html#x5invar-3-19" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="eigenuppertri.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Minimal Polynomial</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-2" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Existence of Eigenvalues on Complex Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-3" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Eigenvalues and the Minimal Polynomial</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Eigenvalues on Odd-Dimensional Real Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4-10" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x4utm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Upper-Triangular Matrices</span></a></div>
+<ul id="ptx-toc-group-x4utm" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x4utm.html#x4utm-41" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="diagmat.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Diagonalizable Operators</span></a></div>
+<ul id="ptx-toc-group-diagmat" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-2" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Diagonal Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-3" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Conditions for Diagonalizability</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="diagmat.html#diagmat-4" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Gershgorin Disk Theorem</span></a></div>
+<ul id="ptx-toc-group-diagmat-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="diagmat.html#diagmat-4-12" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2diagmat.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Commuting Operators</span></a></div>
+<ul id="ptx-toc-group-x2diagmat" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2diagmat.html#x2diagmat-30" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="InnerProductSpaces.html" class="internal"><span class="codenumber">6</span> <span class="title">Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-InnerProductSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="InnerProductSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x6ipn.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Inner Products and Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-2" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Inner Products</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x6ipn.html#x6ipn-3" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-3-41" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="orthobases.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Orthonormal Bases</span></a></div>
+<ul id="ptx-toc-group-orthobases" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="orthobases.html#orthobases-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Orthonormal Lists and the Gram–Schmidt Procedure</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="orthobases.html#orthobases-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Linear Functionals on Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-orthobases-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="orthobases.html#orthobases-3-16" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="OrthoMin.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements and Minimization Problems</span></a></div>
+<ul id="ptx-toc-group-OrthoMin" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-2" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-3" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Minimization Problems</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Pseudoinverse</span></a></div>
+<ul id="ptx-toc-group-OrthoMin-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4-27" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="opsinner.html" class="internal"><span class="codenumber">7</span> <span class="title">Operators on Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-opsinner" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="opsinner-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="selfadjoint_normal.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Self-Adjoint and Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-2" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Adjoints</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-3" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Self-Adjoint Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4-18" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpectralTheorem.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Real Spectral Theorem</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Complex Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4-10" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="POIUO.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Positive Operators</span></a></div>
+<ul id="ptx-toc-group-POIUO" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="POIUO.html#POIUO-21" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3QR.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isometries, Unitary Operators, and Matrix Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-2" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Isometries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-3" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-4" class="internal"><span class="codenumber">7.4.3</span> <span class="title">QR Factorization</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3QR.html#x3QR-5" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Cholesky Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3QR.html#x3QR-5-13" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2SVD.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x2SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-2" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2SVD.html#x2SVD-3" class="internal"><span class="codenumber">7.5.2</span> <span class="title">SVD for Linear Maps and for Matrices</span></a></div>
+<ul id="ptx-toc-group-x2SVD-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-3-22" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9SVD.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Consequences of Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x9SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-2" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Norms of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-3" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Approximation by Linear Maps with Lower-Dimensional Range</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-4" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Polar Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-5" class="internal"><span class="codenumber">7.6.4</span> <span class="title">Operators Applied to Ellipsoids and Parallelepipeds</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-6" class="internal"><span class="codenumber">7.6.5</span> <span class="title">Volume via Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9SVD.html#x9SVD-7" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Properties of an Operator as Determined by Its Eigenvalues</span></a></div>
+<ul id="ptx-toc-group-x9SVD-7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-7-5" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="operators_complex_vs.html" class="internal"><span class="codenumber">8</span> <span class="title">Operators on Complex Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-operators_complex_vs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="operators_complex_vs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="geneig.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Generalized Eigenvectors and Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-2" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Null Spaces of Powers of an Operator</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-3" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Generalized Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="geneig.html#geneig-4" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="geneig.html#geneig-4-15" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="decompop.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-decompop" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-2" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Generalized Eigenspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-3" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Multiplicity of an Eigenvalue</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="decompop.html#decompop-4" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Block Diagonal Matrices</span></a></div>
+<ul id="ptx-toc-group-decompop-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="decompop.html#decompop-4-10" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x8geneigde.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Consequences of Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-x8geneigde" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x8geneigde.html#x8geneigde-2" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Square Roots of Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x8geneigde.html#Jordan" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Jordan Form</span></a></div>
+<ul id="ptx-toc-group-Jordan" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x8geneigde.html#Jordan-19" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x7trace.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Trace: A Connection Between Matrices and Operators</span></a></div>
+<ul id="ptx-toc-group-x7trace" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x7trace.html#x7trace-36" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="MultLATensors.html" class="internal"><span class="codenumber">9</span> <span class="title">Multilinear Algebra and Determinants</span></a></div>
+<ul id="ptx-toc-group-MultLATensors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="MultLATensors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bilin_quad.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Bilinear Forms and Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-2" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-3" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Symmetric Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4-15" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="alt_multi.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Alternating Multilinear Forms</span></a></div>
+<ul id="ptx-toc-group-alt_multi" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-2" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Multilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="alt_multi.html#alt_multi-3" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Alternating Multilinear Forms and Permutations</span></a></div>
+<ul id="ptx-toc-group-alt_multi-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-3-27" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9det.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9det.html#x9det-2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Defining the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9det.html#x9det-3" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Properties of Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9det.html#x9det-3-65" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9TensorSect.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Tensor Products</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-2" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Tensor Product of Two Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-3" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Tensor Product of Inner Product Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Tensor Product of Multiple Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4-25" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back matter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocredits.html" class="internal"><span class="codenumber">1</span> <span class="title">Photo Credits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="typesetting.html" class="internal"><span class="codenumber">2</span> <span class="title">Colophon: Notes on Typesetting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pretextplus.html" class="internal"><span class="codenumber">3</span> <span class="title">Colophon: The Web version</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="x5invar">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Invariant Subspaces</span>
+</h1>
+<section class="subsection" id="x5invar-2">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Eigenvalues</span>
+</h2>
+<article class="definition definition-like" id="x5invar-2-2"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">operator.</span>
+</h3>
+<div class="para" id="x5invar-2-2-2-1">A linear map from a vector space to itself is called an <dfn class="terminology">operator</dfn>. <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.1: operator"><a tabindex="-1" href="#x5invar-2-2" title="Copy heading and permalink for Definition 5.1: operator" aria-label="Copy heading and permalink for Definition 5.1: operator">🔗</a></div>
+</article>
+<details id="x5invar-2-3" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Aside</span></h3></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="x5invar-2-3-1">Recall that we defined the notation <span class="process-math">\(\Lc(V)\)</span> to mean <span class="process-math">\(\Lc(V{}, V)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para logical" id="x5invar-2-4">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> If <span class="process-math">\(m \ge 2\)</span> and</div>
+<div class="displaymath process-math" id="x5invar-2-4-3">
+\begin{equation*}
+V = V{}_1 \oplus \dots \oplus V{}_m  ,
+\end{equation*}
+</div>
+<div class="para">where each <span class="process-math">\(V{}_k\)</span> is a nonzero subspace of <span class="process-math">\(V{}\text{,}\)</span> then to understand the behavior of <span class="process-math">\(T\)</span> we only need to understand the behavior of each <span class="process-math">\(T|_{V{}_k}\text{;}\)</span> here <span class="process-math">\(T|_{V{}_k}\)</span> denotes the restriction of <span class="process-math">\(T\)</span> to the smaller domain <span class="process-math">\(V{}_k\text{.}\)</span> Dealing with <span class="process-math">\(T|_{V{}_k}\)</span> should be easier than dealing with <span class="process-math">\(T\)</span> because <span class="process-math">\(V{}_k\)</span> is a smaller vector space than <span class="process-math">\(V{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-2-5">However, if we intend to apply tools useful in the study of operators (such as taking powers), then we have a problem: <span class="process-math">\(T|_{V{}_k}\)</span> may not map <span class="process-math">\(V{}_k\)</span> into itself; in other words, <span class="process-math">\(T|_{V{}_k}\)</span> may not be an operator on <span class="process-math">\(V{}_k\text{.}\)</span> Thus we are led to consider only decompositions of <span class="process-math">\(V\)</span> of the form above in which <span class="process-math">\(T\)</span> maps each <span class="process-math">\(V{}_k\)</span> into itself. Hence we now give a name to subspaces of <span class="process-math">\(V\)</span> that get mapped into themselves by <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="x5invar-2-6"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">invariant subspace.</span>
+</h3>
+<div class="para" id="x5invar-2-6-2-1">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> A subspace <span class="process-math">\(U\)</span> of <span class="process-math">\(V\)</span> is called <dfn class="terminology">invariant</dfn>  under <span class="process-math">\(T\)</span> if <span class="process-math">\(Tu \in U\)</span> for every <span class="process-math">\(u \in U\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.2: invariant subspace"><a tabindex="-1" href="#x5invar-2-6" title="Copy heading and permalink for Definition 5.2: invariant subspace" aria-label="Copy heading and permalink for Definition 5.2: invariant subspace">🔗</a></div>
+</article>
+<div class="para" id="x5invar-2-7">Thus <span class="process-math">\(U\)</span> is invariant under <span class="process-math">\(T\)</span> if <span class="process-math">\(T|_U\)</span> is an operator on <span class="process-math">\(U\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="x5invar-2-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">subspace invariant under differentiation operator.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="x5invar-2-8-2-1">Suppose that <span class="process-math">\(T \in \Lc\bigl(\P(\R{})\bigr)\)</span> is defined by <span class="process-math">\(Tp = p'\!\text{.}\)</span> Then <span class="process-math">\(\P{}_4(\R{})\text{,}\)</span> which is a subspace of <span class="process-math">\(\P(\R{})\text{,}\)</span> is invariant under <span class="process-math">\(T\)</span> because if <span class="process-math">\(p \in \P(\R{})\)</span> has degree at most <span class="process-math">\(4\text{,}\)</span> then <span class="process-math">\(p'\)</span> also has degree at most <span class="process-math">\(4\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.3: subspace invariant under differentiation operator"><a tabindex="-1" href="#x5invar-2-8" title="Copy heading and permalink for Example 5.3: subspace invariant under differentiation operator" aria-label="Copy heading and permalink for Example 5.3: subspace invariant under differentiation operator">🔗</a></div>
+</article></details>
+<details id="invariant" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">four invariant subspaces, not necessarily all different.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="invariant-2-1">
+<div class="para">If <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> then the following subspaces of <span class="process-math">\(V\)</span> are all invariant under <span class="process-math">\(T{}\text{.}\)</span>
+</div>
+<ol class="decimal" id="invariant-2-1-4">
+<li id="invariant-2-1-4-1">
+<span class="heading li--heading"><span class="title li--heading-title"><span class="process-math">\(\{ 0 \}\)</span>.</span></span>
+<div class="para" id="invariant-2-1-4-1-2">The subspace <span class="process-math">\(\{0\}\)</span> is invariant under <span class="process-math">\(T\)</span> because if <span class="process-math">\(u \in \{0\}\text{,}\)</span> then <span class="process-math">\(u = 0\)</span> and hence <span class="process-math">\(Tu = 0 \in \{0\}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#invariant-2-1-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1: \{ 0 \}"><a tabindex="-1" href="#invariant-2-1-4-1" title="Copy heading and permalink for Item 1: \{ 0 \}" aria-label="Copy heading and permalink for Item 1: \{ 0 \}">🔗</a></div>
+</li>
+<li id="invariant-2-1-4-2">
+<span class="heading li--heading"><span class="title li--heading-title"><span class="process-math">\(V\)</span>.</span></span>
+<div class="para" id="invariant-2-1-4-2-2">The subspace <span class="process-math">\(V\)</span> is invariant under <span class="process-math">\(T\)</span> because if <span class="process-math">\(u \in V{}\text{,}\)</span> then <span class="process-math">\(Tu \in V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#invariant-2-1-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2: V"><a tabindex="-1" href="#invariant-2-1-4-2" title="Copy heading and permalink for Item 2: V" aria-label="Copy heading and permalink for Item 2: V">🔗</a></div>
+</li>
+<li id="invariant-2-1-4-3">
+<span class="heading li--heading"><span class="title li--heading-title"><span class="process-math">\(\ker T\)</span>.</span></span>
+<div class="para" id="invariant-2-1-4-3-2">The subspace <span class="process-math">\(\ker T\)</span> is invariant under <span class="process-math">\(T\)</span> because if <span class="process-math">\(u \in \ker T\text{,}\)</span> then <span class="process-math">\(Tu = 0\text{,}\)</span> and hence <span class="process-math">\(Tu \in \ker T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#invariant-2-1-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3: \ker T"><a tabindex="-1" href="#invariant-2-1-4-3" title="Copy heading and permalink for Item 3: \ker T" aria-label="Copy heading and permalink for Item 3: \ker T">🔗</a></div>
+</li>
+<li id="invariant-2-1-4-4">
+<span class="heading li--heading"><span class="title li--heading-title"><span class="process-math">\(\ran T\)</span>.</span></span>
+<div class="para" id="invariant-2-1-4-4-2">The subspace <span class="process-math">\(\ran T\)</span> is invariant under <span class="process-math">\(T\)</span> because if <span class="process-math">\(u \in \ran T\text{,}\)</span> then <span class="process-math">\(Tu \in \ran T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#invariant-2-1-4-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4: \ran T"><a tabindex="-1" href="#invariant-2-1-4-4" title="Copy heading and permalink for Item 4: \ran T" aria-label="Copy heading and permalink for Item 4: \ran T">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#invariant-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.4: four invariant subspaces, not necessarily all different"><a tabindex="-1" href="#invariant" title="Copy heading and permalink for Example 5.4: four invariant subspaces, not necessarily all different" aria-label="Copy heading and permalink for Example 5.4: four invariant subspaces, not necessarily all different">🔗</a></div>
+</article></details>
+<div class="para" id="x5invar-2-10">Must an operator <span class="process-math">\(T \in \Lc(V)\)</span> have any invariant subspaces other than <span class="process-math">\(\{0\}\)</span> and <span class="process-math">\(V\text{?}\)</span> Later we will see that this question has an affirmative answer if <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(\dim V &gt; 1\)</span> (for <span class="process-math">\(\F{} = \C{}\)</span>) or <span class="process-math">\(\dim V &gt; 2\)</span> (for <span class="process-math">\(\F{} = \R{})\text{;}\)</span> <a href="eigenuppertri.html#x151" class="xref" data-knowl="./knowl/xref/x151.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.18: existence of eigenvalues">see 5.18</a> and <a href="eigenuppertri.html#x5inv2" class="xref" data-knowl="./knowl/xref/x5inv2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.2.3.29">Exercise 5.2.3.29</a> in <a href="eigenuppertri.html" class="internal" title="Section 5.2: The Minimal Polynomial">Section 5.2</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-2-11">The previous example noted that <span class="process-math">\(\ker T\)</span> and <span class="process-math">\(\ran T\)</span> are invariant under <span class="process-math">\(T\text{.}\)</span> However, these subspaces do not necessarily provide easy answers to the question above about the existence of invariant subspaces other than <span class="process-math">\(\{0\}\)</span> and <span class="process-math">\(V{}\text{,}\)</span> because <span class="process-math">\(\ker T\)</span> may equal <span class="process-math">\(\{0\}\)</span> and <span class="process-math">\(\ran T\)</span> may equal <span class="process-math">\(V\)</span> (this happens when <span class="process-math">\(T\)</span> is invertible).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-2-12">We will return later to a deeper study of invariant subspaces. Now we turn to an investigation of the simplest possible nontrivial invariant subspaces—invariant subspaces of dimension one.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x5invar-2-13">
+<div class="para">Take any <span class="process-math">\(v \in V\)</span> with <span class="process-math">\(v \ne 0\)</span> and let <span class="process-math">\(U\)</span> equal the set of all scalar multiples of <span class="process-math">\(v\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="x5invar-2-13-6">
+\begin{equation*}
+U = \{\lambda v: \lambda \in \F{}\} = \Span (v).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x5invar-2-14">
+<div class="para">Then <span class="process-math">\(U\)</span> is a one-dimensional subspace of <span class="process-math">\(V\)</span> (and every one-dimensional subspace of <span class="process-math">\(V\)</span> is of this form for an appropriate choice of <span class="process-math">\(v\)</span>). If <span class="process-math">\(U\)</span> is invariant under an operator <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> then <span class="process-math">\(Tv \in U\text{,}\)</span> and hence there is a scalar <span class="process-math">\(\lambda \in \F{}\)</span> such that</div>
+<div class="displaymath process-math" id="x5invar-2-14-9">
+\begin{equation*}
+Tv = \lambda v.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-2-15">Conversely, if <span class="process-math">\(Tv = \lambda v\)</span> for some <span class="process-math">\(\lambda \in \F{}{}\text{,}\)</span> then <span class="process-math">\(\Span (v)\)</span> is a one-dimensional subspace of <span class="process-math">\(V\)</span> invariant under <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-2-16">The equation <span class="process-math">\(Tv = \lambda v\text{,}\)</span> which we have just seen is intimately connected with one-dimensional invariant subspaces, is important enough that the scalars <span class="process-math">\(\lambda\)</span> and vectors <span class="process-math">\(v\)</span> satisfying it are given special names.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="x5invar-2-17"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">eigenvalue.</span>
+</h3>
+<div class="para" id="x5invar-2-17-2-1">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> A number <span class="process-math">\(\lambda \in \F{}\)</span> is called an <dfn class="terminology">eigenvalue</dfn> of <span class="process-math">\(T\)</span> if there exists <span class="process-math">\(v \in V\)</span> such that <span class="process-math">\(v \ne 0\)</span> and <span class="process-math">\(Tv = \lambda v\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.5: eigenvalue"><a tabindex="-1" href="#x5invar-2-17" title="Copy heading and permalink for Definition 5.5: eigenvalue" aria-label="Copy heading and permalink for Definition 5.5: eigenvalue">🔗</a></div>
+</article>
+<details id="x5invar-2-18" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Aside</span></h3></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="x5invar-2-18-1">The word <em class="emphasis">eigenvalue</em> is half-German, half-English. The German prefix <em class="emphasis">eigen</em> means “own” in the sense of characterizing an intrinsic property.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para" id="x5invar-2-19">In the definition above, we require that <span class="process-math">\(v \ne 0\)</span> because every scalar <span class="process-math">\(\lambda \in \F{}\)</span> satisfies <span class="process-math">\(T0 = \lambda 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-2-20">The comments above show that <span class="process-math">\(V\)</span> has a one-dimensional subspace invariant under <span class="process-math">\(T\)</span> if and only if <span class="process-math">\(T\)</span> has an eigenvalue.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="x5invar-2-21" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">eigenvalue.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="x5invar-2-21-2-1">
+<div class="para">Define an operator <span class="process-math">\(T \in \Lc( \F3 )\)</span> by</div>
+<div class="displaymath process-math" id="x5invar-2-21-2-1-2">
+\begin{equation*}
+T(x,y,z) = (7x + 3z, 3x +6y + 9z, -6y)
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\((x, y, z) \in \FF3\text{.}\)</span> Then <span class="process-math">\(T(3,1,-1) = (18, 6, -6) = 6(3,1,-1)\text{.}\)</span> Thus <span class="process-math">\(6\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-21-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.6: eigenvalue"><a tabindex="-1" href="#x5invar-2-21" title="Copy heading and permalink for Example 5.6: eigenvalue" aria-label="Copy heading and permalink for Example 5.6: eigenvalue">🔗</a></div>
+</article></details>
+<div class="para" id="x5invar-2-22">The equivalences in the next result, along with many deep results in linear algebra, are valid only in the context of finite-dimensional vector spaces.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="eigenequiv"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">equivalent conditions to be an eigenvalue.</span>
+</h3>
+<div class="para logical" id="eigenequiv-2-1">
+<div class="para">Suppose <span class="process-math">\(V\)</span> is finite-dimensional, <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> and <span class="process-math">\(\lambda \in \F{}{}\text{.}\)</span> Then the following are equivalent.</div>
+<ol class="decimal" id="eigenequiv-2-1-4">
+<li id="eigenequiv-2-1-4-1">
+<div class="para" id="eigenequiv-2-1-4-1-1">
+<span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eigenequiv-2-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#eigenequiv-2-1-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="eigenequiv-2-1-4-2">
+<div class="para" id="eigenequiv-2-1-4-2-1">
+<span class="process-math">\(T - \lambda I\)</span> is not injective.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eigenequiv-2-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#eigenequiv-2-1-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="eigenequiv-2-1-4-3">
+<div class="para" id="eigenequiv-2-1-4-3-1">
+<span class="process-math">\(T - \lambda I\)</span> is not surjective.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eigenequiv-2-1-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#eigenequiv-2-1-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="eigenequiv-2-1-4-4">
+<div class="para" id="eigenequiv-2-1-4-4-1">
+<span class="process-math">\(T - \lambda I\)</span> is not invertible.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eigenequiv-2-1-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#eigenequiv-2-1-4-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eigenequiv-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 5.7: equivalent conditions to be an eigenvalue"><a tabindex="-1" href="#eigenequiv" title="Copy heading and permalink for Theorem 5.7: equivalent conditions to be an eigenvalue" aria-label="Copy heading and permalink for Theorem 5.7: equivalent conditions to be an eigenvalue">🔗</a></div>
+</article>
+<details id="x5invar-2-24" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Aside</span></h3></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="x5invar-2-24-1">Reminder: <span class="process-math">\(I \in \Lc(V)\)</span> is the identity operator. Thus <span class="process-math">\(Iv = v\)</span> for all <span class="process-math">\(v \in V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<details id="x5invar-2-25" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="x5invar-2-25-1">Conditions (a) and (b) are equivalent because the equation <span class="process-math">\(Tv = \lambda v\)</span> is equivalent to the equation <span class="process-math">\((T - \lambda I)v = 0\text{.}\)</span> Conditions (b), (c), and (d) are equivalent by <a href="invertible.html#x18" class="xref" data-knowl="./knowl/xref/x18.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.61: injectivity is equivalent to surjectivity  (if  \dim V = \dim W \lt \infty)">Theorem 3.61</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.1.1.1"><a tabindex="-1" href="#x5invar-2-25" title="Copy heading and permalink for Proof 5.1.1.1" aria-label="Copy heading and permalink for Proof 5.1.1.1">🔗</a></div>
+</article></details>
+<article class="definition definition-like" id="x5invar-2-26"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">eigenvector.</span>
+</h3>
+<div class="para" id="x5invar-2-26-2-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(\lambda \in \F{}\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span> A vector <span class="process-math">\(v \in V\)</span> is called an <dfn class="terminology">eigenvector</dfn>  of <span class="process-math">\(T\)</span> corresponding to <span class="process-math">\(\lambda\)</span> if <span class="process-math">\(v \ne 0\)</span> and <span class="process-math">\(Tv = \lambda v\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-26-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.8: eigenvector"><a tabindex="-1" href="#x5invar-2-26" title="Copy heading and permalink for Definition 5.8: eigenvector" aria-label="Copy heading and permalink for Definition 5.8: eigenvector">🔗</a></div>
+</article>
+<div class="para" id="x5invar-2-27">In other words, a nonzero vector <span class="process-math">\(v \in V\)</span> is an eigenvector of an operator <span class="process-math">\(T \in \Lc(V)\)</span> if and only if <span class="process-math">\(Tv\)</span> is a scalar multiple of <span class="process-math">\(v\text{.}\)</span> Because <span class="process-math">\(Tv = \lambda v\)</span> if and only if <span class="process-math">\((T - \lambda I)v = 0\text{,}\)</span> a vector <span class="process-math">\(v \in V\)</span> with <span class="process-math">\(v \ne 0\)</span> is an eigenvector of <span class="process-math">\(T\)</span> corresponding to <span class="process-math">\(\lambda\)</span> if and only if <span class="process-math">\(v \in \ker (T - \lambda I)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="a117" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">eigenvalues and eigenvectors.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="a117-2-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc( \F{2} )\)</span> is defined by <span class="process-math">\(T(w,z) = (-z,w)\text{.}\)</span>
+</div>
+<ol class="decimal" id="a117-2-1-3">
+<li id="a117-2-1-3-1">
+<div class="para" id="a117-2-1-3-1-1">First consider the case <span class="process-math">\(\F{} = \R{}\text{.}\)</span> Then <span class="process-math">\(T\)</span> is a counterclockwise rotation by <span class="process-math">\(90^\circ\)</span> about the origin in <span class="process-math">\(\RR{2}\text{.}\)</span> An operator has an eigenvalue if and only if there exists a nonzero vector in its domain that gets sent by the operator to a scalar multiple of itself. A <span class="process-math">\(90^\circ\)</span> counterclockwise rotation of a nonzero vector in <span class="process-math">\(\R{2}\)</span> cannot equal a scalar multiple of itself. Conclusion: if <span class="process-math">\(\F{} = \R{}\text{,}\)</span> then <span class="process-math">\(T\)</span> has no eigenvalues (and thus has no eigenvectors).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#a117-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#a117-2-1-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="a117-2-1-3-2">
+<div class="para logical" id="a117-2-1-3-2-1">
+<div class="para">Now consider the case <span class="process-math">\(\F{} = \C{}\text{.}\)</span> To find eigenvalues of <span class="process-math">\(T\text{,}\)</span> we must find the scalars <span class="process-math">\(\lambda\)</span> such that <span class="process-math">\(T(w,z) = \lambda (w, z)\)</span> has some solution other than <span class="process-math">\(w = z = 0\text{.}\)</span> The equation <span class="process-math">\(T(w,z) = \lambda (w, z)\)</span> is equivalent to the simultaneous equations</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x118.html ./knowl/xref/x118.html" id="x118">
+\begin{equation}
+-z = \lambda w,  w = \lambda z.\tag{5.1}
+\end{equation}
+</div>
+<div class="para">Substituting the value for <span class="process-math">\(w\)</span> given by the second equation into the first equation gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x118.html ./knowl/xref/x118.html" id="a117-2-1-3-2-1-9">
+\begin{equation*}
+-z = \lambda^2 z.
+\end{equation*}
+</div>
+<div class="para">Now <span class="process-math">\(z\)</span> cannot equal <span class="process-math">\(0\)</span>  [<a href="x5invar.html#x118" class="xref" data-knowl="./knowl/xref/x118.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.1">otherwise (5.1)</a> implies that <span class="process-math">\(w = 0\text{;}\)</span> we are looking for solutions to <a href="x5invar.html#x118" class="xref" data-knowl="./knowl/xref/x118.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.1">(5.1)</a> such that <span class="process-math">\((w, z)\)</span> is not the <span class="process-math">\(0\)</span> vector] , so the equation above leads to the equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x118.html ./knowl/xref/x118.html" id="a117-2-1-3-2-1-17">
+\begin{equation*}
+-1 = \lambda^2{}.
+\end{equation*}
+</div>
+<div class="para">The solutions to this equation are <span class="process-math">\(\lambda = i\)</span> and <span class="process-math">\(\lambda = -i\text{.}\)</span> You can verify that <span class="process-math">\(i\)</span> and <span class="process-math">\(-i\)</span> are eigenvalues of <span class="process-math">\(T{}\text{.}\)</span> Indeed, the eigenvectors corresponding to the eigenvalue <span class="process-math">\(i\)</span> are the vectors of the form <span class="process-math">\((w, -wi)\text{,}\)</span> with <span class="process-math">\(w \in \C{}\)</span> and <span class="process-math">\(w \ne 0\text{.}\)</span> Furthermore, the eigenvectors corresponding to the eigenvalue <span class="process-math">\(-i\)</span> are the vectors of the form <span class="process-math">\((w, wi)\text{,}\)</span> with <span class="process-math">\(w \in \C{}\)</span> and <span class="process-math">\(w \ne 0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#a117-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#a117-2-1-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#a117-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.9: eigenvalues and eigenvectors"><a tabindex="-1" href="#a117" title="Copy heading and permalink for Example 5.9: eigenvalues and eigenvectors" aria-label="Copy heading and permalink for Example 5.9: eigenvalues and eigenvectors">🔗</a></div>
+</article></details>
+<div class="para logical" id="x5invar-2-29">
+<div class="para">In the next proof, we again use the equivalence</div>
+<div class="displaymath process-math" id="x5invar-2-29-1">
+\begin{equation*}
+Tv = \lambda v \iff (T - \lambda I)v = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x26"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">linearly independent eigenvectors.</span>
+</h3>
+<div class="para" id="x26-2-1">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Then every list of eigenvectors of <span class="process-math">\(T\)</span> corresponding to distinct eigenvalues of <span class="process-math">\(T\)</span> is linearly independent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x26-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 5.10: linearly independent eigenvectors"><a tabindex="-1" href="#x26" title="Copy heading and permalink for Theorem 5.10: linearly independent eigenvectors" aria-label="Copy heading and permalink for Theorem 5.10: linearly independent eigenvectors">🔗</a></div>
+</article>
+<details id="x5invar-2-31" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="x5invar-2-31-1">
+<div class="para">Suppose the desired result is false. Then there exists a smallest positive integer <span class="process-math">\(m\)</span> such that there exists a linearly dependent list <span class="process-math">\(v_1, \ldots,
+v_m\)</span> of eigenvectors of <span class="process-math">\(T\)</span> corresponding to distinct eigenvalues <span class="process-math">\(\lambda_1, \ldots, \lambda_m\)</span> of <span class="process-math">\(T\)</span> (note that <span class="process-math">\(m\ge 2\)</span> because an eigenvector is, by definition, nonzero). Thus there exist <span class="process-math">\(a_1, \ldots,
+a_m \in \F{}{}\text{,}\)</span> none of which are <span class="process-math">\(0\)</span> (because of the minimality of <span class="process-math">\(m\)</span>), such that</div>
+<div class="displaymath process-math" id="x5invar-2-31-1-10">
+\begin{equation*}
+a_1 v_1 + \cdots + a_m v_m = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-31-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x5invar-2-31-2">
+<div class="para">Apply <span class="process-math">\(T - \lambda_m I\)</span> to both sides of the equation above, getting</div>
+<div class="displaymath process-math" id="x5invar-2-31-2-2">
+\begin{equation*}
+a_1 (\lambda_1 - \lambda_m) v_1 + \cdots + a_{m-1} (\lambda_{m-1} - \lambda_m) v_{m-1} = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-31-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-2-31-3">Because the eigenvalues <span class="process-math">\(\lambda_1, \ldots, \lambda_m\)</span> are distinct, none of the coefficients above equal <span class="process-math">\(0\text{.}\)</span> Thus <span class="process-math">\(v_1, \ldots,
+v_{m-1}\)</span> is a linearly dependent list of <span class="process-math">\(m-1\)</span> eigenvectors of <span class="process-math">\(T\)</span> corresponding to distinct eigenvalues, contradicting the minimality of <span class="process-math">\(m\text{.}\)</span> This contradiction completes the proof.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-31-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.1.1.2"><a tabindex="-1" href="#x5invar-2-31" title="Copy heading and permalink for Proof 5.1.1.2" aria-label="Copy heading and permalink for Proof 5.1.1.2">🔗</a></div>
+</article></details>
+<div class="para" id="x5invar-2-32">The result above leads to a short proof of the result below, which puts an upper bound on the number of distinct eigenvalues that an operator can have.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x279"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">operator cannot have more eigenvalues than dimension of vector space.</span>
+</h3>
+<div class="para" id="x279-2-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional. Then each operator on <span class="process-math">\(V\)</span> has at most <span class="process-math">\(\dim V\)</span> distinct eigenvalues.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x279-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 5.11: operator cannot have more eigenvalues than dimension of vector space"><a tabindex="-1" href="#x279" title="Copy heading and permalink for Theorem 5.11: operator cannot have more eigenvalues than dimension of vector space" aria-label="Copy heading and permalink for Theorem 5.11: operator cannot have more eigenvalues than dimension of vector space">🔗</a></div>
+</article>
+<details id="x5invar-2-34" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="x5invar-2-34-1">Let <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Suppose <span class="process-math">\(\lambda_1, \dots, \lambda_m\)</span> are distinct eigenvalues of <span class="process-math">\(T{}\text{.}\)</span> Let <span class="process-math">\(v_1, \dots, v_m\)</span> be corresponding eigenvectors. <a href="x5invar.html#x26" class="xref" data-knowl="./knowl/xref/x26.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.10: linearly independent eigenvectors">Then 5.10</a> implies that the list <span class="process-math">\(v_1, \dots,
+v_m\)</span> is linearly independent. Thus <span class="process-math">\(m \le \dim V\)</span> (<a href="x2spli.html#x7" class="xref" data-knowl="./knowl/xref/x7.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.22: length of linearly independent list  \le length of spanning list">see 2.22</a>), as desired.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-2-34-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.1.1.3"><a tabindex="-1" href="#x5invar-2-34" title="Copy heading and permalink for Proof 5.1.1.3" aria-label="Copy heading and permalink for Proof 5.1.1.3">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 5.1.1: Eigenvalues"><a tabindex="-1" href="#x5invar-2" title="Copy heading and permalink for Subsection 5.1.1: Eigenvalues" aria-label="Copy heading and permalink for Subsection 5.1.1: Eigenvalues">🔗</a></div>
+</section>
+<section class="subsection" id="x5invar-3">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynomials Applied to Operators</span>
+</h2>
+<div class="para" id="x5invar-3-2">The main reason that a richer theory exists for operators (which map a vector space into itself) than for more general linear maps is that operators can be raised to powers. In this subsection we define that notion and the concept of applying a polynomial to an operator. This concept will be the key tool that we use in the next section when we prove that every operator on a nonzero finite-dimensional complex vector space has an eigenvalue.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-3-3">If <span class="process-math">\(T\)</span> is an operator, then <span class="process-math">\(TT\)</span> makes sense (<a href="vslinear.html#x3ST" class="xref" data-knowl="./knowl/xref/x3ST.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.7: product of linear maps">see 3.7</a>) and is also an operator on the same vector space as <span class="process-math">\(T{}\text{.}\)</span> We usually write <span class="process-math">\(T^2\)</span> instead of <span class="process-math">\(TT{}\text{.}\)</span> More generally, we have the following definition of <span class="process-math">\(T^m\!\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="principle theorem-like" id="x5invar-3-4"><h3 class="heading">
+<span class="type">Principle</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(T^m\)</span>.</span>
+</h3>
+<div class="para logical" id="x5invar-3-4-2-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(m\)</span> is a positive integer. </div>
+<ol class="decimal" id="x5invar-3-4-2-1-4">
+<li id="x5invar-3-4-2-1-4-1">
+<div class="para" id="x5invar-3-4-2-1-4-1-1">
+<span class="process-math">\(T^m \in \Lc(V)\)</span> is defined by <span class="process-math">\(T^m = \underbrace{T \dotsm T}_{m \textit{ times}}{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-4-2-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#x5invar-3-4-2-1-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="x5invar-3-4-2-1-4-2">
+<div class="para" id="x5invar-3-4-2-1-4-2-1">
+<span class="process-math">\(T^0\)</span> is defined to be the identity operator <span class="process-math">\(I\)</span> on <span class="process-math">\(V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-4-2-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#x5invar-3-4-2-1-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="x5invar-3-4-2-1-4-3">
+<div class="para logical" id="x5invar-3-4-2-1-4-3-1">
+<div class="para">If <span class="process-math">\(T\)</span> is invertible with inverse <span class="process-math">\(T^{-1}{}\text{,}\)</span> then <span class="process-math">\(T^{-m} \in \Lc(V)\)</span> is defined by</div>
+<div class="displaymath process-math" id="x5invar-3-4-2-1-4-3-1-4">
+\begin{equation*}
+T^{-m} = ( T^{-1} )^m\!.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-4-2-1-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#x5invar-3-4-2-1-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Principle 5.12: T^m"><a tabindex="-1" href="#x5invar-3-4" title="Copy heading and permalink for Principle 5.12: T^m" aria-label="Copy heading and permalink for Principle 5.12: T^m">🔗</a></div>
+</article>
+<div class="para logical" id="x5invar-3-5">
+<div class="para">You should verify that if <span class="process-math">\(T\)</span> is an operator, then</div>
+<div class="displaymath process-math" id="x5invar-3-5-2">
+\begin{equation*}
+T^m T^n = T^{m+n} \andd ( T^m )^n = T^{mn}\!,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> are arbitrary integers if <span class="process-math">\(T\)</span> is invertible and are nonnegative integers if <span class="process-math">\(T\)</span> is not invertible.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-3-6">Having defined powers of an operator, we can now define what it means to apply a polynomial to an operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="principle theorem-like" id="x5invar-3-7"><h3 class="heading">
+<span class="type">Principle</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(p(T)\)</span>.</span>
+</h3>
+<div class="para logical" id="x5invar-3-7-2-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(p \in \P(\F{})\)</span> is a polynomial given by</div>
+<div class="displaymath process-math" id="x5invar-3-7-2-1-3">
+\begin{equation*}
+p(z) = a_0 + a_1 z + a_2 z^2 + \dots + a_m z^m
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z \in \F{}{}\text{.}\)</span> Then <span class="process-math">\(p(T)\)</span> is the operator on <span class="process-math">\(V\)</span> defined by </div>
+<div class="displaymath process-math" id="x5invar-3-7-2-1-8">
+\begin{equation*}
+p(T) = a_0 I + a_1 T + a_2 T^2 + \dots + a_m T^m\!.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Principle 5.13: p(T)"><a tabindex="-1" href="#x5invar-3-7" title="Copy heading and permalink for Principle 5.13: p(T)" aria-label="Copy heading and permalink for Principle 5.13: p(T)">🔗</a></div>
+</article>
+<div class="para" id="x5invar-3-8">This is a new use of the symbol <span class="process-math">\(p\)</span> because we are applying <span class="process-math">\(p\)</span> to operators, not just elements of <span class="process-math">\(\F{}{}\text{.}\)</span> The idea here is that to evaluate <span class="process-math">\(p(T)\text{,}\)</span> we simply replace <span class="process-math">\(z\)</span> with <span class="process-math">\(T\)</span> in the expression defining <span class="process-math">\(p\text{.}\)</span> Note that the constant term <span class="process-math">\(a_0\)</span> in <span class="process-math">\(p(z)\)</span> becomes the operator <span class="process-math">\(a_0 I\)</span> \big(which is a reasonable choice because <span class="process-math">\(a_0 = a_0 z^0\)</span> and thus we should replace <span class="process-math">\(a_0\)</span> with <span class="process-math">\(a_0 T^0{}\text{,}\)</span> which equals <span class="process-math">\(a_0 I\)</span>\big).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="x5invar-3-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">a polynomial applied to the differentiation operator.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="x5invar-3-9-2-1">
+<div class="para">Suppose <span class="process-math">\(D \in \Lc\bigl(\P(\R{})\bigr)\)</span> is the differentiation operator defined by <span class="process-math">\(Dq = q'\)</span> and <span class="process-math">\(p\)</span> is the polynomial defined by <span class="process-math">\(p(x) = 7 - 3x + 5x^2{}\text{.}\)</span> Then <span class="process-math">\(p(D) = 7I - 3D + 5D^2{}\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="x5invar-3-9-2-1-7">
+\begin{equation*}
+\bigl(p(D)\bigr)q  = 7q - 3q' + 5q''
+\end{equation*}
+</div>
+<div class="para">for every <span class="process-math">\(q \in \P(\R{})\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.14: a polynomial applied to the differentiation operator"><a tabindex="-1" href="#x5invar-3-9" title="Copy heading and permalink for Example 5.14: a polynomial applied to the differentiation operator" aria-label="Copy heading and permalink for Example 5.14: a polynomial applied to the differentiation operator">🔗</a></div>
+</article></details>
+<div class="para" id="x5invar-3-10">If we fix an operator <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> then the function from <span class="process-math">\(\P(\F{})\)</span> to <span class="process-math">\(\Lc(V)\)</span> given by <span class="process-math">\(p \mapsto p(T)\)</span> is linear, as you should verify.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="x5invar-3-11"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">product of polynomials.</span>
+</h3>
+<div class="para logical" id="x5invar-3-11-2-1">
+<div class="para">If <span class="process-math">\(p, q \in \P(\F{})\text{,}\)</span> then <span class="process-math">\(pq \in \P(\F{})\)</span> is the polynomial defined by</div>
+<div class="displaymath process-math" id="x5invar-3-11-2-1-4">
+\begin{equation*}
+(pq)(z) = p(z) q(z)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z \in \F{}{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.15: product of polynomials"><a tabindex="-1" href="#x5invar-3-11" title="Copy heading and permalink for Definition 5.15: product of polynomials" aria-label="Copy heading and permalink for Definition 5.15: product of polynomials">🔗</a></div>
+</article>
+<div class="para" id="x5invar-3-12">The order does not matter in taking products of polynomials of a single operator, as shown by (b) in the next result.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="multprop"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">multiplicative properties.</span>
+</h3>
+<div class="para logical" id="multprop-2-1">
+<div class="para">Suppose <span class="process-math">\(p, q \in \P(\F{})\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Then</div>
+<ol class="decimal" id="multprop-2-1-3">
+<li id="multprop-2-1-3-1">
+<div class="para" id="multprop-2-1-3-1-1">
+<span class="process-math">\((pq)(T) = p(T)q(T)\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multprop-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#multprop-2-1-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="multprop-2-1-3-2">
+<div class="para" id="multprop-2-1-3-2-1">
+<span class="process-math">\(p(T)q(T) = q(T)p(T)\text{.}\)</span> <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multprop-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#multprop-2-1-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multprop-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 5.16: multiplicative properties"><a tabindex="-1" href="#multprop" title="Copy heading and permalink for Theorem 5.16: multiplicative properties" aria-label="Copy heading and permalink for Theorem 5.16: multiplicative properties">🔗</a></div>
+</article>
+<details id="x5invar-3-14" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Aside</span></h3></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="x5invar-3-14-1">Informal proof: When a product of polynomials is expanded using the distributive property, it does not matter whether the symbol is <span class="process-math">\(z\)</span> or <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<details id="x5invar-3-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="x5invar-3-15-1">
+<ol class="decimal" id="x5invar-3-15-1-1">
+<li id="x5invar-3-15-1-1-1">
+<div class="para logical" id="x5invar-3-15-1-1-1-1">
+<div class="para">Suppose <span class="process-math">\(\displaystyle p(z) = \sum_{j=1[=0]}^m a_j z^j\)</span> and <span class="process-math">\(\displaystyle q(z) = \sum_{k=0}^n b_k z^k\)</span> for all <span class="process-math">\(z \in \F{}{}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="x5invar-3-15-1-1-1-1-4">
+\begin{equation*}
+(pq)(z) = \sum_{j=1[=0]}^m \sum_{k=0}^n a_j b_k z^{j+k}\!.
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="x5invar-3-15-1-1-1-1-5">
+\begin{align*}
+(pq)(T) \amp = \sum_{j=1[=0]}^m \sum_{k=0}^n a_j b_k T^{j+k}\\
+\amp = (  \sum_{j=1[=0]}^m a_j T^j  ) (  \sum_{k=0}^n b_k T^k  )\\
+\amp = p(T) q(T)\text{.}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-15-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#x5invar-3-15-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="x5invar-3-15-1-1-2">
+<div class="para" id="x5invar-3-15-1-1-2-1">Using (a) twice, we have <span class="process-math">\(p(T)q(T) = (pq)(T) = (qp)(T) = q(T)p(T)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-15-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#x5invar-3-15-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.1.2.1"><a tabindex="-1" href="#x5invar-3-15" title="Copy heading and permalink for Proof 5.1.2.1" aria-label="Copy heading and permalink for Proof 5.1.2.1">🔗</a></div>
+</article></details>
+<div class="para" id="x5invar-3-16">We observed earlier that if <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> then the subspaces <span class="process-math">\(\ker T\)</span> and <span class="process-math">\(\ran T\)</span> are invariant under <span class="process-math">\(T\)</span> (<a href="x5invar.html#invariant" class="xref" data-knowl="./knowl/xref/invariant.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.4: four invariant subspaces, not necessarily all different">see 5.4</a>). Now we show that the null space and the range of every polynomial of <span class="process-math">\(T\)</span> are also invariant under <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x130"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">null space and range of  <span class="process-math">\(p(T)\)</span> are invariant under  <span class="process-math">\(T\)</span>.</span>
+</h3>
+<div class="para" id="x130-2-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(p \in \P(\F{})\text{.}\)</span> Then <span class="process-math">\(\ker p(T)\)</span> and <span class="process-math">\(\ran p(T)\)</span> are invariant under <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x130-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 5.17: null space and range of  p(T) are invariant under  T"><a tabindex="-1" href="#x130" title="Copy heading and permalink for Theorem 5.17: null space and range of  p(T) are invariant under  T" aria-label="Copy heading and permalink for Theorem 5.17: null space and range of  p(T) are invariant under  T">🔗</a></div>
+</article>
+<details id="x5invar-3-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="x5invar-3-18-1">
+<div class="para">Suppose <span class="process-math">\(u \in \ker p(T)\text{.}\)</span> Then <span class="process-math">\(p(T)u = 0\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="x5invar-3-18-1-3">
+\begin{equation*}
+\bigl(p(T)\bigr)(Tu) = (  p(T) T  )(u) = (  T p(T)  )(u) = T\bigl(p(T)u\bigr) = T(0) = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-3-18-2">Hence <span class="process-math">\(Tu \in \ker p(T)\text{.}\)</span> Thus <span class="process-math">\(\ker p(T)\)</span> is invariant under <span class="process-math">\(T\text{,}\)</span> as desired.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-18-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="x5invar-3-18-3">
+<div class="para">Suppose <span class="process-math">\(u \in \ran p(T)\text{.}\)</span> Then there exists <span class="process-math">\(v \in V\)</span> such that <span class="process-math">\(u = p(T)v\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="x5invar-3-18-3-4">
+\begin{equation*}
+Tu = T\bigl(p(T)v\bigr) = p(T)(Tv).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-18-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="x5invar-3-18-4">Hence <span class="process-math">\(Tu \in \ran p(T)\text{.}\)</span> Thus <span class="process-math">\(\ran p(T)\)</span> is invariant under <span class="process-math">\(T\text{,}\)</span> as desired.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-18-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.1.2.2"><a tabindex="-1" href="#x5invar-3-18" title="Copy heading and permalink for Proof 5.1.2.2" aria-label="Copy heading and permalink for Proof 5.1.2.2">🔗</a></div>
+</article></details>
+<section class="exercises" id="x5invar-3-19">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="x5invar-3-19-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-2-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V{}\text{.}\)</span>
+</div>
+<ol class="decimal" id="x5invar-3-19-2-1-1-4">
+<li id="x5invar-3-19-2-1-1-4-1">
+<div class="para" id="x5invar-3-19-2-1-1-4-1-1">Prove that if <span class="process-math">\(U \subset \ker T\text{,}\)</span> then <span class="process-math">\(U\)</span> is invariant under <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-2-1-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.1.1"><a tabindex="-1" href="#x5invar-3-19-2-1-1-4-1" title="Copy heading and permalink for Item 5.1.2.1.1" aria-label="Copy heading and permalink for Item 5.1.2.1.1">🔗</a></div>
+</li>
+<li id="x5invar-3-19-2-1-1-4-2">
+<div class="para" id="x5invar-3-19-2-1-1-4-2-1">Prove that if <span class="process-math">\(\ran T \subset U\text{,}\)</span> then <span class="process-math">\(U\)</span> is invariant under <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-2-1-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.1.2"><a tabindex="-1" href="#x5invar-3-19-2-1-1-4-2" title="Copy heading and permalink for Item 5.1.2.1.2" aria-label="Copy heading and permalink for Item 5.1.2.1.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.1"><a tabindex="-1" href="#x5invar-3-19-2" title="Copy heading and permalink for Exercise 5.1.2.1" aria-label="Copy heading and permalink for Exercise 5.1.2.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-3-1-1">Suppose that <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(V{}_1, \dots, V{}_m\)</span> are subspaces of <span class="process-math">\(V\)</span> invariant under <span class="process-math">\(T{}\text{.}\)</span> Prove that <span class="process-math">\(V{}_1 + \dots + V{}_m\)</span> is invariant under <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.2"><a tabindex="-1" href="#x5invar-3-19-3" title="Copy heading and permalink for Exercise 5.1.2.2" aria-label="Copy heading and permalink for Exercise 5.1.2.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-4-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that the intersection of every collection of subspaces of <span class="process-math">\(V\)</span> invariant under <span class="process-math">\(T\)</span> is invariant under <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.3"><a tabindex="-1" href="#x5invar-3-19-4" title="Copy heading and permalink for Exercise 5.1.2.3" aria-label="Copy heading and permalink for Exercise 5.1.2.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-5"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-5-1-1">Prove or give a counterexample: If <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V\)</span> that is invariant under every operator on <span class="process-math">\(V{}\text{,}\)</span> then <span class="process-math">\(U = \{0\}\)</span> or <span class="process-math">\(U = V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.4"><a tabindex="-1" href="#x5invar-3-19-5" title="Copy heading and permalink for Exercise 5.1.2.4" aria-label="Copy heading and permalink for Exercise 5.1.2.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-6-1-1">Suppose <span class="process-math">\(T \in \Lc( \R{2} )\)</span> is defined by <span class="process-math">\(T(x, y) = (-3y, x)\text{.}\)</span> Find the eigenvalues of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.5"><a tabindex="-1" href="#x5invar-3-19-6" title="Copy heading and permalink for Exercise 5.1.2.5" aria-label="Copy heading and permalink for Exercise 5.1.2.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-7-1-1">Define <span class="process-math">\(T \in \Lc( \F{2} )\)</span> by <span class="process-math">\(T(w, z) = (z, w)\text{.}\)</span> Find all eigenvalues and eigenvectors of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.6"><a tabindex="-1" href="#x5invar-3-19-7" title="Copy heading and permalink for Exercise 5.1.2.6" aria-label="Copy heading and permalink for Exercise 5.1.2.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-8"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-8-1-1">Define <span class="process-math">\(T \in \Lc( \F{3} )\)</span> by <span class="process-math">\(T(z_1, z_2, z_3) = (2 z_2, 0, 5z_3)\text{.}\)</span> Find all eigenvalues and eigenvectors of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.7"><a tabindex="-1" href="#x5invar-3-19-8" title="Copy heading and permalink for Exercise 5.1.2.7" aria-label="Copy heading and permalink for Exercise 5.1.2.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5P"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5P-1-1">Suppose <span class="process-math">\(P \in \Lc(V)\)</span> is such that <span class="process-math">\(P^2 = P{}\text{.}\)</span> Prove that if <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(P{}\text{,}\)</span> then <span class="process-math">\(\lambda = 0\)</span> or <span class="process-math">\(\lambda = 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5P-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.8"><a tabindex="-1" href="#x5P" title="Copy heading and permalink for Exercise 5.1.2.8" aria-label="Copy heading and permalink for Exercise 5.1.2.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-10"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-10-1-1">Define <span class="process-math">\(T \colon \P(\R{}) \to \P(\R{})\)</span> by <span class="process-math">\(Tp = p'\!\text{.}\)</span> Find all eigenvalues and eigenvectors of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.9"><a tabindex="-1" href="#x5invar-3-19-10" title="Copy heading and permalink for Exercise 5.1.2.9" aria-label="Copy heading and permalink for Exercise 5.1.2.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-11"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-11-1-1">Define <span class="process-math">\(T \in \Lc\bigl( \P{}_4(\R{}) \bigr)\)</span> by <span class="process-math">\((Tp)(x) = x p' \! (x)\)</span> for all <span class="process-math">\(x \in \R{}\text{.}\)</span> Find all eigenvalues and eigenvectors of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.10"><a tabindex="-1" href="#x5invar-3-19-11" title="Copy heading and permalink for Exercise 5.1.2.10" aria-label="Copy heading and permalink for Exercise 5.1.2.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-12"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-12-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional, <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> and <span class="process-math">\(\alpha \in \F{}{}\text{.}\)</span> Prove that there exists <span class="process-math">\(\delta &gt; 0\)</span> such that <span class="process-math">\(T - \lambda I\)</span> is invertible for all <span class="process-math">\(\lambda \in \F{}\)</span> such that <span class="process-math">\(0 \lt |\alpha - \lambda| \lt \delta\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.11"><a tabindex="-1" href="#x5invar-3-19-12" title="Copy heading and permalink for Exercise 5.1.2.11" aria-label="Copy heading and permalink for Exercise 5.1.2.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-13"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-13-1-1">Suppose <span class="process-math">\(V = U \oplus W{}\text{,}\)</span> where <span class="process-math">\(U\)</span> and <span class="process-math">\(W\)</span> are nonzero subspaces of <span class="process-math">\(V{}\text{.}\)</span> Define <span class="process-math">\(P \in \Lc(V)\)</span> by <span class="process-math">\(P(u + w) = u\)</span> for each <span class="process-math">\(u \in U\)</span> and each <span class="process-math">\(w \in W{}\text{.}\)</span> Find all eigenvalues and eigenvectors of <span class="process-math">\(P{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.12"><a tabindex="-1" href="#x5invar-3-19-13" title="Copy heading and permalink for Exercise 5.1.2.12" aria-label="Copy heading and permalink for Exercise 5.1.2.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-14"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-14-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Suppose <span class="process-math">\(S \in \Lc(V)\)</span> is invertible.</div>
+<ol class="decimal" id="x5invar-3-19-14-1-1-3">
+<li id="x5invar-3-19-14-1-1-3-1">
+<div class="para" id="x5invar-3-19-14-1-1-3-1-1">Prove that <span class="process-math">\(T\)</span> and <span class="process-math">\(S^{-1} T S\)</span> have the same eigenvalues.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-14-1-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.13.1"><a tabindex="-1" href="#x5invar-3-19-14-1-1-3-1" title="Copy heading and permalink for Item 5.1.2.13.1" aria-label="Copy heading and permalink for Item 5.1.2.13.1">🔗</a></div>
+</li>
+<li id="x5invar-3-19-14-1-1-3-2">
+<div class="para" id="x5invar-3-19-14-1-1-3-2-1">What is the relationship between the eigenvectors of <span class="process-math">\(T\)</span> and the eigenvectors of <span class="process-math">\(S^{-1} T S\text{?}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-14-1-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.13.2"><a tabindex="-1" href="#x5invar-3-19-14-1-1-3-2" title="Copy heading and permalink for Item 5.1.2.13.2" aria-label="Copy heading and permalink for Item 5.1.2.13.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.13"><a tabindex="-1" href="#x5invar-3-19-14" title="Copy heading and permalink for Exercise 5.1.2.13" aria-label="Copy heading and permalink for Exercise 5.1.2.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-15"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-15-1-1">Give an example of an operator on <span class="process-math">\(\R{4}\)</span> that has no (real) eigenvalues.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.14"><a tabindex="-1" href="#x5invar-3-19-15" title="Copy heading and permalink for Exercise 5.1.2.14" aria-label="Copy heading and permalink for Exercise 5.1.2.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5eigdual"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5eigdual-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional, <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> and <span class="process-math">\(\lambda \in \F{}{}\text{.}\)</span> Show that <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\)</span> if and only if <span class="process-math">\(\lambda\)</span> is an eigenvalue of the dual operator <span class="process-math">\(T' \in \Lc(V')\text{.}\)</span> <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5eigdual-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.15"><a tabindex="-1" href="#x5eigdual" title="Copy heading and permalink for Exercise 5.1.2.15" aria-label="Copy heading and permalink for Exercise 5.1.2.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-17"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-17-1-1">
+<div class="para">Suppose <span class="process-math">\(v_1, \ldots,
+v_n\)</span> is a basis of <span class="process-math">\(V\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that if <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x2HSeigen.html ./knowl/xref/x6ipn.html" id="x5invar-3-19-17-1-1-6">
+\begin{equation*}
+\lvert \lambda \rvert  \le n \max \{  \lvert \M(T)_{j,k} \rvert  : 1 \le j, k \le n  \},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\M(T)_{j,k}\)</span> denotes the entry in row <span class="process-math">\(j\text{,}\)</span> column <span class="process-math">\(k\)</span> of the matrix of <span class="process-math">\(T\)</span> with respect to the basis <span class="process-math">\(v_1, \ldots, v_n\text{.}\)</span> Note: See <a href="x6ipn.html#x2HSeigen" class="xref" data-knowl="./knowl/xref/x2HSeigen.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.1.2.19">Exercise 6.1.2.19</a> in <a href="x6ipn.html" class="internal" title="Section 6.1: Inner Products and Norms">Section 6.1</a> for a different bound on <span class="process-math">\(\lvert \lambda \rvert\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.16"><a tabindex="-1" href="#x5invar-3-19-17" title="Copy heading and permalink for Exercise 5.1.2.16" aria-label="Copy heading and permalink for Exercise 5.1.2.16">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5realeig"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5realeig-1-1">Suppose <span class="process-math">\(\F{} = \R{}\text{,}\)</span> <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> and <span class="process-math">\(\lambda \in \R{}\text{.}\)</span> Prove that <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\)</span> if and only if <span class="process-math">\(\lambda\)</span> is an eigenvalue of the complexification <span class="process-math">\(T{}_{\C{}}\text{.}\)</span>  Note: See <a href="x3nullspace.html#x3complexMap" class="xref" data-knowl="./knowl/xref/x3complexMap.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.2.3.33">Exercise 3.2.3.33</a> in <a href="x3nullspace.html" class="internal" title="Section 3.2: Null Spaces and Ranges">Section 3.2</a> for the definition of <span class="process-math">\(T{}_{\C{}}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5realeig-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.17"><a tabindex="-1" href="#x5realeig" title="Copy heading and permalink for Exercise 5.1.2.17" aria-label="Copy heading and permalink for Exercise 5.1.2.17">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5TC"><h4 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5TC-1-1">Suppose <span class="process-math">\(\F{} = \R{}\text{,}\)</span> <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> and <span class="process-math">\(\lambda \in \C{}\text{.}\)</span> Prove that <span class="process-math">\(\lambda\)</span> is an eigenvalue of the complexification <span class="process-math">\(T{}_{\C{}}\)</span> if and only if <span class="process-math">\(\bar{\lambda}\)</span> is an eigenvalue of <span class="process-math">\(T{}_{\C{}}\text{.}\)</span> <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5TC-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.18"><a tabindex="-1" href="#x5TC" title="Copy heading and permalink for Exercise 5.1.2.18" aria-label="Copy heading and permalink for Exercise 5.1.2.18">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-20"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-20-1-1">
+<div class="para">Show that the forward shift operator <span class="process-math">\(T \in \Lc( \F{\infty} )\)</span> defined by </div>
+<div class="displaymath process-math" id="x5invar-3-19-20-1-1-3">
+\begin{equation*}
+T(z_1, z_2, \dots ) = (0, z_1, z_2, \dots )
+\end{equation*}
+</div>
+<div class="para">has no eigenvalues.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.19"><a tabindex="-1" href="#x5invar-3-19-20" title="Copy heading and permalink for Exercise 5.1.2.19" aria-label="Copy heading and permalink for Exercise 5.1.2.19">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-21"><h4 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-21-1-1">
+<div class="para">Define the backward shift operator <span class="process-math">\(S \in \Lc( \F{\infty} )\)</span> by </div>
+<div class="displaymath process-math" id="x5invar-3-19-21-1-1-3">
+\begin{equation*}
+S(z_1, z_2, z_3, \dots) = (z_2, z_3, \dots).
+\end{equation*}
+</div>
+<ol class="decimal" id="x5invar-3-19-21-1-1-4">
+<li id="x5invar-3-19-21-1-1-4-1">
+<div class="para" id="x5invar-3-19-21-1-1-4-1-1">Show that every element of <span class="process-math">\(\F{}\)</span> is an eigenvalue of <span class="process-math">\(S\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-21-1-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.20.1"><a tabindex="-1" href="#x5invar-3-19-21-1-1-4-1" title="Copy heading and permalink for Item 5.1.2.20.1" aria-label="Copy heading and permalink for Item 5.1.2.20.1">🔗</a></div>
+</li>
+<li id="x5invar-3-19-21-1-1-4-2">
+<div class="para" id="x5invar-3-19-21-1-1-4-2-1">Find all eigenvectors of <span class="process-math">\(S\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-21-1-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.20.2"><a tabindex="-1" href="#x5invar-3-19-21-1-1-4-2" title="Copy heading and permalink for Item 5.1.2.20.2" aria-label="Copy heading and permalink for Item 5.1.2.20.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.20"><a tabindex="-1" href="#x5invar-3-19-21" title="Copy heading and permalink for Exercise 5.1.2.20" aria-label="Copy heading and permalink for Exercise 5.1.2.20">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-22"><h4 class="heading"><span class="codenumber">21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-22-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is invertible.</div>
+<ol class="decimal" id="x5invar-3-19-22-1-1-2">
+<li id="x5invar-3-19-22-1-1-2-1">
+<div class="para" id="x5invar-3-19-22-1-1-2-1-1">Suppose <span class="process-math">\(\lambda \in \F{}\)</span> with <span class="process-math">\(\lambda \ne 0\text{.}\)</span> Prove that <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\)</span> if and only if <span class="process-math">\(\frac{1}{\lambda}\)</span> is an eigenvalue of <span class="process-math">\(T^{-1}{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-22-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.21.1"><a tabindex="-1" href="#x5invar-3-19-22-1-1-2-1" title="Copy heading and permalink for Item 5.1.2.21.1" aria-label="Copy heading and permalink for Item 5.1.2.21.1">🔗</a></div>
+</li>
+<li id="x5invar-3-19-22-1-1-2-2">
+<div class="para" id="x5invar-3-19-22-1-1-2-2-1">Prove that <span class="process-math">\(T\)</span> and <span class="process-math">\(T^{-1}\)</span> have the same eigenvectors.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-22-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.21.2"><a tabindex="-1" href="#x5invar-3-19-22-1-1-2-2" title="Copy heading and permalink for Item 5.1.2.21.2" aria-label="Copy heading and permalink for Item 5.1.2.21.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.21"><a tabindex="-1" href="#x5invar-3-19-22" title="Copy heading and permalink for Exercise 5.1.2.21" aria-label="Copy heading and permalink for Exercise 5.1.2.21">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-23"><h4 class="heading"><span class="codenumber">22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-23-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and there exist nonzero vectors <span class="process-math">\(u\)</span> and <span class="process-math">\(w\)</span> in <span class="process-math">\(V\)</span> such that</div>
+<div class="displaymath process-math" id="x5invar-3-19-23-1-1-5">
+\begin{equation*}
+Tu = 3w \andd Tw = 3u.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-23-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="x5invar-3-19-23-1-2">Prove that <span class="process-math">\(3\)</span> or <span class="process-math">\(-3\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-23-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.22"><a tabindex="-1" href="#x5invar-3-19-23" title="Copy heading and permalink for Exercise 5.1.2.22" aria-label="Copy heading and permalink for Exercise 5.1.2.22">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-24"><h4 class="heading"><span class="codenumber">23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-24-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(S, T \in \Lc(V)\text{.}\)</span> Prove that <span class="process-math">\(ST\)</span> and <span class="process-math">\(TS\)</span> have the same eigenvalues.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-24-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.23"><a tabindex="-1" href="#x5invar-3-19-24" title="Copy heading and permalink for Exercise 5.1.2.23" aria-label="Copy heading and permalink for Exercise 5.1.2.23">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-25"><h4 class="heading"><span class="codenumber">24<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-25-1-1">
+<div class="para">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\)</span>-by-<span class="process-math">\(n\)</span> matrix with entries in <span class="process-math">\(\F{}{}\text{.}\)</span> Define <span class="process-math">\(T \in \Lc( \F{n} )\)</span> by <span class="process-math">\(Tx = Ax\text{,}\)</span> where elements of <span class="process-math">\(\F{n}\)</span> are thought of as <span class="process-math">\(n\)</span>-by-<span class="process-math">\(1\)</span> column vectors.</div>
+<ol class="decimal" id="x5invar-3-19-25-1-1-10">
+<li id="x5invar-3-19-25-1-1-10-1">
+<div class="para" id="x5invar-3-19-25-1-1-10-1-1">Suppose the sum of the entries in each row of <span class="process-math">\(A\)</span> equals <span class="process-math">\(1\text{.}\)</span> Prove that <span class="process-math">\(1\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-25-1-1-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.24.1"><a tabindex="-1" href="#x5invar-3-19-25-1-1-10-1" title="Copy heading and permalink for Item 5.1.2.24.1" aria-label="Copy heading and permalink for Item 5.1.2.24.1">🔗</a></div>
+</li>
+<li id="x5invar-3-19-25-1-1-10-2">
+<div class="para" id="x5invar-3-19-25-1-1-10-2-1">Suppose the sum of the entries in each column of <span class="process-math">\(A\)</span> equals <span class="process-math">\(1\text{.}\)</span> Prove that <span class="process-math">\(1\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-25-1-1-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.24.2"><a tabindex="-1" href="#x5invar-3-19-25-1-1-10-2" title="Copy heading and permalink for Item 5.1.2.24.2" aria-label="Copy heading and permalink for Item 5.1.2.24.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-25-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.24"><a tabindex="-1" href="#x5invar-3-19-25" title="Copy heading and permalink for Exercise 5.1.2.24" aria-label="Copy heading and permalink for Exercise 5.1.2.24">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-26"><h4 class="heading"><span class="codenumber">25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-26-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(u,
+w\)</span> are eigenvectors of <span class="process-math">\(T\)</span> such that <span class="process-math">\(u+w\)</span> is also an eigenvector of <span class="process-math">\(T{}\text{.}\)</span> Prove that <span class="process-math">\(u\)</span> and <span class="process-math">\(w\)</span> are eigenvectors of <span class="process-math">\(T\)</span> corresponding to the same eigenvalue.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-26-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.25"><a tabindex="-1" href="#x5invar-3-19-26" title="Copy heading and permalink for Exercise 5.1.2.25" aria-label="Copy heading and permalink for Exercise 5.1.2.25">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x388"><h4 class="heading"><span class="codenumber">26<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x388-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is such that every nonzero vector in <span class="process-math">\(V\)</span> is an eigenvector of <span class="process-math">\(T{}\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> is a scalar multiple of the identity operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x388-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.26"><a tabindex="-1" href="#x388" title="Copy heading and permalink for Exercise 5.1.2.26" aria-label="Copy heading and permalink for Exercise 5.1.2.26">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-28"><h4 class="heading"><span class="codenumber">27<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-28-1-1">Suppose that <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(k \in \{ 1, \ldots,\dim V - 1 \}\text{.}\)</span> Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is such that every subspace of <span class="process-math">\(V\)</span> of dimension <span class="process-math">\(k\)</span> is invariant under <span class="process-math">\(T{}\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> is a scalar multiple of the identity operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-28-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.27"><a tabindex="-1" href="#x5invar-3-19-28" title="Copy heading and permalink for Exercise 5.1.2.27" aria-label="Copy heading and permalink for Exercise 5.1.2.27">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-29"><h4 class="heading"><span class="codenumber">28<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-29-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> has at most <span class="process-math">\(1 + \dim \ran T\)</span> distinct eigenvalues.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-29-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.28"><a tabindex="-1" href="#x5invar-3-19-29" title="Copy heading and permalink for Exercise 5.1.2.28" aria-label="Copy heading and permalink for Exercise 5.1.2.28">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-30"><h4 class="heading"><span class="codenumber">29<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-30-1-1">Suppose <span class="process-math">\(T \in \Lc( \R{3} )\)</span> and <span class="process-math">\(-4\text{,}\)</span> <span class="process-math">\(5\text{,}\)</span> and <span class="process-math">\(\sqrt{7}\)</span> are eigenvalues of <span class="process-math">\(T{}\text{.}\)</span> Prove that there exists <span class="process-math">\(x \in \R{3}\)</span> such that <span class="process-math">\(Tx - 9x = ( -4, 5, \sqrt{7} )\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-30-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.29"><a tabindex="-1" href="#x5invar-3-19-30" title="Copy heading and permalink for Exercise 5.1.2.29" aria-label="Copy heading and permalink for Exercise 5.1.2.29">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-31"><h4 class="heading"><span class="codenumber">30<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-31-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\((T-2I) (T-3 I) (T-4 I) = 0\text{.}\)</span> Suppose <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span> Prove that <span class="process-math">\(\lambda = 2\)</span> or <span class="process-math">\(\lambda = 3\)</span> or <span class="process-math">\(\lambda = 4\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-31-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.30"><a tabindex="-1" href="#x5invar-3-19-31" title="Copy heading and permalink for Exercise 5.1.2.30" aria-label="Copy heading and permalink for Exercise 5.1.2.30">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-32"><h4 class="heading"><span class="codenumber">31<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-32-1-1">Give an example of <span class="process-math">\(T \in \Lc( \R2 )\)</span> such that <span class="process-math">\(T^4 = -I\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-32-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.31"><a tabindex="-1" href="#x5invar-3-19-32" title="Copy heading and permalink for Exercise 5.1.2.31" aria-label="Copy heading and permalink for Exercise 5.1.2.31">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-33"><h4 class="heading"><span class="codenumber">32<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-33-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> has no eigenvalues and <span class="process-math">\(T^4 = I\text{.}\)</span> Prove that <span class="process-math">\(T^2 = -I\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-33-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.32"><a tabindex="-1" href="#x5invar-3-19-33" title="Copy heading and permalink for Exercise 5.1.2.32" aria-label="Copy heading and permalink for Exercise 5.1.2.32">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-34"><h4 class="heading"><span class="codenumber">33<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-34-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(m\)</span> is a positive integer.</div>
+<ol class="decimal" id="x5invar-3-19-34-1-1-3">
+<li id="x5invar-3-19-34-1-1-3-1">
+<div class="para" id="x5invar-3-19-34-1-1-3-1-1">Prove that <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(T^m\)</span> is injective.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-34-1-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.33.1"><a tabindex="-1" href="#x5invar-3-19-34-1-1-3-1" title="Copy heading and permalink for Item 5.1.2.33.1" aria-label="Copy heading and permalink for Item 5.1.2.33.1">🔗</a></div>
+</li>
+<li id="x5invar-3-19-34-1-1-3-2">
+<div class="para" id="x5invar-3-19-34-1-1-3-2-1">Prove that <span class="process-math">\(T\)</span> is surjective if and only if <span class="process-math">\(T^m\)</span> is surjective.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-34-1-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.33.2"><a tabindex="-1" href="#x5invar-3-19-34-1-1-3-2" title="Copy heading and permalink for Item 5.1.2.33.2" aria-label="Copy heading and permalink for Item 5.1.2.33.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-34-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.33"><a tabindex="-1" href="#x5invar-3-19-34" title="Copy heading and permalink for Exercise 5.1.2.33" aria-label="Copy heading and permalink for Exercise 5.1.2.33">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-35"><h4 class="heading"><span class="codenumber">34<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-35-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(v_1, \dots,
+v_m \in V{}\text{.}\)</span> Prove that the list <span class="process-math">\(v_1, \dots,
+v_m\)</span> is linearly independent if and only if there exists <span class="process-math">\(T \in \Lc(V)\)</span> such that <span class="process-math">\(v_1, \dots,
+v_m\)</span> are eigenvectors of <span class="process-math">\(T\)</span> corresponding to distinct eigenvalues.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-35-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.34"><a tabindex="-1" href="#x5invar-3-19-35" title="Copy heading and permalink for Exercise 5.1.2.34" aria-label="Copy heading and permalink for Exercise 5.1.2.34">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-36"><h4 class="heading"><span class="codenumber">35<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-36-1-1">Suppose that <span class="process-math">\(\lambda_1, \dots, \lambda_n\)</span> is a list of distinct real numbers. Prove that the list <span class="process-math">\(e^{\lambda_1 x}, \dots,
+e^{\lambda_n x}\)</span> is linearly independent in the vector space of real-valued functions on <span class="process-math">\(\R{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-36-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="x5invar-3-19-36-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="x5invar-3-19-36-2-1">Let <span class="process-math">\(V = \Span( e^{\lambda_1 x}, \dots, e^{\lambda_n x} )\text{,}\)</span> and define an operator <span class="process-math">\(D \in \Lc(V)\)</span> by <span class="process-math">\(Df = f'\!\text{.}\)</span> Find eigenvalues and eigenvectors of <span class="process-math">\(D\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-36-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 5.1.2.35.1"><a tabindex="-1" href="#x5invar-3-19-36-2" title="Copy heading and permalink for Hint 5.1.2.35.1" aria-label="Copy heading and permalink for Hint 5.1.2.35.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.35"><a tabindex="-1" href="#x5invar-3-19-36" title="Copy heading and permalink for Exercise 5.1.2.35" aria-label="Copy heading and permalink for Exercise 5.1.2.35">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-37"><h4 class="heading"><span class="codenumber">36<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-37-1-1">Suppose that <span class="process-math">\(\lambda_1, \dots, \lambda_n\)</span> is a list of distinct positive numbers. Prove that the list <span class="process-math">\(\cos(\lambda_1 x), \dots, \cos(\lambda_n x)\)</span> is linearly independent in the vector space of real-valued functions on <span class="process-math">\(\R{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-37-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.36"><a tabindex="-1" href="#x5invar-3-19-37" title="Copy heading and permalink for Exercise 5.1.2.36" aria-label="Copy heading and permalink for Exercise 5.1.2.36">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="LLV"><h4 class="heading"><span class="codenumber">37<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="LLV-1-1">
+<div class="para">Suppose <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Define <span class="process-math">\(\A \in \Lc( \Lc(V) )\)</span> by</div>
+<div class="displaymath process-math" id="LLV-1-1-4">
+\begin{equation*}
+\A(S) = TS
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(S \in \Lc(V)\text{.}\)</span> Prove that the set of eigenvalues of <span class="process-math">\(T\)</span> equals the set of eigenvalues of <span class="process-math">\(\A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#LLV-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.37"><a tabindex="-1" href="#LLV" title="Copy heading and permalink for Exercise 5.1.2.37" aria-label="Copy heading and permalink for Exercise 5.1.2.37">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5quotient"><h4 class="heading"><span class="codenumber">38<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5quotient-1-1">
+<div class="para">Suppose <span class="process-math">\(V\)</span> is finite-dimensional, <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> and <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V\)</span> invariant under <span class="process-math">\(T{}\text{.}\)</span> The <dfn class="terminology">quotient operator</dfn>  <span class="process-math">\(T{}/U \in \Lc(V{}/U)\)</span> is defined by</div>
+<div class="displaymath process-math" id="x5quotient-1-1-10">
+\begin{equation*}
+(T{}/U)(v + U) = Tv +U
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(v \in V{}\text{.}\)</span>
+</div>
+<ol class="decimal" id="x5quotient-1-1-12">
+<li id="x5quotient-1-1-12-1">
+<div class="para" id="x5quotient-1-1-12-1-1">Show that the definition of <span class="process-math">\(T{}/U\)</span> makes sense (which requires using the condition that <span class="process-math">\(U\)</span> is invariant under <span class="process-math">\(T\)</span>) and show that <span class="process-math">\(T{}/U\)</span> is an operator on <span class="process-math">\(V{}/U\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5quotient-1-1-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.38.1"><a tabindex="-1" href="#x5quotient-1-1-12-1" title="Copy heading and permalink for Item 5.1.2.38.1" aria-label="Copy heading and permalink for Item 5.1.2.38.1">🔗</a></div>
+</li>
+<li id="x5quotient-1-1-12-2">
+<div class="para" id="x5quotient-1-1-12-2-1">Show that each eigenvalue of <span class="process-math">\(T{}/U\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5quotient-1-1-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.38.2"><a tabindex="-1" href="#x5quotient-1-1-12-2" title="Copy heading and permalink for Item 5.1.2.38.2" aria-label="Copy heading and permalink for Item 5.1.2.38.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5quotient-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.38"><a tabindex="-1" href="#x5quotient" title="Copy heading and permalink for Exercise 5.1.2.38" aria-label="Copy heading and permalink for Exercise 5.1.2.38">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-40"><h4 class="heading"><span class="codenumber">39<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-40-1-1">Suppose <span class="process-math">\(V\)</span> is finite-dimensional and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> has an eigenvalue if and only if there exists a subspace of <span class="process-math">\(V\)</span> of dimension <span class="process-math">\(\dim V - 1\)</span> that is invariant under <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-40-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.39"><a tabindex="-1" href="#x5invar-3-19-40" title="Copy heading and permalink for Exercise 5.1.2.39" aria-label="Copy heading and permalink for Exercise 5.1.2.39">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-41"><h4 class="heading"><span class="codenumber">40<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-41-1-1">
+<div class="para">Suppose <span class="process-math">\(S, T \in \Lc(V)\)</span> and <span class="process-math">\(S\)</span> is invertible. Suppose <span class="process-math">\(p \in \P(\F{})\)</span> is a polynomial. Prove that</div>
+<div class="displaymath process-math" id="x5invar-3-19-41-1-1-4">
+\begin{equation*}
+p( STS^{-1} ) = S p(T) S^{-1}{}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-41-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.40"><a tabindex="-1" href="#x5invar-3-19-41" title="Copy heading and permalink for Exercise 5.1.2.40" aria-label="Copy heading and permalink for Exercise 5.1.2.40">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="InvPoly"><h4 class="heading"><span class="codenumber">41<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="InvPoly-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(U\)</span> is a subspace of <span class="process-math">\(V\)</span> invariant under <span class="process-math">\(T{}\text{.}\)</span> Prove that <span class="process-math">\(U\)</span> is invariant under <span class="process-math">\(p(T)\)</span> for every polynomial <span class="process-math">\(p \in \P(\F{})\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#InvPoly-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.41"><a tabindex="-1" href="#InvPoly" title="Copy heading and permalink for Exercise 5.1.2.41" aria-label="Copy heading and permalink for Exercise 5.1.2.41">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-43"><h4 class="heading"><span class="codenumber">42<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x5invar-3-19-43-1-1">
+<div class="para">Define <span class="process-math">\(T \in \Lc( \F{n} )\)</span> by <span class="process-math">\(T(x_1, x_2, x_3, \dots,
+x_n) = (x_1, 2x_2, 3x_3, \dots, n x_n)\text{.}\)</span>
+</div>
+<ol class="decimal" id="x5invar-3-19-43-1-1-3">
+<li id="x5invar-3-19-43-1-1-3-1">
+<div class="para" id="x5invar-3-19-43-1-1-3-1-1">Find all eigenvalues and eigenvectors of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-43-1-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.42.1"><a tabindex="-1" href="#x5invar-3-19-43-1-1-3-1" title="Copy heading and permalink for Item 5.1.2.42.1" aria-label="Copy heading and permalink for Item 5.1.2.42.1">🔗</a></div>
+</li>
+<li id="x5invar-3-19-43-1-1-3-2">
+<div class="para" id="x5invar-3-19-43-1-1-3-2-1">Find all subspaces of <span class="process-math">\(\F n\)</span> that are invariant under <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-43-1-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5.1.2.42.2"><a tabindex="-1" href="#x5invar-3-19-43-1-1-3-2" title="Copy heading and permalink for Item 5.1.2.42.2" aria-label="Copy heading and permalink for Item 5.1.2.42.2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-43-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.42"><a tabindex="-1" href="#x5invar-3-19-43" title="Copy heading and permalink for Exercise 5.1.2.42" aria-label="Copy heading and permalink for Exercise 5.1.2.42">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x5invar-3-19-44"><h4 class="heading"><span class="codenumber">43<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x5invar-3-19-44-1-1">Suppose that <span class="process-math">\(V\)</span> is finite-dimensional, <span class="process-math">\(\dim V &gt; 1\text{,}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that <span class="process-math">\(\{ p(T): p \in \P(\F{}) \} \ne \Lc(V)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5invar-3-19-44-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 5.1.2.43"><a tabindex="-1" href="#x5invar-3-19-44" title="Copy heading and permalink for Exercise 5.1.2.43" aria-label="Copy heading and permalink for Exercise 5.1.2.43">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 5.1.2: Exercises"><a tabindex="-1" href="#x5invar-3-19" title="Copy heading and permalink for Exercises 5.1.2: Exercises" aria-label="Copy heading and permalink for Exercises 5.1.2: Exercises">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 5.1.2: Polynomials Applied to Operators"><a tabindex="-1" href="#x5invar-3" title="Copy heading and permalink for Subsection 5.1.2: Polynomials Applied to Operators" aria-label="Copy heading and permalink for Subsection 5.1.2: Polynomials Applied to Operators">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 5.1: Invariant Subspaces"><a tabindex="-1" href="#x5invar" title="Copy heading and permalink for Section 5.1: Invariant Subspaces" aria-label="Copy heading and permalink for Section 5.1: Invariant Subspaces">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="eigs-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="eigenuppertri.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

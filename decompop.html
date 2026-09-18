@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Generalized Eigenspace Decomposition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-0 { system: extends lower-alpha; prefix: '('; suffix: ') '; }
+</style>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Linear algebra done right">
+<meta property="og:title" content="Linear algebra done right">
+<meta property="book:title" content="Linear algebra done right">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.12';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.561f7165d9bf3626.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Linear algebra done right</span></a></div>
+<p class="byline">Sheldon Axler</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="geneig.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="operators_complex_vs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="x8geneigde.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\tensor}{\otimes}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\andd}{\quad \text{and} \quad}
+\newcommand{\orr}{\quad \text{or} \quad}
+\newcommand{\butt}{\quad \text{but} \quad}
+\newcommand{\fun}[3]{#1 \colon #2 \to #3}
+\newcommand{\nth}{{\text{th}}}
+\newcommand{\C}[1]{\symbf{C}^{#1}}
+\newcommand{\F}[1]{\symbf{F}^{#1}}
+\newcommand{\R}[1]{\symbf{R}^{#1}}
+\newcommand{\CC}[1]{\symbf{C}^{#1}}
+\newcommand{\FF}[1]{\symbf{F}^{#1}}
+\newcommand{\RR}[1]{\symbf{R}^{#1}}
+\newcommand{\A}{\symcal{A}}
+\newcommand{\B}{\symcal{B}}
+\newcommand{\E}{\symcal{E}}
+\newcommand{\CF}{\symcal{F}}
+\newcommand{\Lc}{\symcal{L}}
+\newcommand{\M}{\symcal{M}}
+\newcommand{\P}{\symcal{P}}
+\newcommand{\sm}{\backslash}
+\newcommand{\Space}{}
+\DeclareMathOperator{\ran}{range}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\perm}{perm}
+\DeclareMathOperator{\vol}{volume}
+\DeclareMathOperator{\ker}{null}
+\newcommand{\tran}[1]{#1^{\text{t}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Linear Algebra Done Right</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="author.html" class="internal"><span class="title">About the Author</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forStudents.html" class="internal"><span class="title">Preface for Students</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="forInstructors.html" class="internal"><span class="title">Preface for Instructors</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgments.html" class="internal"><span class="title">Acknowledgments</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="VectorSpaces.html" class="internal"><span class="codenumber">1</span> <span class="title">Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-VectorSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="VectorSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Rn_and_Cn.html" class="internal"><span class="codenumber">1.1</span> <span class="title"><span class="process-math">\(\R n\)</span> and <span class="process-math">\(\C n\)</span></span></a></div>
+<ul id="ptx-toc-group-Rn_and_Cn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-2" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-3" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Lists</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Rn_and_Cn.html#Rn_and_Cn-4" class="internal"><span class="codenumber">1.1.3</span> <span class="title"><span class="process-math">\(\F n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="Rn_and_Cn.html#fields" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Digression on Fields</span></a></div>
+<ul id="ptx-toc-group-fields" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="Rn_and_Cn.html#fields-4" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1DefVS.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Definition of Vector Space</span></a></div>
+<ul id="ptx-toc-group-x1DefVS" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1DefVS.html#x1DefVS-46" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x1Subspaces.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Subspaces</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-3" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Sums of Subspaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Direct Sums</span></a></div>
+<ul id="ptx-toc-group-x1Subspaces-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x1Subspaces.html#x1Subspaces-4-18" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="fin-dimVS.html" class="internal"><span class="codenumber">2</span> <span class="title">Finite-Dimensional Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-fin-dimVS" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="fin-dimVS-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2spli.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Span and Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2spli.html#x2spli-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Linear Combinations and Span</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2spli.html#x2spli-4" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Linear Independence</span></a></div>
+<ul id="ptx-toc-group-x2spli-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2spli.html#x2spli-4-26" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bases.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Bases</span></a></div>
+<ul id="ptx-toc-group-bases" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bases.html#bases-26" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="dimension.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Dimension</span></a></div>
+<ul id="ptx-toc-group-dimension" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="dimension.html#dimension-30" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="LinearMaps.html" class="internal"><span class="codenumber">3</span> <span class="title">Linear Maps</span></a></div>
+<ul id="ptx-toc-group-LinearMaps" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="LinearMaps-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="vslinear.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Vector Space of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-vslinear" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vslinear.html#vslinear-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Definition and Examples of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="vslinear.html#vslinear-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Algebraic Operations on <span class="process-math">\(\Lc(V, W)\)</span></span></a></div>
+<ul id="ptx-toc-group-vslinear-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="vslinear.html#vslinear-3-20" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3nullspace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Null Spaces and Ranges</span></a></div>
+<ul id="ptx-toc-group-x3nullspace" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-2" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Null Space and Injectivity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-3" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Range and Surjectivity</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Fundamental Theorem of Linear Maps</span></a></div>
+<ul id="ptx-toc-group-x3nullspace-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3nullspace.html#x3nullspace-4-30" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Matrices</span></a></div>
+<ul id="ptx-toc-group-matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-2" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Representing a Linear Map by a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-3" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Addition and Scalar Multiplication of Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="matrices.html#matrices-4" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="matrices.html#matrices-5" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Column–Row Factorization and Rank of a Matrix</span></a></div>
+<ul id="ptx-toc-group-matrices-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="matrices.html#x3think2" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="invertible.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Invertibility and Isomorphisms</span></a></div>
+<ul id="ptx-toc-group-invertible" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-2" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Invertible Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-3" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Isomorphic Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="invertible.html#invertible-4" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Linear Maps Thought of as Matrix Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="invertible.html#invertible-5" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Change of Basis</span></a></div>
+<ul id="ptx-toc-group-invertible-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="invertible.html#invertible-5-27" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pq.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Products and Quotients of Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-pq" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pq.html#pq-2" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Products of Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="pq.html#pq-3" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Quotient Spaces</span></a></div>
+<ul id="ptx-toc-group-pq-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="pq.html#pq-3-29" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="duals.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Duality</span></a></div>
+<ul id="ptx-toc-group-duals" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-2" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Dual Space and Dual Map</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="duals.html#duals-3" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Null Space and Range of Dual of Linear Map</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="duals.html#duals-4" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Matrix of Dual of Linear Map</span></a></div>
+<ul id="ptx-toc-group-duals-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="duals.html#duals-4-9" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="polynomials.html" class="internal"><span class="codenumber">4</span> <span class="title">Polynomials</span></a></div>
+<ul id="ptx-toc-group-polynomials" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="polynomials-25.html" class="internal"><span class="codenumber">4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="eigs.html" class="internal"><span class="codenumber">5</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div>
+<ul id="ptx-toc-group-eigs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="eigs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x5invar.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Invariant Subspaces</span></a></div>
+<ul id="ptx-toc-group-x5invar" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x5invar.html#x5invar-2" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Eigenvalues</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x5invar.html#x5invar-3" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Polynomials Applied to Operators</span></a></div>
+<ul id="ptx-toc-group-x5invar-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x5invar.html#x5invar-3-19" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="eigenuppertri.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Minimal Polynomial</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-2" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Existence of Eigenvalues on Complex Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-3" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Eigenvalues and the Minimal Polynomial</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Eigenvalues on Odd-Dimensional Real Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-eigenuppertri-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="eigenuppertri.html#eigenuppertri-4-10" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x4utm.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Upper-Triangular Matrices</span></a></div>
+<ul id="ptx-toc-group-x4utm" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x4utm.html#x4utm-41" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="diagmat.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Diagonalizable Operators</span></a></div>
+<ul id="ptx-toc-group-diagmat" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-2" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Diagonal Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="diagmat.html#diagmat-3" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Conditions for Diagonalizability</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="diagmat.html#diagmat-4" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Gershgorin Disk Theorem</span></a></div>
+<ul id="ptx-toc-group-diagmat-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="diagmat.html#diagmat-4-12" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2diagmat.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Commuting Operators</span></a></div>
+<ul id="ptx-toc-group-x2diagmat" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2diagmat.html#x2diagmat-30" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="InnerProductSpaces.html" class="internal"><span class="codenumber">6</span> <span class="title">Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-InnerProductSpaces" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="InnerProductSpaces-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x6ipn.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Inner Products and Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-2" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Inner Products</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x6ipn.html#x6ipn-3" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Norms</span></a></div>
+<ul id="ptx-toc-group-x6ipn-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x6ipn.html#x6ipn-3-41" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="orthobases.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Orthonormal Bases</span></a></div>
+<ul id="ptx-toc-group-orthobases" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="orthobases.html#orthobases-2" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Orthonormal Lists and the Gram–Schmidt Procedure</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="orthobases.html#orthobases-3" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Linear Functionals on Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-orthobases-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="orthobases.html#orthobases-3-16" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="OrthoMin.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Orthogonal Complements and Minimization Problems</span></a></div>
+<ul id="ptx-toc-group-OrthoMin" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-2" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Orthogonal Complements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-3" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Minimization Problems</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Pseudoinverse</span></a></div>
+<ul id="ptx-toc-group-OrthoMin-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="OrthoMin.html#OrthoMin-4-27" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="opsinner.html" class="internal"><span class="codenumber">7</span> <span class="title">Operators on Inner Product Spaces</span></a></div>
+<ul id="ptx-toc-group-opsinner" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="opsinner-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="selfadjoint_normal.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Self-Adjoint and Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-2" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Adjoints</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-3" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Self-Adjoint Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Normal Operators</span></a></div>
+<ul id="ptx-toc-group-selfadjoint_normal-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="selfadjoint_normal.html#selfadjoint_normal-4-18" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpectralTheorem.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-3" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Real Spectral Theorem</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Complex Spectral Theorem</span></a></div>
+<ul id="ptx-toc-group-SpectralTheorem-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="SpectralTheorem.html#SpectralTheorem-4-10" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="POIUO.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Positive Operators</span></a></div>
+<ul id="ptx-toc-group-POIUO" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="POIUO.html#POIUO-21" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x3QR.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isometries, Unitary Operators, and Matrix Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-2" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Isometries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-3" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x3QR.html#x3QR-4" class="internal"><span class="codenumber">7.4.3</span> <span class="title">QR Factorization</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x3QR.html#x3QR-5" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Cholesky Factorization</span></a></div>
+<ul id="ptx-toc-group-x3QR-5" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x3QR.html#x3QR-5-13" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x2SVD.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x2SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-2" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x2SVD.html#x2SVD-3" class="internal"><span class="codenumber">7.5.2</span> <span class="title">SVD for Linear Maps and for Matrices</span></a></div>
+<ul id="ptx-toc-group-x2SVD-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x2SVD.html#x2SVD-3-22" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9SVD.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Consequences of Singular Value Decomposition</span></a></div>
+<ul id="ptx-toc-group-x9SVD" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-2" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Norms of Linear Maps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-3" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Approximation by Linear Maps with Lower-Dimensional Range</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-4" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Polar Decomposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-5" class="internal"><span class="codenumber">7.6.4</span> <span class="title">Operators Applied to Ellipsoids and Parallelepipeds</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-6" class="internal"><span class="codenumber">7.6.5</span> <span class="title">Volume via Singular Values</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9SVD.html#x9SVD-7" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Properties of an Operator as Determined by Its Eigenvalues</span></a></div>
+<ul id="ptx-toc-group-x9SVD-7" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9SVD.html#x9SVD-7-5" class="internal"><span class="codenumber">7.6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="operators_complex_vs.html" class="internal"><span class="codenumber">8</span> <span class="title">Operators on Complex Vector Spaces</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-operators_complex_vs">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="operators_complex_vs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="geneig.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Generalized Eigenvectors and Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-2" class="internal"><span class="codenumber">8.1.1</span> <span class="title">Null Spaces of Powers of an Operator</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="geneig.html#geneig-3" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Generalized Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="geneig.html#geneig-4" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Nilpotent Operators</span></a></div>
+<ul id="ptx-toc-group-geneig-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="geneig.html#geneig-4-15" class="internal"><span class="codenumber">8.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="decompop.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Generalized Eigenspace Decomposition</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-decompop">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-2" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Generalized Eigenspaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="decompop.html#decompop-3" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Multiplicity of an Eigenvalue</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="decompop.html#decompop-4" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Block Diagonal Matrices</span></a></div>
+<ul id="ptx-toc-group-decompop-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="decompop.html#decompop-4-10" class="internal"><span class="codenumber">8.2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x8geneigde.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Consequences of Generalized Eigenspace Decomposition</span></a></div>
+<ul id="ptx-toc-group-x8geneigde" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x8geneigde.html#x8geneigde-2" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Square Roots of Operators</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x8geneigde.html#Jordan" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Jordan Form</span></a></div>
+<ul id="ptx-toc-group-Jordan" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x8geneigde.html#Jordan-19" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x7trace.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Trace: A Connection Between Matrices and Operators</span></a></div>
+<ul id="ptx-toc-group-x7trace" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x7trace.html#x7trace-36" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="MultLATensors.html" class="internal"><span class="codenumber">9</span> <span class="title">Multilinear Algebra and Determinants</span></a></div>
+<ul id="ptx-toc-group-MultLATensors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="MultLATensors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bilin_quad.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Bilinear Forms and Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-2" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-3" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Symmetric Bilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Quadratic Forms</span></a></div>
+<ul id="ptx-toc-group-bilin_quad-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="bilin_quad.html#bilin_quad-4-15" class="internal"><span class="codenumber">9.1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="alt_multi.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Alternating Multilinear Forms</span></a></div>
+<ul id="ptx-toc-group-alt_multi" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-2" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Multilinear Forms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="alt_multi.html#alt_multi-3" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Alternating Multilinear Forms and Permutations</span></a></div>
+<ul id="ptx-toc-group-alt_multi-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="alt_multi.html#alt_multi-3-27" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9det.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9det.html#x9det-2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Defining the Determinant</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9det.html#x9det-3" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Properties of Determinants</span></a></div>
+<ul id="ptx-toc-group-x9det-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9det.html#x9det-3-65" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="x9TensorSect.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Tensor Products</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-2" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Tensor Product of Two Vector Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-3" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Tensor Product of Inner Product Spaces</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Tensor Product of Multiple Vector Spaces</span></a></div>
+<ul id="ptx-toc-group-x9TensorSect-4" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="x9TensorSect.html#x9TensorSect-4-25" class="internal"><span class="codenumber">9.4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back matter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocredits.html" class="internal"><span class="codenumber">1</span> <span class="title">Photo Credits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="typesetting.html" class="internal"><span class="codenumber">2</span> <span class="title">Colophon: Notes on Typesetting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pretextplus.html" class="internal"><span class="codenumber">3</span> <span class="title">Colophon: The Web version</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="decompop">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Generalized Eigenspace Decomposition</span>
+</h1>
+<section class="subsection" id="decompop-2">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Generalized Eigenspaces</span>
+</h2>
+<article class="definition definition-like" id="decompop-2-2"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">generalized eigenspace, <span class="process-math">\(G(\lambda, T)\)</span>.</span>
+</h3>
+<div class="para logical" id="decompop-2-2-2-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(\lambda \in \F{}{}\text{.}\)</span> The <dfn class="terminology">generalized eigenspace</dfn> of <span class="process-math">\(T\)</span> corresponding to <span class="process-math">\(\lambda\text{,}\)</span> denoted by <span class="process-math">\(G(\lambda, T)\text{,}\)</span> is defined by</div>
+<div class="displaymath process-math" id="decompop-2-2-2-1-7">
+\begin{equation*}
+G(\lambda, T) = \{  v \in V : ( T- \lambda I)^k v = 0 \text{ for some positive integer }  k \}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="decompop-2-2-2-2">Thus <span class="process-math">\(G(\lambda, T)\)</span> is the set of generalized eigenvectors of <span class="process-math">\(T\)</span> corresponding to <span class="process-math">\(\lambda\text{,}\)</span> along with the <span class="process-math">\(0\)</span> vector. <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 8.16: generalized eigenspace, G(\lambda, T)"><a tabindex="-1" href="#decompop-2-2" title="Copy heading and permalink for Definition 8.16: generalized eigenspace, G(\lambda, T)" aria-label="Copy heading and permalink for Definition 8.16: generalized eigenspace, G(\lambda, T)">🔗</a></div>
+</article>
+<div class="para" id="decompop-2-3"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="para" id="decompop-2-4">Because every eigenvector of <span class="process-math">\(T\)</span> is a generalized eigenvector of <span class="process-math">\(T\)</span> (take <span class="process-math">\(k=1\)</span> in the definition of generalized eigenvector), each eigenspace is contained in the corresponding generalized eigenspace. In other words, if <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(\lambda \in \F{}{}\text{,}\)</span> then <span class="process-math">\(E(\lambda, T) \subset G(\lambda, T)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-2-5">The next result implies that if <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(\lambda \in \F{}{}\text{,}\)</span> then the generalized eigenspace <span class="process-math">\(G(\lambda, T)\)</span> is a subspace of  <span class="process-math">\(V\)</span> (because the null space of each linear map on <span class="process-math">\(V\)</span> is a subspace of <span class="process-math">\(V\)</span>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x180"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">description of generalized eigenspaces.</span>
+</h3>
+<div class="para" id="x180-2-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(\lambda \in \F{}{}\text{.}\)</span> Then <span class="process-math">\(G(\lambda, T) =\ker (T - \lambda I)^{\dim V}\!\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x180-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.17: description of generalized eigenspaces"><a tabindex="-1" href="#x180" title="Copy heading and permalink for Theorem 8.17: description of generalized eigenspaces" aria-label="Copy heading and permalink for Theorem 8.17: description of generalized eigenspaces">🔗</a></div>
+</article>
+<details id="decompop-2-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="decompop-2-7-1">Suppose <span class="process-math">\(v \in \ker (T - \lambda I)^{\dim V}\!\text{.}\)</span> The definitions imply <span class="process-math">\(v \in G(\lambda, T)\text{.}\)</span> Thus <span class="process-math">\(G(\lambda, T) \supset \ker (T - \lambda I)^{\dim V}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-2-7-2">Conversely, suppose <span class="process-math">\(v \in G(\lambda, T)\text{.}\)</span> Thus there is a positive integer <span class="process-math">\(k\)</span> such that <span class="process-math">\(v \in \ker (T - \lambda I)^k\!\text{.}\)</span> <a href="geneig.html#x76" class="xref" data-knowl="./knowl/xref/x76.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.1: sequence of increasing null spaces">From 8.1</a> and <a href="geneig.html#x23" class="xref" data-knowl="./knowl/xref/x23.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.3: null spaces stop growing">Theorem 8.3</a> (with <span class="process-math">\(T - \lambda I\)</span> replacing <span class="process-math">\(T\)</span>), we get <span class="process-math">\(v \in \ker (T - \lambda I)^{\dim V}\text{.}\)</span> Thus <span class="process-math">\(G(\lambda, T) \subset \ker (T - \lambda I)^{\dim V}\text{,}\)</span> completing the proof.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.2.1.1"><a tabindex="-1" href="#decompop-2-7" title="Copy heading and permalink for Proof 8.2.1.1" aria-label="Copy heading and permalink for Proof 8.2.1.1">🔗</a></div>
+</article></details>
+<details id="x5exgeneig" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">generalized eigenspaces of an operator on  <span class="process-math">\(\C3\)</span>.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="x5exgeneig-2-1">
+<div class="para">Define <span class="process-math">\(T \in \Lc( \C{3} )\)</span> by</div>
+<div class="displaymath process-math" id="x5exgeneig-2-1-2">
+\begin{equation*}
+T(z_1, z_2, z_3) = (4z_2, 0, 5z_3).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5exgeneig-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="x5exgeneig-2-2">
+<div class="para">In <a href="geneig.html#x8exgeneig" class="xref" data-knowl="./knowl/xref/x8exgeneig.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.8: generalized eigenvectors of an operator on  \C3">Example 8.8</a>, we saw that the eigenvalues of <span class="process-math">\(T\)</span> are <span class="process-math">\(0\)</span> and <span class="process-math">\(5\text{,}\)</span> and we found the corresponding sets of generalized eigenvectors. Taking the union of those sets with <span class="process-math">\(\{ 0 \}\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x8exgeneig.html" id="x5exgeneig-2-2-6">
+\begin{equation*}
+G(0, T) = \{  (z_1, z_2, 0): z_1, z_2 \in \C{}  \} \andd G(5, T) = \{  (0, 0, z_3): z_3 \in \C{}  \}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5exgeneig-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="x5exgeneig-2-3">Note that <span class="process-math">\(\CC{3} = G(0, T)\oplus G(5, T)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x5exgeneig-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.18: generalized eigenspaces of an operator on  \C3"><a tabindex="-1" href="#x5exgeneig" title="Copy heading and permalink for Example 8.18: generalized eigenspaces of an operator on  \C3" aria-label="Copy heading and permalink for Example 8.18: generalized eigenspaces of an operator on  \C3">🔗</a></div>
+</article></details>
+<div class="para" id="decompop-2-9">In <a href="decompop.html#x5exgeneig" class="xref" data-knowl="./knowl/xref/x5exgeneig.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.18: generalized eigenspaces of an operator on  \C3">Example 8.18</a>, the domain space <span class="process-math">\(\C3\)</span> is the direct sum of the generalized eigenspaces of the operator <span class="process-math">\(T\)</span> in that example. Our next result shows that this behavior holds in general. Specifically, the following major result shows that if <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> then <span class="process-math">\(V\)</span> is the direct sum of the generalized eigenspaces of <span class="process-math">\(T\text{,}\)</span> each of which is invariant under <span class="process-math">\(T\)</span> and on which <span class="process-math">\(T\)</span> is a nilpotent operator plus a scalar multiple of the identity. Thus the next result achieves our goal of decomposing <span class="process-math">\(V\)</span> into invariant subspaces on which <span class="process-math">\(T\)</span> has a known behavior.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-2-10">As we will see, the proof follows from putting together what we have learned about generalized eigenspaces and then using our result that for each operator <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> there exists a basis of <span class="process-math">\(V\)</span> consisting of generalized eigenvectors of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x31"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">generalized eigenspace decomposition.</span>
+</h3>
+<div class="para logical" id="x31-2-1">
+<div class="para">Suppose <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Let <span class="process-math">\(\lambda_1, \dots, \lambda_m\)</span> be the distinct eigenvalues of <span class="process-math">\(T{}\text{.}\)</span> Then</div>
+<ol class="decimal" id="x31-2-1-6">
+<li id="x31-2-1-6-1">
+<div class="para" id="x31-2-1-6-1-1">
+<span class="process-math">\(G(\lambda_k, T)\)</span> is invariant under <span class="process-math">\(T\)</span> for each <span class="process-math">\(k = 1, \ldots, m\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x31-2-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#x31-2-1-6-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="x31-2-1-6-2">
+<div class="para" id="x31-2-1-6-2-1">
+<span class="process-math">\((T - \lambda_k I)|_{G(\lambda_k, T)}\)</span> is nilpotent for each <span class="process-math">\(k = 1, \ldots, m\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x31-2-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#x31-2-1-6-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="x31-2-1-6-3">
+<div class="para" id="x31-2-1-6-3-1">
+<span class="process-math">\(V = G(\lambda_1, T) \oplus \dots \oplus G(\lambda_m, T)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x31-2-1-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#x31-2-1-6-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x31-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.19: generalized eigenspace decomposition"><a tabindex="-1" href="#x31" title="Copy heading and permalink for Theorem 8.19: generalized eigenspace decomposition" aria-label="Copy heading and permalink for Theorem 8.19: generalized eigenspace decomposition">🔗</a></div>
+</article>
+<details id="decompop-2-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="decompop-2-12-1">
+<ol class="decimal" id="decompop-2-12-1-1">
+<li id="decompop-2-12-1-1-1">
+<div class="para logical" id="decompop-2-12-1-1-1-1">
+<div class="para">Suppose <span class="process-math">\(k \in \{ 1, \ldots, m \}\text{.}\)</span> <a href="decompop.html#x180" class="xref" data-knowl="./knowl/xref/x180.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.17: description of generalized eigenspaces">Then 8.17</a> shows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x180.html ./knowl/xref/x130.html" id="decompop-2-12-1-1-1-1-3">
+\begin{equation*}
+G(\lambda_k, T) = \ker (T - \lambda_k I)^{\dim V}\!.
+\end{equation*}
+</div>
+<div class="para">
+<a href="x5invar.html#x130" class="xref" data-knowl="./knowl/xref/x130.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.17: null space and range of  p(T) are invariant under  T">Thus 5.17</a>, with <span class="process-math">\(p(z) = (z - \lambda_k)^{\dim V}\!\text{,}\)</span> implies that <span class="process-math">\(G(\lambda_k, T)\)</span> is invariant under <span class="process-math">\(T\text{,}\)</span> proving (a).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-12-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#decompop-2-12-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="decompop-2-12-1-1-2">
+<div class="para" id="decompop-2-12-1-1-2-1">Suppose <span class="process-math">\(k \in \{ 1, \ldots, m \}\text{.}\)</span> If <span class="process-math">\(v \in G(\lambda_k, T)\text{,}\)</span> then <span class="process-math">\((T - \lambda_k I)^{\dim V} v = 0\)</span> (by <a href="decompop.html#x180" class="xref" data-knowl="./knowl/xref/x180.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.17: description of generalized eigenspaces">Theorem 8.17</a>). Thus <span class="process-math">\(( (T - \lambda_k I)|_{G(\lambda_k,T)} )^{\dim V} = 0\text{.}\)</span> Hence <span class="process-math">\((T - \lambda_k I)|_{G(\lambda_k, T)}\)</span> is nilpotent, proving (b).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-12-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#decompop-2-12-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="decompop-2-12-1-1-3">
+<div class="para logical" id="decompop-2-12-1-1-3-1">
+<div class="para">To show that <span class="process-math">\(G(\lambda_1, T) + \dots + G(\lambda_m, T)\)</span> is a direct sum, suppose</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/genind.html ./knowl/xref/x30.html ./knowl/xref/x28.html" id="decompop-2-12-1-1-3-1-2">
+\begin{equation*}
+v_1 + \dots + v_m = 0,
+\end{equation*}
+</div>
+<div class="para">where each <span class="process-math">\(v_k\)</span> is in <span class="process-math">\(G(\lambda_k, T)\text{.}\)</span> Because generalized eigenvectors of <span class="process-math">\(T\)</span> corresponding to distinct eigenvalues are linearly independent (by <a href="geneig.html#genind" class="xref" data-knowl="./knowl/xref/genind.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.10: linearly independent generalized eigenvectors">Theorem 8.10</a>), this implies that each <span class="process-math">\(v_k\)</span> equals <span class="process-math">\(0\text{.}\)</span> Thus <span class="process-math">\(G(\lambda_1, T) + \dots + G(\lambda_m, T)\)</span> is a direct sum (by <a href="x1Subspaces.html#x30" class="xref" data-knowl="./knowl/xref/x30.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.49: condition for a direct sum">Theorem 1.49</a>). Finally, each vector in <span class="process-math">\(V\)</span> can be written as a finite sum of generalized eigenvectors of <span class="process-math">\(T\)</span> (by <a href="geneig.html#x28" class="xref" data-knowl="./knowl/xref/x28.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.7: a basis of generalized eigenvectors">Theorem 8.7</a>). Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/genind.html ./knowl/xref/x30.html ./knowl/xref/x28.html" id="decompop-2-12-1-1-3-1-15">
+\begin{equation*}
+V = G(\lambda_1, T) \oplus \dots \oplus G(\lambda_m, T),
+\end{equation*}
+</div>
+<div class="para">proving (c).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-12-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#decompop-2-12-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.2.1.2"><a tabindex="-1" href="#decompop-2-12" title="Copy heading and permalink for Proof 8.2.1.2" aria-label="Copy heading and permalink for Proof 8.2.1.2">🔗</a></div>
+</article></details>
+<div class="para" id="decompop-2-13">For the analogous result when <span class="process-math">\(\F{}=\R{}\text{,}\)</span> see <a href="decompop.html#x8Rdecomp" class="xref" data-knowl="./knowl/xref/x8Rdecomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.2.3.8">Exercise 8.2.3.8</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 8.2.1: Generalized Eigenspaces"><a tabindex="-1" href="#decompop-2" title="Copy heading and permalink for Subsection 8.2.1: Generalized Eigenspaces" aria-label="Copy heading and permalink for Subsection 8.2.1: Generalized Eigenspaces">🔗</a></div>
+</section>
+<section class="subsection" id="decompop-3">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Multiplicity of an Eigenvalue</span>
+</h2>
+<div class="para" id="decompop-3-2">If <span class="process-math">\(V\)</span> is a complex vector space and <span class="process-math">\(T\in \Lc(V)\text{,}\)</span> then the decomposition of <span class="process-math">\(V\)</span> provided by the generalized eigenspace decomposition <a href="decompop.html#x31" class="xref" data-knowl="./knowl/xref/x31.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.19: generalized eigenspace decomposition">Theorem 8.19</a> can be a powerful tool. The dimensions of the subspaces involved in this decomposition are sufficiently important to get a name, which is given in the next definition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="multeigen"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">multiplicity.</span>
+</h3>
+<div class="para logical" id="multeigen-2-1">
+<ol class="decimal" id="multeigen-2-1-1">
+<li id="multeigen-2-1-1-1">
+<div class="para" id="multeigen-2-1-1-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> The <dfn class="terminology">multiplicity</dfn> of an eigenvalue <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(T\)</span> is defined to be the dimension of the corresponding generalized eigenspace <span class="process-math">\(G(\lambda, T)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multeigen-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#multeigen-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="multeigen-2-1-1-2">
+<div class="para logical" id="multeigen-2-1-1-2-1">
+<div class="para">In other words, the  multiplicity of an eigenvalue <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(T\)</span> equals</div>
+<div class="displaymath process-math" id="multeigen-2-1-1-2-1-4">
+\begin{equation*}
+\dim \ker (T - \lambda I)^{\dim V\!}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multeigen-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#multeigen-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multeigen-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 8.20: multiplicity"><a tabindex="-1" href="#multeigen" title="Copy heading and permalink for Definition 8.20: multiplicity" aria-label="Copy heading and permalink for Definition 8.20: multiplicity">🔗</a></div>
+</article>
+<div class="para" id="decompop-3-4">The second bullet point above holds because <span class="process-math">\(G(\lambda, T) = \ker (T - \lambda I)^{\dim V}\)</span> (<a href="decompop.html#x180" class="xref" data-knowl="./knowl/xref/x180.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.17: description of generalized eigenspaces">see 8.17</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="multex" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">multiplicity of each eigenvalue of an operator.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="multex-2-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc( \C{3} )\)</span> is defined by</div>
+<div class="displaymath process-math" id="multex-2-1-2">
+\begin{equation*}
+T(z_1, z_2, z_3) = (6z_1 + 3z_2 + 4z_3, 6z_2 + 2z_3, 7z_3).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multex-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="multex-2-2">
+<div class="para">The matrix of <span class="process-math">\(T\)</span> (with respect to the standard basis) is</div>
+<div class="displaymath process-math" id="multex-2-2-2">
+\begin{equation*}
+\begin{pmatrix}6 \amp  3 \amp  4 \\ 0 \amp  6 \amp  2 \\ 0 \amp  0 \amp  7 \end{pmatrix} .
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multex-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="multex-2-3">
+<div class="para">The eigenvalues of <span class="process-math">\(T\)</span> are the diagonal entries <span class="process-math">\(6\)</span> and <span class="process-math">\(7\text{,}\)</span> as follows from <a href="x4utm.html#a221" class="xref" data-knowl="./knowl/xref/a221.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.37: determination of eigenvalues from upper-triangular matrix">Theorem 5.37</a>. You can verify that the generalized eigenspaces of <span class="process-math">\(T\)</span> are as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/a221.html" id="multex-2-3-6">
+\begin{equation*}
+G(6, T)  = \Span\bigl( (1, 0, 0), (0, 1, 0) \bigr) \andd G(7, T) = \Span\bigl( (10, 2, 1) \bigr).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multex-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<details id="multex-2-4" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Aside</span></h4></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="multex-2-4-1">In this example, the multiplicity of each eigenvalue equals the number of times that eigenvalue appears on the diagonal of an upper-triangular matrix representing the operator. This behavior always happens, as we will see in <a href="decompop.html#x253" class="xref" data-knowl="./knowl/xref/x253.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.28: multiplicity of an eigenvalue equals number of times on diagonal">Theorem 8.28</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multex-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details> 
+<div class="para" id="multex-2-5">Thus the eigenvalue <span class="process-math">\(6\)</span> has multiplicity <span class="process-math">\(2\)</span> and the eigenvalue <span class="process-math">\(7\)</span> has multiplicity <span class="process-math">\(1\text{.}\)</span> The direct sum <span class="process-math">\(\CC3 = G(6, T) \oplus G(7, T)\)</span> is the generalized eigenspace decomposition promised by <a href="decompop.html#x31" class="xref" data-knowl="./knowl/xref/x31.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.19: generalized eigenspace decomposition">Theorem 8.19</a>. A basis of <span class="process-math">\(\C3\)</span> consisting of generalized eigenvectors of <span class="process-math">\(T\text{,}\)</span> as promised by <a href="geneig.html#x28" class="xref" data-knowl="./knowl/xref/x28.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.7: a basis of generalized eigenvectors">Theorem 8.7</a>, is <span class="process-math">\((1, 0, 0), (0, 1, 0), (10, 2, 1)\text{.}\)</span> There does not exist a basis of <span class="process-math">\(\C3\)</span> consisting of eigenvectors of this operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multex-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.21: multiplicity of each eigenvalue of an operator"><a tabindex="-1" href="#multex" title="Copy heading and permalink for Example 8.21: multiplicity of each eigenvalue of an operator" aria-label="Copy heading and permalink for Example 8.21: multiplicity of each eigenvalue of an operator">🔗</a></div>
+</article></details>
+<div class="para" id="decompop-3-6">In the example above, the sum of the multiplicities of the eigenvalues of <span class="process-math">\(T\)</span> equals <span class="process-math">\(3\text{,}\)</span> which is the dimension of the domain of <span class="process-math">\(T{}\text{.}\)</span> The next result shows that this holds for all operators on finite-dimensional complex vector spaces.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x8sm"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">sum of the multiplicities equals <span class="process-math">\(\dim V\)</span>.</span>
+</h3>
+<div class="para" id="x8sm-2-1">Suppose <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Then the sum of the multiplicities of all eigenvalues of  <span class="process-math">\(T\)</span> equals  <span class="process-math">\(\dim V{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x8sm-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.22: sum of the multiplicities equals \dim V"><a tabindex="-1" href="#x8sm" title="Copy heading and permalink for Theorem 8.22: sum of the multiplicities equals \dim V" aria-label="Copy heading and permalink for Theorem 8.22: sum of the multiplicities equals \dim V">🔗</a></div>
+</article>
+<details id="decompop-3-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="decompop-3-8-1">The desired result follows from the generalized eigenspace decomposition <a href="decompop.html#x31" class="xref" data-knowl="./knowl/xref/x31.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.19: generalized eigenspace decomposition">Theorem 8.19</a> and the formula for the dimension of a direct sum (<a href="pq.html#x3directsumdim" class="xref" data-knowl="./knowl/xref/x3directsumdim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.87: a sum is a direct sum if and only if dimensions add up">see 3.87</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.2.2.1"><a tabindex="-1" href="#decompop-3-8" title="Copy heading and permalink for Proof 8.2.2.1" aria-label="Copy heading and permalink for Proof 8.2.2.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="decompop-3-9">
+<div class="para">The terms <dfn class="terminology">algebraic multiplicity</dfn>  and <dfn class="terminology">geometric multiplicity</dfn>  are used in some books. In case you encounter this terminology, be aware that the algebraic multiplicity is the same as the multiplicity defined here and the geometric multiplicity is the dimension of the corresponding eigenspace. In other words, if <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="decompop-3-9-8">
+\begin{gather*}
+\text{ algebraic multiplicity of\ } \lambda = \dim \ker(T - \lambda I)^{\dim V} = \dim G(\lambda, T),\\
+\text{ geometric multiplicity of\ } \lambda = \dim \ker (T - \lambda I) = \dim E(\lambda, T)\text{.}
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-3-10">Note that as defined above, the algebraic multiplicity also has a geometric meaning as the dimension of a certain null space. The definition of multiplicity given here is cleaner than the traditional definition that involves determinants; <a href="x9det.html#x9chareqdet" class="xref" data-knowl="./knowl/xref/x9chareqdet.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.60: if  \F{} = \C{} then characteristic polynomial of  T equals  \det(z I - T)">Theorem 9.60</a> implies that these definitions are equivalent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-3-11">If <span class="process-math">\(V\)</span> is an inner product space, <span class="process-math">\(T \in \Lc(V)\)</span> is normal, and <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\text{,}\)</span> then the algebraic multiplicity of <span class="process-math">\(\lambda\)</span> equals the geometric multiplicity of <span class="process-math">\(\lambda\text{,}\)</span> as can be seen from applying <a href="selfadjoint_normal.html#x399" class="xref" data-knowl="./knowl/xref/x399.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.1.3.27">Exercise 7.1.3.27</a> in <a href="selfadjoint_normal.html" class="internal" title="Section 7.1: Self-Adjoint and Normal Operators">Section 7.1</a> to the normal operator <span class="process-math">\(T - \lambda I\text{.}\)</span> As a special case, the singular values of <span class="process-math">\(S \in \Lc(V{}, W)\)</span> (here <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are both finite-dimensional inner product spaces) depend on the multiplicities (either algebraic or geometric) of the eigenvalues of the self-adjoint operator <span class="process-math">\(S^* S\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-3-12">The next definition associates a monic polynomial with each operator on a finite-dimensional complex vector space.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="x7charpoly"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">characteristic polynomial.</span>
+</h3>
+<div class="para logical" id="x7charpoly-2-1">
+<div class="para">Suppose <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Let <span class="process-math">\(\lambda_1, \dots, \lambda_m\)</span> denote the distinct eigenvalues of <span class="process-math">\(T\text{,}\)</span> with multiplicities <span class="process-math">\(d_1, \dots, d_m\text{.}\)</span> The polynomial</div>
+<div class="displaymath process-math" id="x7charpoly-2-1-7">
+\begin{equation*}
+(z - \lambda_1)^{d_1} \dotsm (z - \lambda_m)^{d_m}
+\end{equation*}
+</div>
+<div class="para">is called the <dfn class="terminology">characteristic polynomial</dfn> of <span class="process-math">\(T{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x7charpoly-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 8.23: characteristic polynomial"><a tabindex="-1" href="#x7charpoly" title="Copy heading and permalink for Definition 8.23: characteristic polynomial" aria-label="Copy heading and permalink for Definition 8.23: characteristic polynomial">🔗</a></div>
+</article>
+<details id="multex2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">the characteristic polynomial of an operator.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="multex2-2-1">Suppose <span class="process-math">\(T \in \Lc( \C3 )\)</span> is defined as in <a href="decompop.html#multex" class="xref" data-knowl="./knowl/xref/multex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.21: multiplicity of each eigenvalue of an operator">Example 8.21</a>. Because the eigenvalues of <span class="process-math">\(T\)</span> are <span class="process-math">\(6\text{,}\)</span> with multiplicity <span class="process-math">\(2\text{,}\)</span> and <span class="process-math">\(7\text{,}\)</span> with multiplicity <span class="process-math">\(1\text{,}\)</span> we see that the characteristic polynomial of <span class="process-math">\(T\)</span> is <span class="process-math">\((z-6)^2 (z-7)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#multex2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.24: the characteristic polynomial of an operator"><a tabindex="-1" href="#multex2" title="Copy heading and permalink for Example 8.24: the characteristic polynomial of an operator" aria-label="Copy heading and permalink for Example 8.24: the characteristic polynomial of an operator">🔗</a></div>
+</article></details>
+<article class="theorem theorem-like" id="degreezeros"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">degree and zeros of characteristic polynomial.</span>
+</h3>
+<div class="para logical" id="degreezeros-2-1">
+<div class="para">Suppose <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Then</div>
+<ol class="decimal" id="degreezeros-2-1-3">
+<li id="degreezeros-2-1-3-1">
+<div class="para" id="degreezeros-2-1-3-1-1">the characteristic polynomial of <span class="process-math">\(T\)</span> has degree <span class="process-math">\(\dim V\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#degreezeros-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#degreezeros-2-1-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="degreezeros-2-1-3-2">
+<div class="para" id="degreezeros-2-1-3-2-1">the zeros of the characteristic polynomial of <span class="process-math">\(T\)</span> are the eigenvalues of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#degreezeros-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#degreezeros-2-1-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#degreezeros-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.25: degree and zeros of characteristic polynomial"><a tabindex="-1" href="#degreezeros" title="Copy heading and permalink for Theorem 8.25: degree and zeros of characteristic polynomial" aria-label="Copy heading and permalink for Theorem 8.25: degree and zeros of characteristic polynomial">🔗</a></div>
+</article>
+<details id="decompop-3-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="decompop-3-16-1">Our result about the sum of the multiplicities <a href="decompop.html#x8sm" class="xref" data-knowl="./knowl/xref/x8sm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.22: sum of the multiplicities equals \dim V">Theorem 8.22</a> implies (a). The definition of the characteristic polynomial implies (b).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.2.2.2"><a tabindex="-1" href="#decompop-3-16" title="Copy heading and permalink for Proof 8.2.2.2" aria-label="Copy heading and permalink for Proof 8.2.2.2">🔗</a></div>
+</article></details>
+<div class="para" id="decompop-3-17">Most texts define the characteristic polynomial using determinants (the two definitions are equivalent by <a href="x9det.html#x9chareqdet" class="xref" data-knowl="./knowl/xref/x9chareqdet.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.60: if  \F{} = \C{} then characteristic polynomial of  T equals  \det(z I - T)">Theorem 9.60</a>). The approach taken here, which is considerably simpler, leads to the following nice proof of the Cayley–Hamilton theorem.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x139"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cayley–Hamilton theorem.</span>
+</h3>
+<div class="para" id="x139-2-1"> Suppose <span class="process-math">\(\F{} = \C{}\text{,}\)</span> <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> and <span class="process-math">\(q\)</span> is the characteristic polynomial of <span class="process-math">\(T{}\text{.}\)</span> Then <span class="process-math">\(q(T) =0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x139-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.26: Cayley–Hamilton theorem"><a tabindex="-1" href="#x139" title="Copy heading and permalink for Theorem 8.26: Cayley–Hamilton theorem" aria-label="Copy heading and permalink for Theorem 8.26: Cayley–Hamilton theorem">🔗</a></div>
+</article>
+<details id="decompop-3-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="decompop-3-19-1">Let <span class="process-math">\(\lambda_1, \dots, \lambda_m\)</span> be the distinct eigenvalues of <span class="process-math">\(T\text{,}\)</span> and let <span class="process-math">\(d_k = \dim G(\lambda_k, T)\text{.}\)</span> For each <span class="process-math">\(k \in \{1, \dots, m\}\text{,}\)</span> we know that <span class="process-math">\((T - \lambda_k I)|_{G(\lambda_k, T)}\)</span> is nilpotent. Thus we have<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="decompop-3-19-2" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Aside</span></h4></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="decompop-3-19-2-1">Arthur Cayley (1821–1895) published three mathematics papers before completing his undergraduate degree.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para logical" id="decompop-3-19-3">
+<div class="displaymath process-math" id="decompop-3-19-3-2">
+\begin{equation*}
+(T - \lambda_k I)^{d_k}|_{G(\lambda_k, T)} = 0
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-19-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-3-19-4">(by <a href="geneig.html#x181" class="xref" data-knowl="./knowl/xref/x181.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.13: nilpotent operator raised to dimension of domain is 0">Theorem 8.13</a>) for each <span class="process-math">\(k \in \{1, \dots, m\}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-19-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-3-19-5">The generalized eigenspace decomposition <a href="decompop.html#x31" class="xref" data-knowl="./knowl/xref/x31.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.19: generalized eigenspace decomposition">Theorem 8.19</a> states that every vector in <span class="process-math">\(V\)</span> is a sum of vectors in <span class="process-math">\(G(\lambda_1, T), \dots, G(\lambda_m, T)\text{.}\)</span> Thus to prove that <span class="process-math">\(q(T) = 0\text{,}\)</span> we only need to show that <span class="process-math">\(q(T)|_{G(\lambda_k, T)} = 0\)</span> for each <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-19-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="decompop-3-19-6">
+<div class="para">Fix <span class="process-math">\(k \in \{1, \dots, m\}\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="decompop-3-19-6-2">
+\begin{equation*}
+q(T) = (T - \lambda_1 I)^{d_1} \dotsm (T - \lambda_m I)^{d_m}{}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-19-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-3-19-7">The operators on the right side of the equation above all commute, so we can move the factor <span class="process-math">\((T - \lambda_k I)^{d_k}\)</span> to be the last term in the expression on the right. Because <span class="process-math">\((T - \lambda_k I)^{d_k}|_{G(\lambda_k, T)} = 0\text{,}\)</span> we have <span class="process-math">\(q(T)|_{G(\lambda_k, T)} = 0\text{,}\)</span> as desired.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-19-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.2.2.3"><a tabindex="-1" href="#decompop-3-19" title="Copy heading and permalink for Proof 8.2.2.3" aria-label="Copy heading and permalink for Proof 8.2.2.3">🔗</a></div>
+</article></details>
+<div class="para" id="decompop-3-20">The next result implies that if the minimal polynomial of an operator <span class="process-math">\(T \in \Lc(V)\)</span> has degree <span class="process-math">\(\dim V\)</span> (as happens almost always—see the paragraphs <a href="eigenuppertri.html#x2defminpoly" class="xref" data-knowl="./knowl/xref/x2defminpoly.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.22: minimal polynomial">following 5.22</a>), then the characteristic polynomial of <span class="process-math">\(T\)</span> equals the minimal polynomial of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="charmult"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">characteristic polynomial is a multiple of minimal polynomial.</span>
+</h3>
+<div class="para" id="charmult-2-1">Suppose <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Then the characteristic polynomial of <span class="process-math">\(T\)</span> is a polynomial multiple of the minimal polynomial of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#charmult-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.27: characteristic polynomial is a multiple of minimal polynomial"><a tabindex="-1" href="#charmult" title="Copy heading and permalink for Theorem 8.27: characteristic polynomial is a multiple of minimal polynomial" aria-label="Copy heading and permalink for Theorem 8.27: characteristic polynomial is a multiple of minimal polynomial">🔗</a></div>
+</article>
+<div class="para" id="decompop-3-22"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<details id="decompop-3-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="decompop-3-23-1">The desired result follows immediately from the Cayley–Hamilton theorem <a href="decompop.html#x139" class="xref" data-knowl="./knowl/xref/x139.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.26: Cayley–Hamilton theorem">Theorem 8.26</a> and <a href="eigenuppertri.html#x140" class="xref" data-knowl="./knowl/xref/x140.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.26: q(T) = 0 \iff q is a polynomial multiple of the minimal polynomial">Theorem 5.26</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.2.2.4"><a tabindex="-1" href="#decompop-3-23" title="Copy heading and permalink for Proof 8.2.2.4" aria-label="Copy heading and permalink for Proof 8.2.2.4">🔗</a></div>
+</article></details>
+<div class="para" id="decompop-3-24">Now we can prove that the result suggested by <a href="decompop.html#multex" class="xref" data-knowl="./knowl/xref/multex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.21: multiplicity of each eigenvalue of an operator">Example 8.21</a> holds for all operators on finite-dimensional complex vector spaces.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x253"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">multiplicity of an eigenvalue equals number of times on diagonal.</span>
+</h3>
+<div class="para" id="x253-2-1">Suppose <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Suppose <span class="process-math">\(v_1, \ldots,
+v_n\)</span> is a basis of <span class="process-math">\(V\)</span> such that <span class="process-math">\(\M( T, (v_1, \ldots,
+v_n) )\)</span> is upper triangular. Then the number of times that each eigenvalue <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(T\)</span> appears on the diagonal of <span class="process-math">\(\M( T, (v_1, \ldots,
+v_n) )\)</span> equals the multiplicity of <span class="process-math">\(\lambda\)</span> as an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x253-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.28: multiplicity of an eigenvalue equals number of times on diagonal"><a tabindex="-1" href="#x253" title="Copy heading and permalink for Theorem 8.28: multiplicity of an eigenvalue equals number of times on diagonal" aria-label="Copy heading and permalink for Theorem 8.28: multiplicity of an eigenvalue equals number of times on diagonal">🔗</a></div>
+</article>
+<details id="decompop-3-26" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="decompop-3-26-1">
+<div class="para">Let <span class="process-math">\(A = \M( T, (v_1, \ldots, v_n) )\text{.}\)</span> Thus <span class="process-math">\(A\)</span> is an upper-triangular matrix. Let <span class="process-math">\(\lambda_1, \ldots, \lambda_n\)</span> denote the entries on the diagonal of <span class="process-math">\(A\text{.}\)</span> Thus for each <span class="process-math">\(k \in \{ 1, \ldots, n \}\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x4.html" id="decompop-3-26-1-6">
+\begin{equation*}
+Tv_k = u_k + \lambda_k v_k
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(u_k \in \Span(v_1, \ldots, v_{k-1})\text{.}\)</span> Hence if <span class="process-math">\(k \in \{ 1, \ldots,
+n \}\)</span> and <span class="process-math">\(\lambda_k \ne 0\text{,}\)</span> then <span class="process-math">\(Tv_k\)</span> is not a linear combination of <span class="process-math">\(Tv_1, \ldots, Tv_{k-1}\text{.}\)</span> The linear dependence lemma <a href="x2spli.html#x4" class="xref" data-knowl="./knowl/xref/x4.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.20: linear dependence lemma">Theorem 2.20</a> now implies that the list of those <span class="process-math">\(Tv_k\)</span> such that <span class="process-math">\(\lambda_k \ne 0\)</span> is linearly independent.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-26-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="decompop-3-26-2">
+<div class="para">Let <span class="process-math">\(d\)</span> denote the number of indices <span class="process-math">\(k \in \{ 1, \ldots,
+n \}\)</span> such that <span class="process-math">\(\lambda_k = 0\text{.}\)</span> The conclusion of the previous paragraph implies that</div>
+<div class="displaymath process-math" id="decompop-3-26-2-4">
+\begin{equation*}
+\dim \ran T \ge n - d.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-26-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="decompop-3-26-3">
+<div class="para">Because <span class="process-math">\(n = \dim V = \dim \ker T + \dim \ran T\text{,}\)</span> the inequality above implies that</div>
+<div class="displaymath process-math" id="x8dimnullT">
+\begin{equation}
+\dim \ker T \le d.\tag{8.4}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-26-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="decompop-3-26-4">
+<div class="para">The matrix of the operator <span class="process-math">\(T^n\)</span> with respect to the basis <span class="process-math">\(v_1, \ldots,
+v_n\)</span> is the upper-triangular matrix <span class="process-math">\(A^n{}\text{,}\)</span> which has diagonal entries <span class="process-math">\({\lambda_1}^{n}, \ldots, {\lambda_n}^{n}\)</span> [see <a href="x4utm.html#x2AB" class="xref" data-knowl="./knowl/xref/x2AB.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.3.2">Exercise 5.3.2</a>(b) in <a href="x4utm.html" class="internal" title="Section 5.3: Upper-Triangular Matrices">Section 5.3</a>] . Because <span class="process-math">\({\lambda_k}^{n} = 0\)</span> if and only if <span class="process-math">\(\lambda_k = 0\text{,}\)</span> the number of times that <span class="process-math">\(0\)</span> appears on the diagonal of <span class="process-math">\(A^n\)</span> equals <span class="process-math">\(d\text{.}\)</span> Thus <a href="decompop.html#x8dimnullT" class="xref" data-knowl="./knowl/xref/x8dimnullT.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.4">applying (8.4)</a> with <span class="process-math">\(T\)</span> replaced with <span class="process-math">\(T^n{}\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x2AB.html ./knowl/xref/x4utm.html ./knowl/xref/x8dimnullT.html" id="x8dimnullTn">
+\begin{equation}
+\dim \ker T^n \le d.\tag{8.5}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-26-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="decompop-3-26-5">
+<div class="para">For <span class="process-math">\(\lambda\)</span> an eigenvalue of <span class="process-math">\(T{}\text{,}\)</span> let <span class="process-math">\(m_{\lambda}\)</span> denote the multiplicity of <span class="process-math">\(\lambda\)</span> as an eigenvalue of <span class="process-math">\(T\)</span> and let <span class="process-math">\(d_{\lambda}\)</span> denote the number of times that <span class="process-math">\(\lambda\)</span> appears on the diagonal of <span class="process-math">\(A\text{.}\)</span> Replacing <span class="process-math">\(T\)</span> in <a href="decompop.html#x8dimnullTn" class="xref" data-knowl="./knowl/xref/x8dimnullTn.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5">(8.5)</a> with <span class="process-math">\(T - \lambda I\text{,}\)</span> we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x8dimnullTn.html ./knowl/xref/x8sm.html" id="x8md">
+\begin{equation}
+m_{\lambda} \le d_{\lambda}\tag{8.6}
+\end{equation}
+</div>
+<div class="para">for each eigenvalue <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(T{}\text{.}\)</span> The sum of the multiplicities <span class="process-math">\(m_{\lambda}\)</span> over all eigenvalues <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(T\)</span> equals <span class="process-math">\(n\text{,}\)</span> the dimension of <span class="process-math">\(V\)</span> (by <a href="decompop.html#x8sm" class="xref" data-knowl="./knowl/xref/x8sm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.22: sum of the multiplicities equals \dim V">Theorem 8.22</a>). The sum of the numbers <span class="process-math">\(d_{\lambda}\)</span> over all eigenvalues <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(T\)</span> also equals <span class="process-math">\(n\text{,}\)</span> because the diagonal of <span class="process-math">\(A\)</span> has length <span class="process-math">\(n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-26-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-3-26-6">Thus summing both sides of <a href="decompop.html#x8md" class="xref" data-knowl="./knowl/xref/x8md.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.6">(8.6)</a> over all eigenvalues <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(T\)</span> produces an equality. <a href="decompop.html#x8md" class="xref" data-knowl="./knowl/xref/x8md.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.6">Hence (8.6)</a> must actually be an equality for each eigenvalue <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(T{}\text{.}\)</span> Thus the multiplicity of <span class="process-math">\(\lambda\)</span> as an eigenvalue of <span class="process-math">\(T{}\)</span> equals the number of times that <span class="process-math">\(\lambda\)</span> appears on the diagonal of <span class="process-math">\(A\text{,}\)</span> as desired.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-3-26-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.2.2.5"><a tabindex="-1" href="#decompop-3-26" title="Copy heading and permalink for Proof 8.2.2.5" aria-label="Copy heading and permalink for Proof 8.2.2.5">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 8.2.2: Multiplicity of an Eigenvalue"><a tabindex="-1" href="#decompop-3" title="Copy heading and permalink for Subsection 8.2.2: Multiplicity of an Eigenvalue" aria-label="Copy heading and permalink for Subsection 8.2.2: Multiplicity of an Eigenvalue">🔗</a></div>
+</section>
+<section class="subsection" id="decompop-4">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Block Diagonal Matrices</span>
+</h2>
+<details id="decompop-4-2" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Aside</span></h3></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para" id="decompop-4-2-1">Often we can understand a matrix better by thinking of it as composed of smaller matrices.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para" id="decompop-4-3">To interpret our results in matrix form, we make the following definition, generalizing the notion of a diagonal matrix. If each matrix <span class="process-math">\(A_k\)</span> in the definition below is a <span class="process-math">\(1\)</span>-by-<span class="process-math">\(1\)</span> matrix, then we actually have a diagonal matrix.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="decompop-4-4"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">block diagonal matrix.</span>
+</h3>
+<div class="para logical" id="decompop-4-4-2-1">
+<div class="para">A <dfn class="terminology">block diagonal matrix</dfn>  is a square matrix of the form</div>
+<div class="displaymath process-math" id="decompop-4-4-2-1-3">
+\begin{equation*}
+\begin{pmatrix}A_1 \amp  \amp  0 \\ \amp  \ddots \amp  \\ 0 \amp  \amp  A_m \end{pmatrix} ,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(A_1, \dots, A_m\)</span> are square matrices lying along the diagonal and all other entries of the matrix equal <span class="process-math">\(0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 8.29: block diagonal matrix"><a tabindex="-1" href="#decompop-4-4" title="Copy heading and permalink for Definition 8.29: block diagonal matrix" aria-label="Copy heading and permalink for Definition 8.29: block diagonal matrix">🔗</a></div>
+</article>
+<details id="x260" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">a block diagonal matrix.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="x260-2-1">
+<div class="para">The <span class="process-math">\(5\)</span>-by-<span class="process-math">\(5\)</span> matrix</div>
+<div class="displaymath process-math" id="x260-2-1-3">
+\begin{equation*}
+A = \begin{pmatrix}\begin{pmatrix}4 \end{pmatrix}  \amp  \begin{matrix}0 \amp  0 \end{matrix}  \amp  \begin{matrix}0 \amp  0 \end{matrix} \\ \begin{matrix}0 \\ 0 \end{matrix}  \amp  \begin{pmatrix}2 \amp  -3 \\ 0 \amp  2 \end{pmatrix}  \amp \begin{matrix}0 \amp  0 \\ 0 \amp  0 \end{matrix}  \\ \begin{matrix}0 \\ 0 \end{matrix}  \amp  \begin{matrix}0 \amp  0 \\ 0 \amp  0 \end{matrix}  \amp \begin{pmatrix}1 \amp  7 \\ 0 \amp  1 \end{pmatrix} \end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">is a block diagonal matrix with</div>
+<div class="displaymath process-math" id="x260-2-1-4">
+\begin{equation*}
+A = \begin{pmatrix}A_1 \amp  \amp  0 \\ \amp  A_2 \amp  \\ 0 \amp  \amp  A_3 \end{pmatrix} ,
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" id="x260-2-1-5">
+\begin{equation*}
+A_1 = \begin{pmatrix}4 \end{pmatrix} , A_2 = \begin{pmatrix}2 \amp  -3 \\ 0 \amp  2 \end{pmatrix} , A_3 = \begin{pmatrix}1 \amp  7 \\ 0 \amp  1 \end{pmatrix} .
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x260-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="x260-2-2">Here the inner matrices in the <span class="process-math">\(5\)</span>-by-<span class="process-math">\(5\)</span> matrix above are blocked off to show how we can think of it as a block diagonal matrix.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x260-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.30: a block diagonal matrix"><a tabindex="-1" href="#x260" title="Copy heading and permalink for Example 8.30: a block diagonal matrix" aria-label="Copy heading and permalink for Example 8.30: a block diagonal matrix">🔗</a></div>
+</article></details>
+<div class="para" id="decompop-4-6">Note that in the example above, each of <span class="process-math">\(A_1\text{,}\)</span> <span class="process-math">\(A_2\text{,}\)</span> <span class="process-math">\(A_3\)</span> is an upper-triangular matrix whose diagonal entries are all equal. The next result shows that with respect to an appropriate basis, every operator on a finite-dimensional complex vector space has a matrix of this form. Note that this result gives us many more zeros in the matrix than are needed to make it upper triangular. <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="x187"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">block diagonal matrix with upper-triangular blocks.</span>
+</h3>
+<div class="para logical" id="x187-2-1">
+<div class="para">Suppose <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Let <span class="process-math">\(\lambda_1, \dots, \lambda_m\)</span> be the distinct eigenvalues of <span class="process-math">\(T\text{,}\)</span> with multiplicities <span class="process-math">\(d_1, \dots, d_m\text{.}\)</span> Then there is a basis of <span class="process-math">\(V\)</span> with respect to which <span class="process-math">\(T\)</span> has a block diagonal matrix of the form</div>
+<div class="displaymath process-math" id="x187-2-1-8">
+\begin{equation*}
+\begin{pmatrix}A_1 \amp  \amp  0 \\ \amp  \ddots \amp  \\ 0 \amp   \amp  A_m \end{pmatrix} ,
+\end{equation*}
+</div>
+<div class="para">where each <span class="process-math">\(A_k\)</span> is a <span class="process-math">\(d_k\)</span>-by-<span class="process-math">\(d_k\)</span> upper-triangular matrix of the form</div>
+<div class="displaymath process-math" id="x187-2-1-12">
+\begin{equation*}
+A_k = \begin{pmatrix}\lambda_k \amp  \amp * \\ \amp \ddots \amp  \\ 0 \amp  \amp  \lambda_k \end{pmatrix} .
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x187-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.31: block diagonal matrix with upper-triangular blocks"><a tabindex="-1" href="#x187" title="Copy heading and permalink for Theorem 8.31: block diagonal matrix with upper-triangular blocks" aria-label="Copy heading and permalink for Theorem 8.31: block diagonal matrix with upper-triangular blocks">🔗</a></div>
+</article>
+<details id="decompop-4-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="decompop-4-8-1">Each <span class="process-math">\((T - \lambda_k I)|_{G(\lambda_k, T)}\)</span> is nilpotent (<a href="decompop.html#x31" class="xref" data-knowl="./knowl/xref/x31.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.19: generalized eigenspace decomposition">see 8.19</a>). For each <span class="process-math">\(k\text{,}\)</span> choose a basis of <span class="process-math">\(G(\lambda_k, T)\text{,}\)</span> which is a vector space of dimension <span class="process-math">\(d_k\text{,}\)</span> such that the matrix of <span class="process-math">\((T - \lambda_k I)|_{G(\lambda_k, T)}\)</span> with respect to this basis is as in <a href="geneig.html#a33" class="xref" data-knowl="./knowl/xref/a33.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.15: minimal polynomial and upper-triangular matrix of nilpotent operator">Theorem 8.15</a>(c). Thus with respect to this basis, the matrix of <span class="process-math">\(T|_{G(\lambda_k, T)}\text{,}\)</span> which equals <span class="process-math">\((T - \lambda_k I)|_{G(\lambda_k, T)} + \lambda_k I|_{G(\lambda_k, T)}\text{,}\)</span> looks like the desired form shown above for <span class="process-math">\(A_k\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="decompop-4-8-2">The generalized eigenspace decomposition <a href="decompop.html#x31" class="xref" data-knowl="./knowl/xref/x31.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.19: generalized eigenspace decomposition">Theorem 8.19</a> shows that putting together the bases of the <span class="process-math">\(G(\lambda_k, T)\)</span>’s chosen above gives a basis of <span class="process-math">\(V{}\text{.}\)</span> The matrix of <span class="process-math">\(T\)</span> with respect to this basis has the desired form.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.2.3.1"><a tabindex="-1" href="#decompop-4-8" title="Copy heading and permalink for Proof 8.2.3.1" aria-label="Copy heading and permalink for Proof 8.2.3.1">🔗</a></div>
+</article></details>
+<details id="decompex" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">block diagonal matrix via generalized eigenvectors.</span>
+</h3></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="decompex-2-1">
+<div class="para">Let <span class="process-math">\(T \in \Lc( \C{3} )\)</span> be defined by <span class="process-math">\(T(z_1, z_2, z_3) = (6z_1 + 3z_2 + 4z_3, 6z_2 + 2z_3, 7z_3)\text{.}\)</span> The matrix of <span class="process-math">\(T\)</span> (with respect to the standard basis) is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x187.html" id="decompex-2-1-4">
+\begin{equation*}
+\begin{pmatrix}6 \amp  3 \amp  4 \\ 0 \amp  6 \amp  2 \\ 0 \amp  0 \amp  7 \end{pmatrix} ,
+\end{equation*}
+</div>
+<div class="para">which is an upper-triangular matrix but is not of the form promised by <a href="decompop.html#x187" class="xref" data-knowl="./knowl/xref/x187.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.31: block diagonal matrix with upper-triangular blocks">Theorem 8.31</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompex-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="decompex-2-2">
+<div class="para">As we saw in <a href="decompop.html#multex" class="xref" data-knowl="./knowl/xref/multex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.21: multiplicity of each eigenvalue of an operator">Example 8.21</a>, the eigenvalues of <span class="process-math">\(T\)</span> are <span class="process-math">\(6\)</span> and <span class="process-math">\(7\text{;}\)</span> also,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/multex.html" id="decompex-2-2-5">
+\begin{equation*}
+G(6, T)  = \Span\bigl( (1, 0, 0), (0, 1, 0) \bigr) \andd G(7, T) = \Span\bigl( (10, 2, 1) \bigr).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompex-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="decompex-2-3">
+<div class="para">We also saw that a basis of <span class="process-math">\(\C3\)</span> consisting of generalized eigenvectors of <span class="process-math">\(T\)</span> is</div>
+<div class="displaymath process-math" id="decompex-2-3-3">
+\begin{equation*}
+(1, 0, 0), (0, 1, 0), (10, 2, 1).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompex-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="decompex-2-4">
+<div class="para">The matrix of <span class="process-math">\(T\)</span> with respect to this basis is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x187.html" id="decompex-2-4-2">
+\begin{equation*}
+\begin{pmatrix}\begin{pmatrix}6 \amp  3 \\ 0 \amp  6 \end{pmatrix}  \amp  \begin{matrix}0 \\ 0 \end{matrix} \begin{matrix}0 \amp  0 \end{matrix}  \amp  \begin{pmatrix}7 \end{pmatrix} \end{pmatrix} ,
+\end{equation*}
+</div>
+<div class="para">which is a matrix of the block diagonal form promised by <a href="decompop.html#x187" class="xref" data-knowl="./knowl/xref/x187.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.31: block diagonal matrix with upper-triangular blocks">Theorem 8.31</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompex-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.32: block diagonal matrix via generalized eigenvectors"><a tabindex="-1" href="#decompex" title="Copy heading and permalink for Example 8.32: block diagonal matrix via generalized eigenvectors" aria-label="Copy heading and permalink for Example 8.32: block diagonal matrix via generalized eigenvectors">🔗</a></div>
+</article></details>
+<section class="exercises" id="decompop-4-10">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="decompop-4-10-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-2-1-1">Define <span class="process-math">\(T \in \Lc( \C{2} )\)</span> by <span class="process-math">\(T(w,z) = (-z, w)\text{.}\)</span> Find the generalized eigenspaces corresponding to the distinct eigenvalues of <span class="process-math">\(T{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.1"><a tabindex="-1" href="#decompop-4-10-2" title="Copy heading and permalink for Exercise 8.2.3.1" aria-label="Copy heading and permalink for Exercise 8.2.3.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-3-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> is invertible. Prove that <span class="process-math">\(G(\lambda, T) = G( \frac{1}{\lambda}, T^{-1} )\)</span> for every <span class="process-math">\(\lambda \in \F{}\)</span> with <span class="process-math">\(\lambda \ne 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.2"><a tabindex="-1" href="#decompop-4-10-3" title="Copy heading and permalink for Exercise 8.2.3.2" aria-label="Copy heading and permalink for Exercise 8.2.3.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-4-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Suppose <span class="process-math">\(S \in \Lc(V)\)</span> is invertible. Prove that <span class="process-math">\(T\)</span> and <span class="process-math">\(S^{-1} T S\)</span> have the same eigenvalues with the same multiplicities.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.3"><a tabindex="-1" href="#decompop-4-10-4" title="Copy heading and permalink for Exercise 8.2.3.3" aria-label="Copy heading and permalink for Exercise 8.2.3.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-5"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-5-1-1">Suppose <span class="process-math">\(\dim V \ge 2\)</span> and <span class="process-math">\(T \in \Lc(V)\)</span> is such that <span class="process-math">\(\ker T^{\dim V-2\!} \ne \ker T^{\dim V-1\!}\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> has at most two distinct eigenvalues.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.4"><a tabindex="-1" href="#decompop-4-10-5" title="Copy heading and permalink for Exercise 8.2.3.4" aria-label="Copy heading and permalink for Exercise 8.2.3.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-6-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(3\)</span> and <span class="process-math">\(8\)</span> are eigenvalues of <span class="process-math">\(T{}\text{.}\)</span> Let <span class="process-math">\(n = \dim V{}\text{.}\)</span> Prove that <span class="process-math">\(V = ( \ker T^{n-2} ) \oplus ( \ran T^{n-2} )\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.5"><a tabindex="-1" href="#decompop-4-10-6" title="Copy heading and permalink for Exercise 8.2.3.5" aria-label="Copy heading and permalink for Exercise 8.2.3.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-7-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span> Explain why the exponent of <span class="process-math">\(z-\lambda\)</span> in the factorization of the minimal polynomial of <span class="process-math">\(T\)</span> is the smallest positive integer <span class="process-math">\(m\)</span> such that <span class="process-math">\((T - \lambda I)^m|_{G(\lambda, T)} = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.6"><a tabindex="-1" href="#decompop-4-10-7" title="Copy heading and permalink for Exercise 8.2.3.6" aria-label="Copy heading and permalink for Exercise 8.2.3.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-8"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-8-1-1">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\)</span> with multiplicity <span class="process-math">\(d\text{.}\)</span> Prove that <span class="process-math">\(G(\lambda, T) = \ker(T - \lambda I)^d\!\text{.}\)</span> Note: If <span class="process-math">\(d \lt \dim V{}\text{,}\)</span> then this exercise <a href="decompop.html#x180" class="xref" data-knowl="./knowl/xref/x180.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.17: description of generalized eigenspaces">improves 8.17</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.7"><a tabindex="-1" href="#decompop-4-10-8" title="Copy heading and permalink for Exercise 8.2.3.7" aria-label="Copy heading and permalink for Exercise 8.2.3.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8Rdecomp"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x8Rdecomp-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(\lambda_1, \ldots, \lambda_m\)</span> are the distinct eigenvalues of <span class="process-math">\(T{}\text{.}\)</span> Prove that </div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x136.html ./knowl/xref/x31.html" id="x8Rdecomp-1-1-5">
+\begin{equation*}
+V = G(\lambda_1, T) \oplus \cdots \oplus G(\lambda_m, T)
+\end{equation*}
+</div>
+<div class="para">if and only if the minimal polynomial of <span class="process-math">\(T\)</span> equals <span class="process-math">\((z-\lambda_1)^{k_1} \cdots (z - \lambda_m)^{k_m}\)</span> for some positive integers <span class="process-math">\(k_1, \ldots, k_m\text{.}\)</span> Note: The case <span class="process-math">\(\F{} = \C{}\)</span> follows immediately from <a href="eigenuppertri.html#x136" class="xref" data-knowl="./knowl/xref/x136.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.24: eigenvalues are the zeros of the minimal polynomial">Theorem 5.24</a> (b) and the generalized eigenspace decomposition <a href="decompop.html#x31" class="xref" data-knowl="./knowl/xref/x31.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.19: generalized eigenspace decomposition">Theorem 8.19</a> ; thus this exercise is interesting only when <span class="process-math">\(\F{} = \R{}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x8Rdecomp-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.8"><a tabindex="-1" href="#x8Rdecomp" title="Copy heading and permalink for Exercise 8.2.3.8" aria-label="Copy heading and permalink for Exercise 8.2.3.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-10"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-10-1-1">Suppose <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Prove that there exist <span class="process-math">\(D, N \in \Lc(V)\)</span> such that <span class="process-math">\(T = D + N\text{,}\)</span> the operator <span class="process-math">\(D\)</span> is diagonalizable, <span class="process-math">\(N\)</span> is nilpotent, and <span class="process-math">\(DN = ND\text{.}\)</span> <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.9"><a tabindex="-1" href="#decompop-4-10-10" title="Copy heading and permalink for Exercise 8.2.3.9" aria-label="Copy heading and permalink for Exercise 8.2.3.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-11"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="decompop-4-10-11-1-1">
+<div class="para">Suppose <span class="process-math">\(V\)</span> is a complex inner product space, <span class="process-math">\(e_1, \ldots,
+e_n\)</span> is an orthonormal basis of <span class="process-math">\(V\text{,}\)</span> and <span class="process-math">\(T \in \Lc(V)\text{.}\)</span> Let <span class="process-math">\(\lambda_1, \dots, \lambda_n\)</span> be the eigenvalues of <span class="process-math">\(T\text{,}\)</span> each included as many times as its multiplicity. Prove that</div>
+<div class="displaymath process-math" id="decompop-4-10-11-1-1-8">
+\begin{equation*}
+|\lambda_1|^2 + \dots + |\lambda_n|^2 \le \lVert Te_1 \rVert ^2 + \cdots + \lVert Te_n \rVert ^2{}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="decompop-4-10-11-1-2">Note: See the comment after <a href="selfadjoint_normal.html#x6sumT2" class="xref" data-knowl="./knowl/xref/x6sumT2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.1.3.5">Exercise 7.1.3.5</a> in <a href="selfadjoint_normal.html" class="internal" title="Section 7.1: Self-Adjoint and Normal Operators">Section 7.1</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-11-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.10"><a tabindex="-1" href="#decompop-4-10-11" title="Copy heading and permalink for Exercise 8.2.3.10" aria-label="Copy heading and permalink for Exercise 8.2.3.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-12"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-12-1-1">Give an example of an operator on <span class="process-math">\(\C{4}\)</span> whose characteristic polynomial equals <span class="process-math">\((z - 7)^2 (z - 8)^2{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.11"><a tabindex="-1" href="#decompop-4-10-12" title="Copy heading and permalink for Exercise 8.2.3.11" aria-label="Copy heading and permalink for Exercise 8.2.3.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-13"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-13-1-1">Give an example of an operator on <span class="process-math">\(\C4\)</span> whose characteristic polynomial equals <span class="process-math">\((z - 1) (z - 5)^3\)</span> and whose minimal polynomial equals <span class="process-math">\((z - 1) (z - 5)^2{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.12"><a tabindex="-1" href="#decompop-4-10-13" title="Copy heading and permalink for Exercise 8.2.3.12" aria-label="Copy heading and permalink for Exercise 8.2.3.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-14"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-14-1-1">Give an example of an operator on <span class="process-math">\(\C{4}\)</span> whose characteristic and minimal polynomials both equal <span class="process-math">\(z (z - 1)^2 (z - 3)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.13"><a tabindex="-1" href="#decompop-4-10-14" title="Copy heading and permalink for Exercise 8.2.3.13" aria-label="Copy heading and permalink for Exercise 8.2.3.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-15"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-15-1-1">Give an example of an operator on <span class="process-math">\(\C{4}\)</span> whose characteristic polynomial equals <span class="process-math">\(z (z - 1)^2 (z - 3)\)</span> and whose minimal polynomial equals <span class="process-math">\(z (z - 1) (z - 3)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.14"><a tabindex="-1" href="#decompop-4-10-15" title="Copy heading and permalink for Exercise 8.2.3.14" aria-label="Copy heading and permalink for Exercise 8.2.3.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-16"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-16-1-1">Let <span class="process-math">\(T\)</span> be the operator on <span class="process-math">\(\C4\)</span> defined by <span class="process-math">\(T(z_1, z_2, z_3, z_4) = (0, z_1, z_2, z_3)\text{.}\)</span> Find the characteristic polynomial and the minimal polynomial of <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.15"><a tabindex="-1" href="#decompop-4-10-16" title="Copy heading and permalink for Exercise 8.2.3.15" aria-label="Copy heading and permalink for Exercise 8.2.3.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-17"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="decompop-4-10-17-1-1">
+<div class="para">Let <span class="process-math">\(T\)</span> be the operator on <span class="process-math">\(\C6\)</span> defined by</div>
+<div class="displaymath process-math" id="decompop-4-10-17-1-1-3">
+\begin{equation*}
+T(z_1, z_2, z_3, z_4, z_5, z_6) = (0, z_1, z_2, 0, z_4, 0).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="decompop-4-10-17-1-2">Find the characteristic polynomial and the minimal polynomial of <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-17-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.16"><a tabindex="-1" href="#decompop-4-10-17" title="Copy heading and permalink for Exercise 8.2.3.16" aria-label="Copy heading and permalink for Exercise 8.2.3.16">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8P2"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x8P2-1-1">Suppose <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(P \in \Lc(V)\)</span> is such that <span class="process-math">\(P^2 = P{}\text{.}\)</span> Prove that the characteristic polynomial of <span class="process-math">\(P\)</span> is <span class="process-math">\(z^m (z-1)^n{}\text{,}\)</span> where <span class="process-math">\(m = \dim \ker P\)</span> and <span class="process-math">\(n = \dim \ran P{}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x8P2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.17"><a tabindex="-1" href="#x8P2" title="Copy heading and permalink for Exercise 8.2.3.17" aria-label="Copy heading and permalink for Exercise 8.2.3.17">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-19"><h4 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="decompop-4-10-19-1-1">
+<div class="para">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T{}\text{.}\)</span> Explain why the following four numbers equal each other.</div>
+<ol class="decimal" id="decompop-4-10-19-1-1-4">
+<li id="decompop-4-10-19-1-1-4-1">
+<div class="para" id="decompop-4-10-19-1-1-4-1-1">The exponent of <span class="process-math">\(z-\lambda\)</span> in the factorization of the minimal polynomial of <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-19-1-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 8.2.3.18.1"><a tabindex="-1" href="#decompop-4-10-19-1-1-4-1" title="Copy heading and permalink for Item 8.2.3.18.1" aria-label="Copy heading and permalink for Item 8.2.3.18.1">🔗</a></div>
+</li>
+<li id="decompop-4-10-19-1-1-4-2">
+<div class="para" id="decompop-4-10-19-1-1-4-2-1">The smallest positive integer <span class="process-math">\(m\)</span> such that <span class="process-math">\((T - \lambda I)^m|_{G(\lambda, T)} = 0\text{.}\)</span> <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-19-1-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 8.2.3.18.2"><a tabindex="-1" href="#decompop-4-10-19-1-1-4-2" title="Copy heading and permalink for Item 8.2.3.18.2" aria-label="Copy heading and permalink for Item 8.2.3.18.2">🔗</a></div>
+</li>
+<li id="decompop-4-10-19-1-1-4-3">
+<div class="para logical" id="decompop-4-10-19-1-1-4-3-1">
+<div class="para">The smallest positive integer <span class="process-math">\(m\)</span> such that</div>
+<div class="displaymath process-math" id="decompop-4-10-19-1-1-4-3-1-2">
+\begin{equation*}
+\ker (T - \lambda I)^m = \ker (T - \lambda I)^{m+1}\!.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-19-1-1-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 8.2.3.18.3"><a tabindex="-1" href="#decompop-4-10-19-1-1-4-3" title="Copy heading and permalink for Item 8.2.3.18.3" aria-label="Copy heading and permalink for Item 8.2.3.18.3">🔗</a></div>
+</li>
+<li id="decompop-4-10-19-1-1-4-4">
+<div class="para logical" id="decompop-4-10-19-1-1-4-4-1">
+<div class="para">The smallest positive integer <span class="process-math">\(m\)</span> such that</div>
+<div class="displaymath process-math" id="decompop-4-10-19-1-1-4-4-1-2">
+\begin{equation*}
+\ran (T - \lambda I)^m = \ran (T - \lambda I)^{m+1}\!.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-19-1-1-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 8.2.3.18.4"><a tabindex="-1" href="#decompop-4-10-19-1-1-4-4" title="Copy heading and permalink for Item 8.2.3.18.4" aria-label="Copy heading and permalink for Item 8.2.3.18.4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.18"><a tabindex="-1" href="#decompop-4-10-19" title="Copy heading and permalink for Exercise 8.2.3.18" aria-label="Copy heading and permalink for Exercise 8.2.3.18">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-20"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-20-1-1">Suppose <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(S \in \Lc(V)\)</span> is a unitary operator. Prove that the constant term in the characteristic polynomial of <span class="process-math">\(S\)</span> has absolute value <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.19"><a tabindex="-1" href="#decompop-4-10-20" title="Copy heading and permalink for Exercise 8.2.3.19" aria-label="Copy heading and permalink for Exercise 8.2.3.19">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-21"><h4 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="decompop-4-10-21-1-1">
+<div class="para">Suppose that <span class="process-math">\(\F{} = \C{}\)</span> and <span class="process-math">\(V{}_1, \dots, V{}_m\)</span> are nonzero subspaces of <span class="process-math">\(V\)</span> such that</div>
+<div class="displaymath process-math" id="decompop-4-10-21-1-1-4">
+\begin{equation*}
+V = V{}_1 \oplus \dots \oplus V{}_m.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="decompop-4-10-21-1-2">Suppose <span class="process-math">\(T \in \Lc(V)\)</span> and each <span class="process-math">\(V{}_k\)</span> is invariant under <span class="process-math">\(T{}\text{.}\)</span> For each <span class="process-math">\(k\text{,}\)</span> let <span class="process-math">\(p_k\)</span> denote the characteristic polynomial of <span class="process-math">\(T|_{V{}_k}\text{.}\)</span> Prove that the characteristic polynomial of <span class="process-math">\(T\)</span> equals <span class="process-math">\(p_1 \dotsm p_m\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-21-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.20"><a tabindex="-1" href="#decompop-4-10-21" title="Copy heading and permalink for Exercise 8.2.3.20" aria-label="Copy heading and permalink for Exercise 8.2.3.20">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="decompop-4-10-22"><h4 class="heading"><span class="codenumber">21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="decompop-4-10-22-1-1">Suppose <span class="process-math">\(p,
+q \in \P(\C{})\)</span> are monic polynomials with the same zeros and <span class="process-math">\(q\)</span> is a polynomial multiple of <span class="process-math">\(p\text{.}\)</span> Prove that there exists <span class="process-math">\(T \in \Lc( \C{\deg q} )\)</span> such that the characteristic polynomial of <span class="process-math">\(T\)</span> is <span class="process-math">\(q\)</span> and the minimal polynomial of <span class="process-math">\(T\)</span> is <span class="process-math">\(p\text{.}\)</span> Note: This exercise implies that every monic polynomial is the characteristic polynomial of some operator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#decompop-4-10-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.21"><a tabindex="-1" href="#decompop-4-10-22" title="Copy heading and permalink for Exercise 8.2.3.21" aria-label="Copy heading and permalink for Exercise 8.2.3.21">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="blockmult"><h4 class="heading"><span class="codenumber">22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="blockmult-1-1">
+<div class="para">Suppose <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are block diagonal matrices of the form</div>
+<div class="displaymath process-math" id="blockmult-1-1-3">
+\begin{equation*}
+A = \begin{pmatrix}A_1 \amp  \amp  0 \\ \amp  \ddots \amp  \\ 0 \amp  \amp  A_m \end{pmatrix} , B = \begin{pmatrix}B_1 \amp  \amp  0 \\ \amp  \ddots \amp  \\ 0 \amp  \amp  B_m \end{pmatrix} ,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(A_k\)</span> and <span class="process-math">\(B_k\)</span> are square matrices of the same size for each <span class="process-math">\(k = 1, \dots, m\text{.}\)</span> Show that <span class="process-math">\(AB\)</span> is a block diagonal matrix of the form</div>
+<div class="displaymath process-math" id="blockmult-1-1-8">
+\begin{equation*}
+AB = \begin{pmatrix}A_1 B_1 \amp  \amp  0 \\ \amp  \ddots \amp  \\ 0 \amp  \amp  A_m B_m \end{pmatrix} .
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#blockmult-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.22"><a tabindex="-1" href="#blockmult" title="Copy heading and permalink for Exercise 8.2.3.22" aria-label="Copy heading and permalink for Exercise 8.2.3.22">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8compmult"><h4 class="heading"><span class="codenumber">23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="x8compmult-1-1">
+<div class="para">Suppose <span class="process-math">\(\F{} = \R{}\text{,}\)</span> <span class="process-math">\(T \in \Lc(V)\text{,}\)</span> and <span class="process-math">\(\lambda \in \C{}\text{.}\)</span> </div>
+<ol class="decimal" id="x8compmult-1-1-7">
+<li id="x8compmult-1-1-7-1">
+<div class="para" id="x8compmult-1-1-7-1-1">Show that <span class="process-math">\(u + iv \in G( \lambda, T{}_{\C{}} )\)</span> if and only if <span class="process-math">\(u - iv \in G( \overline{\lambda}, T{}_{\C{}} )\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x8compmult-1-1-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 8.2.3.23.1"><a tabindex="-1" href="#x8compmult-1-1-7-1" title="Copy heading and permalink for Item 8.2.3.23.1" aria-label="Copy heading and permalink for Item 8.2.3.23.1">🔗</a></div>
+</li>
+<li id="x8compmult-1-1-7-2">
+<div class="para" id="x8compmult-1-1-7-2-1">Show that the multiplicity of <span class="process-math">\(\lambda\)</span> as an eigenvalue of <span class="process-math">\(T{}_{\C{}}\)</span> equals the multiplicity of <span class="process-math">\(\bar{\lambda}\)</span> as an eigenvalue of <span class="process-math">\(T{}_{\C{}}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x8compmult-1-1-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 8.2.3.23.2"><a tabindex="-1" href="#x8compmult-1-1-7-2" title="Copy heading and permalink for Item 8.2.3.23.2" aria-label="Copy heading and permalink for Item 8.2.3.23.2">🔗</a></div>
+</li>
+<li id="x8compmult-1-1-7-3">
+<div class="para" id="x8compmult-1-1-7-3-1">Use (b) and the result about the sum of the multiplicities <a href="decompop.html#x8sm" class="xref" data-knowl="./knowl/xref/x8sm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.22: sum of the multiplicities equals \dim V">Theorem 8.22</a> to show that if <span class="process-math">\(\dim V\)</span> is an odd number, then <span class="process-math">\(T{}_{\C{}}\)</span> has a real eigenvalue.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x8compmult-1-1-7-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 8.2.3.23.3"><a tabindex="-1" href="#x8compmult-1-1-7-3" title="Copy heading and permalink for Item 8.2.3.23.3" aria-label="Copy heading and permalink for Item 8.2.3.23.3">🔗</a></div>
+</li>
+<li id="x8compmult-1-1-7-4">
+<div class="para" id="x8compmult-1-1-7-4-1">Use (c) and the result about real eigenvalues of <span class="process-math">\(T{}_{\C{}}\)</span> (<a href="x5invar.html#x5realeig" class="xref" data-knowl="./knowl/xref/x5realeig.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.1.2.17">Exercise 5.1.2.17</a> in <a href="x5invar.html" class="internal" title="Section 5.1: Invariant Subspaces">Section 5.1</a>) to show that if <span class="process-math">\(\dim V\)</span> is an odd number, then <span class="process-math">\(T\)</span> has an eigenvalue (thus giving an alternative proof of <a href="eigenuppertri.html#x5odd" class="xref" data-knowl="./knowl/xref/x5odd.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.30: operators on odd-dimensional vector spaces have eigenvalues">Theorem 5.30</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x8compmult-1-1-7-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 8.2.3.23.4"><a tabindex="-1" href="#x8compmult-1-1-7-4" title="Copy heading and permalink for Item 8.2.3.23.4" aria-label="Copy heading and permalink for Item 8.2.3.23.4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x8compmult-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="x8compmult-1-2">Note: See <a href="x3nullspace.html#x3complexMap" class="xref" data-knowl="./knowl/xref/x3complexMap.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.2.3.33">Exercise 3.2.3.33</a> in <a href="x3nullspace.html" class="internal" title="Section 3.2: Null Spaces and Ranges">Section 3.2</a> for the definition of the complexification <span class="process-math">\(T{}_{\C{}}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x8compmult-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 8.2.3.23"><a tabindex="-1" href="#x8compmult" title="Copy heading and permalink for Exercise 8.2.3.23" aria-label="Copy heading and permalink for Exercise 8.2.3.23">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 8.2.3: Exercises"><a tabindex="-1" href="#decompop-4-10" title="Copy heading and permalink for Exercises 8.2.3: Exercises" aria-label="Copy heading and permalink for Exercises 8.2.3: Exercises">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 8.2.3: Block Diagonal Matrices"><a tabindex="-1" href="#decompop-4" title="Copy heading and permalink for Subsection 8.2.3: Block Diagonal Matrices" aria-label="Copy heading and permalink for Subsection 8.2.3: Block Diagonal Matrices">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 8.2: Generalized Eigenspace Decomposition"><a tabindex="-1" href="#decompop" title="Copy heading and permalink for Section 8.2: Generalized Eigenspace Decomposition" aria-label="Copy heading and permalink for Section 8.2: Generalized Eigenspace Decomposition">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="geneig.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="x8geneigde.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
