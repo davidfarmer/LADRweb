@@ -137,6 +137,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\P}{\symcal{P}}
 \newcommand{\sm}{\backslash}
 \newcommand{\Space}{}
+\newcommand{\pound}[1]{#1^{\#}}
 \DeclareMathOperator{\ran}{range}
 \DeclareMathOperator{\Span}{span}
 \DeclareMathOperator{\re}{Re}
@@ -605,7 +606,7 @@ v = \langle v, e_1 \rangle  e_1 + \dots + \langle v, e_n \rangle  e_n\tag{7.46}
 \|v\|^2 = \lvert \langle v, e_1 \rangle  \rvert ^2 + \dots + \lvert \langle v, e_n \rangle  \rvert ^2{},\tag{7.47}
 \end{equation}
 </div>
-<div class="para">where we have <a href="orthobases.html#x190" class="xref" data-knowl="./knowl/xref/x190.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.33: writing a vector as a linear combination of an orthonormal basis">used 6.33</a>(b). Applying <span class="process-math">\(S\)</span> to both sides of <a href="x3QR.html#x235" class="xref" data-knowl="./knowl/xref/x235.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.46">(7.46)</a> gives</div>
+<div class="para">where we have <a href="orthobases.html#x190" class="xref" data-knowl="./knowl/xref/x190.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.30: writing a vector as a linear combination of an orthonormal basis">used 6.30</a>(b). Applying <span class="process-math">\(S\)</span> to both sides of <a href="x3QR.html#x235" class="xref" data-knowl="./knowl/xref/x235.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.46">(7.46)</a> gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x190.html ./knowl/xref/x235.html" id="isoex-2-1-15">
 \begin{equation*}
 Sv = \langle v, e_1 \rangle  S e_1 + \dots + \langle v, e_n \rangle  S e_n =  \langle v, e_1 \rangle  g_1 + \dots +  \langle v, e_n \rangle  g_n.
@@ -1007,7 +1008,7 @@ A = QR.
 <details id="x3QR-4-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical" id="x3QR-4-12-1">
-<div class="para">Let <span class="process-math">\(v_1, \ldots, v_n\)</span> denote the columns of <span class="process-math">\(A\text{,}\)</span> thought of as elements of <span class="process-math">\(\FF{n}\text{.}\)</span> Apply the Gram–Schmidt procedure <a href="orthobases.html#x186" class="xref" data-knowl="./knowl/xref/x186.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.35: Gram–Schmidt procedure">Theorem 6.35</a> to the list <span class="process-math">\(v_1, \ldots, v_n\text{,}\)</span> getting an orthonormal basis <span class="process-math">\(e_1, \ldots,
+<div class="para">Let <span class="process-math">\(v_1, \ldots, v_n\)</span> denote the columns of <span class="process-math">\(A\text{,}\)</span> thought of as elements of <span class="process-math">\(\FF{n}\text{.}\)</span> Apply the Gram–Schmidt procedure <a href="orthobases.html#x186" class="xref" data-knowl="./knowl/xref/x186.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.32: Gram–Schmidt procedure">Theorem 6.32</a> to the list <span class="process-math">\(v_1, \ldots, v_n\text{,}\)</span> getting an orthonormal basis <span class="process-math">\(e_1, \ldots,
 e_n\)</span> of <span class="process-math">\(\F{n}\)</span> such that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x186.html ./knowl/xref/x7GS.html" id="x7GS">
 \begin{equation}
@@ -1031,10 +1032,10 @@ e_k)\)</span> and hence <span class="process-math">\(e_j\)</span> is orthogonal 
 \langle v_k, e_1 \rangle  e_1 + \cdots + \langle v_k, e_k \rangle  e_k,
 \end{equation*}
 </div>
-<div class="para">which equals <span class="process-math">\(v_k\)</span> [by <a href="orthobases.html#x190" class="xref" data-knowl="./knowl/xref/x190.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.33: writing a vector as a linear combination of an orthonormal basis">Theorem 6.33</a>(a)] , the <span class="process-math">\(k^\nth\)</span> column of <span class="process-math">\(A\text{.}\)</span> Thus <span class="process-math">\(A = QR\text{,}\)</span> as desired.</div>
+<div class="para">which equals <span class="process-math">\(v_k\)</span> [by <a href="orthobases.html#x190" class="xref" data-knowl="./knowl/xref/x190.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.30: writing a vector as a linear combination of an orthonormal basis">Theorem 6.30</a>(a)] , the <span class="process-math">\(k^\nth\)</span> column of <span class="process-math">\(A\text{.}\)</span> Thus <span class="process-math">\(A = QR\text{,}\)</span> as desired.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x3QR-4-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="x3QR-4-12-3">The equations defining the Gram–Schmidt procedure (<a href="orthobases.html#x186" class="xref" data-knowl="./knowl/xref/x186.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.35: Gram–Schmidt procedure">see 6.35</a>) show that each <span class="process-math">\(v_k\)</span> equals a positive multiple of <span class="process-math">\(e_k\)</span> plus a linear combination of <span class="process-math">\(e_1, \ldots,
+<div class="para" id="x3QR-4-12-3">The equations defining the Gram–Schmidt procedure (<a href="orthobases.html#x186" class="xref" data-knowl="./knowl/xref/x186.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.32: Gram–Schmidt procedure">see 6.32</a>) show that each <span class="process-math">\(v_k\)</span> equals a positive multiple of <span class="process-math">\(e_k\)</span> plus a linear combination of <span class="process-math">\(e_1, \ldots,
 e_{k-1}\text{.}\)</span> Thus each <span class="process-math">\(\langle v_k, e_k \rangle\)</span> is a positive number. Hence all entries on the diagonal of <span class="process-math">\(R\)</span> are positive numbers, as desired.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x3QR-4-12-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="x3QR-4-12-4">Finally, to show that <span class="process-math">\(Q\)</span> and <span class="process-math">\(R\)</span> are unique, suppose we also have <span class="process-math">\(A = \hat{Q} \hat{R}\text{,}\)</span> where <span class="process-math">\(\hat{Q}\)</span> is unitary and <span class="process-math">\(\hat{R}\)</span> is upper triangular with only positive numbers on its diagonal. Let <span class="process-math">\(q_1, \ldots, q_n\)</span> denote the columns of <span class="process-math">\(\hat{Q}\text{.}\)</span> Thinking of matrix multiplication as above, we see that each <span class="process-math">\(v_k\)</span> is a linear combination of <span class="process-math">\(q_1, \ldots, q_k\text{,}\)</span> with the coefficients coming from the <span class="process-math">\(k^\nth\)</span> column of <span class="process-math">\(\hat{R}\text{.}\)</span> This implies that <span class="process-math">\(\Span(v_1, \ldots,
