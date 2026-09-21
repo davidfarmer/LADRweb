@@ -221,7 +221,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Rn_and_Cn.html#Rn_and_Cn-4-19",
   "type": "Figure",
-  "number": "1.17",
+  "number": "1",
   "title": "",
   "body": " Elements of can be thought of as points or as vectors.   Missing description   "
 },
@@ -239,7 +239,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Rn_and_Cn.html#Rn_and_Cn-4-21",
   "type": "Figure",
-  "number": "1.18",
+  "number": "2",
   "title": "",
   "body": " A vector.   Missing description   "
 },
@@ -248,7 +248,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Rn_and_Cn.html#Rn_and_Cn-4-27",
   "type": "Figure",
-  "number": "1.19",
+  "number": "3",
   "title": "",
   "body": " The sum of two vectors.   Missing description   "
 },
@@ -257,7 +257,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Rn_and_Cn.html#Rn_and_Cn-4-30",
   "type": "Definition",
-  "number": "1.20",
+  "number": "1.17",
   "title": "additive inverse in <span class=\"process-math\">\\(\\F{n}\\text{,}\\)<\/span>  <span class=\"process-math\">\\(-x\\)<\/span>.",
   "body": " additive inverse in ,   For , the additive inverse additive inverse in of , denoted by , is the vector such that   Thus if , then .   "
 },
@@ -266,7 +266,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Rn_and_Cn.html#Rn_and_Cn-4-31",
   "type": "Figure",
-  "number": "1.21",
+  "number": "4",
   "title": "",
   "body": " A vector and its additive inverse.   Missing description   "
 },
@@ -275,7 +275,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Rn_and_Cn.html#Rn_and_Cn-4-34",
   "type": "Definition",
-  "number": "1.22",
+  "number": "1.18",
   "title": "scalar multiplication in  <span class=\"process-math\">\\(\\F{n}\\)<\/span>.",
   "body": " scalar multiplication in   The product product of scalar and vector in of a number and a vector in is computed by multiplying each coordinate of the vector by : scalar multiplication  here and .   "
 },
@@ -284,7 +284,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "Rn_and_Cn.html#Rn_and_Cn-4-37",
   "type": "Figure",
-  "number": "1.23",
+  "number": "5",
   "title": "",
   "body": " Scalar multiplication.   Missing description   "
 },
@@ -446,7 +446,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x1DefVS-4",
   "type": "Definition",
-  "number": "1.24",
+  "number": "1.19",
   "title": "addition, scalar multiplication.",
   "body": " addition, scalar multiplication      An addition addition of vectors on a set is a function that assigns an element to each pair of elements .    A scalar multiplication  scalar multiplication  product of scalar and vector on a set is a function that assigns an element to each and each .      "
 },
@@ -455,7 +455,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#vectorspace",
   "type": "Definition",
-  "number": "1.25",
+  "number": "1.20",
   "title": "vector space.",
   "body": " vector space   A vector space  vector space is a set along with an addition on and a scalar multiplication on such that the following properties hold.   commutativity   for all . commutativity     associativity   and for all and for all . associativity     additive identity  There exists an element such that for all .    additive inverse  For every , there exists such that . additive inverse in vector space     multiplicative identity   for all .    distributive properties   and for all and all . distributive property       "
 },
@@ -464,7 +464,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x1DefVS-8",
   "type": "Definition",
-  "number": "1.26",
+  "number": "1.21",
   "title": "vector, point.",
   "body": " vector, point   Elements of a vector space are called vectors  vector or points . point    "
 },
@@ -482,7 +482,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x1DefVS-10",
   "type": "Definition",
-  "number": "1.27",
+  "number": "1.22",
   "title": "real vector space, complex vector space.",
   "body": " real vector space, complex vector space      A vector space over is called a real vector space . real vector space     A vector space over is called a complex vector space . complex vector space       "
 },
@@ -491,7 +491,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x1DefVS-14",
   "type": "Example",
-  "number": "1.28",
+  "number": "1.23",
   "title": "<span class=\"process-math\">\\(\\F{\\infty}\\)<\/span>.",
   "body": "    is defined to be the set of all sequences of elements of :   Addition and scalar multiplication on are defined as expected: .  With these definitions, becomes a vector space over , as you should verify. The additive identity in this vector space is the sequence of all 's.   "
 },
@@ -500,7 +500,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x1DefVS-16",
   "type": "Notation",
-  "number": "1.29",
+  "number": "1.24",
   "title": "<span class=\"process-math\">\\(\\F{S}\\)<\/span>.",
   "body": "      If is a set, then denotes the set of functions from to .    For , the sum  addition of functions is the function defined by for all .    For and , the product  is the function defined by for all .      "
 },
@@ -509,7 +509,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x1DefVS-20",
   "type": "Example",
-  "number": "1.30",
+  "number": "1.25",
   "title": "<span class=\"process-math\">\\(\\F{S}\\)<\/span> is a vector space.",
   "body": " is a vector space      If is a nonempty set, then (with the operations of addition and scalar multiplication as defined above) is a vector space over .    The additive identity of is the function defined by for all .    For , the additive inverse of is the function defined by for all .      "
 },
@@ -518,7 +518,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x1DefVS-25",
   "type": "Theorem",
-  "number": "1.31",
+  "number": "1.26",
   "title": "unique additive identity.",
   "body": " unique additive identity   A vector space has a unique additive identity.   "
 },
@@ -536,7 +536,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x1DefVS-28",
   "type": "Theorem",
-  "number": "1.32",
+  "number": "1.27",
   "title": "unique additive inverse.",
   "body": " unique additive inverse   Every element in a vector space has a unique additive inverse.   "
 },
@@ -554,7 +554,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x1DefVS-31",
   "type": "Notation",
-  "number": "1.33",
+  "number": "1.28",
   "title": "<span class=\"process-math\">\\(-v\\text{,}\\)<\/span> <span class=\"process-math\">\\(w - v\\)<\/span>.",
   "body": " ,   Let . Then     denotes the additive inverse of ; additive inverse in vector space      is defined to be .      "
 },
@@ -563,7 +563,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x1DefVS-33",
   "type": "Notation",
-  "number": "1.34",
+  "number": "1.29",
   "title": "<span class=\"process-math\">\\(V\\)<\/span>.",
   "body": "   For the rest of this book, denotes a vector space over .   "
 },
@@ -572,7 +572,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x64",
   "type": "Theorem",
-  "number": "1.35",
+  "number": "1.30",
   "title": "the number <span class=\"process-math\">\\(0\\)<\/span> times a vector.",
   "body": " the number times a vector    for every .   "
 },
@@ -590,7 +590,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x65",
   "type": "Theorem",
-  "number": "1.36",
+  "number": "1.31",
   "title": "a number times the vector  <span class=\"process-math\">\\(0\\)<\/span>.",
   "body": " a number times the vector    for every .   "
 },
@@ -608,7 +608,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1DefVS.html#x2",
   "type": "Theorem",
-  "number": "1.37",
+  "number": "1.32",
   "title": "the number  <span class=\"process-math\">\\(-1\\)<\/span> times a vector.",
   "body": " the number times a vector    for every .   "
 },
@@ -707,7 +707,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#x1Subspaces-2-2",
   "type": "Definition",
-  "number": "1.38",
+  "number": "1.33",
   "title": "subspace.",
   "body": " subspace   A subset of is called a subspace  subspace of if is also a vector space with the same additive identity, addition, and scalar multiplication as on .   "
 },
@@ -716,7 +716,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#subspace",
   "type": "Theorem",
-  "number": "1.39",
+  "number": "1.34",
   "title": "conditions for a subspace.",
   "body": " conditions for a subspace   A subset of is a subspace of if and only if satisfies the following three conditions.   additive identity   .    closed under addition   closed under addition  implies .    closed under scalar multiplication   closed under scalar multiplication  and implies .      "
 },
@@ -734,7 +734,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#subspaces",
   "type": "Example",
-  "number": "1.40",
+  "number": "1.35",
   "title": "subspaces.",
   "body": " subspaces      If , then is a subspace of if and only if .    The set of continuous real-valued functions on the interval is a subspace of .    The set of differentiable real-valued functions on is a subspace of .    The set of differentiable real-valued functions on the interval such that is a subspace of if and only if .    The set of all sequences of complex numbers with limit is a subspace of .      "
 },
@@ -743,7 +743,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#x1Subspaces-3-4",
   "type": "Definition",
-  "number": "1.41",
+  "number": "1.36",
   "title": "sum of subspaces.",
   "body": " sum of subspaces   Suppose are subspaces of . The sum of , denoted by , is the set of all possible sums of elements of . More precisely, addition of subspaces  sum of subspaces     "
 },
@@ -752,7 +752,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#x1Subspaces-3-6",
   "type": "Example",
-  "number": "1.42",
+  "number": "1.37",
   "title": "a sum of subspaces of  <span class=\"process-math\">\\(\\F{3}\\)<\/span>.",
   "body": " a sum of subspaces of   Suppose is the set of all elements of whose second and third coordinates equal , and is the set of all elements of whose first and third coordinates equal :   Then as you should verify.   "
 },
@@ -761,7 +761,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#x1Subspaces-3-7",
   "type": "Example",
-  "number": "1.43",
+  "number": "1.38",
   "title": "a sum of subspaces of  <span class=\"process-math\">\\(\\F{4}\\)<\/span>.",
   "body": " a sum of subspaces of   Suppose   Using words rather than symbols, we could say that is the set of elements of whose first two coordinates equal each other and whose third and fourth coordinates equal each other. Similarly, is the set of elements of whose first three coordinates equal each other.  To find a description of , consider a typical element of and a typical element of , where . We have which shows that every element of has its first two coordinates equal to each other. Thus   To prove the inclusion in the other direction, suppose . Then where the first vector on the right is in and the second vector on the right is in . Thus , showing that the inclusion also holds in the opposite direction. Hence which shows that is the set of elements of whose first two coordinates equal each other.   "
 },
@@ -770,7 +770,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#x1Subspaces-3-9",
   "type": "Theorem",
-  "number": "1.45",
+  "number": "1.40",
   "title": "sum of subspaces is the smallest containing subspace.",
   "body": " sum of subspaces is the smallest containing subspace   Suppose are subspaces of . Then is the smallest subspace of containing .   "
 },
@@ -788,7 +788,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#directsum",
   "type": "Definition",
-  "number": "1.46",
+  "number": "1.41",
   "title": "direct sum,  <span class=\"process-math\">\\(\\oplus\\)<\/span>.",
   "body": " direct sum,    Suppose are subspaces of .   The sum is called a direct sum  direct sum if each element of can be written in only one way as a sum , where each .    If is a direct sum, then denotes , with the notation serving as an indication that this is a direct sum.      "
 },
@@ -797,7 +797,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#x1Subspaces-4-4",
   "type": "Example",
-  "number": "1.47",
+  "number": "1.42",
   "title": "a direct sum of two subspaces.",
   "body": " a direct sum of two subspaces   Suppose is the subspace of of those vectors whose last coordinate equals , and is the subspace of of those vectors whose first two coordinates equal :   Then , as you should verify.   "
 },
@@ -806,7 +806,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#x1Subspaces-4-5",
   "type": "Example",
-  "number": "1.48",
+  "number": "1.43",
   "title": "a direct sum of multiple subspaces.",
   "body": " a direct sum of multiple subspaces    To produce in tex , type \\backslash oplus .   Suppose is the subspace of of those vectors whose coordinates are all , except possibly in the slot; for example, . Then as you should verify.   "
 },
@@ -815,7 +815,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#x3direct",
   "type": "Example",
-  "number": "1.49",
+  "number": "1.44",
   "title": "a sum that is not a direct sum.",
   "body": " a sum that is not a direct sum   Suppose .  Then because every vector can be written as where the first vector on the right side is in , the second vector is in , and the third vector is in .  However, does not equal the direct sum of , because the vector can be written in more than one way as a sum , with each . Specifically, we have and, of course, where the first vector on the right side of each equation above is in , the second vector is in , and the third vector is in . Thus the sum is not a direct sum.   "
 },
@@ -824,7 +824,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#x30",
   "type": "Theorem",
-  "number": "1.50",
+  "number": "1.45",
   "title": "condition for a direct sum.",
   "body": " condition for a direct sum   Suppose are subspaces of . Then is a direct sum if and only if the only way to write as a sum , where each , is by taking each equal to .   "
 },
@@ -842,7 +842,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x1Subspaces.html#x219",
   "type": "Theorem",
-  "number": "1.51",
+  "number": "1.46",
   "title": "direct sum of two subspaces.",
   "body": " direct sum of two subspaces   Suppose and are subspaces of . Then    "
 },
@@ -1085,7 +1085,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-2-2",
   "type": "Notation",
-  "number": "2.2",
+  "number": "2.1",
   "title": "list of vectors.",
   "body": " list of vectors    list of vectors We will usually write lists of vectors without surrounding parentheses.   "
 },
@@ -1094,7 +1094,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x433",
   "type": "Definition",
-  "number": "2.3",
+  "number": "2.2",
   "title": "linear combination.",
   "body": " linear combination   A linear combination  linear combination of a list of vectors in is a vector of the form where .   "
 },
@@ -1103,7 +1103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-4",
   "type": "Example",
-  "number": "2.4",
+  "number": "2.3",
   "title": "linear combinations in  <span class=\"process-math\">\\(\\R{3}\\)<\/span>.",
   "body": " linear combinations in       is a linear combination of , which is a list of length two of vectors in , because      is not a linear combination of , which is a list of length two of vectors in , because there do not exist numbers such that In other words, the system of equations has no solutions (as you should verify).      "
 },
@@ -1112,7 +1112,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-5",
   "type": "Definition",
-  "number": "2.5",
+  "number": "2.4",
   "title": "span.",
   "body": " span   The set of all linear combinations of a list of vectors in is called the span  span of , denoted by . In other words,   The span of the empty list is defined to be .   "
 },
@@ -1121,7 +1121,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-6",
   "type": "Example",
-  "number": "2.6",
+  "number": "2.5",
   "title": "span.",
   "body": " span   The previous example shows that in ,    ;     .      "
 },
@@ -1130,7 +1130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-7",
   "type": "Theorem",
-  "number": "2.7",
+  "number": "2.6",
   "title": "span is the smallest containing subspace.",
   "body": " span is the smallest containing subspace   The span of a list of vectors in is the smallest subspace of containing all vectors in the list.   "
 },
@@ -1148,7 +1148,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-9",
   "type": "Definition",
-  "number": "2.8",
+  "number": "2.7",
   "title": "spans.",
   "body": " spans   If equals , we say that the list  spans  spans  .   "
 },
@@ -1157,7 +1157,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#Fn",
   "type": "Example",
-  "number": "2.9",
+  "number": "2.8",
   "title": "a list that spans  <span class=\"process-math\">\\(\\F{n}\\)<\/span>.",
   "body": " a list that spans   Suppose is a positive integer. We want to show that spans . Here the vector in the list above has in the slot and in all other slots.  Suppose . Then   Thus , as desired.   "
 },
@@ -1166,7 +1166,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-12",
   "type": "Definition",
-  "number": "2.10",
+  "number": "2.9",
   "title": "finite-dimensional vector space.",
   "body": " finite-dimensional vector space   A vector space is called finite-dimensional finite-dimensional vector space if some list of vectors in it spans the space.   "
 },
@@ -1175,7 +1175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-16",
   "type": "Definition",
-  "number": "2.11",
+  "number": "2.10",
   "title": "polynomial, <span class=\"process-math\">\\(\\P(\\F)\\)<\/span>.",
   "body": " polynomial,      A function is called a polynomial  polynomial with coefficients in if there exist such that for all .     is the set of all polynomials with coefficients in .      "
 },
@@ -1184,7 +1184,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-19",
   "type": "Definition",
-  "number": "2.12",
+  "number": "2.11",
   "title": "degree of a polynomial, <span class=\"process-math\">\\(\\deg p\\)<\/span>.",
   "body": " degree of a polynomial,    deg    A polynomial is said to have degree  degree of a polynomial  if there exist scalars with such that for every , we have     The polynomial that is identically is said to have degree .     The degree of a polynomial is denoted by .      "
 },
@@ -1193,7 +1193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-21",
   "type": "Notation",
-  "number": "2.13",
+  "number": "2.12",
   "title": "<span class=\"process-math\">\\(\\P_m(\\F)\\)<\/span>.",
   "body": "   For a nonnegative integer, denotes the set of all polynomials with coefficients in and degree at most .   "
 },
@@ -1202,7 +1202,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-23",
   "type": "Definition",
-  "number": "2.14",
+  "number": "2.13",
   "title": "infinite-dimensional vector space.",
   "body": " infinite-dimensional vector space   A vector space is called infinite-dimensional infinite-dimensional vector space if it is not finite-dimensional.   "
 },
@@ -1211,7 +1211,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-3-24",
   "type": "Example",
-  "number": "2.15",
+  "number": "2.14",
   "title": "<span class=\"process-math\">\\(\\P(\\F)\\)<\/span> is infinite-dimensional.",
   "body": " is infinite-dimensional   Consider any list of elements of . Let denote the highest degree of the polynomials in this list. Then every polynomial in the span of this list has degree at most . Thus is not in the span of our list. Hence no list spans . Thus is infinite-dimensional.   "
 },
@@ -1220,7 +1220,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-4-6",
   "type": "Definition",
-  "number": "2.16",
+  "number": "2.15",
   "title": "linearly independent.",
   "body": " linearly independent      A list of vectors in is called linearly independent  linearly independent if the only choice of that makes is .    The empty list is also declared to be linearly independent.      "
 },
@@ -1229,7 +1229,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-4-8",
   "type": "Example",
-  "number": "2.17",
+  "number": "2.16",
   "title": "linearly independent lists.",
   "body": " linearly independent lists      To see that the list is linearly independent in , suppose and Thus Hence . Thus the list is linearly independent in .    Suppose is a nonnegative integer. To see that the list is linearly independent in , suppose and where we think of both sides as elements of . Then for all . As discussed earlier (and as follows from ), this implies that . Thus is a linearly independent list in .    A list of length one in a vector space is linearly independent if and only if the vector in the list is not .    A list of length two in a vector space is linearly independent if and only if neither of the two vectors in the list is a scalar multiple of the other.      "
 },
@@ -1238,7 +1238,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-4-10",
   "type": "Definition",
-  "number": "2.18",
+  "number": "2.17",
   "title": "linearly dependent.",
   "body": " linearly dependent      A list of vectors in is called linearly dependent  linearly dependent if it is not linearly independent.    In other words, a list of vectors in is linearly dependent if there exist , not all , such that .      "
 },
@@ -1247,7 +1247,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#linearlydep",
   "type": "Example",
-  "number": "2.19",
+  "number": "2.18",
   "title": "linearly dependent lists.",
   "body": " linearly dependent lists       is linearly dependent in because     The list is linearly dependent in if and only if , as you should verify.    If some vector in a list of vectors in is a linear combination of the other vectors, then the list is linearly dependent. (Proof: After writing one vector in the list as equal to a linear combination of the other vectors, move that vector to the other side of the equation, where it will be multiplied by .)    Every list of vectors in containing the vector is linearly dependent. (This is a special case of the previous bullet point.)      "
 },
@@ -1256,7 +1256,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x4",
   "type": "Theorem",
-  "number": "2.20",
+  "number": "2.19",
   "title": "linear dependence lemma.",
   "body": " linear dependence lemma    linear dependence lemma Suppose is a linearly dependent list in . Then there exists such that   Furthermore, if satisfies the condition above and the term is removed from , then the span of the remaining list equals .   "
 },
@@ -1274,7 +1274,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-4-16",
   "type": "Example",
-  "number": "2.22",
+  "number": "2.21",
   "title": "smallest  <span class=\"process-math\">\\(k\\)<\/span> in linear dependence lemma.",
   "body": " smallest in linear dependence lemma   Consider the list in . This list of length four is linearly dependent, as we will soon see. Thus the linear dependence lemma implies that there exists such that the vector in this list is a linear combination of the previous vectors in the list. Let's see how to find the smallest value of that works.  Taking in the linear dependence lemma works if and only if the first vector in the list equals . Because is not the vector, we cannot take for this list.  Taking in the linear dependence lemma works if and only if the second vector in the list is a scalar multiple of the first vector. However, there does not exist such that . Thus we cannot take for this list.  Taking in the linear dependence lemma works if and only if the third vector in the list is a linear combination of the first two vectors. Thus for the list in this example, we want to know whether there exist such that   The equation above is equivalent to a system of three linear equations in the two unknowns . Using Gaussian elimination or appropriate software, we find that , is a solution of the equation above, as you can verify. Thus for the list in this example, taking is the smallest value of that works in the linear dependence lemma.   "
 },
@@ -1283,7 +1283,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x7",
   "type": "Theorem",
-  "number": "2.23",
+  "number": "2.22",
   "title": "length of linearly independent list  <span class=\"process-math\">\\(\\le\\)<\/span> length of spanning list.",
   "body": " length of linearly independent list length of spanning list   In a finite-dimensional vector space, the length of every linearly independent list of vectors is less than or equal to the length of every spanning list of vectors.   "
 },
@@ -1301,7 +1301,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-4-21",
   "type": "Example",
-  "number": "2.24",
+  "number": "2.23",
   "title": "no list of length  <span class=\"process-math\">\\(4\\)<\/span> is linearly independent in  <span class=\"process-math\">\\(\\R{3}\\)<\/span>.",
   "body": " no list of length is linearly independent in   The list , which has length three, spans . Thus no list of length larger than three is linearly independent in .  For example, we now know that , which is a list of length four, is not linearly independent in .   "
 },
@@ -1310,7 +1310,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x2spli-4-22",
   "type": "Example",
-  "number": "2.25",
+  "number": "2.24",
   "title": "no list of length  <span class=\"process-math\">\\(3\\)<\/span> spans  <span class=\"process-math\">\\(\\R{4}\\)<\/span>.",
   "body": " no list of length spans   The list , which has length four, is linearly independent in . Thus no list of length less than four spans .  For example, we now know that , which is a list of length three, does not span .   "
 },
@@ -1319,7 +1319,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x2spli.html#x68",
   "type": "Theorem",
-  "number": "2.26",
+  "number": "2.25",
   "title": "finite-dimensional subspaces.",
   "body": " finite-dimensional subspaces   Every subspace of a finite-dimensional vector space is finite-dimensional.   "
 },
@@ -1526,7 +1526,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bases.html#bases-3",
   "type": "Definition",
-  "number": "2.27",
+  "number": "2.26",
   "title": "basis.",
   "body": " basis   A basis  basis of is a list of vectors in that is linearly independent and spans .   "
 },
@@ -1535,7 +1535,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bases.html#ex_bases",
   "type": "Example",
-  "number": "2.28",
+  "number": "2.27",
   "title": "bases.",
   "body": " bases      The list is a basis of , called the standard basis standard basis of of .    The list is a basis of . Note that this list has length two, which is the same as the length of the standard basis of . In the next section, we will see that this is not a coincidence.    The list is linearly independent in but is not a basis of because it does not span .    The list spans but is not a basis of because it is not linearly independent.    The list is a basis of .    The list is a basis of     The list is a basis of , called the standard basis standard basis of of .      "
 },
@@ -1544,7 +1544,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bases.html#x380",
   "type": "Theorem",
-  "number": "2.29",
+  "number": "2.28",
   "title": "criterion for basis.",
   "body": " criterion for basis   A list of vectors in is a basis of if and only if every can be written uniquely in the form where .   "
 },
@@ -1562,7 +1562,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bases.html#x267",
   "type": "Theorem",
-  "number": "2.31",
+  "number": "2.30",
   "title": "every spanning list contains a basis.",
   "body": " every spanning list contains a basis   Every spanning list in a vector space can be reduced to a basis of the vector space.   "
 },
@@ -1580,7 +1580,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bases.html#x6",
   "type": "Theorem",
-  "number": "2.32",
+  "number": "2.31",
   "title": "basis of finite-dimensional vector space.",
   "body": " basis of finite-dimensional vector space   Every finite-dimensional vector space has a basis.   "
 },
@@ -1598,7 +1598,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bases.html#x9",
   "type": "Theorem",
-  "number": "2.33",
+  "number": "2.32",
   "title": "every linearly independent list extends to a basis.",
   "body": " every linearly independent list extends to a basis   Every linearly independent list of vectors in a finite-dimensional vector space can be extended to a basis of the vector space.   "
 },
@@ -1616,7 +1616,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bases.html#a220",
   "type": "Theorem",
-  "number": "2.34",
+  "number": "2.33",
   "title": "every subspace of  <span class=\"process-math\">\\(V\\)<\/span> is part of a direct sum equal to  <span class=\"process-math\">\\(V\\)<\/span>.",
   "body": " every subspace of is part of a direct sum equal to   Suppose is finite-dimensional and is a subspace of . Then there is a subspace of such that .   "
 },
@@ -1742,7 +1742,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dimension.html#x3basislen",
   "type": "Theorem",
-  "number": "2.35",
+  "number": "2.34",
   "title": "basis length does not depend on basis.",
   "body": " basis length does not depend on basis   Any two bases of a finite-dimensional vector space have the same length.   "
 },
@@ -1760,7 +1760,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dimension.html#dimension-6",
   "type": "Definition",
-  "number": "2.36",
+  "number": "2.35",
   "title": "dimension, <span class=\"process-math\">\\(\\dim V\\)<\/span>.",
   "body": " dimension,      The dimension  dimension of a finite-dimensional vector space is the length of any basis of the vector space.    The dimension of a finite-dimensional vector space is denoted by . dim       "
 },
@@ -1769,7 +1769,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dimension.html#dimension-7",
   "type": "Example",
-  "number": "2.37",
+  "number": "2.36",
   "title": "dimensions.",
   "body": " dimensions       because the standard basis of has length .     because the standard basis of has length .    If , then because is a basis of .    If , then because the list is a basis of .      "
 },
@@ -1778,7 +1778,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dimension.html#x2subdim",
   "type": "Theorem",
-  "number": "2.38",
+  "number": "2.37",
   "title": "dimension of a subspace.",
   "body": " dimension of a subspace   If is finite-dimensional and is a subspace of , then .   "
 },
@@ -1796,7 +1796,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dimension.html#x75",
   "type": "Theorem",
-  "number": "2.39",
+  "number": "2.38",
   "title": "linearly independent list of the right length is a basis.",
   "body": " linearly independent list of the right length is a basis   Suppose is finite-dimensional. Then every linearly independent list of vectors in of length is a basis of .   "
 },
@@ -1814,7 +1814,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dimension.html#x2subfull",
   "type": "Theorem",
-  "number": "2.40",
+  "number": "2.39",
   "title": "subspace of full dimension equals the whole space.",
   "body": " subspace of full dimension equals the whole space   Suppose that is finite-dimensional and is a subspace of such that . Then .   "
 },
@@ -1832,7 +1832,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dimension.html#dimension-18",
   "type": "Example",
-  "number": "2.41",
+  "number": "2.40",
   "title": "a basis of  <span class=\"process-math\">\\(\\F{2}\\)<\/span>.",
   "body": " a basis of   Consider the list of vectors in . This list of length two is linearly independent in (because neither vector is a scalar multiple of the other). Note that has dimension two. Thus implies that the linearly independent list of length two is a basis of (we do not need to bother checking that it spans ).   "
 },
@@ -1841,7 +1841,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dimension.html#basissub",
   "type": "Example",
-  "number": "2.42",
+  "number": "2.41",
   "title": "a basis of a subspace of  <span class=\"process-math\">\\(\\P_3(\\R)\\)<\/span>.",
   "body": " a basis of a subspace of   Let be the subspace of defined by   To find a basis of , first note that each of the polynomials , , and is in .  Suppose and for every . Without explicitly expanding the left side of the equation above, we can see that the left side has a term. Because the right side has no term, this implies that . Because , we see that the left side has a term, which implies that . Because , we can also conclude that . Thus the equation above implies that . Hence the list is linearly independent in . Thus . Hence where we have used .  The polynomial is not in because its derivative is the constant function . Thus . Hence (by ). The inequality above now implies that . Thus the linearly independent list in has length and hence is a basis of (by ).   "
 },
@@ -1850,7 +1850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dimension.html#x276",
   "type": "Theorem",
-  "number": "2.43",
+  "number": "2.42",
   "title": "spanning list of the right length is a basis.",
   "body": " spanning list of the right length is a basis   Suppose is finite-dimensional. Then every spanning list of vectors in of length is a basis of .   "
 },
@@ -1868,7 +1868,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "dimension.html#x128",
   "type": "Theorem",
-  "number": "2.44",
+  "number": "2.43",
   "title": "dimension of a sum.",
   "body": " dimension of a sum    dimension of a sum of subspaces If and are subspaces of a finite-dimensional vector space, then    "
 },
@@ -2338,7 +2338,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Null Spaces and Ranges",
-  "body": " Null Spaces and Ranges   Null Space and Injectivity  In this section we will learn about two subspaces that are intimately connected with each linear map. We begin with the set of vectors that get mapped to .   null space,   For , the null space of , denoted by , is the subset of consisting of those vectors that maps to : null space       null space      If is the zero map from to , meaning that for every , then .    Suppose is defined by . Then equals , which is a subspace of the domain of . We will soon see that the null space of each linear map is a subspace of its domain.       The word null means zero. Thus the term null space should remind you of the connection to . Some mathematicians use the term kernel  kernel instead of null space.  Suppose is the differentiation map defined by . The only functions whose derivative equals the zero function are the constant functions. Thus the null space of equals the set of constant functions.  differentiation linear map     Suppose that is the multiplication by map defined by . The only polynomial such that for all is the polynomial. Thus .    Suppose is the backward shift defined by backward shift  Then equals if and only if the numbers are all . Thus .       The next result shows that the null space of each linear map is a subspace of the domain. In particular, is in the null space of every linear map.   the null space is a subspace   Suppose . Then is a subspace of .     Because is a linear map, (by ). Thus .  Suppose . Then   Hence . Thus is closed under addition.  Suppose and . Then   Hence . Thus is closed under scalar multiplication.  We have shown that contains and is closed under addition and scalar multiplication. Thus is a subspace of (by ).   As we will soon see, for a linear map the next definition is closely connected to the null space.   injective   A function is called injective if implies .     injective    The term one-to-one  one-to-one means the same as injective.   We could rephrase the definition above to say that is injective if implies that . Thus is injective if and only if it maps distinct inputs to distinct outputs.  The next result says that we can check whether a linear map is injective by checking whether is the only vector that gets mapped to . As a simple application of this result, we see that of the linear maps whose null spaces we computed in , only multiplication by is injective (except that the zero map is injective in the special case ).   injectivity null space equals   Let . Then is injective if and only if .     First suppose is injective. We want to prove that . We already know that (by ). To prove the inclusion in the other direction, suppose . Then   Because is injective, the equation above implies that . Thus we can conclude that , as desired.  To prove the implication in the other direction, now suppose . We want to prove that is injective. To do this, suppose and . Then   Thus is in , which equals . Hence , which implies that . Hence is injective, as desired.     Range and Surjectivity  Now we give a name to the set of outputs of a linear map.   range   For , the range of is the subset of consisting of those vectors that are equal to for some : range       range      If is the zero map from to , meaning that for every , then .    Suppose is defined by . Then Note that is a subspace of . We will soon see that the range of each element of is a subspace of .    Suppose is the differentiation map defined by . Because for every polynomial there exists a polynomial such that , the range of is . differentiation linear map        The next result shows that the range of each linear map is a subspace of the vector space into which it is being mapped.   the range is a subspace   If , then is a subspace of .     Suppose . Then (by ), which implies that .  If , then there exist such that and . Thus   Hence . Thus is closed under addition.  If and , then there exists such that . Thus   Hence . Thus is closed under scalar multiplication.  We have shown that contains and is closed under addition and scalar multiplication. Thus is a subspace of (by ).    surjective   A function is called surjective if its range equals .     surjective   To illustrate the definition above, note that of the ranges we computed in , only the differentiation map differentiation linear map is surjective (except that the zero map is surjective in the special case ).   Some people use the term onto , onto which means the same as surjective.   Whether a linear map is surjective depends on what we are thinking of as the vector space into which it maps.   surjectivity depends on the target space   The differentiation map differentiation linear map defined by is not surjective, because the polynomial is not in the range of . However, the differentiation map defined by is surjective, because its range equals , which is the vector space into which maps.      Fundamental Theorem of Linear Maps  The next result is so important that it gets a dramatic name.   fundamental theorem of linear maps    fundamental theorem of linear maps Suppose is finite-dimensional and . Then is finite-dimensional and      Let be a basis of ; thus . The linearly independent list can be extended to a basis of (by ). Thus . To complete the proof, we need to show that is finite-dimensional and . We will do this by proving that is a basis of .  Let . Because spans , we can write where the 's and 's are in . Applying to both sides of this equation, we get where the terms of the form disappeared because each is in . The last equation implies that the list spans . In particular, is finite-dimensional.  To show is linearly independent, suppose and   Then   Hence   Because spans , we can write where the 's are in . This equation implies that all the 's (and 's) are (because is linearly independent). Thus is linearly independent and hence is a basis of , as desired.   Now we can show that no linear map from a finite-dimensional vector space to a smaller vector space can be injective, where smaller is measured by dimension.   linear map to a lower-dimensional space is not injective   Suppose and are finite-dimensional vector spaces such that . Then no linear map from to is injective.     Let . Then , where the first line above comes from the fundamental theorem of linear maps and the second line follows from . The inequality above states that . This means that contains vectors other than . Thus is not injective (by ).    linear map from to is not injective   Define a linear map by   Because , we can use to assert that is not injective, without doing any calculations.    The next result shows that no linear map from a finite-dimensional vector space to a bigger vector space can be surjective, where bigger is measured by dimension.   linear map to a higher-dimensional space is not surjective   Suppose and are finite-dimensional vector spaces such that . Then no linear map from to is surjective.     Let . Then , where the equality above comes from the fundamental theorem of linear maps . The inequality above states that . This means that cannot equal . Thus is not surjective.   As we will soon see, and have important consequences in the theory of linear equations. The idea is to express questions about systems of linear equations in terms of linear maps. Let's begin by rephrasing in terms of linear maps the question of whether a homogeneous system of linear equations has a nonzero solution. linear equations|(     Homogeneous , in this context, means that the constant term on the right side of each equation below is .   Fix positive integers and , and let for and . Consider the homogeneous system of linear equations .  Clearly is a solution of the system of equations above; the question here is whether any other solutions exist.  Define by   The equation (the here is the additive identity in , namely, the list of length of all 's) is the same as the homogeneous system of linear equations above.  Thus we want to know if is strictly bigger than , which is equivalent to not being injective (by ). The next result gives an important condition for ensuring that is not injective.   homogeneous system of linear equations    homogeneous system of linear equations A homogeneous system of linear equations with more variables than equations has nonzero solutions.     Use the notation and result from the discussion above. Thus is a linear map from to , and we have a homogeneous system of linear equations with variables . From we see that is not injective if .   Example of the result above: a homogeneous system of four linear equations with five variables has nonzero solutions.  Now we consider the question of whether a system of linear equations has no solutions for some choice of the constant terms. To rephrase this question in terms of a linear map, fix positive integers and , and let for all and all . For , consider the system of linear equations .  With this notation, the question here is whether there is some choice of the constant terms such that no solution exists to the system above.   The results and , which compare the number of variables and the number of equations, can also be proved using Gaussian elimination. The abstract approach taken here seems to provide cleaner proofs.    Gaussian elimination   Define as in . The equation is the same as the system of equations . Thus we want to know if . Hence we can rephrase our question about not having a solution for some choice of as follows: What condition ensures that is not surjective? The next result gives one such condition.   system of linear equations with more equations than variables   A system of linear equations with more equations than variables has no solution for some choice of the constant terms.     Use the notation from the discussion above. Thus is a linear map from to , and we have a system of equations with variables ; see . If , then implies that is not surjective. As discussed above, this shows that if we have more equations than variables in a system of linear equations, then there is no solution for some choice of the constant terms.   Example of the result above: a system of five linear equations with four variables has no solution for some choice of the constant terms. linear equations|)    Exercises    Give an example of a linear map with and .      Suppose are such that . Prove that .      Suppose is a list of vectors in . Define by    What property of corresponds to spanning ?    What property of corresponds to the list being linearly independent?         Show that is not a subspace of .      Give an example of such that .      Prove that there does not exist such that .      Suppose and are finite-dimensional with . Show that is not a subspace of .      Suppose and are finite-dimensional with . Show that is not a subspace of .      Suppose is injective and is linearly independent in . Prove that is linearly independent in .      Suppose spans and . Show that spans .      Suppose that is finite-dimensional and that . Prove that there exists a subspace of such that       Suppose is a linear map from to such that   Prove that is surjective.      Suppose is a three-dimensional subspace of and that is a linear map from to such that . Prove that is surjective.      Prove that there does not exist a linear map from to whose null space equals .      Suppose there exists a linear map on whose null space and range are both finite-dimensional. Prove that is finite-dimensional.      Suppose and are both finite-dimensional. Prove that there exists an injective linear map from to if and only if .      Suppose and are both finite-dimensional. Prove that there exists a surjective linear map from onto if and only if .      Suppose and are finite-dimensional and that is a subspace of . Prove that there exists such that if and only if .      Suppose is finite-dimensional and . Prove that is injective if and only if there exists such that is the identity operator on .      Suppose is finite-dimensional and . Prove that is surjective if and only if there exists such that is the identity operator on .      Suppose is finite-dimensional, , and is a subspace of . Prove that is a subspace of and       Suppose and are finite-dimensional vector spaces and and . Prove that       Suppose and are finite-dimensional vector spaces and and . Prove that          Suppose and are such that . Prove that .    Give an example of with and .         Suppose that is finite-dimensional and . Prove that if and only if there exists such that .      Suppose that is finite-dimensional and . Prove that if and only if there exists such that .      Suppose and . Prove that .      Suppose is such that for every nonconstant polynomial . Prove that is surjective. differentiation linear map Note: The notation is used above to remind you of the differentiation map that sends a polynomial to .      Suppose . Prove that there exists a polynomial such that . Note: This exercise can be done without linear algebra, but it's more fun to do it using linear algebra.      Suppose and . Suppose is not in . Prove that       Suppose is finite-dimensional, is a subspace of , and is a finite-dimensional subspace of . Prove that there exists such that and if and only if .      Suppose is finite-dimensional with . Show that if is a linear map such that for all , then .    The description of the two-sided ideals of given by Exercise in Section might be useful.      Suppose that and are real vector spaces and . Define by complexification of a linear map   for all .   Show that is a (complex) linear map from to .    Show that is injective if and only if is injective.    Show that if and only if .     Note: See Exercise in Section for the definition of the complexification . The linear map is called the complexification of the linear map .      "
+  "body": " Null Spaces and Ranges   Null Space and Injectivity  In this section we will learn about two subspaces that are intimately connected with each linear map. We begin with the set of vectors that get mapped to .   null space,   For , the null space of , denoted by , is the subset of consisting of those vectors that maps to : null space       null space      If is the zero map from to , meaning that for every , then .    Suppose is defined by . Then equals , which is a subspace of the domain of . We will soon see that the null space of each linear map is a subspace of its domain.       The word null means zero. Thus the term null space should remind you of the connection to . Some mathematicians use the term kernel  kernel instead of null space.  Suppose is the differentiation map defined by . The only functions whose derivative equals the zero function are the constant functions. Thus the null space of equals the set of constant functions.  differentiation linear map     Suppose that is the multiplication by map defined by . The only polynomial such that for all is the polynomial. Thus .    Suppose is the backward shift defined by backward shift  Then equals if and only if the numbers are all . Thus .       The next result shows that the null space of each linear map is a subspace of the domain. In particular, is in the null space of every linear map.   the null space is a subspace   Suppose . Then is a subspace of .     Because is a linear map, (by ). Thus .  Suppose . Then   Hence . Thus is closed under addition.  Suppose and . Then   Hence . Thus is closed under scalar multiplication.  We have shown that contains and is closed under addition and scalar multiplication. Thus is a subspace of (by ).   As we will soon see, for a linear map the next definition is closely connected to the null space.   injective   A function is called injective if implies .     injective    The term one-to-one  one-to-one means the same as injective.   We could rephrase the definition above to say that is injective if implies that . Thus is injective if and only if it maps distinct inputs to distinct outputs.  The next result says that we can check whether a linear map is injective by checking whether is the only vector that gets mapped to . As a simple application of this result, we see that of the linear maps whose null spaces we computed in , only multiplication by is injective (except that the zero map is injective in the special case ).   injectivity null space equals   Let . Then is injective if and only if .     First suppose is injective. We want to prove that . We already know that (by ). To prove the inclusion in the other direction, suppose . Then   Because is injective, the equation above implies that . Thus we can conclude that , as desired.  To prove the implication in the other direction, now suppose . We want to prove that is injective. To do this, suppose and . Then   Thus is in , which equals . Hence , which implies that . Hence is injective, as desired.     Range and Surjectivity  Now we give a name to the set of outputs of a linear map.   range   For , the range of is the subset of consisting of those vectors that are equal to for some : range       range      If is the zero map from to , meaning that for every , then .    Suppose is defined by . Then Note that is a subspace of . We will soon see that the range of each element of is a subspace of .    Suppose is the differentiation map defined by . Because for every polynomial there exists a polynomial such that , the range of is . differentiation linear map        The next result shows that the range of each linear map is a subspace of the vector space into which it is being mapped.   the range is a subspace   If , then is a subspace of .     Suppose . Then (by ), which implies that .  If , then there exist such that and . Thus   Hence . Thus is closed under addition.  If and , then there exists such that . Thus   Hence . Thus is closed under scalar multiplication.  We have shown that contains and is closed under addition and scalar multiplication. Thus is a subspace of (by ).    surjective   A function is called surjective if its range equals .     surjective   To illustrate the definition above, note that of the ranges we computed in , only the differentiation map differentiation linear map is surjective (except that the zero map is surjective in the special case ).   Some people use the term onto , onto which means the same as surjective.   Whether a linear map is surjective depends on what we are thinking of as the vector space into which it maps.   surjectivity depends on the target space   The differentiation map differentiation linear map defined by is not surjective, because the polynomial is not in the range of . However, the differentiation map defined by is surjective, because its range equals , which is the vector space into which maps.      Fundamental Theorem of Linear Maps  The next result is so important that it gets a dramatic name.   fundamental theorem of linear maps    fundamental theorem of linear maps Suppose is finite-dimensional and . Then is finite-dimensional and      Let be a basis of ; thus . The linearly independent list can be extended to a basis of (by ). Thus . To complete the proof, we need to show that is finite-dimensional and . We will do this by proving that is a basis of .  Let . Because spans , we can write where the 's and 's are in . Applying to both sides of this equation, we get where the terms of the form disappeared because each is in . The last equation implies that the list spans . In particular, is finite-dimensional.  To show is linearly independent, suppose and   Then   Hence   Because spans , we can write where the 's are in . This equation implies that all the 's (and 's) are (because is linearly independent). Thus is linearly independent and hence is a basis of , as desired.   Now we can show that no linear map from a finite-dimensional vector space to a smaller vector space can be injective, where smaller is measured by dimension.   linear map to a lower-dimensional space is not injective   Suppose and are finite-dimensional vector spaces such that . Then no linear map from to is injective.     Let . Then , where the first line above comes from the fundamental theorem of linear maps and the second line follows from . The inequality above states that . This means that contains vectors other than . Thus is not injective (by ).    linear map from to is not injective   Define a linear map by   Because , we can use to assert that is not injective, without doing any calculations.    The next result shows that no linear map from a finite-dimensional vector space to a bigger vector space can be surjective, where bigger is measured by dimension.   linear map to a higher-dimensional space is not surjective   Suppose and are finite-dimensional vector spaces such that . Then no linear map from to is surjective.     Let . Then , where the equality above comes from the fundamental theorem of linear maps . The inequality above states that . This means that cannot equal . Thus is not surjective.   As we will soon see, and have important consequences in the theory of linear equations. The idea is to express questions about systems of linear equations in terms of linear maps. Let's begin by rephrasing in terms of linear maps the question of whether a homogeneous system of linear equations has a nonzero solution. linear equations     Homogeneous , in this context, means that the constant term on the right side of each equation below is .   Fix positive integers and , and let for and . Consider the homogeneous system of linear equations .  Clearly is a solution of the system of equations above; the question here is whether any other solutions exist.  Define by   The equation (the here is the additive identity in , namely, the list of length of all 's) is the same as the homogeneous system of linear equations above.  Thus we want to know if is strictly bigger than , which is equivalent to not being injective (by ). The next result gives an important condition for ensuring that is not injective.   homogeneous system of linear equations    homogeneous system of linear equations A homogeneous system of linear equations with more variables than equations has nonzero solutions.     Use the notation and result from the discussion above. Thus is a linear map from to , and we have a homogeneous system of linear equations with variables . From we see that is not injective if .   Example of the result above: a homogeneous system of four linear equations with five variables has nonzero solutions.  Now we consider the question of whether a system of linear equations has no solutions for some choice of the constant terms. To rephrase this question in terms of a linear map, fix positive integers and , and let for all and all . For , consider the system of linear equations .  With this notation, the question here is whether there is some choice of the constant terms such that no solution exists to the system above.   The results and , which compare the number of variables and the number of equations, can also be proved using Gaussian elimination. The abstract approach taken here seems to provide cleaner proofs.    Gaussian elimination   Define as in . The equation is the same as the system of equations . Thus we want to know if . Hence we can rephrase our question about not having a solution for some choice of as follows: What condition ensures that is not surjective? The next result gives one such condition.   system of linear equations with more equations than variables   A system of linear equations with more equations than variables has no solution for some choice of the constant terms.     Use the notation from the discussion above. Thus is a linear map from to , and we have a system of equations with variables ; see . If , then implies that is not surjective. As discussed above, this shows that if we have more equations than variables in a system of linear equations, then there is no solution for some choice of the constant terms.   Example of the result above: a system of five linear equations with four variables has no solution for some choice of the constant terms. linear equations    Exercises    Give an example of a linear map with and .      Suppose are such that . Prove that .      Suppose is a list of vectors in . Define by    What property of corresponds to spanning ?    What property of corresponds to the list being linearly independent?         Show that is not a subspace of .      Give an example of such that .      Prove that there does not exist such that .      Suppose and are finite-dimensional with . Show that is not a subspace of .      Suppose and are finite-dimensional with . Show that is not a subspace of .      Suppose is injective and is linearly independent in . Prove that is linearly independent in .      Suppose spans and . Show that spans .      Suppose that is finite-dimensional and that . Prove that there exists a subspace of such that       Suppose is a linear map from to such that   Prove that is surjective.      Suppose is a three-dimensional subspace of and that is a linear map from to such that . Prove that is surjective.      Prove that there does not exist a linear map from to whose null space equals .      Suppose there exists a linear map on whose null space and range are both finite-dimensional. Prove that is finite-dimensional.      Suppose and are both finite-dimensional. Prove that there exists an injective linear map from to if and only if .      Suppose and are both finite-dimensional. Prove that there exists a surjective linear map from onto if and only if .      Suppose and are finite-dimensional and that is a subspace of . Prove that there exists such that if and only if .      Suppose is finite-dimensional and . Prove that is injective if and only if there exists such that is the identity operator on .      Suppose is finite-dimensional and . Prove that is surjective if and only if there exists such that is the identity operator on .      Suppose is finite-dimensional, , and is a subspace of . Prove that is a subspace of and       Suppose and are finite-dimensional vector spaces and and . Prove that       Suppose and are finite-dimensional vector spaces and and . Prove that          Suppose and are such that . Prove that .    Give an example of with and .         Suppose that is finite-dimensional and . Prove that if and only if there exists such that .      Suppose that is finite-dimensional and . Prove that if and only if there exists such that .      Suppose and . Prove that .      Suppose is such that for every nonconstant polynomial . Prove that is surjective. differentiation linear map Note: The notation is used above to remind you of the differentiation map that sends a polynomial to .      Suppose . Prove that there exists a polynomial such that . Note: This exercise can be done without linear algebra, but it's more fun to do it using linear algebra.      Suppose and . Suppose is not in . Prove that       Suppose is finite-dimensional, is a subspace of , and is a finite-dimensional subspace of . Prove that there exists such that and if and only if .      Suppose is finite-dimensional with . Show that if is a linear map such that for all , then .    The description of the two-sided ideals of given by Exercise in Section might be useful.      Suppose that and are real vector spaces and . Define by complexification of a linear map   for all .   Show that is a (complex) linear map from to .    Show that is injective if and only if is injective.    Show that if and only if .     Note: See Exercise in Section for the definition of the complexification . The linear map is called the complexification of the linear map .      "
 },
 {
   "id": "x3nullspace-2-3",
@@ -4028,7 +4028,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#pq-3-5",
   "type": "Definition",
-  "number": "3.98",
+  "number": "3.97",
   "title": "translate.",
   "body": " translate   For and a subset of , the set is said to be a translate of .   "
 },
@@ -4037,7 +4037,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#pq-3-7",
   "type": "Example",
-  "number": "3.99",
+  "number": "3.98",
   "title": "translates.",
   "body": " translates      If is the line in defined by , then all lines in with slope are translates of . See Example above for a drawing of and one of its translates.    More generally, if is a line in , then the set of all translates of is the set of all lines in that are parallel to .    If , then the translates of are the planes in that are parallel to the -plane .    More generally, if is a plane in , then the set of all translates of is the set of all planes in that are parallel to (see, for example, Exercise ).      "
 },
@@ -4046,7 +4046,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#pq-3-8",
   "type": "Definition",
-  "number": "3.100",
+  "number": "3.99",
   "title": "quotient space, <span class=\"process-math\">\\(V\/U\\)<\/span>.",
   "body": " quotient space,    Suppose is a subspace of . Then the quotient space  is the set of all translates of . Thus quotient space     "
 },
@@ -4055,7 +4055,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#pq-3-9",
   "type": "Example",
-  "number": "3.101",
+  "number": "3.100",
   "title": "quotient spaces.",
   "body": " quotient spaces      If , then is the set of all lines in that have slope .    If is a line in containing the origin, then is the set of all lines in parallel to .    If is a plane in containing the origin, then is the set of all planes in parallel to .      "
 },
@@ -4064,7 +4064,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#equalordisjoint",
   "type": "Theorem",
-  "number": "3.102",
+  "number": "3.101",
   "title": "two translates of a subspace are equal or disjoint.",
   "body": " two translates of a subspace are equal or disjoint   Suppose is a subspace of and . Then    "
 },
@@ -4082,7 +4082,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#pq-3-14",
   "type": "Definition",
-  "number": "3.103",
+  "number": "3.102",
   "title": "addition and scalar multiplication on <span class=\"process-math\">\\(V\/U\\)<\/span>.",
   "body": " addition and scalar multiplication on   Suppose is a subspace of . Then addition and scalar multiplication are defined on by addition in quotient space  scalar multiplication in quotient space  for all and all .   "
 },
@@ -4091,7 +4091,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#pq-3-16",
   "type": "Theorem",
-  "number": "3.104",
+  "number": "3.103",
   "title": "quotient space is a vector space.",
   "body": " quotient space is a vector space   Suppose is a subspace of . Then , with the operations of addition and scalar multiplication as defined above, is a vector space.   "
 },
@@ -4109,7 +4109,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#pq-3-19",
   "type": "Definition",
-  "number": "3.105",
+  "number": "3.104",
   "title": "quotient map, <span class=\"process-math\">\\(\\pi\\)<\/span>.",
   "body": " quotient map,    Suppose is a subspace of . The quotient map  quotient map  is the linear map defined by for each .   "
 },
@@ -4118,7 +4118,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#dimVmodU",
   "type": "Theorem",
-  "number": "3.106",
+  "number": "3.105",
   "title": "dimension of quotient space.",
   "body": " dimension of quotient space   Suppose is finite-dimensional and is a subspace of . Then    "
 },
@@ -4136,7 +4136,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#pq-3-24",
   "type": "Notation",
-  "number": "3.107",
+  "number": "3.106",
   "title": "<span class=\"process-math\">\\(\\tilde{T}\\)<\/span>.",
   "body": "    Suppose . Define by    "
 },
@@ -4145,7 +4145,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pq.html#nullranTtilde",
   "type": "Theorem",
-  "number": "3.108",
+  "number": "3.107",
   "title": "null space and range of  <span class=\"process-math\">\\(\\tilde{T}\\)<\/span>.",
   "body": " null space and range of   Suppose . Then    , where is the quotient map of onto ;     is injective;     ;     and are isomorphic vector spaces.      "
 },
@@ -4343,7 +4343,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#duals-2-3",
   "type": "Definition",
-  "number": "3.109",
+  "number": "3.108",
   "title": "linear functional.",
   "body": " linear functional   A linear functional  linear functional on is a linear map from to . In other words, a linear functional is an element of .   "
 },
@@ -4352,7 +4352,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#duals-2-4",
   "type": "Example",
-  "number": "3.110",
+  "number": "3.109",
   "title": "linear functionals.",
   "body": " linear functionals      Define by . Then is a linear functional on .    Fix . Define by . Then is a linear functional on .    Define by Then is a linear functional on .    Define by for each . Then is a linear functional on .      "
 },
@@ -4361,7 +4361,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#DualSpace",
   "type": "Definition",
-  "number": "3.111",
+  "number": "3.110",
   "title": "dual space, <span class=\"process-math\">\\(V'\\)<\/span>.",
   "body": " dual space,    The dual space dual of a vector space of , denoted by , is the vector space of all linear functionals on . In other words, .   "
 },
@@ -4370,7 +4370,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#x3dimdual",
   "type": "Theorem",
-  "number": "3.112",
+  "number": "3.111",
   "title": "<span class=\"process-math\">\\(\\dim V' = \\dim V\\)<\/span>.",
   "body": "   Suppose is finite-dimensional. Then is also finite-dimensional and    "
 },
@@ -4388,7 +4388,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#DualBasis",
   "type": "Definition",
-  "number": "3.113",
+  "number": "3.112",
   "title": "dual basis.",
   "body": " dual basis   If is a basis of , then the dual basis  dual of a basis of is the list of elements of , where each is the linear functional on such that    "
 },
@@ -4397,7 +4397,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#dualstandard",
   "type": "Example",
-  "number": "3.114",
+  "number": "3.113",
   "title": "the dual basis of the standard basis of  <span class=\"process-math\">\\(\\F{n}\\)<\/span>.",
   "body": " the dual basis of the standard basis of   Suppose is a positive integer. For , define to be the linear functional on that selects the coordinate of a vector in . Thus for each .  Let be the standard basis of . Then   Thus is the dual basis of the standard basis of .   "
 },
@@ -4406,7 +4406,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#x3dualbasis",
   "type": "Theorem",
-  "number": "3.115",
+  "number": "3.114",
   "title": "dual basis gives coefficients for linear combination.",
   "body": " dual basis gives coefficients for linear combination   Suppose is a basis of and is the dual basis. Then for each .   "
 },
@@ -4424,7 +4424,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#dualbasis",
   "type": "Theorem",
-  "number": "3.117",
+  "number": "3.116",
   "title": "dual basis is a basis of the dual space.",
   "body": " dual basis is a basis of the dual space   Suppose is finite-dimensional. Then the dual basis of a basis of is a basis of .   "
 },
@@ -4442,7 +4442,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#DualMap",
   "type": "Definition",
-  "number": "3.119",
+  "number": "3.118",
   "title": "dual map, <span class=\"process-math\">\\(T'\\)<\/span>.",
   "body": " dual map,    Suppose . The dual map dual of a linear map of is the linear map defined for each by    "
 },
@@ -4451,7 +4451,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#duals-2-23",
   "type": "Example",
-  "number": "3.120",
+  "number": "3.119",
   "title": "dual map of the differentiation linear map.",
   "body": " dual map of the differentiation linear map   Define by .   Suppose is the linear functional on defined by . Then is the linear functional on given by Thus is the linear functional on taking to .    Suppose is the linear functional on defined by . Then is the linear functional on given by . Thus is the linear functional on taking to .      "
 },
@@ -4460,7 +4460,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#x3dualmaps",
   "type": "Theorem",
-  "number": "3.121",
+  "number": "3.120",
   "title": "algebraic properties of dual maps.",
   "body": " algebraic properties of dual maps   Suppose . Then    for all ;     for all ;     for all .      "
 },
@@ -4478,7 +4478,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#annihilator",
   "type": "Definition",
-  "number": "3.122",
+  "number": "3.121",
   "title": "annihilator, <span class=\"process-math\">\\(U^0\\)<\/span>.",
   "body": " annihilator,    For , the annihilator  annihilator of , denoted by , is defined by    "
 },
@@ -4487,7 +4487,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#duals-3-4",
   "type": "Example",
-  "number": "3.123",
+  "number": "3.122",
   "title": "element of an annihilator.",
   "body": " element of an annihilator   Suppose is the subspace of consisting of polynomial multiples of . If is the linear functional on defined by , then .   "
 },
@@ -4496,7 +4496,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#annih",
   "type": "Example",
-  "number": "3.124",
+  "number": "3.123",
   "title": "the annihilator of a two-dimensional subspace of  <span class=\"process-math\">\\(\\R5\\)<\/span>.",
   "body": " the annihilator of a two-dimensional subspace of   Let denote the standard basis of ; let denote the dual basis of . Suppose   We want to show that .  Recall ( see ) that is the linear functional on that selects the coordinate: .  First suppose . Then there exist such that . If , then   Thus . Hence we have shown that .  To show the inclusion in the other direction, suppose that . Because the dual basis is a basis of , there exist such that . Because and , we have   Similarly, and thus . Hence . Thus , which shows that .  Thus .   "
 },
@@ -4505,7 +4505,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#duals-3-7",
   "type": "Theorem",
-  "number": "3.125",
+  "number": "3.124",
   "title": "the annihilator is a subspace.",
   "body": " the annihilator is a subspace   Suppose . Then is a subspace of .   "
 },
@@ -4523,7 +4523,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#dimannih",
   "type": "Theorem",
-  "number": "3.126",
+  "number": "3.125",
   "title": "dimension of the annihilator.",
   "body": " dimension of the annihilator   Suppose is finite-dimensional and is a subspace of . Then    "
 },
@@ -4541,7 +4541,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#x2annih",
   "type": "Theorem",
-  "number": "3.128",
+  "number": "3.127",
   "title": "condition for the annihilator to equal  <span class=\"process-math\">\\(\\{ 0 \\}\\)<\/span> or the whole space.",
   "body": " condition for the annihilator to equal or the whole space   Suppose is finite-dimensional and is a subspace of . Then    ;     .      "
 },
@@ -4559,7 +4559,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#nullTprime",
   "type": "Theorem",
-  "number": "3.129",
+  "number": "3.128",
   "title": "the null space of <span class=\"process-math\">\\(T'\\)<\/span>.",
   "body": " the null space of   Suppose and are finite-dimensional and . Then null space of     ;     .      "
 },
@@ -4577,7 +4577,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#TsurTprimeinj",
   "type": "Theorem",
-  "number": "3.130",
+  "number": "3.129",
   "title": "<span class=\"process-math\">\\(T\\)<\/span> surjective is equivalent to <span class=\"process-math\">\\(T'\\)<\/span> injective.",
   "body": " surjective is equivalent to injective   Suppose and are finite-dimensional and . Then    "
 },
@@ -4595,7 +4595,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#rangeTprime",
   "type": "Theorem",
-  "number": "3.131",
+  "number": "3.130",
   "title": "the range of <span class=\"process-math\">\\(T'\\)<\/span>.",
   "body": " the range of   Suppose and are finite-dimensional and . Then range of     ;     .      "
 },
@@ -4613,7 +4613,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#TinjTprimesur",
   "type": "Theorem",
-  "number": "3.132",
+  "number": "3.131",
   "title": "<span class=\"process-math\">\\(T\\)<\/span> injective is equivalent to <span class=\"process-math\">\\(T'\\)<\/span> surjective.",
   "body": " injective is equivalent to surjective   Suppose and are finite-dimensional and . Then    "
 },
@@ -4631,7 +4631,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#x3matrixTprime",
   "type": "Theorem",
-  "number": "3.133",
+  "number": "3.132",
   "title": "matrix of  <span class=\"process-math\">\\(T'\\)<\/span> is transpose of matrix of  <span class=\"process-math\">\\(T\\)<\/span>.",
   "body": " matrix of is transpose of matrix of    matrix of Suppose and are finite-dimensional and . Then    "
 },
@@ -4649,7 +4649,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "duals.html#x3rank",
   "type": "Theorem",
-  "number": "3.134",
+  "number": "3.133",
   "title": "column rank equals row rank.",
   "body": " column rank equals row rank   Suppose . Then the column rank of equals the row rank of .   "
 },
@@ -7448,7 +7448,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x6ipn.html#x6ipn-3-21",
   "type": "Figure",
-  "number": "6.13",
+  "number": "8",
   "title": "",
   "body": " An orthogonal decomposition: expressed as a scalar multiple of plus a vector orthogonal to .   Missing description   "
 },
@@ -7457,7 +7457,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x6ipn.html#orthogdecomp",
   "type": "Theorem",
-  "number": "6.14",
+  "number": "6.13",
   "title": "an orthogonal decomposition.",
   "body": " an orthogonal decomposition   Suppose , with . Set and . Then    "
 },
@@ -7466,7 +7466,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x6ipn.html#x177",
   "type": "Theorem",
-  "number": "6.15",
+  "number": "6.14",
   "title": "Cauchy–Schwarz inequality.",
   "body": " Cauchy Schwarz inequality    Cauchy Schwarz inequality Suppose . Then   This inequality is an equality if and only if one of is a scalar multiple of the other.   "
 },
@@ -7484,7 +7484,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x6ipn.html#CS",
   "type": "Example",
-  "number": "6.17",
+  "number": "6.16",
   "title": "Cauchy–Schwarz inequality.",
   "body": " Cauchy Schwarz inequality      If , then as follows from applying the Cauchy Schwarz inequality to the vectors , using the usual Euclidean inner product.    If are continuous real-valued functions on , then as follows from applying the Cauchy Schwarz inequality to Example (c).      "
 },
@@ -7493,7 +7493,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x6ipn.html#x6ipn-3-31",
   "type": "Figure",
-  "number": "6.18",
+  "number": "9",
   "title": "",
   "body": " In this triangle, the length of is less than the length of plus the length of .   Missing description   "
 },
@@ -7502,7 +7502,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x6ipn.html#x3triangle",
   "type": "Theorem",
-  "number": "6.19",
+  "number": "6.17",
   "title": "triangle inequality.",
   "body": " triangle inequality   Suppose . Then   This inequality is an equality if and only if one of is a nonnegative real multiple of the other.   "
 },
@@ -7520,7 +7520,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x6ipn.html#x6ipn-3-37",
   "type": "Figure",
-  "number": "6.23",
+  "number": "10",
   "title": "",
   "body": " The diagonals of this parallelogram are and .   Missing description   "
 },
@@ -7529,7 +7529,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x6ipn.html#x6ipn-3-39",
   "type": "Theorem",
-  "number": "6.24",
+  "number": "6.21",
   "title": "parallelogram equality.",
   "body": " parallelogram equality   Suppose . Then parallelogram equality     "
 },
@@ -7871,7 +7871,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#orthobases-2-2",
   "type": "Definition",
-  "number": "6.25",
+  "number": "6.22",
   "title": "orthonormal.",
   "body": " orthonormal      A list of vectors is called orthonormal  orthonormal list if each vector in the list has norm and is orthogonal to all the other vectors in the list.    In other words, a list of vectors in is orthonormal if for all .      "
 },
@@ -7880,7 +7880,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#orthobases-2-3",
   "type": "Example",
-  "number": "6.26",
+  "number": "6.23",
   "title": "orthonormal lists.",
   "body": " orthonormal lists      The standard basis of is an orthonormal list.     is an orthonormal list in .     is an orthonormal list in .    Suppose is a positive integer. Then, as Exercise asks you to verify, is an orthonormal list of vectors in , the vector space of continuous real-valued functions on with inner product The orthonormal list above is often used for modeling periodic phenomena, such as tides.    Suppose we make into an inner product space using the inner product given by for all . The standard basis of is not an orthonormal list because the vectors in that list do not have norm . Dividing each vector by its norm gives the list , in which each vector has norm , and the second vector is orthogonal to the first and third vectors. However, the first and third vectors are not orthogonal. Thus this is not an orthonormal list. Soon we will see how to construct an orthonormal list from the standard basis (see Example ).      "
 },
@@ -7889,7 +7889,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x4strange",
   "type": "Theorem",
-  "number": "6.27",
+  "number": "6.24",
   "title": "norm of an orthonormal linear combination.",
   "body": " norm of an orthonormal linear combination   Suppose is an orthonormal list of vectors in . Then for all .   "
 },
@@ -7907,7 +7907,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x46",
   "type": "Theorem",
-  "number": "6.28",
+  "number": "6.25",
   "title": "orthonormal lists are linearly independent.",
   "body": " orthonormal lists are linearly independent   Every orthonormal list of vectors is linearly independent.   "
 },
@@ -7925,7 +7925,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#Bessel",
   "type": "Theorem",
-  "number": "6.29",
+  "number": "6.26",
   "title": "Bessel’s inequality.",
   "body": " Bessel's inequality   Suppose is an orthonormal list of vectors in . If then Bessel's inequality     "
 },
@@ -7943,7 +7943,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#orthobases-2-14",
   "type": "Definition",
-  "number": "6.30",
+  "number": "6.27",
   "title": "orthonormal basis.",
   "body": " orthonormal basis   An orthonormal basis  orthonormal basis of is an orthonormal list of vectors in that is also a basis of .   "
 },
@@ -7952,7 +7952,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#onbasis",
   "type": "Theorem",
-  "number": "6.31",
+  "number": "6.28",
   "title": "orthonormal lists of the right length are orthonormal bases.",
   "body": " orthonormal lists of the right length are orthonormal bases   Suppose is finite-dimensional. Then every orthonormal list of vectors in of length is an orthonormal basis of .   "
 },
@@ -7970,7 +7970,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x4FonBasis",
   "type": "Example",
-  "number": "6.32",
+  "number": "6.29",
   "title": "an orthonormal basis of  <span class=\"process-math\">\\(\\F{4}\\)<\/span>.",
   "body": " an orthonormal basis of   As mentioned above, the standard basis is an orthonormal basis of . We now show that is also an orthonormal basis of .  We have   Similarly, the other three vectors in the list above also have norm .  Note that   Similarly, the inner product of any two distinct vectors in the list above also equals .  Thus the list above is orthonormal. Because we have an orthonormal list of length four in the four-dimensional vector space , this list is an orthonormal basis of (by ).   "
 },
@@ -7979,7 +7979,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x190",
   "type": "Theorem",
-  "number": "6.33",
+  "number": "6.30",
   "title": "writing a vector as a linear combination of an orthonormal basis.",
   "body": " writing a vector as a linear combination of an orthonormal basis   Suppose is an orthonormal basis of and . Then    ;     ;     .      "
 },
@@ -7997,7 +7997,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#orthobases-2-26",
   "type": "Example",
-  "number": "6.34",
+  "number": "6.31",
   "title": "finding coefficients for a linear combination.",
   "body": " finding coefficients for a linear combination   Suppose we want to write the vector as a linear combination of the orthonormal basis of from Example . Instead of solving a system of four linear equations in four unknowns, as typically would be required if we were working with a nonorthonormal basis, we simply evaluate four inner products and use (a), getting that equals    "
 },
@@ -8015,7 +8015,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x186",
   "type": "Theorem",
-  "number": "6.35",
+  "number": "6.32",
   "title": "Gram–Schmidt procedure.",
   "body": " Gram Schmidt procedure   Suppose is a linearly independent list of vectors in . Let . For , define inductively by   For each , let . Then is an orthonormal list of vectors in such that for each .   "
 },
@@ -8033,7 +8033,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#obP2R",
   "type": "Example",
-  "number": "6.37",
+  "number": "6.34",
   "title": "an orthonormal basis of  <span class=\"process-math\">\\(\\P_2(\\R{})\\)<\/span>.",
   "body": " an orthonormal basis of   Suppose we make into an inner product space using the inner product given by for all . We know that is a basis of , but it is not an orthonormal basis. We will find an orthonormal basis of by applying the Gram Schmidt procedure with , , and .  To get started, take . Thus . Hence the formula in tells us that where the last equality holds because .  The formula above for implies that . Now the formula in tells us that .  The formula above for implies that   Now dividing each of by its norm gives us the orthonormal list   The orthonormal list above has length three, which is the dimension of . Hence this orthonormal list is an orthonormal basis of [by ].   "
 },
@@ -8042,7 +8042,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#orthobases-2-34",
   "type": "Theorem",
-  "number": "6.38",
+  "number": "6.35",
   "title": "existence of orthonormal basis.",
   "body": " existence of orthonormal basis   Every finite-dimensional inner product space has an orthonormal basis.   "
 },
@@ -8060,7 +8060,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x49",
   "type": "Theorem",
-  "number": "6.39",
+  "number": "6.36",
   "title": "every orthonormal list extends to an orthonormal basis.",
   "body": " every orthonormal list extends to an orthonormal basis   Suppose is finite-dimensional. Then every orthonormal list of vectors in can be extended to an orthonormal basis of .   "
 },
@@ -8087,7 +8087,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x188",
   "type": "Theorem",
-  "number": "6.40",
+  "number": "6.37",
   "title": "upper-triangular matrix with respect to some orthonormal basis.",
   "body": " upper-triangular matrix with respect to some orthonormal basis   Suppose is finite-dimensional and . Then has an upper-triangular matrix with respect to some orthonormal basis of if and only if the minimal polynomial of equals for some .   "
 },
@@ -8105,7 +8105,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x214",
   "type": "Theorem",
-  "number": "6.41",
+  "number": "6.38",
   "title": "Schur’s theorem.",
   "body": " Schur's theorem    Schur's theorem Every operator on a finite-dimensional complex inner product space has an upper-triangular matrix with respect to some orthonormal basis.   "
 },
@@ -8123,7 +8123,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#orthobases-3-3",
   "type": "Definition",
-  "number": "6.42",
+  "number": "6.39",
   "title": "linear functional, dual space, <span class=\"process-math\">\\(V'\\)<\/span>.",
   "body": " linear functional, dual space,       A linear functional  linear functional on is a linear map from to .    The dual space dual of a vector space of , denoted by , is the vector space of all linear functionals on . In other words, .      "
 },
@@ -8132,7 +8132,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x359",
   "type": "Example",
-  "number": "6.43",
+  "number": "6.40",
   "title": "linear functional on  <span class=\"process-math\">\\(\\F{3}\\)<\/span>.",
   "body": " linear functional on   The function defined by is a linear functional on . We could write this linear functional in the form for every , where .   "
 },
@@ -8141,7 +8141,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x360",
   "type": "Example",
-  "number": "6.44",
+  "number": "6.41",
   "title": "linear functional on  <span class=\"process-math\">\\(\\P_5(\\R)\\)<\/span>.",
   "body": " linear functional on   The function defined by is a linear functional on .   "
 },
@@ -8150,7 +8150,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#x50",
   "type": "Theorem",
-  "number": "6.45",
+  "number": "6.42",
   "title": "Riesz representation theorem.",
   "body": " Riesz representation theorem    Riesz representation theorem Suppose is finite-dimensional and is a linear functional on . Then there is a unique vector such that for every .   "
 },
@@ -8168,7 +8168,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "orthobases.html#orthobases-3-12",
   "type": "Example",
-  "number": "6.47",
+  "number": "6.44",
   "title": "computation illustrating Riesz representation theorem.",
   "body": " computation illustrating Riesz representation theorem   Suppose we want to find a polynomial such that for every polynomial . To do this, we make into an inner product space by defining to be the right side of the equation above for . Note that the left side of the equation above does not equal the inner product in of and the function because this last function is not a polynomial.  Define a linear functional on by letting for each . Now use the orthonormal basis from Example and apply formula from the proof of the Riesz representation theorem to see that if , then , where .  A bit of calculus applied to the equation above shows that   The same procedure shows that if we want to find such that holds for all , then we should take    "
 },
@@ -8393,7 +8393,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#OrthoMin-2-2",
   "type": "Definition",
-  "number": "6.49",
+  "number": "6.46",
   "title": "orthogonal complement, <span class=\"process-math\">\\(U^\\perp\\)<\/span>.",
   "body": " orthogonal complement,   If is a subset of , then the orthogonal complement orthogonal complement of , denoted by , is the set of all vectors in that are orthogonal to every vector in :    "
 },
@@ -8402,7 +8402,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#OrthoMin-2-4",
   "type": "Example",
-  "number": "6.50",
+  "number": "6.47",
   "title": "orthogonal complements.",
   "body": " orthogonal complements      If and is the subset of consisting of the single point , then is the plane .    If and is the plane , then is the line .    More generally, if is a plane in containing the origin, then is the line containing the origin that is perpendicular to .    If is a line in containing the origin, then is the plane containing the origin that is perpendicular to .    If and , then     If is an orthonormal basis of , then       "
 },
@@ -8411,7 +8411,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#oc",
   "type": "Theorem",
-  "number": "6.51",
+  "number": "6.48",
   "title": "properties of orthogonal complement.",
   "body": " properties of orthogonal complement      If is a subset of , then is a subspace of .     .     .    If is a subset of , then .    If and are subsets of and , then .      "
 },
@@ -8429,7 +8429,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#x191",
   "type": "Theorem",
-  "number": "6.52",
+  "number": "6.49",
   "title": "direct sum of a subspace and its orthogonal complement.",
   "body": " direct sum of a subspace and its orthogonal complement    direct sum of a subspace and its orthogonal complement Suppose is a finite-dimensional subspace of . Then    "
 },
@@ -8447,7 +8447,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#x350",
   "type": "Theorem",
-  "number": "6.54",
+  "number": "6.51",
   "title": "dimension of orthogonal complement.",
   "body": " dimension of orthogonal complement   Suppose is finite-dimensional and is a subspace of . Then    "
 },
@@ -8465,7 +8465,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#x376",
   "type": "Theorem",
-  "number": "6.55",
+  "number": "6.52",
   "title": "orthogonal complement of the orthogonal complement.",
   "body": " orthogonal complement of the orthogonal complement   Suppose is a finite-dimensional subspace of . Then    "
 },
@@ -8483,7 +8483,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#x01Uperp",
   "type": "Theorem",
-  "number": "6.57",
+  "number": "6.54",
   "title": "<span class=\"process-math\">\\(U^\\perp = \\{0\\} \\iff U = V\\)<\/span>  (for  <span class=\"process-math\">\\(U\\)<\/span> a finite-dimensional subspace of  <span class=\"process-math\">\\(V\\)<\/span>).",
   "body": " (for a finite-dimensional subspace of )   Suppose is a finite-dimensional subspace of . Then    "
 },
@@ -8501,7 +8501,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#orthogproj",
   "type": "Definition",
-  "number": "6.58",
+  "number": "6.55",
   "title": "orthogonal projection, <span class=\"process-math\">\\(P_{U}\\)<\/span>.",
   "body": " orthogonal projection,    Suppose is a finite-dimensional subspace of . The orthogonal projection orthogonal projection of onto is the operator defined as follows: For each , write , where and . Then let .   "
 },
@@ -8510,7 +8510,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#OrthoMin-2-25",
   "type": "Example",
-  "number": "6.59",
+  "number": "6.56",
   "title": "orthogonal projection onto one-dimensional subspace.",
   "body": " orthogonal projection onto one-dimensional subspace   Suppose with and is the one-dimensional subspace of defined by .  If , then where the first term on the right is in (and thus is in ) and the second term on the right is orthogonal to (and thus is in . Thus equals the first term on the right. In other words, we have the formula for every .  The formula above becomes if and becomes if . These equations are special cases of (b) and (c) in the next result.   "
 },
@@ -8519,7 +8519,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#x418",
   "type": "Theorem",
-  "number": "6.60",
+  "number": "6.57",
   "title": "properties of orthogonal projection <span class=\"process-math\">\\(P_{U}\\)<\/span>.",
   "body": " properties of orthogonal projection   Suppose is a finite-dimensional subspace of . Then    ;     for every ;     for every ;     ;     ;     for every ;     ;     for every ;    if is an orthonormal basis of and , then       "
 },
@@ -8537,7 +8537,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#x3RRT",
   "type": "Theorem",
-  "number": "6.61",
+  "number": "6.58",
   "title": "Riesz representation theorem, revisited.",
   "body": " Riesz representation theorem, revisited   Suppose is finite-dimensional. For each , define by Riesz representation theorem  for each . Then is a one-to-one function from onto .   "
 },
@@ -8555,7 +8555,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#x417",
   "type": "Theorem",
-  "number": "6.64",
+  "number": "6.61",
   "title": "minimizing distance to a subspace.",
   "body": " minimizing distance to a subspace   Suppose is a finite-dimensional subspace of , , and . Then   Furthermore, the inequality above is an equality if and only if .   "
 },
@@ -8573,7 +8573,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#OrthoMin-3-7",
   "type": "Example",
-  "number": "6.67",
+  "number": "6.63",
   "title": "using linear algebra to approximate the sine function.",
   "body": " using linear algebra to approximate the sine function   Suppose we want to find a polynomial with real coefficients and of degree at most that approximates the sine function as well as possible on the interval , in the sense that is as small as possible.  Let denote the real inner product space of continuous real-valued functions on with inner product   Let be the function defined by . Let denote the subspace of consisting of the polynomials with real coefficients and of degree at most . Our problem can now be reformulated as follows:    A computer that can integrate is useful here.   To compute the solution to our approximation problem, first apply the Gram Schmidt procedure (using the inner product given by ) to the basis of , producing an orthonormal basis of . Then, again using the inner product given by , compute  using (i) (with ). Doing this computation shows that is the function defined by where the 's that appear in the exact answer have been replaced with a good decimal approximation. By , the polynomial above is the best approximation to the sine function on using polynomials of degree at most \\big(here best approximation means in the sense of minimizing \\big).  To see how good this approximation is, the next figure shows the graphs of both the sine function and our approximation given by over the interval .   Graphs on of the sine function (red) and its best fifth degree polynomial approximation (blue) from .   Missing description    Our approximation is so accurate that the two graphs are almost identical our eyes may see only one graph! Here the red graph is placed almost exactly over the blue graph. If you are viewing this on an electronic device, enlarge the picture above by 400% near or to see a small gap between the two graphs.  Another well-known approximation to the sine function by a polynomial of degree is given by the Taylor polynomial defined by   To see how good this approximation is, the next picture shows the graphs of both the sine function and the Taylor polynomial over the interval .   Graphs on of the sine function (red) and the Taylor polynomial (blue) from .   Missing description    The Taylor polynomial of degree is an excellent approximation to for near . But the picture above shows that for , the Taylor polynomial is not so accurate, especially compared to . For example, taking , our approximation estimates with an error of approximately , but the Taylor polynomial estimates with an error of approximately . Thus at , the error in the Taylor polynomial is hundreds of times larger than the error given by . Linear algebra has helped us discover an approximation to the sine function that improves upon what we learned in calculus!   "
 },
@@ -8582,7 +8582,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#OrthoMin-4-8",
   "type": "Theorem",
-  "number": "6.73",
+  "number": "6.67",
   "title": "restriction of a linear map to obtain a one-to-one and onto map.",
   "body": " restriction of a linear map to obtain a one-to-one and onto map   Suppose is finite-dimensional and . Then is an injective map of onto .   "
 },
@@ -8600,7 +8600,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#x6pseudo",
   "type": "Definition",
-  "number": "6.74",
+  "number": "6.68",
   "title": "pseudoinverse, <span class=\"process-math\">\\(T^\\dagger\\)<\/span>.",
   "body": " pseudoinverse,   Suppose that is finite-dimensional and . The pseudoinverse  of is the linear map from to defined by pseudoinverse   for each .   "
 },
@@ -8609,7 +8609,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#x6propps",
   "type": "Theorem",
-  "number": "6.75",
+  "number": "6.69",
   "title": "algebraic properties of the pseudoinverse.",
   "body": " algebraic properties of the pseudoinverse   Suppose is finite-dimensional and .   If is invertible, then .     the orthogonal projection of onto .     the orthogonal projection of onto .      "
 },
@@ -8627,7 +8627,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#OrthoMin-4-23",
   "type": "Theorem",
-  "number": "6.76",
+  "number": "6.70",
   "title": "pseudoinverse provides best approximate solution or best solution.",
   "body": " pseudoinverse provides best approximate solution or best solution   Suppose is finite-dimensional, , and .   If , then with equality if and only if .    If , then with equality if and only if .      "
 },
@@ -8645,7 +8645,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "OrthoMin.html#OrthoMin-4-26",
   "type": "Example",
-  "number": "6.77",
+  "number": "6.71",
   "title": "pseudoinverse of a linear map from  <span class=\"process-math\">\\(\\F4\\)<\/span> to  <span class=\"process-math\">\\(\\F3\\)<\/span>.",
   "body": " pseudoinverse of a linear map from to   Suppose is defined by   This linear map is neither injective nor surjective, but we can compute its pseudoinverse. To do this, first note that . Thus for each . Also,   The list of two vectors in spans because if then   Because the list is linearly independent, this list is a basis of .  Now suppose . Then   The right side of the equation above is the vector such that and . In other words, , , , must satisfy the following equations: , where the first two equations are equivalent to the equation and the last two equations come from the condition for to be orthogonal to each of the basis vectors in this basis of . Thinking of and as constants and , , , as unknowns, we can solve the system above of four equations in four unknowns, getting    Hence tells us that   The formula above for shows that for all , which illustrates the equation from (b).   "
 },
@@ -10510,7 +10510,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.5",
   "title": "Singular Value Decomposition",
-  "body": " Singular Value Decomposition   Singular Values  We will need the following result in this section.   properties of   Suppose . Then    is a positive operator on ;     ;     ;     .           We have Thus is self-adjoint. If , then Thus is a positive operator.    First suppose . Then Thus , proving that . The inclusion in the other direction is clear, because if and , then . Thus , completing the proof of (b).    We already know from (a) that is self-adjoint. Thus where the first and last equalities come from and the second equality comes from (b).    To verify the first equation in (d), note that where the first equality comes from (d), the second equality comes from , and the last equality comes from the fundamental theorem of linear maps . The equality follows from (c).      The eigenvalues of an operator tell us something about the behavior of the operator. Another collection of numbers, called the singular values, is also useful. Eigenspaces and the notation (used in the examples) were defined in .   singular values   Suppose . The singular values  singular values of are the nonnegative square roots of the eigenvalues of , listed in decreasing order, each included as many times as the dimension of the corresponding eigenspace of .     singular values of an operator on   Define by . A calculation shows that as you should verify. Thus the standard basis of diagonalizes , and we see that the eigenvalues of are , , and . Also, the dimensions of the eigenspaces corresponding to the eigenvalues are   Taking nonnegative square roots of these eigenvalues of and using dimension information from above, we conclude that the singular values of are .  The only eigenvalues of are and . Thus in this case, the collection of eigenvalues did not pick up the number that appears in the definition (and hence the behavior) of , but the list of singular values does include .     singular values of a linear map from to   Suppose has matrix (with respect to the standard bases)   You can verify that the matrix of is and that the eigenvalues of the operator are , , , with , , and . Thus the singular values of are .    See Exercise for a characterization of the positive singular values.   role of positive singular values   Suppose that . Then    is injective is not a singular value of ;    the number of positive singular values of equals ;     is surjective number of positive singular values of equals .        The linear map is injective if and only if , which happens if and only if [by (b)] , which happens if and only if is not an eigenvalue of , which happens if and only if is not a singular value of , completing the proof of (a).  The spectral theorem applied to shows that equals the number of positive eigenvalues of (counting repetitions). Thus (d) implies that equals the number of positive singular values of , proving (b).  Use (b) and to show that (c) holds.   The table below compares eigenvalues with singular values.        list of eigenvalues  list of singular values        context: vector spaces  context: inner product spaces        defined only for linear maps from a vector space to itself  defined for linear maps from an inner product space to a possibly different inner product space        can be arbitrary real numbers (if \\(\\F{} = \\R{}\\)) or complex numbers (if \\(\\F{} = \\C{}\\))  are nonnegative numbers        can be the empty list if \\(\\F{} = \\R{}\\)  length of list equals dimension of domain        includes \\(0 \\! \\iff \\!\\) operator is not invertible  includes \\(0 \\! \\iff\\!\\) linear map is not injective        no standard order, especially if \\(\\F{} = \\C{}\\)  always listed in decreasing order        The next result nicely characterizes isometries in terms of singular values.   isometries characterized by having all singular values equal   Suppose that . Then    is an isometry all singular values of equal .      We have where the first equivalence comes from and the second equivalence comes from the spectral theorem (  or ) applied to the self-adjoint operator .     SVD for Linear Maps and for Matrices   The singular value decomposition is useful in computational linear algebra because good techniques exist for approximating eigenvalues and eigenvectors of positive operators such as , whose eigenvalues and eigenvectors lead to the singular value decomposition.   The next result shows that every linear map from to has a remarkably clean description in terms of its singular values and orthonormal lists in and . In the next section we will see several important applications of the singular value decomposition (often called the SVD).   singular value decomposition    singular value decomposition of linear map Suppose and the positive singular values of are . Then there exist orthonormal lists in and in such that for every .     Let denote the singular values of (thus ). Because is a positive operator [ see (a)] , the spectral theorem implies that there exists an orthonormal basis of with for each .  For each , let   If , then   Thus is an orthonormal list in .  If and , then and hence (by ), which implies that [by (b)] .  Suppose . Then , where the last index in the first line switched from to in the second line because if (as noted in the paragraph above) and the third line follows from . The equation above is our desired result.   Suppose , the positive singular values of are , and and are as in the singular value decomposition . The orthonormal list can be extended to an orthonormal basis of and the orthonormal list can be extended to an orthonormal basis of . The formula shows that   Thus the matrix of with respect to the orthonormal bases and has the simple form   If (as happens, for example, if ), then the matrix described in the paragraph above is a diagonal matrix. If we extend the definition of diagonal matrix as follows to apply to matrices that are not necessarily square, then we have proved the wonderful result that every linear map from to has a diagonal matrix with respect to appropriate orthonormal bases.   diagonal matrix   An -by- matrix is called a diagonal matrix  diagonal matrix if all entries of the matrix are except possibly for .    The table below compares the spectral theorem ( and ) with the singular value decomposition .        spectral theorem  singular value decomposition        describes only self-adjoint operators (when \\(\\F{} = \\R{}\\)) or normal operators (when \\(\\F{} = \\C{}\\))  describes arbitrary linear maps from an inner product space to a possibly different inner product space        produces a single orthonormal basis  produces two orthonormal lists, one for domain space and one for range space, that are not necessarily the same even when range space equals domain space        different proofs depending on whether \\(\\F{} = \\R{}\\) or \\(\\F{}=\\C{}\\)  same proof works regardless of whether \\(\\F{} = \\R{}\\) or \\(\\F{}=\\C{}\\)        The singular value decomposition gives us a new way to understand the adjoint and the inverse of a linear map. Specifically, the next result shows that given a singular value decomposition of a linear map , we can obtain the adjoint of simply by interchanging the roles of the 's and the 's ( see ). Similarly, we can obtain the pseudoinverse ( see ) of by interchanging the roles of the 's and the 's and replacing each positive singular value of with ( see ).  Recall that the pseudoinverse in below equals the inverse if is invertible [ see (a)] . pseudoinverse    singular value decomposition of adjoint and pseudoinverse    singular value decomposition of adjoint  singular value decomposition of pseudoinverse Suppose and the positive singular values of are . Suppose and are orthonormal lists in and such that for every . Then and for every .     If and then .  This implies that    proving .  To prove , suppose . Let   Apply to both sides of the equation above, getting , where the second line holds because implies that if , and the last line above holds because implies that spans and thus is an orthonormal basis of [and hence (i) applies] . The equation above, the observation that [see Exercise (b)] , and the definition of ( see ) show that , proving .    finding a singular value decomposition   Define by . We want to find a singular value decomposition of . The matrix of (with respect to the standard bases) is   Thus, as discussed in Example , the matrix of is and the positive eigenvalues of are , , with and . Hence the positive singular values of are .  Thus to find a singular value decomposition of , we must find an orthonormal list in and an orthonormal list in such that for all .  An orthonormal basis of is the vector ; an orthonormal basis of is the vector . Thus, following the proof of , we take and   Then, as expected, we see that is an orthonormal list in and is an orthonormal list in and for all . Thus we have found a singular value decomposition of .    The next result translates the singular value decomposition from the context of linear maps to the context of matrices. Specifically, the following result gives a factorization of an arbitrary matrix as the product of three nice matrices. The proof gives an explicit construction of these three matrices in terms of the singular value decomposition.  In the next result, the phrase orthonormal columns should be interpreted to mean that the columns are orthonormal with respect to the standard Euclidean inner product.   matrix version of SVD   Suppose is a -by- matrix of rank . Then there exist a -by- matrix with orthonormal columns, an -by- diagonal matrix with positive numbers on the diagonal, and an -by- matrix with orthonormal columns such that      Let be the linear map whose matrix with respect to the standard bases equals . Then (by ). Let be a singular value decomposition of . Let .  Let denote the standard basis of . If then   Thus .  Multiply both sides of this last equation by (the conjugate transpose of ) on the right to get   Note that the rows of are the complex conjugates of . Thus if , then the definition of matrix multiplication shows that ; hence . Thus for all .  If , then (as follows from ) and (as follows from the definition of matrix multiplication). Hence for all .  Because and agree on and on , we conclude that . Thus the displayed equation above becomes as desired.   Note that the matrix in the result above has entries. In comparison, the matrices , , and above have a total of entries. Thus if and are large numbers and the rank is considerably less than and , then the number of entries that must be stored on a computer to represent is considerably less than .   Exercises    Suppose . Show that if and only if all singular values of are .      Suppose and . Prove that is a singular value of if and only if there exist nonzero vectors and such that   Note: The vectors satisfying both equations above are called a Schmidt pair . Erhard Schmidt introduced the concept of singular values in 1907. Schmidt pair  Schmidt, Erhard       Give an example of such that is the only eigenvalue of and the singular values of are .      Suppose that , is the largest singular value of , and is the smallest singular value of . Prove that       Suppose is defined by . Find the singular values of .      Find the singular values of the differentiation operator defined by , where the inner product on is as in Example .      Suppose that is self-adjoint or that and is normal. Let be the eigenvalues of , each included in this list as many times as the dimension of the corresponding eigenspace. Show that the singular values of are , after these numbers have been sorted into decreasing order.      Suppose . Suppose and is an orthonormal list in and is an orthonormal list in such that for every .   Prove that is an orthonormal basis of .    Prove that is an orthonormal basis of .    Prove that are the positive singular values of .    Prove that if , then is an eigenvector of with corresponding eigenvalue .    Prove that for all .         Suppose . Show that and have the same positive singular values.      Suppose has singular values . Prove that if is an invertible linear map, then has singular values       Suppose that and is an orthonormal basis of . Let denote the singular values of .   Prove that .    Prove that if and is a positive operator, then      Note: See the comment after Exercise in Section .         Give an example of a finite-dimensional vector space and an operator on it such that the singular values of do not equal the squares of the singular values of .    Suppose is normal. Prove that the singular values of equal the squares of the singular values of .         Suppose . Prove that and have the same singular values if and only if there exist unitary operators such that .      Suppose . Let denote the smallest singular value of . Prove that for every .      Suppose and are the singular values of . Prove that if is an eigenvalue of , then .      Suppose . Prove that . pseudoinverse|( Note: Compare the result in this exercise to the analogous result for invertible linear maps \\big[ see ( f ) \\big].      Suppose . Prove that is self-adjoint if and only if is self-adjoint. pseudoinverse|)       Matrices unfold  Singular values gleam like stars  Order in chaos shines  ChatGPT  written by ChatGPT with input: haiku about SVD    "
+  "body": " Singular Value Decomposition   Singular Values  We will need the following result in this section.   properties of   Suppose . Then    is a positive operator on ;     ;     ;     .           We have Thus is self-adjoint. If , then Thus is a positive operator.    First suppose . Then Thus , proving that . The inclusion in the other direction is clear, because if and , then . Thus , completing the proof of (b).    We already know from (a) that is self-adjoint. Thus where the first and last equalities come from and the second equality comes from (b).    To verify the first equation in (d), note that where the first equality comes from (d), the second equality comes from , and the last equality comes from the fundamental theorem of linear maps . The equality follows from (c).      The eigenvalues of an operator tell us something about the behavior of the operator. Another collection of numbers, called the singular values, is also useful. Eigenspaces and the notation (used in the examples) were defined in .   singular values   Suppose . The singular values  singular values of are the nonnegative square roots of the eigenvalues of , listed in decreasing order, each included as many times as the dimension of the corresponding eigenspace of .     singular values of an operator on   Define by . A calculation shows that as you should verify. Thus the standard basis of diagonalizes , and we see that the eigenvalues of are , , and . Also, the dimensions of the eigenspaces corresponding to the eigenvalues are   Taking nonnegative square roots of these eigenvalues of and using dimension information from above, we conclude that the singular values of are .  The only eigenvalues of are and . Thus in this case, the collection of eigenvalues did not pick up the number that appears in the definition (and hence the behavior) of , but the list of singular values does include .     singular values of a linear map from to   Suppose has matrix (with respect to the standard bases)   You can verify that the matrix of is and that the eigenvalues of the operator are , , , with , , and . Thus the singular values of are .    See Exercise for a characterization of the positive singular values.   role of positive singular values   Suppose that . Then    is injective is not a singular value of ;    the number of positive singular values of equals ;     is surjective number of positive singular values of equals .        The linear map is injective if and only if , which happens if and only if [by (b)] , which happens if and only if is not an eigenvalue of , which happens if and only if is not a singular value of , completing the proof of (a).  The spectral theorem applied to shows that equals the number of positive eigenvalues of (counting repetitions). Thus (d) implies that equals the number of positive singular values of , proving (b).  Use (b) and to show that (c) holds.   The table below compares eigenvalues with singular values.        list of eigenvalues  list of singular values        context: vector spaces  context: inner product spaces        defined only for linear maps from a vector space to itself  defined for linear maps from an inner product space to a possibly different inner product space        can be arbitrary real numbers (if ) or complex numbers (if )  are nonnegative numbers        can be the empty list if  length of list equals dimension of domain        includes operator is not invertible  includes linear map is not injective        no standard order, especially if  always listed in decreasing order        The next result nicely characterizes isometries in terms of singular values.   isometries characterized by having all singular values equal   Suppose that . Then    is an isometry all singular values of equal .      We have where the first equivalence comes from and the second equivalence comes from the spectral theorem (  or ) applied to the self-adjoint operator .     SVD for Linear Maps and for Matrices   The singular value decomposition is useful in computational linear algebra because good techniques exist for approximating eigenvalues and eigenvectors of positive operators such as , whose eigenvalues and eigenvectors lead to the singular value decomposition.   The next result shows that every linear map from to has a remarkably clean description in terms of its singular values and orthonormal lists in and . In the next section we will see several important applications of the singular value decomposition (often called the SVD).   singular value decomposition    singular value decomposition of linear map Suppose and the positive singular values of are . Then there exist orthonormal lists in and in such that for every .     Let denote the singular values of (thus ). Because is a positive operator [ see (a)] , the spectral theorem implies that there exists an orthonormal basis of with for each .  For each , let   If , then   Thus is an orthonormal list in .  If and , then and hence (by ), which implies that [by (b)] .  Suppose . Then , where the last index in the first line switched from to in the second line because if (as noted in the paragraph above) and the third line follows from . The equation above is our desired result.   Suppose , the positive singular values of are , and and are as in the singular value decomposition . The orthonormal list can be extended to an orthonormal basis of and the orthonormal list can be extended to an orthonormal basis of . The formula shows that   Thus the matrix of with respect to the orthonormal bases and has the simple form   If (as happens, for example, if ), then the matrix described in the paragraph above is a diagonal matrix. If we extend the definition of diagonal matrix as follows to apply to matrices that are not necessarily square, then we have proved the wonderful result that every linear map from to has a diagonal matrix with respect to appropriate orthonormal bases.   diagonal matrix   An -by- matrix is called a diagonal matrix  diagonal matrix if all entries of the matrix are except possibly for .    The table below compares the spectral theorem ( and ) with the singular value decomposition .        spectral theorem  singular value decomposition        describes only self-adjoint operators (when ) or normal operators (when )  describes arbitrary linear maps from an inner product space to a possibly different inner product space        produces a single orthonormal basis  produces two orthonormal lists, one for domain space and one for range space, that are not necessarily the same even when range space equals domain space        different proofs depending on whether or  same proof works regardless of whether or        The singular value decomposition gives us a new way to understand the adjoint and the inverse of a linear map. Specifically, the next result shows that given a singular value decomposition of a linear map , we can obtain the adjoint of simply by interchanging the roles of the 's and the 's ( see ). Similarly, we can obtain the pseudoinverse ( see ) of by interchanging the roles of the 's and the 's and replacing each positive singular value of with ( see ).  Recall that the pseudoinverse in below equals the inverse if is invertible [ see (a)] . pseudoinverse    singular value decomposition of adjoint and pseudoinverse    singular value decomposition of adjoint  singular value decomposition of pseudoinverse Suppose and the positive singular values of are . Suppose and are orthonormal lists in and such that for every . Then and for every .     If and then .  This implies that    proving .  To prove , suppose . Let   Apply to both sides of the equation above, getting , where the second line holds because implies that if , and the last line above holds because implies that spans and thus is an orthonormal basis of [and hence (i) applies] . The equation above, the observation that [see Exercise (b)] , and the definition of ( see ) show that , proving .    finding a singular value decomposition   Define by . We want to find a singular value decomposition of . The matrix of (with respect to the standard bases) is   Thus, as discussed in Example , the matrix of is and the positive eigenvalues of are , , with and . Hence the positive singular values of are .  Thus to find a singular value decomposition of , we must find an orthonormal list in and an orthonormal list in such that for all .  An orthonormal basis of is the vector ; an orthonormal basis of is the vector . Thus, following the proof of , we take and   Then, as expected, we see that is an orthonormal list in and is an orthonormal list in and for all . Thus we have found a singular value decomposition of .    The next result translates the singular value decomposition from the context of linear maps to the context of matrices. Specifically, the following result gives a factorization of an arbitrary matrix as the product of three nice matrices. The proof gives an explicit construction of these three matrices in terms of the singular value decomposition.  In the next result, the phrase orthonormal columns should be interpreted to mean that the columns are orthonormal with respect to the standard Euclidean inner product.   matrix version of SVD   Suppose is a -by- matrix of rank . Then there exist a -by- matrix with orthonormal columns, an -by- diagonal matrix with positive numbers on the diagonal, and an -by- matrix with orthonormal columns such that      Let be the linear map whose matrix with respect to the standard bases equals . Then (by ). Let be a singular value decomposition of . Let .  Let denote the standard basis of . If then   Thus .  Multiply both sides of this last equation by (the conjugate transpose of ) on the right to get   Note that the rows of are the complex conjugates of . Thus if , then the definition of matrix multiplication shows that ; hence . Thus for all .  If , then (as follows from ) and (as follows from the definition of matrix multiplication). Hence for all .  Because and agree on and on , we conclude that . Thus the displayed equation above becomes as desired.   Note that the matrix in the result above has entries. In comparison, the matrices , , and above have a total of entries. Thus if and are large numbers and the rank is considerably less than and , then the number of entries that must be stored on a computer to represent is considerably less than .   Exercises    Suppose . Show that if and only if all singular values of are .      Suppose and . Prove that is a singular value of if and only if there exist nonzero vectors and such that   Note: The vectors satisfying both equations above are called a Schmidt pair . Erhard Schmidt introduced the concept of singular values in 1907. Schmidt pair  Schmidt, Erhard       Give an example of such that is the only eigenvalue of and the singular values of are .      Suppose that , is the largest singular value of , and is the smallest singular value of . Prove that       Suppose is defined by . Find the singular values of .      Find the singular values of the differentiation operator defined by , where the inner product on is as in Example .      Suppose that is self-adjoint or that and is normal. Let be the eigenvalues of , each included in this list as many times as the dimension of the corresponding eigenspace. Show that the singular values of are , after these numbers have been sorted into decreasing order.      Suppose . Suppose and is an orthonormal list in and is an orthonormal list in such that for every .   Prove that is an orthonormal basis of .    Prove that is an orthonormal basis of .    Prove that are the positive singular values of .    Prove that if , then is an eigenvector of with corresponding eigenvalue .    Prove that for all .         Suppose . Show that and have the same positive singular values.      Suppose has singular values . Prove that if is an invertible linear map, then has singular values       Suppose that and is an orthonormal basis of . Let denote the singular values of .   Prove that .    Prove that if and is a positive operator, then      Note: See the comment after Exercise in Section .         Give an example of a finite-dimensional vector space and an operator on it such that the singular values of do not equal the squares of the singular values of .    Suppose is normal. Prove that the singular values of equal the squares of the singular values of .         Suppose . Prove that and have the same singular values if and only if there exist unitary operators such that .      Suppose . Let denote the smallest singular value of . Prove that for every .      Suppose and are the singular values of . Prove that if is an eigenvalue of , then .      Suppose . Prove that . pseudoinverse|( Note: Compare the result in this exercise to the analogous result for invertible linear maps \\big[ see ( f ) \\big].      Suppose . Prove that is self-adjoint if and only if is self-adjoint. pseudoinverse|)       Matrices unfold  Singular values gleam like stars  Order in chaos shines  ChatGPT  written by ChatGPT with input: haiku about SVD    "
 },
 {
   "id": "x2Tstar",
@@ -10825,7 +10825,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.6",
   "title": "Consequences of Singular Value Decomposition",
-  "body": " Consequences of Singular Value Decomposition   Norms of Linear Maps  The singular value decomposition leads to the following upper bound for .   upper bound for   Suppose . Let be the largest singular value of . Then for all .     For a lower bound on , look at Exercise in Section .    Let denote the positive singular values of , and let be an orthonormal list in and be an orthonormal list in that provide a singular value decomposition of . Thus for all . Hence if then , where the last inequality follows from Bessel's inequality . Taking square roots of both sides of the inequality above shows that , as desired.   Suppose and is the largest singular value of . The result above shows that   Taking in shows that . Because , this implies that . Thus because , the inequality in leads to the equation   The equation above is the motivation for the following definition, which defines the norm of to be the left side of the equation above without needing to refer to singular values or the singular value decomposition.   norm of a linear map,   Suppose . Then the norm of , denoted by , is defined by  norm of a linear map      In general, the maximum of an infinite set of nonnegative numbers need not exist. However, the discussion before shows that the maximum in the definition of the norm of a linear map from to does indeed exist (and equals the largest singular value of ).  We now have two different uses of the word norm and the notation . Our first use of this notation was in connection with an inner product on , when we defined for each . Our second use of the norm notation and terminology is with the definition we just made of for . The norm for does not usually come from taking an inner product of with itself (see Exercise ). You should be able to tell from the context and from the symbols used which meaning of the norm is intended.  The properties of the norm on listed below look identical to properties of the norm on an inner product space ( see and ). The inequality in (d) is called the triangle inequality , triangle inequality thus using the same terminology that we used for the norm on . For the reverse triangle inequality, see Exercise .   basic properties of norms of linear maps   Suppose . Then    ;     ;     for all ;     for all .           Because for every , the definition of implies that .    Suppose . Thus for all with . If with , then where the last equality holds because has norm . Because for all , we have . Conversely, if then for all and hence .    Suppose . Then .    Suppose . The definition of implies that there exists such that and . Now completing the proof of (d).      For , the quantity is often called the distance between and . Informally, think of the condition that is a small number as meaning that and are close together. For example, Exercise asserts that for every , there is an invertible operator as close to as we wish.   alternative formulas for   Suppose . Then    the largest singular value of ;     ;     the smallest number such that for all .        P    See .    Let be such that . Let . Then Thus when finding the maximum of with , we can restrict attention to vectors in with norm , proving (b).    Suppose and . Then the definition of implies that which implies that Now suppose and for all . This implies that for all with . Taking the maximum of the left side of the inequality above over all with shows that . Thus is the smallest number such that for all .      When working with norms of linear maps, you will probably frequently use the inequality .  For computing an approximation of the norm of a linear map given the matrix of with respect to some orthonormal bases, (a) is likely to be most useful. The matrix of is quickly computable from matrix multiplication. Then a computer can be asked to find an approximation for the largest eigenvalue of (excellent numeric algorithms exist for this purpose). Then taking the square root and using (a) gives an approximation for the norm of (which usually cannot be computed exactly).  You should verify all assertions in the example below.   norms      If denotes the usual identity operator on , then .    If and the matrix of with respect to the standard basis of consists of all 's, then .    If and has an orthonormal basis consisting of eigenvectors of with corresponding eigenvalues , then is the maximum of the numbers .    Suppose is the operator whose matrix (with respect to the standard basis) is the -by- matrix whose entry in row , column is . Standard mathematical software shows that the largest singular value of is approximately and the smallest singular value of is approximately . Thus and (using Exercise in Section ) . It is not possible to find exact formulas for these norms.       A linear map and its adjoint have the same norm, as shown by the next result.   norm of the adjoint   Suppose . Then .     Suppose . Then   The inequality above implies that which along with (c) implies that .  Replacing with in the inequality and then using the equation shows that . Thus , as desired.   You may want to construct an alternative proof of the result above using Exercise in Section , which asserts that a linear map and its adjoint have the same positive singular values.    Approximation by Linear Maps with Lower-Dimensional Range  The next result is a spectacular application of the singular value decomposition. It says that to best approximate a linear map by a linear map whose range has dimension at most , chop off the singular value decomposition after the first terms. Specifically, the linear map in the next result has the property that and minimizes the distance to among all linear maps with range of dimension at most . This result leads to algorithms for compressing huge matrices while preserving their most important information.   best approximation by linear map whose range has dimension   Suppose and are the positive singular values of . Suppose . Then   Furthermore, if is a singular value decomposition of and is defined by for each , then and .     If then .  Thus . The equation now shows that .  Suppose and . Thus , which is a list of length , is linearly dependent. Hence there exist , not all , such that   Now because are not all . We have .  Because , the inequality above implies that   Thus minimizes among with .   For other examples of the use of the singular value decomposition in best approximation, see Exercise , which finds a subspace of given dimension on which the restriction of a linear map is as small as possible, and Exercise , which finds a unitary operator that is as close as possible to a given operator.    Polar Decomposition  Recall our discussion before of the analogy between complex numbers with and unitary operators. Continuing with this analogy, note that every complex number except can be written in the form , where the first factor, namely, , has absolute value .  Our analogy leads us to guess that every operator can be written as a unitary operator times . That guess is indeed correct. The corresponding result is called the polar decomposition, which gives a beautiful description of an arbitrary operator on .  Note that if , then is a positive operator [as was shown in (a)] . Thus the operator makes sense and is well defined as a positive operator on .  The polar decomposition that we are about to state and prove says that every operator on is the product of a unitary operator and a positive operator. Thus we can write an arbitrary operator on as the product of two nice operators, each of which comes from a class that we can completely describe and that we understand reasonably well. The unitary operators are described by if ; the positive operators are described by the real and complex spectral theorems ( and ).  Specifically, consider the case , and suppose is a polar decomposition of an operator , where is a unitary operator. Then there is an orthonormal basis of with respect to which has a diagonal matrix, and there is an orthonormal basis of with respect to which has a diagonal matrix. Warning: There may not exist an orthonormal basis that simultaneously puts the matrices of both and into these nice diagonal forms may require one orthonormal basis and may require a different orthonormal basis.  However (still assuming that ), if is normal, then an orthonormal basis of can be chosen such that both and have diagonal matrices with respect to this basis see Exercise . The converse is also true: If and for some unitary operator such that and both have diagonal matrices with respect to the same orthonormal basis of , then is normal. This holds because then has a diagonal matrix with respect to this same orthonormal basis, which implies that is normal [by the equivalence of (c) and (a) in ] .  The polar decomposition below is valid on both real and complex inner product spaces and for all operators on those spaces.   polar decomposition    polar decomposition Suppose . Then there exists a unitary operator such that      Let be the positive singular values of , and let and be orthonormal lists in such that for every . Extend and to orthonormal bases and of .  Define by for each . Then .  Thus is a unitary operator.  Applying to both sides of and then using the formula for given by shows that for every . Thus if , then because the operator that sends to the right side of the equation above is a positive operator whose square equals . Now , where the last equation follows from .    Exercise shows that the unitary operator produced in the proof above is as close as a unitary operator can be to .  Alternative proofs of the polar decomposition directly use the spectral theorem, avoiding the singular value decomposition. However, the proof above seems cleaner than those alternative proofs.    Operators Applied to Ellipsoids and Parallelepipeds   ball,   The ball in of radius centered at , denoted by , is defined by ball        The ball in .   Missing description    If , the word disk is sometimes used instead of ball . However, using ball in all dimensions is less confusing. Similarly, if , then the word ellipse is sometimes used instead of the word ellipsoid that we are about to define. Again, using ellipsoid in all dimensions is less confusing.  You can think of the ellipsoid defined below as obtained by starting with the ball and then stretching by a factor of along each -axis.   ellipsoid, , principal axes   Suppose that is an orthonormal basis of and are positive numbers. The ellipsoid  with principal axes  is defined by ellipsoid  principal axes       The ellipsoid notation does not explicitly include the inner product space , even though the definition above depends on . However, the inner product space should be clear from the context and also from the requirement that be an orthonormal basis of .   ellipsoids     The ellipsoid in , where is the standard basis of .   Missing description     The ellipsoid in , where and .   Missing description       Missing description   The ellipsoid in , where is the standard basis of .     The ellipsoid equals the ball in for every orthonormal basis of [by Parseval's identity (b)] .     For a function defined on and , define by     Thus if is a function defined on , then .  The next result states that every invertible operator maps the ball in onto an ellipsoid in . The proof shows that the principal axes of this ellipsoid come from the singular value decomposition of .   invertible operator takes ball to ellipsoid   Suppose is invertible. Then maps the ball in onto an ellipsoid in .     Suppose has singular value decomposition for all ; here are the singular values of and and are both orthonormal bases of . We will show that .  First suppose . Because is invertible, none of the singular values equals ( see ). Thus implies that   Thus . Hence .  To prove inclusion in the other direction, now suppose . Let   Then and implies that . Thus .   We now use the previous result to show that invertible operators take all ellipsoids, not just the ball of radius , to ellipsoids.   invertible operator takes ellipsoids to ellipsoids   Suppose is invertible and is an ellipsoid in . Then is an ellipsoid in .     There exist an orthonormal basis of and positive numbers such that . Define by   Then maps the ball of onto , as you can verify. Thus   The equation above and , applied to , show that is an ellipsoid in .   Recall ( see ) that if and then is defined by   Geometrically, the sets and look the same, but they are in different locations.  In the following definition, if then the word parallelogram is often used instead of parallelepiped .   , parallelepiped   Suppose is a basis of . Let   A parallelepiped is a set of the form for some . The vectors are called the edges of this parallelepiped.     parallelepipeds     The parallelepiped in .   Missing description     A parallelepiped in .   Missing description        invertible operator takes parallelepipeds to parallelepipeds   Suppose , is a basis of , and is invertible. Then      Because is invertible, the list is a basis of . The linearity of implies that for all . Thus .   Just as the rectangles are distinguished among the parallelograms in , we give a special name to the parallelepipeds in whose defining edges are orthogonal to each other.   box   A box in is a set of the form { where and are positive numbers and is an orthonormal basis of .}    Note that in the special case of each box is a rectangle, but the terminology box can be used in all dimensions.   boxes     The box , where and .   Missing description     The box , where is the standard basis of .   Missing description       Suppose is invertible. Then maps every parallelepiped in to a parallelepiped in (by ). In particular, maps every box in to a parallelepiped in . This raises the question of whether maps some boxes in to boxes in . The following result answers this question, with the help of the singular value decomposition.   every invertible operator takes some boxes to boxes   Suppose is invertible. Suppose has singular value decomposition where are the singular values of and and are orthonormal bases of and the equation above holds for all . Then maps the box onto the box for all positive numbers and all .     If and are positive numbers and , then   Thus .     Volume via Singular Values  Our goal in this subsection is to understand how an operator changes the volume of subsets of its domain. Because notions of volume belong to analysis rather than to linear algebra, we will work only with an intuitive notion of volume. Our intuitive approach to volume can be converted into appropriate correct definitions, correct statements, and correct proofs using the machinery of analysis.  Our intuition about volume works best in real inner product spaces. Thus the assumption that will appear frequently in the rest of this subsection.  If , then by volume we will mean -dimensional volume. You should be familiar with this concept in . When , this is usually called area instead of volume, but for consistency we use the word volume in all dimensions. The most fundamental intuition about volume is that the volume of a box (whose defining edges are by definition orthogonal to each other) is the product of the lengths of the defining edges. Thus we make the following definition.   volume of a box   Suppose . If and are positive numbers and is an orthonormal basis of , then volume of a box      The definition above agrees with the familiar formulas for the area (which we are calling the volume) of a rectangle in and for the volume of a box in . For example, the first box in Example has two-dimensional volume (or area) because the defining edges of that box have length and . The second box in Example has three-dimensional volume because the defining edges of that box have length , , and .   Volume of this ball sum of the volumes of the five boxes.   Missing description    To define the volume of a subset of , approximate the subset by a finite collection of disjoint boxes, and then add up the volumes of the approximating collection of boxes. As we approximate a subset of more accurately by disjoint unions of more boxes, we get a better approximation to the volume.  These ideas should remind you of how the Riemann integral is defined by approximating the area under a curve by a disjoint collection of rectangles. This discussion leads to the following nonrigorous but intuitive definition.   volume   Suppose and . Then the volume  volume of , denoted by , is approximately the sum of the volumes of a collection of disjoint boxes that approximate .    We are ignoring many reasonable questions by taking an intuitive approach to volume. For example, if we approximate by boxes with respect to one basis, do we get the same volume if we approximate by boxes with respect to a different basis? If and are disjoint subsets of , is ? Provided that we consider only reasonably nice subsets of , techniques of analysis show that both these questions have affirmative answers that agree with our intuition about volume.   volume change by a linear map    Each box here has twice the width and the same height as the boxes in the previous figure.   Missing description    Suppose that is defined by , where is the standard basis of . This linear map stretches vectors along the -axis by a factor of and leaves vectors along the -axis unchanged. The ball approximated by five boxes above gets mapped by to the ellipsoid shown here. Each of the five boxes in the original figure gets mapped to a box of twice the width and the same height as in the original figure. Hence each box gets mapped to a box of twice the volume (area) as in the original figure. The sum of the volumes of the five new boxes approximates the volume of the ellipsoid. Thus changes the volume of the ball by a factor of .    In the example above, maps boxes with respect to the basis to boxes with respect to the same basis; thus we can see how changes volume. In general, an operator maps boxes to parallelepipeds that are not boxes. However, if we choose the right basis (coming from the singular value decomposition!), then boxes with respect to that basis get mapped to boxes with respect to a possibly different basis, as shown in . This observation leads to a natural proof of the following result.   volume changes by a factor of the product of the singular values   Suppose , is invertible, and . Then      Suppose has singular value decomposition for all , where and are orthonormal bases of .  Approximate by boxes of the form , which have volume . The operator maps each box onto the box , which has volume .  The operator maps a collection of boxes that approximate onto a collection of boxes that approximate . Because changes the volume of each box in a collection that approximates by a factor of , the linear map changes the volume of by the same factor.   Suppose . As we will see when we get to determinants, the product of the singular values of equals ; see and .    Properties of an Operator as Determined by Its Eigenvalues  We conclude this chapter by presenting the table below. The context of this table is a finite-dimensional complex inner product space. The first column of the table shows a property that a normal operator on such a space might have. The second column of the table shows a subset of such that the operator has the corresponding property if and only if all eigenvalues of the operator lie in the specified subset. For example, the first row of the table states that a normal operator is invertible if and only if all its eigenvalues are nonzero (this first row is the only one in the table that does not need the hypothesis that the operator is normal).  Make sure you can explain why all results in the table hold. For example, the last row of the table holds because the norm of an operator equals its largest singular value (by ) and the singular values of a normal operator, assuming , equal the absolute values of the eigenvalues (by Exercise in Section ).    properties of a normal operator  eigenvalues are contained in        invertible          self-adjoint          skew         orthogonal projection         positive         unitary         norm is less than          Exercises    Prove that if , then . Note: The inequality above is called the reverse triangle inequality . reverse triangle inequality       Suppose that is self-adjoint or that and is normal. Prove that       Suppose and . Prove that       Suppose , , and . Prove that if and , then .      Suppose is a finite-dimensional inner product space, , and . Prove that       Prove or give a counterexample: If , then .      Show that defining for makes a metric on . Note: This exercise is intended for readers who are familiar with metric spaces.         Prove that if and , then is invertible.    Suppose that is invertible. Prove that if and , then is invertible.     Note: This exercise shows that the set of invertible operators in is an open subset of , using the metric defined in Exercise .      Suppose . Prove that for every , there exists an invertible operator such that .      Suppose and is not invertible. Prove that for every , there exists such that and is not invertible.      Suppose and . Prove that for every there exists a diagonalizable operator such that . diagonalizable       Suppose is a positive operator. Show that .      Suppose are positive operators. Show that       Suppose and are subspaces of such that . Prove that .      Define by   Find (explicitly) a unitary operator such that .      Suppose is a positive invertible operator. Prove that there exists such that is a positive operator for every self-adjoint operator with .      Prove that if and is the linear functional on defined by the equation , then . Note: Here we are thinking of the scalar field as an inner product space with for all . Thus means the norm of as a linear map from to .      Suppose is an orthonormal basis of and .   Prove that .    Prove that if and only if .     Note: Here is an arbitrary orthonormal basis of , not necessarily connected with a singular value decomposition of . If is the list of singular values of , then the right side of the inequality above equals , as was shown in Exercise (a) in Section .      Prove that if , then . -algebras Note: This formula for leads to the important subject of -algebras.      Suppose is normal. Prove that for every positive integer .      Suppose and . Prove that the norm on does not come from an inner product. In other words, prove that there does not exist an inner product on such that for all .      Suppose . Let and let denote the singular values of . Prove that if , then       Suppose . Show that is uniformly continuous with respect to the metrics on and that arise from the norms on those spaces (see Exercise in Section ).      Suppose is invertible. Prove that       Fix with . Define by for every . Prove that for every .      Suppose . Prove that is invertible if and only if there exists a unique unitary operator such that .      Suppose and are the singular values of . Let and be orthonormal bases of such that for all . Define by    Show that is unitary and .    Show that if is unitary, then .     Note: This exercise finds a unitary operator that is as close as possible (among the unitary operators) to a given operator .      Suppose . Prove that there exists a unitary operator such that .      Suppose .   Use the polar decomposition to show that there exists a unitary operator such that .    Show how (a) implies that and have the same singular values.         Suppose , is a unitary operator, and is a positive operator such that . Prove that . Note: This exercise shows that if we write as the product of a unitary operator and a positive operator (as in the polar decomposition ) , then the positive operator equals .      Suppose and is normal. Prove that there exists a unitary operator such that and such that and both have diagonal matrices with respect to the same orthonormal basis of .      Suppose that and . Let denote the positive singular values of . Show that there exists an orthonormal basis of such that equals the ball in of radius centered at .      "
+  "body": " Consequences of Singular Value Decomposition   Norms of Linear Maps  The singular value decomposition leads to the following upper bound for .   upper bound for   Suppose . Let be the largest singular value of . Then for all .     For a lower bound on , look at Exercise in Section .    Let denote the positive singular values of , and let be an orthonormal list in and be an orthonormal list in that provide a singular value decomposition of . Thus for all . Hence if then , where the last inequality follows from Bessel's inequality . Taking square roots of both sides of the inequality above shows that , as desired.   Suppose and is the largest singular value of . The result above shows that   Taking in shows that . Because , this implies that . Thus because , the inequality in leads to the equation   The equation above is the motivation for the following definition, which defines the norm of to be the left side of the equation above without needing to refer to singular values or the singular value decomposition.   norm of a linear map,   Suppose . Then the norm of , denoted by , is defined by  norm of a linear map      In general, the maximum of an infinite set of nonnegative numbers need not exist. However, the discussion before shows that the maximum in the definition of the norm of a linear map from to does indeed exist (and equals the largest singular value of ).  We now have two different uses of the word norm and the notation . Our first use of this notation was in connection with an inner product on , when we defined for each . Our second use of the norm notation and terminology is with the definition we just made of for . The norm for does not usually come from taking an inner product of with itself (see Exercise ). You should be able to tell from the context and from the symbols used which meaning of the norm is intended.  The properties of the norm on listed below look identical to properties of the norm on an inner product space ( see and ). The inequality in (d) is called the triangle inequality , triangle inequality thus using the same terminology that we used for the norm on . For the reverse triangle inequality, see Exercise .   basic properties of norms of linear maps   Suppose . Then    ;     ;     for all ;     for all .           Because for every , the definition of implies that .    Suppose . Thus for all with . If with , then where the last equality holds because has norm . Because for all , we have . Conversely, if then for all and hence .    Suppose . Then .    Suppose . The definition of implies that there exists such that and . Now completing the proof of (d).      For , the quantity is often called the distance between and . Informally, think of the condition that is a small number as meaning that and are close together. For example, Exercise asserts that for every , there is an invertible operator as close to as we wish.   alternative formulas for   Suppose . Then    the largest singular value of ;     ;     the smallest number such that for all .        P    See .    Let be such that . Let . Then Thus when finding the maximum of with , we can restrict attention to vectors in with norm , proving (b).    Suppose and . Then the definition of implies that which implies that Now suppose and for all . This implies that for all with . Taking the maximum of the left side of the inequality above over all with shows that . Thus is the smallest number such that for all .      When working with norms of linear maps, you will probably frequently use the inequality .  For computing an approximation of the norm of a linear map given the matrix of with respect to some orthonormal bases, (a) is likely to be most useful. The matrix of is quickly computable from matrix multiplication. Then a computer can be asked to find an approximation for the largest eigenvalue of (excellent numeric algorithms exist for this purpose). Then taking the square root and using (a) gives an approximation for the norm of (which usually cannot be computed exactly).  You should verify all assertions in the example below.   norms      If denotes the usual identity operator on , then .    If and the matrix of with respect to the standard basis of consists of all 's, then .    If and has an orthonormal basis consisting of eigenvectors of with corresponding eigenvalues , then is the maximum of the numbers .    Suppose is the operator whose matrix (with respect to the standard basis) is the -by- matrix whose entry in row , column is . Standard mathematical software shows that the largest singular value of is approximately and the smallest singular value of is approximately . Thus and (using Exercise in Section ) . It is not possible to find exact formulas for these norms.       A linear map and its adjoint have the same norm, as shown by the next result.   norm of the adjoint   Suppose . Then .     Suppose . Then   The inequality above implies that which along with (c) implies that .  Replacing with in the inequality and then using the equation shows that . Thus , as desired.   You may want to construct an alternative proof of the result above using Exercise in Section , which asserts that a linear map and its adjoint have the same positive singular values.    Approximation by Linear Maps with Lower-Dimensional Range  The next result is a spectacular application of the singular value decomposition. It says that to best approximate a linear map by a linear map whose range has dimension at most , chop off the singular value decomposition after the first terms. Specifically, the linear map in the next result has the property that and minimizes the distance to among all linear maps with range of dimension at most . This result leads to algorithms for compressing huge matrices while preserving their most important information.   best approximation by linear map whose range has dimension   Suppose and are the positive singular values of . Suppose . Then   Furthermore, if is a singular value decomposition of and is defined by for each , then and .     If then .  Thus . The equation now shows that .  Suppose and . Thus , which is a list of length , is linearly dependent. Hence there exist , not all , such that   Now because are not all . We have .  Because , the inequality above implies that   Thus minimizes among with .   For other examples of the use of the singular value decomposition in best approximation, see Exercise , which finds a subspace of given dimension on which the restriction of a linear map is as small as possible, and Exercise , which finds a unitary operator that is as close as possible to a given operator.    Polar Decomposition  Recall our discussion before of the analogy between complex numbers with and unitary operators. Continuing with this analogy, note that every complex number except can be written in the form , where the first factor, namely, , has absolute value .  Our analogy leads us to guess that every operator can be written as a unitary operator times . That guess is indeed correct. The corresponding result is called the polar decomposition, which gives a beautiful description of an arbitrary operator on .  Note that if , then is a positive operator [as was shown in (a)] . Thus the operator makes sense and is well defined as a positive operator on .  The polar decomposition that we are about to state and prove says that every operator on is the product of a unitary operator and a positive operator. Thus we can write an arbitrary operator on as the product of two nice operators, each of which comes from a class that we can completely describe and that we understand reasonably well. The unitary operators are described by if ; the positive operators are described by the real and complex spectral theorems ( and ).  Specifically, consider the case , and suppose is a polar decomposition of an operator , where is a unitary operator. Then there is an orthonormal basis of with respect to which has a diagonal matrix, and there is an orthonormal basis of with respect to which has a diagonal matrix. Warning: There may not exist an orthonormal basis that simultaneously puts the matrices of both and into these nice diagonal forms may require one orthonormal basis and may require a different orthonormal basis.  However (still assuming that ), if is normal, then an orthonormal basis of can be chosen such that both and have diagonal matrices with respect to this basis see Exercise . The converse is also true: If and for some unitary operator such that and both have diagonal matrices with respect to the same orthonormal basis of , then is normal. This holds because then has a diagonal matrix with respect to this same orthonormal basis, which implies that is normal [by the equivalence of (c) and (a) in ] .  The polar decomposition below is valid on both real and complex inner product spaces and for all operators on those spaces.   polar decomposition    polar decomposition Suppose . Then there exists a unitary operator such that      Let be the positive singular values of , and let and be orthonormal lists in such that for every . Extend and to orthonormal bases and of .  Define by for each . Then .  Thus is a unitary operator.  Applying to both sides of and then using the formula for given by shows that for every . Thus if , then because the operator that sends to the right side of the equation above is a positive operator whose square equals . Now , where the last equation follows from .    Exercise shows that the unitary operator produced in the proof above is as close as a unitary operator can be to .  Alternative proofs of the polar decomposition directly use the spectral theorem, avoiding the singular value decomposition. However, the proof above seems cleaner than those alternative proofs.    Operators Applied to Ellipsoids and Parallelepipeds   ball,   The ball in of radius centered at , denoted by , is defined by ball        The ball in .   Missing description    If , the word disk is sometimes used instead of ball . However, using ball in all dimensions is less confusing. Similarly, if , then the word ellipse is sometimes used instead of the word ellipsoid that we are about to define. Again, using ellipsoid in all dimensions is less confusing.  You can think of the ellipsoid defined below as obtained by starting with the ball and then stretching by a factor of along each -axis.   ellipsoid, , principal axes   Suppose that is an orthonormal basis of and are positive numbers. The ellipsoid  with principal axes  is defined by ellipsoid  principal axes       The ellipsoid notation does not explicitly include the inner product space , even though the definition above depends on . However, the inner product space should be clear from the context and also from the requirement that be an orthonormal basis of .   ellipsoids     The ellipsoid in , where is the standard basis of .   Missing description     The ellipsoid in , where and .   Missing description       Missing description   The ellipsoid in , where is the standard basis of .     The ellipsoid equals the ball in for every orthonormal basis of [by Parseval's identity (b)] .     For a function defined on and , define by     Thus if is a function defined on , then .  The next result states that every invertible operator maps the ball in onto an ellipsoid in . The proof shows that the principal axes of this ellipsoid come from the singular value decomposition of .   invertible operator takes ball to ellipsoid   Suppose is invertible. Then maps the ball in onto an ellipsoid in .     Suppose has singular value decomposition for all ; here are the singular values of and and are both orthonormal bases of . We will show that .  First suppose . Because is invertible, none of the singular values equals ( see ). Thus implies that   Thus . Hence .  To prove inclusion in the other direction, now suppose . Let   Then and implies that . Thus .   We now use the previous result to show that invertible operators take all ellipsoids, not just the ball of radius , to ellipsoids.   invertible operator takes ellipsoids to ellipsoids   Suppose is invertible and is an ellipsoid in . Then is an ellipsoid in .     There exist an orthonormal basis of and positive numbers such that . Define by   Then maps the ball of onto , as you can verify. Thus   The equation above and , applied to , show that is an ellipsoid in .   Recall ( see ) that if and then is defined by   Geometrically, the sets and look the same, but they are in different locations.  In the following definition, if then the word parallelogram is often used instead of parallelepiped .   , parallelepiped   Suppose is a basis of . Let   A parallelepiped is a set of the form for some . The vectors are called the edges of this parallelepiped.     parallelepipeds     The parallelepiped in .   Missing description     A parallelepiped in .   Missing description        invertible operator takes parallelepipeds to parallelepipeds   Suppose , is a basis of , and is invertible. Then      Because is invertible, the list is a basis of . The linearity of implies that for all . Thus .   Just as the rectangles are distinguished among the parallelograms in , we give a special name to the parallelepipeds in whose defining edges are orthogonal to each other.   box   A box in is a set of the form { where and are positive numbers and is an orthonormal basis of .}    Note that in the special case of each box is a rectangle, but the terminology box can be used in all dimensions.   boxes     The box , where and .   Missing description     The box , where is the standard basis of .   Missing description       Suppose is invertible. Then maps every parallelepiped in to a parallelepiped in (by ). In particular, maps every box in to a parallelepiped in . This raises the question of whether maps some boxes in to boxes in . The following result answers this question, with the help of the singular value decomposition.   every invertible operator takes some boxes to boxes   Suppose is invertible. Suppose has singular value decomposition where are the singular values of and and are orthonormal bases of and the equation above holds for all . Then maps the box onto the box for all positive numbers and all .     If and are positive numbers and , then   Thus .     Volume via Singular Values  Our goal in this subsection is to understand how an operator changes the volume of subsets of its domain. Because notions of volume belong to analysis rather than to linear algebra, we will work only with an intuitive notion of volume. Our intuitive approach to volume can be converted into appropriate correct definitions, correct statements, and correct proofs using the machinery of analysis.  Our intuition about volume works best in real inner product spaces. Thus the assumption that will appear frequently in the rest of this subsection.  If , then by volume we will mean -dimensional volume. You should be familiar with this concept in . When , this is usually called area instead of volume, but for consistency we use the word volume in all dimensions. The most fundamental intuition about volume is that the volume of a box (whose defining edges are by definition orthogonal to each other) is the product of the lengths of the defining edges. Thus we make the following definition.   volume of a box   Suppose . If and are positive numbers and is an orthonormal basis of , then volume of a box      The definition above agrees with the familiar formulas for the area (which we are calling the volume) of a rectangle in and for the volume of a box in . For example, the first box in Example has two-dimensional volume (or area) because the defining edges of that box have length and . The second box in Example has three-dimensional volume because the defining edges of that box have length , , and .   Volume of this ball sum of the volumes of the five boxes.   Missing description    To define the volume of a subset of , approximate the subset by a finite collection of disjoint boxes, and then add up the volumes of the approximating collection of boxes. As we approximate a subset of more accurately by disjoint unions of more boxes, we get a better approximation to the volume.  These ideas should remind you of how the Riemann integral is defined by approximating the area under a curve by a disjoint collection of rectangles. This discussion leads to the following nonrigorous but intuitive definition.   volume   Suppose and . Then the volume  volume of , denoted by , is approximately the sum of the volumes of a collection of disjoint boxes that approximate .    We are ignoring many reasonable questions by taking an intuitive approach to volume. For example, if we approximate by boxes with respect to one basis, do we get the same volume if we approximate by boxes with respect to a different basis? If and are disjoint subsets of , is ? Provided that we consider only reasonably nice subsets of , techniques of analysis show that both these questions have affirmative answers that agree with our intuition about volume.   volume change by a linear map    Each box here has twice the width and the same height as the boxes in the previous figure.   Missing description    Suppose that is defined by , where is the standard basis of . This linear map stretches vectors along the -axis by a factor of and leaves vectors along the -axis unchanged. The ball approximated by five boxes above gets mapped by to the ellipsoid shown here. Each of the five boxes in the original figure gets mapped to a box of twice the width and the same height as in the original figure. Hence each box gets mapped to a box of twice the volume (area) as in the original figure. The sum of the volumes of the five new boxes approximates the volume of the ellipsoid. Thus changes the volume of the ball by a factor of .    In the example above, maps boxes with respect to the basis to boxes with respect to the same basis; thus we can see how changes volume. In general, an operator maps boxes to parallelepipeds that are not boxes. However, if we choose the right basis (coming from the singular value decomposition!), then boxes with respect to that basis get mapped to boxes with respect to a possibly different basis, as shown in . This observation leads to a natural proof of the following result.   volume changes by a factor of the product of the singular values   Suppose , is invertible, and . Then      Suppose has singular value decomposition for all , where and are orthonormal bases of .  Approximate by boxes of the form , which have volume . The operator maps each box onto the box , which has volume .  The operator maps a collection of boxes that approximate onto a collection of boxes that approximate . Because changes the volume of each box in a collection that approximates by a factor of , the linear map changes the volume of by the same factor.   Suppose . As we will see when we get to determinants, the product of the singular values of equals ; see and .    Properties of an Operator as Determined by Its Eigenvalues  We conclude this chapter by presenting the table below. The context of this table is a finite-dimensional complex inner product space. The first column of the table shows a property that a normal operator on such a space might have. The second column of the table shows a subset of such that the operator has the corresponding property if and only if all eigenvalues of the operator lie in the specified subset. For example, the first row of the table states that a normal operator is invertible if and only if all its eigenvalues are nonzero (this first row is the only one in the table that does not need the hypothesis that the operator is normal).  Make sure you can explain why all results in the table hold. For example, the last row of the table holds because the norm of an operator equals its largest singular value (by ) and the singular values of a normal operator, assuming , equal the absolute values of the eigenvalues (by Exercise in Section ).    properties of a normal operator  eigenvalues are contained in        invertible          self-adjoint          skew         orthogonal projection         positive         unitary         norm is less than          Exercises    Prove that if , then . Note: The inequality above is called the reverse triangle inequality . reverse triangle inequality       Suppose that is self-adjoint or that and is normal. Prove that       Suppose and . Prove that       Suppose , , and . Prove that if and , then .      Suppose is a finite-dimensional inner product space, , and . Prove that       Prove or give a counterexample: If , then .      Show that defining for makes a metric on .  Note: This exercise is intended for readers who are familiar with metric spaces.         Prove that if and , then is invertible.    Suppose that is invertible. Prove that if and , then is invertible.     Note: This exercise shows that the set of invertible operators in is an open subset of , using the metric defined in Exercise .      Suppose . Prove that for every , there exists an invertible operator such that .      Suppose and is not invertible. Prove that for every , there exists such that and is not invertible.      Suppose and . Prove that for every there exists a diagonalizable operator such that . diagonalizable       Suppose is a positive operator. Show that .      Suppose are positive operators. Show that       Suppose and are subspaces of such that . Prove that .      Define by   Find (explicitly) a unitary operator such that .      Suppose is a positive invertible operator. Prove that there exists such that is a positive operator for every self-adjoint operator with .      Prove that if and is the linear functional on defined by the equation , then . Note: Here we are thinking of the scalar field as an inner product space with for all . Thus means the norm of as a linear map from to .      Suppose is an orthonormal basis of and .   Prove that .    Prove that if and only if .     Note: Here is an arbitrary orthonormal basis of , not necessarily connected with a singular value decomposition of . If is the list of singular values of , then the right side of the inequality above equals , as was shown in Exercise (a) in Section .      Prove that if , then . -algebras Note: This formula for leads to the important subject of -algebras.      Suppose is normal. Prove that for every positive integer .      Suppose and . Prove that the norm on does not come from an inner product. In other words, prove that there does not exist an inner product on such that for all .      Suppose . Let and let denote the singular values of . Prove that if , then       Suppose . Show that is uniformly continuous with respect to the metrics on and that arise from the norms on those spaces (see Exercise in Section ).      Suppose is invertible. Prove that       Fix with . Define by for every . Prove that for every .      Suppose . Prove that is invertible if and only if there exists a unique unitary operator such that .      Suppose and are the singular values of . Let and be orthonormal bases of such that for all . Define by    Show that is unitary and .    Show that if is unitary, then .     Note: This exercise finds a unitary operator that is as close as possible (among the unitary operators) to a given operator .      Suppose . Prove that there exists a unitary operator such that .      Suppose .   Use the polar decomposition to show that there exists a unitary operator such that .    Show how (a) implies that and have the same singular values.         Suppose , is a unitary operator, and is a positive operator such that . Prove that . Note: This exercise shows that if we write as the product of a unitary operator and a positive operator (as in the polar decomposition ) , then the positive operator equals .      Suppose and is normal. Prove that there exists a unitary operator such that and such that and both have diagonal matrices with respect to the same orthonormal basis of .      Suppose that and . Let denote the positive singular values of . Show that there exists an orthonormal basis of such that equals the ball in of radius centered at .      "
 },
 {
   "id": "x9upperBound",
@@ -10976,7 +10976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x9SVD-5-3",
   "type": "Figure",
-  "number": "7.96",
+  "number": "14",
   "title": "",
   "body": " The ball in .   Missing description   "
 },
@@ -10994,7 +10994,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x9SVD-5-6",
   "type": "Definition",
-  "number": "7.97",
+  "number": "7.96",
   "title": "ellipsoid, <span class=\"process-math\">\\(E(s_1 f_1, \\ldots, s_n f_n)\\text{,}\\)<\/span> principal axes.",
   "body": " ellipsoid, , principal axes   Suppose that is an orthonormal basis of and are positive numbers. The ellipsoid  with principal axes  is defined by ellipsoid  principal axes      "
 },
@@ -11003,7 +11003,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x9SVD-5-8",
   "type": "Example",
-  "number": "7.98",
+  "number": "7.97",
   "title": "ellipsoids.",
   "body": " ellipsoids     The ellipsoid in , where is the standard basis of .   Missing description     The ellipsoid in , where and .   Missing description       Missing description   The ellipsoid in , where is the standard basis of .    "
 },
@@ -11012,7 +11012,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x9SVD-5-10",
   "type": "Notation",
-  "number": "7.102",
+  "number": "7.98",
   "title": "<span class=\"process-math\">\\(T(\\Omega)\\)<\/span>.",
   "body": "   For a function defined on and , define by    "
 },
@@ -11021,7 +11021,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x7TB",
   "type": "Theorem",
-  "number": "7.103",
+  "number": "7.99",
   "title": "invertible operator takes ball to ellipsoid.",
   "body": " invertible operator takes ball to ellipsoid   Suppose is invertible. Then maps the ball in onto an ellipsoid in .   "
 },
@@ -11039,7 +11039,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x9SVD-5-16",
   "type": "Theorem",
-  "number": "7.105",
+  "number": "7.101",
   "title": "invertible operator takes ellipsoids to ellipsoids.",
   "body": " invertible operator takes ellipsoids to ellipsoids   Suppose is invertible and is an ellipsoid in . Then is an ellipsoid in .   "
 },
@@ -11066,7 +11066,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x7parallel",
   "type": "Definition",
-  "number": "7.106",
+  "number": "7.102",
   "title": "<span class=\"process-math\">\\(P(v_1, \\ldots, v_n)\\text{,}\\)<\/span> parallelepiped.",
   "body": " , parallelepiped   Suppose is a basis of . Let   A parallelepiped is a set of the form for some . The vectors are called the edges of this parallelepiped.   "
 },
@@ -11075,7 +11075,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x9SVD-5-22",
   "type": "Example",
-  "number": "7.107",
+  "number": "7.103",
   "title": "parallelepipeds.",
   "body": " parallelepipeds     The parallelepiped in .   Missing description     A parallelepiped in .   Missing description      "
 },
@@ -11084,7 +11084,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x8Tpar",
   "type": "Theorem",
-  "number": "7.110",
+  "number": "7.104",
   "title": "invertible operator takes parallelepipeds to parallelepipeds.",
   "body": " invertible operator takes parallelepipeds to parallelepipeds   Suppose , is a basis of , and is invertible. Then    "
 },
@@ -11102,7 +11102,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x7box",
   "type": "Definition",
-  "number": "7.111",
+  "number": "7.105",
   "title": "box.",
   "body": " box   A box in is a set of the form { where and are positive numbers and is an orthonormal basis of .}   "
 },
@@ -11120,7 +11120,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x2boxes",
   "type": "Example",
-  "number": "7.112",
+  "number": "7.106",
   "title": "boxes.",
   "body": " boxes     The box , where and .   Missing description     The box , where is the standard basis of .   Missing description      "
 },
@@ -11129,7 +11129,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x7boxes",
   "type": "Theorem",
-  "number": "7.115",
+  "number": "7.107",
   "title": "every invertible operator takes some boxes to boxes.",
   "body": " every invertible operator takes some boxes to boxes   Suppose is invertible. Suppose has singular value decomposition where are the singular values of and and are orthonormal bases of and the equation above holds for all . Then maps the box onto the box for all positive numbers and all .   "
 },
@@ -11156,7 +11156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x9SVD-6-5",
   "type": "Definition",
-  "number": "7.116",
+  "number": "7.108",
   "title": "volume of a box.",
   "body": " volume of a box   Suppose . If and are positive numbers and is an orthonormal basis of , then volume of a box     "
 },
@@ -11165,7 +11165,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x9SVD-6-7",
   "type": "Figure",
-  "number": "7.117",
+  "number": "22",
   "title": "",
   "body": " Volume of this ball sum of the volumes of the five boxes.   Missing description   "
 },
@@ -11174,7 +11174,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x9SVD-6-10",
   "type": "Definition",
-  "number": "7.118",
+  "number": "7.109",
   "title": "volume.",
   "body": " volume   Suppose and . Then the volume  volume of , denoted by , is approximately the sum of the volumes of a collection of disjoint boxes that approximate .   "
 },
@@ -11183,7 +11183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x9SVD-6-12",
   "type": "Example",
-  "number": "7.119",
+  "number": "7.110",
   "title": "volume change by a linear map.",
   "body": " volume change by a linear map    Each box here has twice the width and the same height as the boxes in the previous figure.   Missing description    Suppose that is defined by , where is the standard basis of . This linear map stretches vectors along the -axis by a factor of and leaves vectors along the -axis unchanged. The ball approximated by five boxes above gets mapped by to the ellipsoid shown here. Each of the five boxes in the original figure gets mapped to a box of twice the width and the same height as in the original figure. Hence each box gets mapped to a box of twice the volume (area) as in the original figure. The sum of the volumes of the five new boxes approximates the volume of the ellipsoid. Thus changes the volume of the ball by a factor of .   "
 },
@@ -11192,7 +11192,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x9SVD.html#x7volchange",
   "type": "Theorem",
-  "number": "7.121",
+  "number": "7.111",
   "title": "volume changes by a factor of the product of the singular values.",
   "body": " volume changes by a factor of the product of the singular values   Suppose , is invertible, and . Then    "
 },
@@ -11266,7 +11266,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "7.6.6.7",
   "title": "",
-  "body": "  Show that defining for makes a metric on . Note: This exercise is intended for readers who are familiar with metric spaces.   "
+  "body": "  Show that defining for makes a metric on .  Note: This exercise is intended for readers who are familiar with metric spaces.   "
 },
 {
   "id": "x9SVD-7-5-9",
@@ -12434,7 +12434,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x8geneigde.html#x8geneigde-2-6",
   "type": "Figure",
-  "number": "8.41",
+  "number": "24",
   "title": "",
   "body": " Representation of a complex number with polar coordinates.   Missing description   "
 },
@@ -12443,7 +12443,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x8geneigde.html#x397",
   "type": "Theorem",
-  "number": "8.42",
+  "number": "8.41",
   "title": "over <span class=\"process-math\">\\(\\C{}\\text{,}\\)<\/span> invertible operators have square roots.",
   "body": " over , invertible operators have square roots   Suppose is a complex vector space and is invertible. Then has a square root. square root of an operator    "
 },
@@ -12461,7 +12461,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x8geneigde.html#Jordan-4",
   "type": "Example",
-  "number": "8.43",
+  "number": "8.42",
   "title": "nilpotent operator with nice matrix.",
   "body": " nilpotent operator with nice matrix   Let be the operator on defined by   Then ; thus is nilpotent. If , then is a basis of . The matrix of with respect to this basis is    "
 },
@@ -12470,7 +12470,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x8geneigde.html#Jordan-6",
   "type": "Example",
-  "number": "8.44",
+  "number": "8.43",
   "title": "nilpotent operator with slightly more complicated matrix.",
   "body": " nilpotent operator with slightly more complicated matrix   Let be the operator on defined by   Then ; thus is nilpotent. In contrast to the nice behavior of the nilpotent operator of the previous example, for this nilpotent operator there does not exist a vector such that is a basis of . However, if we take , , and , then is a basis of . The matrix of with respect to this basis is .  Here the inner matrices are blocked off to show that we can think of the -by- matrix above as a block diagonal matrix consisting of a -by- block with 's on the line above the diagonal and 's elsewhere, a -by- block with above the diagonal and 's elsewhere, and a -by- block containing .   "
 },
@@ -12479,7 +12479,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x8geneigde.html#Jordan-9",
   "type": "Definition",
-  "number": "8.45",
+  "number": "8.44",
   "title": "Jordan basis.",
   "body": " Jordan basis   Suppose . A basis of is called a Jordan basis  Jordan basis for if with respect to this basis has a block diagonal matrix in which each is an upper-triangular matrix of the form    "
 },
@@ -12488,7 +12488,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x8geneigde.html#x452",
   "type": "Theorem",
-  "number": "8.46",
+  "number": "8.45",
   "title": "every nilpotent operator has a Jordan basis.",
   "body": " every nilpotent operator has a Jordan basis    nilpotent operator Suppose is nilpotent. Then there is a basis of that is a Jordan basis for .   "
 },
@@ -12506,7 +12506,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x8geneigde.html#x398",
   "type": "Theorem",
-  "number": "8.47",
+  "number": "8.46",
   "title": "Jordan form.",
   "body": " Jordan form   Suppose and . Then there is a basis of that is a Jordan basis for .   "
 },
@@ -12659,7 +12659,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x7trace-3",
   "type": "Definition",
-  "number": "8.48",
+  "number": "8.47",
   "title": "trace of a matrix.",
   "body": " trace of a matrix   Suppose is a square matrix with entries in . The trace of , denoted , is defined to be the sum of the diagonal entries of . trace of a matrix    "
 },
@@ -12668,7 +12668,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x7trace-5",
   "type": "Example",
-  "number": "8.49",
+  "number": "8.48",
   "title": "trace of a <span class=\"process-math\">\\(3\\)<\/span>-by-<span class=\"process-math\">\\(3\\)<\/span> matrix.",
   "body": " trace of a -by- matrix   Suppose   The diagonal entries of , which are shown in red above, are , , and . Thus .   "
 },
@@ -12677,7 +12677,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x304",
   "type": "Theorem",
-  "number": "8.50",
+  "number": "8.49",
   "title": "trace of <span class=\"process-math\">\\(AB\\)<\/span> equals trace of <span class=\"process-math\">\\(BA\\)<\/span>.",
   "body": " trace of equals trace of   Suppose is an -by- matrix and is an -by- matrix. Then    "
 },
@@ -12695,7 +12695,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x8trbasis",
   "type": "Theorem",
-  "number": "8.51",
+  "number": "8.50",
   "title": "trace of matrix of operator does not depend on basis.",
   "body": " trace of matrix of operator does not depend on basis   Suppose . Suppose and are bases of . Then    "
 },
@@ -12713,7 +12713,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x7trace-13",
   "type": "Definition",
-  "number": "8.52",
+  "number": "8.51",
   "title": "trace of an operator.",
   "body": " trace of an operator   Suppose . The trace of , denoted , is defined by where is any basis of . trace of an operator    "
 },
@@ -12722,7 +12722,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x9sumeigen",
   "type": "Theorem",
-  "number": "8.53",
+  "number": "8.52",
   "title": "on complex vector spaces, trace equals sum of eigenvalues.",
   "body": " on complex vector spaces, trace equals sum of eigenvalues   Suppose and . Then equals the sum of the eigenvalues of , with each eigenvalue included as many times as its multiplicity.   "
 },
@@ -12740,7 +12740,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x7trace-20",
   "type": "Example",
-  "number": "8.54",
+  "number": "8.53",
   "title": "trace of an operator on  <span class=\"process-math\">\\(\\C3\\)<\/span>.",
   "body": " trace of an operator on   Suppose is defined by   Then the matrix of with respect to the standard basis of is   Adding up the diagonal entries of this matrix, we see that .  The eigenvalues of are , , and , each with multiplicity , as you can verify. The sum of these eigenvalues, each included as many times as its multiplicity, is , which equals , as expected by .   "
 },
@@ -12749,7 +12749,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x8tracechar",
   "type": "Theorem",
-  "number": "8.55",
+  "number": "8.54",
   "title": "trace and characteristic polynomial.",
   "body": " trace and characteristic polynomial   Suppose and . Let . Then equals the negative of the coefficient of in the characteristic polynomial of .   "
 },
@@ -12758,7 +12758,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x9trinner",
   "type": "Theorem",
-  "number": "8.56",
+  "number": "8.55",
   "title": "trace on an inner product space.",
   "body": " trace on an inner product space   Suppose is an inner product space, , and is an orthonormal basis of . Then    "
 },
@@ -12776,7 +12776,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x372",
   "type": "Theorem",
-  "number": "8.57",
+  "number": "8.56",
   "title": "trace is linear.",
   "body": " trace is linear   The function is a linear functional on such that for all .   "
 },
@@ -12794,7 +12794,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "x7trace.html#x10ST",
   "type": "Theorem",
-  "number": "8.58",
+  "number": "8.57",
   "title": "identity operator is not the difference of  <span class=\"process-math\">\\(ST\\)<\/span> and  <span class=\"process-math\">\\(TS\\)<\/span>.",
   "body": " identity operator is not the difference of and   There do not exist operators such that .   "
 },
@@ -13038,7 +13038,7 @@ var ptx_lunr_docs = [
   "url": "bilin_quad.html#bilin_quad-3-2",
   "type": "Definition",
   "number": "9.9",
-  "title": "symmetric bilinear form, <span class=\"process-math\">\\(V^{(2)}_{sym}\\)<\/span>.",
+  "title": "symmetric bilinear form, <span class=\"process-math\">\\(V^{(2)}_{\\text{sym}}\\)<\/span>.",
   "body": " symmetric bilinear form,   A bilinear form is called symmetric if symmetric bilinear form   for all . The set of symmetric bilinear forms on is denoted by .   "
 },
 {
@@ -13110,7 +13110,7 @@ var ptx_lunr_docs = [
   "url": "bilin_quad.html#bilin_quad-3-12",
   "type": "Definition",
   "number": "9.14",
-  "title": "alternating bilinear form, <span class=\"process-math\">\\(V^{(2)}_{alt}\\)<\/span>.",
+  "title": "alternating bilinear form, <span class=\"process-math\">\\(V^{(2)}_{\\text{alt}}\\)<\/span>.",
   "body": " alternating bilinear form,   A bilinear form is called alternating if alternating bilinear form   for all . The set of alternating bilinear forms on is denoted by .   "
 },
 {
@@ -13146,7 +13146,7 @@ var ptx_lunr_docs = [
   "url": "bilin_quad.html#x9V2",
   "type": "Theorem",
   "number": "9.17",
-  "title": "<span class=\"process-math\">\\(V^{(2)} = V^{(2)}_{sym} \\oplus V^{(2)}_{alt}\\)<\/span>.",
+  "title": "<span class=\"process-math\">\\(V^{(2)} = V^{(2)}_{\\text{sym}} \\oplus V^{(2)}_{\\text{alt}}\\)<\/span>.",
   "body": "   The sets and are subspaces of . Furthermore,    "
 },
 {
@@ -14632,7 +14632,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1",
   "title": "Photo Credits",
-  "body": " Photo Credits   photo credits|(   0moon Photos by Carrie Heeter and Bishnu Sarangi. Public domain image.  VectorSpaces Original painting by Pierre Louis Dumesnil; 1884 copy by Nils Forsberg. Public domain image downloaded on 29 March 2022 from https:\/\/commons.wikimedia.org\/wiki\/File:René_Descartes_i_samtal_med_Sveriges_drottning,_Kristina.jpg .  fin-dimVS Public domain image downloaded on 4 February 2022 from https:\/\/commons.wikimedia.org\/wiki\/File:IAS_Princeton.jpg .  LinearMaps Photo by Stefan Schäfer; Creative Commons Attribution Share Alike license. Downloaded on 28 March 2022 from https:\/\/commons.wikimedia.org\/wiki\/File:BurgDankwarderode2016.jpg .  polynomials Photo by Alireza Javaheri. Creative Commons Attribution license. Downloaded on 12 March 2023 from https:\/\/commons.wikimedia.org\/wiki\/File:Hakim_Omar_Khayam___panoramio.jpg .  eigs Statue completed by Giovanni Paganucci in 1863. Photo by Hans-Peter Postel; Creative Commons Attribution license. Downloaded on 14 March 2022 from https:\/\/commons.wikimedia.org\/wiki\/File:Leonardo_da_Pisa.jpg .  InnerProductSpaces Photo by Matthew Petroff; Creative Commons Attribution Share Alike license. Downloaded on 31 March 2022 from https:\/\/commons.wikimedia.org\/wiki\/File:George-peabody-library.jpg .  opsinner Photo by Petar Milosevic; Creative Commons Attribution Share Alike license. Downloaded on 30 March 2022 from https:\/\/en.wikipedia.org\/wiki\/Lviv .  operators_complex_vs Photo by David Iliff; Creative Commons Attribution Share Alike license. Downloaded on 30 March 2022 from https:\/\/en.wikipedia.org\/wiki\/File:Long_Room_Interior,_Trinity_College_Dublin,_Ireland___Diliff.jpg .  MultLATensors Photo by Daniel Schwen; Creative Commons Attribution Share Alike license. Downloaded on 9 July 2019 from https:\/\/commons.wikimedia.org\/wiki\/File:Mathematik_Göttingen.jpg .  photo credits|)    "
+  "body": " Photo Credits   photo credits|(   Photos by Carrie Heeter and Bishnu Sarangi. Public domain image.  Original painting by Pierre Louis Dumesnil; 1884 copy by Nils Forsberg. Public domain image downloaded on 29 March 2022 from https:\/\/commons.wikimedia.org\/wiki\/File:René_Descartes_i_samtal_med_Sveriges_drottning,_Kristina.jpg .  Public domain image downloaded on 4 February 2022 from https:\/\/commons.wikimedia.org\/wiki\/File:IAS_Princeton.jpg .  Photo by Stefan Schäfer; Creative Commons Attribution Share Alike license. Downloaded on 28 March 2022 from https:\/\/commons.wikimedia.org\/wiki\/File:BurgDankwarderode2016.jpg .  Photo by Alireza Javaheri. Creative Commons Attribution license. Downloaded on 12 March 2023 from https:\/\/commons.wikimedia.org\/wiki\/File:Hakim_Omar_Khayam___panoramio.jpg .  Statue completed by Giovanni Paganucci in 1863. Photo by Hans-Peter Postel; Creative Commons Attribution license. Downloaded on 14 March 2022 from https:\/\/commons.wikimedia.org\/wiki\/File:Leonardo_da_Pisa.jpg .  Photo by Matthew Petroff; Creative Commons Attribution Share Alike license. Downloaded on 31 March 2022 from https:\/\/commons.wikimedia.org\/wiki\/File:George-peabody-library.jpg .  Photo by Petar Milosevic; Creative Commons Attribution Share Alike license. Downloaded on 30 March 2022 from https:\/\/en.wikipedia.org\/wiki\/Lviv .  Photo by David Iliff; Creative Commons Attribution Share Alike license. Downloaded on 30 March 2022 from https:\/\/en.wikipedia.org\/wiki\/File:Long_Room_Interior,_Trinity_College_Dublin,_Ireland___Diliff.jpg .  Photo by Daniel Schwen; Creative Commons Attribution Share Alike license. Downloaded on 9 July 2019 from https:\/\/commons.wikimedia.org\/wiki\/File:Mathematik_Göttingen.jpg .  photo credits|)    "
 },
 {
   "id": "typesetting",
@@ -14641,7 +14641,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2",
   "title": "Colophon: Notes on Typesetting",
-  "body": " Colophon: Notes on Typesetting    This book was typeset in Lua latex by the author, who wrote the latex code to implement the book's design.    The latex software used for this book was written by Leslie Lamport. The tex software, which forms the base for latex , was written by Donald Knuth.    The main text font in this book is the Open Type Format version of tex Gyre Termes, a font based on Times, which was designed by Stanley Morison and Victor Lardent for the British newspaper The Times in 1931.    The main math font in this book is the Open Type Format version of tex Gyre Pagella Math, a font based on Palatino, which was designed by Hermann Zapf.    The sans serif font used for page headings and some other design elements is the Open Type Format version of tex Gyre Heros, a font based on Helvetica, which was designed by Max Miedinger and Eduard Hoffmann.    The Lua latex packages fontspec and unicode-math , both written by Will Robertson, were used to manage fonts.    The latex package fontsize , written by Ivan Valbusa, was used to gracefully change the main fonts to 10.5 point size.    The figures in the book were produced by Mathematica , using Mathematica code written by the author. Mathematica was created by Stephen Wolfram. The Mathematica package MaTeX , written by Szabolcs Horvát, was used to place latex -generated labels in the Mathematica figures.    The latex package graphicx , written by David Carlisle and Sebastian Rahtz, was used to include photos and figures.    The latex package multicol , written by Frank Mittelbach, was used to get around latex 's limitation that two-column format must start on a new page (needed for the Symbol Index and the Index).    The latex packages Ti k Z , written by Till Tantau, and tcolorbox , written by Thomas Sturm, were used to produce the definition boxes and result boxes.    The latex package color , written by David Carlisle, was used to add appropriate color to various design elements.    The latex package wrapfig , written by Donald Arseneau, was used to wrap text around the comment boxes.    The latex package microtype , written by Robert Schlicht, was used to reduce hyphenation and produce more pleasing right justification.    "
+  "body": " Colophon: Notes on Typesetting    This book was typeset in Lua latex by the author, who wrote the latex code to implement the book's design.    The latex software used for this book was written by Leslie Lamport. The TeX software, which forms the base for latex , was written by Donald Knuth.    The main text font in this book is the Open Type Format version of TeX Gyre Termes, a font based on Times, which was designed by Stanley Morison and Victor Lardent for the British newspaper The Times in 1931.    The main math font in this book is the Open Type Format version of TeX Gyre Pagella Math, a font based on Palatino, which was designed by Hermann Zapf.    The sans serif font used for page headings and some other design elements is the Open Type Format version of TeX Gyre Heros, a font based on Helvetica, which was designed by Max Miedinger and Eduard Hoffmann.    The Lua latex packages fontspec and unicode-math , both written by Will Robertson, were used to manage fonts.    The latex package fontsize , written by Ivan Valbusa, was used to gracefully change the main fonts to 10.5 point size.    The figures in the book were produced by Mathematica , using Mathematica code written by the author. Mathematica was created by Stephen Wolfram. The Mathematica package MaTeX , written by Szabolcs Horvát, was used to place latex -generated labels in the Mathematica figures.    The latex package graphicx , written by David Carlisle and Sebastian Rahtz, was used to include photos and figures.    The latex package multicol , written by Frank Mittelbach, was used to get around latex 's limitation that two-column format must start on a new page (needed for the Symbol Index and the Index).    The latex packages Ti k Z , written by Till Tantau, and tcolorbox , written by Thomas Sturm, were used to produce the definition boxes and result boxes.    The latex package color , written by David Carlisle, was used to add appropriate color to various design elements.    The latex package wrapfig , written by Donald Arseneau, was used to wrap text around the comment boxes.    The latex package microtype , written by Robert Schlicht, was used to reduce hyphenation and produce more pleasing right justification.    "
 },
 {
   "id": "typesetting-2-3-1",
@@ -14659,7 +14659,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3",
   "title": "Colophon: The Web version",
-  "body": " Colophon: The Web version  The online version of this book was prepared in PreTeXt , after a conversion of the LaTeX source with the assistance of PreTeXt Plus.  "
+  "body": " Colophon: The Web version  The online version of this book was prepared in PreTeXt , after a conversion of the LaTeX source with the assistance of PreTeXt Plus . The author thanks David Farmer for his huge effort in converting the LaTeX source to PreTeXt.  "
 },
 {
   "id": "backmatter-5",

@@ -137,6 +137,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\P}{\symcal{P}}
 \newcommand{\sm}{\backslash}
 \newcommand{\Space}{}
+\newcommand{\pound}[1]{#1^{\#}}
 \DeclareMathOperator{\ran}{range}
 \DeclareMathOperator{\Span}{span}
 \DeclareMathOperator{\re}{Re}
@@ -649,7 +650,7 @@ eBookConfig.enable_chatcodes =  false;
 \dim \ran T = \dim ( \ker T^* )^\perp = \dim W - \dim \ker T^* = \dim \ran T^*{},
 \end{equation*}
 </div>
-<div class="para">where the first equality comes from <a href="selfadjoint_normal.html#x377" class="xref" data-knowl="./knowl/xref/x377.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.6: null space and range of  T^*">Theorem 7.6</a>(d), the second equality comes from <a href="OrthoMin.html#x350" class="xref" data-knowl="./knowl/xref/x350.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.54: dimension of orthogonal complement">Theorem 6.54</a>, and the last equality comes from the fundamental theorem of linear maps <a href="x3nullspace.html#x3ab11" class="xref" data-knowl="./knowl/xref/x3ab11.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.21: fundamental theorem of linear maps">Theorem 3.21</a>. The equality <span class="process-math">\(\dim \ran T^* = \dim \ran T^* T\)</span> follows from (c).</div>
+<div class="para">where the first equality comes from <a href="selfadjoint_normal.html#x377" class="xref" data-knowl="./knowl/xref/x377.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.6: null space and range of  T^*">Theorem 7.6</a>(d), the second equality comes from <a href="OrthoMin.html#x350" class="xref" data-knowl="./knowl/xref/x350.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.51: dimension of orthogonal complement">Theorem 6.51</a>, and the last equality comes from the fundamental theorem of linear maps <a href="x3nullspace.html#x3ab11" class="xref" data-knowl="./knowl/xref/x3ab11.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.21: fundamental theorem of linear maps">Theorem 3.21</a>. The equality <span class="process-math">\(\dim \ran T^* = \dim \ran T^* T\)</span> follows from (c).</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-4-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#x2SVD-2-4-1-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
@@ -755,7 +756,7 @@ T^*T(z_1, z_2, z_3, z_4) = (9 z_1, 4z_2, 0, 9z_4),
 </div>
 <div class="para" id="x2SVD-2-11-2">The spectral theorem applied to <span class="process-math">\(T^* T\)</span> shows that <span class="process-math">\(\dim \ran T^*T\)</span> equals the number of positive eigenvalues of <span class="process-math">\(T^*T\)</span> (counting repetitions). <a href="x2SVD.html#x2Tstar" class="xref" data-knowl="./knowl/xref/x2Tstar.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.64: properties of  T^*T">Thus 7.64</a>(d) implies that <span class="process-math">\(\dim \ran T\)</span> equals the number of positive singular values of <span class="process-math">\(T\text{,}\)</span> proving (b).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="x2SVD-2-11-3">Use (b) and <a href="dimension.html#x2subfull" class="xref" data-knowl="./knowl/xref/x2subfull.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.40: subspace of full dimension equals the whole space">Theorem 2.40</a> to show that (c) holds.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="x2SVD-2-11-3">Use (b) and <a href="dimension.html#x2subfull" class="xref" data-knowl="./knowl/xref/x2subfull.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.39: subspace of full dimension equals the whole space">Theorem 2.39</a> to show that (c) holds.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-2-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 7.5.1.2"><a tabindex="-1" href="#x2SVD-2-11" title="Copy heading and permalink for Proof 7.5.1.2" aria-label="Copy heading and permalink for Proof 7.5.1.2">🔗</a></div>
 </article></details>
@@ -791,7 +792,7 @@ T^*T(z_1, z_2, z_3, z_4) = (9 z_1, 4z_2, 0, 9z_4),
 <td class="l m b1 r0 l0 t0 lines"></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">can be arbitrary real numbers (if \(\F{} = \R{}\)) or complex numbers (if \(\F{} = \C{}\))</td>
+<td class="l m b0 r0 l0 t0 lines">can be arbitrary real numbers (if <span class="process-math">\(\F{} = \R{}\)</span>) or complex numbers (if <span class="process-math">\(\F{} = \C{}\)</span>)</td>
 <td class="l m b0 r0 l0 t0 lines">are nonnegative numbers</td>
 </tr>
 <tr>
@@ -799,7 +800,8 @@ T^*T(z_1, z_2, z_3, z_4) = (9 z_1, 4z_2, 0, 9z_4),
 <td class="l m b1 r0 l0 t0 lines"></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">can be the empty list if \(\F{} = \R{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">can be the empty list if <span class="process-math">\(\F{} = \R{}\)</span>
+</td>
 <td class="l m b0 r0 l0 t0 lines">length of list equals dimension of domain</td>
 </tr>
 <tr>
@@ -807,15 +809,16 @@ T^*T(z_1, z_2, z_3, z_4) = (9 z_1, 4z_2, 0, 9z_4),
 <td class="l m b1 r0 l0 t0 lines"></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">includes \(0 \! \iff \!\) operator is not invertible</td>
-<td class="l m b0 r0 l0 t0 lines">includes \(0 \! \iff\!\) linear map is not injective</td>
+<td class="l m b0 r0 l0 t0 lines">includes <span class="process-math">\(0  \iff \)</span> operator is not invertible</td>
+<td class="l m b0 r0 l0 t0 lines">includes <span class="process-math">\(0  \iff\)</span> linear map is not injective</td>
 </tr>
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
 <td class="l m b1 r0 l0 t0 lines"></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">no standard order, especially if \(\F{} = \C{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">no standard order, especially if <span class="process-math">\(\F{} = \C{}\)</span>
+</td>
 <td class="l m b0 r0 l0 t0 lines">always listed in decreasing order</td>
 </tr>
 <tr>
@@ -844,9 +847,9 @@ T^*T(z_1, z_2, z_3, z_4) = (9 z_1, 4z_2, 0, 9z_4),
 <div class="para">We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x234.html ./knowl/xref/x86.html ./knowl/xref/x85.html" id="x2SVD-2-16-1-1">
 \begin{align*}
-\text{ \(S\) is an isometry }  \amp \iff S^* S = I\\
-\amp \iff \text{ all eigenvalues of \(S^* S\) equal \(1\) }\\
-\amp \iff \text{ all singular values of \(S\) equal~\(1\), }
+\text{  is an isometry }  \amp \iff S^* S = I\\
+\amp \iff \text{ all eigenvalues of  equal  }\\
+\amp \iff \text{ all singular values of  equal  }
 \end{align*}
 </div>
 <div class="para">where the first equivalence comes from <a href="x3QR.html#x234" class="xref" data-knowl="./knowl/xref/x234.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.49: characterizations of isometries">Theorem 7.49</a> and the second equivalence comes from the spectral theorem ( <a href="SpectralTheorem.html#x86" class="xref" data-knowl="./knowl/xref/x86.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.29: real spectral theorem">Theorem 7.29</a> <a href="SpectralTheorem.html#x85" class="xref" data-knowl="./knowl/xref/x85.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.31: complex spectral theorem">or 7.31</a>) applied to the self-adjoint operator <span class="process-math">\(S^* S\text{.}\)</span>
@@ -987,7 +990,7 @@ f_{\dim W})\)</span> has the simple form</div>
 <td class="l m b1 r0 l0 t0 lines"></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">describes only self-adjoint operators (when \(\F{} = \R{}\)) or normal operators (when \(\F{} = \C{}\))</td>
+<td class="l m b0 r0 l0 t0 lines">describes only self-adjoint operators (when <span class="process-math">\(\F{} = \R{}\)</span>) or normal operators (when <span class="process-math">\(\F{} = \C{}\)</span>)</td>
 <td class="l m b0 r0 l0 t0 lines">describes arbitrary linear maps from an inner product space to a possibly different inner product space</td>
 </tr>
 <tr>
@@ -1003,17 +1006,19 @@ f_{\dim W})\)</span> has the simple form</div>
 <td class="l m b1 r0 l0 t0 lines"></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">different proofs depending on whether \(\F{} = \R{}\) or \(\F{}=\C{}\)</td>
-<td class="l m b0 r0 l0 t0 lines">same proof works regardless of whether \(\F{} = \R{}\) or \(\F{}=\C{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">different proofs depending on whether <span class="process-math">\(\F{} = \R{}\)</span> or <span class="process-math">\(\F{}=\C{}\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">same proof works regardless of whether <span class="process-math">\(\F{} = \R{}\)</span> or <span class="process-math">\(\F{}=\C{}\)</span>
+</td>
 </tr>
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
 <td class="l m b1 r0 l0 t0 lines"></td>
 </tr>
 </table></div>
-<div class="para" id="x2SVD-3-12">The singular value decomposition gives us a new way to understand the adjoint and the inverse of a linear map. Specifically, the next result shows that given a singular value decomposition of a linear map <span class="process-math">\(T \in \Lc(V{},W)\text{,}\)</span> we can obtain the adjoint of <span class="process-math">\(T\)</span> simply by interchanging the roles of the <span class="process-math">\(e\)</span>’s and the <span class="process-math">\(f\)</span>’s (<a href="x2SVD.html#x6SVD" class="xref" data-knowl="./knowl/xref/x6SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.77">see (7.77)</a>). Similarly, we can obtain the pseudoinverse <span class="process-math">\(T^\dagger\)</span> (<a href="OrthoMin.html#x6pseudo" class="xref" data-knowl="./knowl/xref/x6pseudo.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.74: pseudoinverse, T^\dagger">see 6.74</a>) of <span class="process-math">\(T\)</span> by interchanging the roles of the <span class="process-math">\(e\)</span>’s and the <span class="process-math">\(f\)</span> ’s and replacing each positive singular value <span class="process-math">\(s_k\)</span> of <span class="process-math">\(T\)</span> with <span class="process-math">\(1/s_k\)</span> (<a href="x2SVD.html#x7SVD" class="xref" data-knowl="./knowl/xref/x7SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.78">see (7.78)</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="x2SVD-3-12">The singular value decomposition gives us a new way to understand the adjoint and the inverse of a linear map. Specifically, the next result shows that given a singular value decomposition of a linear map <span class="process-math">\(T \in \Lc(V{},W)\text{,}\)</span> we can obtain the adjoint of <span class="process-math">\(T\)</span> simply by interchanging the roles of the <span class="process-math">\(e\)</span>’s and the <span class="process-math">\(f\)</span>’s (<a href="x2SVD.html#x6SVD" class="xref" data-knowl="./knowl/xref/x6SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.77">see (7.77)</a>). Similarly, we can obtain the pseudoinverse <span class="process-math">\(T^\dagger\)</span> (<a href="OrthoMin.html#x6pseudo" class="xref" data-knowl="./knowl/xref/x6pseudo.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.68: pseudoinverse, T^\dagger">see 6.68</a>) of <span class="process-math">\(T\)</span> by interchanging the roles of the <span class="process-math">\(e\)</span>’s and the <span class="process-math">\(f\)</span> ’s and replacing each positive singular value <span class="process-math">\(s_k\)</span> of <span class="process-math">\(T\)</span> with <span class="process-math">\(1/s_k\)</span> (<a href="x2SVD.html#x7SVD" class="xref" data-knowl="./knowl/xref/x7SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.78">see (7.78)</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="x2SVD-3-13">Recall that the pseudoinverse <span class="process-math">\(T^\dagger\)</span> in <a href="x2SVD.html#x7SVD" class="xref" data-knowl="./knowl/xref/x7SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.78">(7.78)</a> below equals the inverse <span class="process-math">\(T^{-1}\)</span> if <span class="process-math">\(T\)</span> is invertible [<a href="OrthoMin.html#x6propps" class="xref" data-knowl="./knowl/xref/x6propps.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.75: algebraic properties of the pseudoinverse">see 6.75</a>(a)] . <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="x2SVD-3-13">Recall that the pseudoinverse <span class="process-math">\(T^\dagger\)</span> in <a href="x2SVD.html#x7SVD" class="xref" data-knowl="./knowl/xref/x7SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.78">(7.78)</a> below equals the inverse <span class="process-math">\(T^{-1}\)</span> if <span class="process-math">\(T\)</span> is invertible [<a href="OrthoMin.html#x6propps" class="xref" data-knowl="./knowl/xref/x6propps.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.69: algebraic properties of the pseudoinverse">see 6.69</a>(a)] . <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="x8SVDadj"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.75</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">singular value decomposition of adjoint and pseudoinverse.</span>
@@ -1084,11 +1089,11 @@ v = \frac{\langle w, f_1 \rangle }{s_1} e_1 + \dots + \frac{\langle w, f_m \rang
 \begin{align*}
 Tv \amp = \frac{\langle w, f_1 \rangle }{s_1} Te_1 + \dots + \frac{\langle w, f_m \rangle }{s_m} Te_m\\
 \amp = \langle w, f_1 \rangle  f_1 + \dots + \langle w, f_m \rangle  f_m\\
-\amp = P_{\!\ran T}   w\text{,}
+\amp = P_{\ran T}   w\text{,}
 \end{align*}
 </div>
 <div class="para">where the second line holds <a href="x2SVD.html#x5SVD" class="xref" data-knowl="./knowl/xref/x5SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.76">because (7.76)</a> implies that <span class="process-math">\(Te_k = s_k f_k\)</span> if <span class="process-math">\(k = 1, \ldots, m\text{,}\)</span> and the last line above holds <a href="x2SVD.html#x5SVD" class="xref" data-knowl="./knowl/xref/x5SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.76">because (7.76)</a> implies that <span class="process-math">\(f_1, \ldots,
-f_m\)</span> spans <span class="process-math">\(\ran T\)</span> and thus is an orthonormal basis of <span class="process-math">\(\ran T\)</span> [and <a href="OrthoMin.html#x418" class="xref" data-knowl="./knowl/xref/x418.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.60: properties of orthogonal projection P_{U}">hence 6.60</a>(i) applies] . The equation above, the observation that <span class="process-math">\(v \in (\ker T)^\perp\)</span> [see <a href="x2SVD.html#x4SVD" class="xref" data-knowl="./knowl/xref/x4SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.5.2.8">Exercise 7.5.2.8</a>(b)] , and the definition of <span class="process-math">\(T^\dagger w\)</span> (<a href="OrthoMin.html#x6pseudo" class="xref" data-knowl="./knowl/xref/x6pseudo.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.74: pseudoinverse, T^\dagger">see 6.74</a>) show that <span class="process-math">\(v = T^\dagger w\text{,}\)</span> <a href="x2SVD.html#x7SVD" class="xref" data-knowl="./knowl/xref/x7SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.78">proving (7.78)</a>.</div>
+f_m\)</span> spans <span class="process-math">\(\ran T\)</span> and thus is an orthonormal basis of <span class="process-math">\(\ran T\)</span> [and <a href="OrthoMin.html#x418" class="xref" data-knowl="./knowl/xref/x418.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.57: properties of orthogonal projection P_{U}">hence 6.57</a>(i) applies] . The equation above, the observation that <span class="process-math">\(v \in (\ker T)^\perp\)</span> [see <a href="x2SVD.html#x4SVD" class="xref" data-knowl="./knowl/xref/x4SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.5.2.8">Exercise 7.5.2.8</a>(b)] , and the definition of <span class="process-math">\(T^\dagger w\)</span> (<a href="OrthoMin.html#x6pseudo" class="xref" data-knowl="./knowl/xref/x6pseudo.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.68: pseudoinverse, T^\dagger">see 6.68</a>) show that <span class="process-math">\(v = T^\dagger w\text{,}\)</span> <a href="x2SVD.html#x7SVD" class="xref" data-knowl="./knowl/xref/x7SVD.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.78">proving (7.78)</a>.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-15-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 7.5.2.2"><a tabindex="-1" href="#x2SVD-3-15" title="Copy heading and permalink for Proof 7.5.2.2" aria-label="Copy heading and permalink for Proof 7.5.2.2">🔗</a></div>
@@ -1293,7 +1298,7 @@ w\)</span> satisfying both equations above are called a <em class="emphasis">Sch
 <div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.5"><a tabindex="-1" href="#x2SVD-3-22-6" title="Copy heading and permalink for Exercise 7.5.2.5" aria-label="Copy heading and permalink for Exercise 7.5.2.5">🔗</a></div>
 </article>
 <article class="exercise exercise-like" id="x2SVD-3-22-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="x2SVD-3-22-7-1-1">Find the singular values of the differentiation operator <span class="process-math">\(D \in \Lc\bigl(\P{}_2(\R{})\bigr)\)</span> defined by <span class="process-math">\(Dp = p'\!\text{,}\)</span> where the inner product on <span class="process-math">\(\P{}_2(\R{})\)</span> is as in <a href="orthobases.html#obP2R" class="xref" data-knowl="./knowl/xref/obP2R.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.37: an orthonormal basis of  \P_2(\R{})">Example 6.37</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="x2SVD-3-22-7-1-1">Find the singular values of the differentiation operator <span class="process-math">\(D \in \Lc\bigl(\P{}_2(\R{})\bigr)\)</span> defined by <span class="process-math">\(Dp = p'\text{,}\)</span> where the inner product on <span class="process-math">\(\P{}_2(\R{})\)</span> is as in <a href="orthobases.html#obP2R" class="xref" data-knowl="./knowl/xref/obP2R.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.34: an orthonormal basis of  \P_2(\R{})">Example 6.34</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#x2SVD-3-22-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Exercise 7.5.2.6"><a tabindex="-1" href="#x2SVD-3-22-7" title="Copy heading and permalink for Exercise 7.5.2.6" aria-label="Copy heading and permalink for Exercise 7.5.2.6">🔗</a></div>
 </article>
