@@ -7,3 +7,7 @@
   content: "\A";
   white-space: pre;
 }
+
+.ptx-main > #ptx-content .subsection > .heading > .codenumber {
+  display: none;
+}
